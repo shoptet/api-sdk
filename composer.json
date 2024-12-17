@@ -1,0 +1,40 @@
+{
+    "name": "shoptet/api-sdk-php",
+    "description": "Shoptet API SDK PHP",
+    "keywords": [
+        "shoptet",
+        "api",
+        "sdk",
+        "php"
+    ],
+    "homepage": "https://www.shoptet.cz/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shoptet and contributors",
+            "homepage": "https://github.com/shoptet/api-sdk-php/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "psr/log": ">=1.0.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "1.12.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shoptet\\Api\\Sdk\\Php\\": "src/"
+        }
+    },
+    "scripts": {
+        "phpstan": "php vendor/phpstan/phpstan/phpstan analyze -v -c phpstan.neon.dist --memory-limit=-1",
+        "phpstan:clear-cache": "php vendor/phpstan/phpstan/phpstan clear-result-cache -c phpstan.neon.dist"
+    },
+    "scripts-descriptions": {
+        "phpstan": "Run PHPStan",
+        "phpstan:clear-cache": "Clear PHPStan result cache"
+    }
+}

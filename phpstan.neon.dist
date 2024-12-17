@@ -1,0 +1,18 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 9
+
+    checkFunctionNameCase: true
+    reportUnmatchedIgnoredErrors: true
+    checkBenevolentUnionTypes: true
+    reportAlwaysTrueInLastCondition: true
+    checkMissingCallableSignature: true
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+
+    bootstrapFiles:
+        - build/phpstan.bootstrap.php
+
+    paths:
+        - src
