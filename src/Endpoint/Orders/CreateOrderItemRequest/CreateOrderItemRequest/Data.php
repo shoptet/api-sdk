@@ -3,6 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemRequest\CreateOrderItemRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\ConsumptionTaxId;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemRequest\CreateOrderItemRequest\Data\SurchargeParameters;
@@ -33,6 +34,7 @@ class Data extends Entity
     protected ?int $recyclingFeeId;
     protected ?float $statusId;
     protected ?SurchargeParameters $surchargeParameters;
+    protected ?ConsumptionTaxId $consumptionTaxId;
 
     public function getItemType(): string
     {
@@ -295,6 +297,17 @@ class Data extends Entity
     public function setSurchargeParameters(?SurchargeParameters $surchargeParameters): static
     {
         $this->surchargeParameters = $surchargeParameters;
+        return $this;
+    }
+
+    public function getConsumptionTaxId(): ?ConsumptionTaxId
+    {
+        return $this->consumptionTaxId;
+    }
+
+    public function setConsumptionTaxId(?ConsumptionTaxId $consumptionTaxId): static
+    {
+        $this->consumptionTaxId = $consumptionTaxId;
         return $this;
     }
 }

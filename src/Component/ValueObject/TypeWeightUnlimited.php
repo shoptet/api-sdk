@@ -21,6 +21,6 @@ readonly class TypeWeightUnlimited implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeWeightUnlimited;
+        return (string) $this->typeWeightUnlimited;
     }
 }

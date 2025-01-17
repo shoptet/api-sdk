@@ -2,6 +2,9 @@
 
 namespace Shoptet\Api\Sdk\Php\Response;
 
+/**
+ * Converts raw response from API to array
+ */
 class ArrayResponse extends AbstractResponse
 {
     /**
@@ -10,6 +13,8 @@ class ArrayResponse extends AbstractResponse
     protected ?array $body;
 
     /**
+     * Convert and returns raw response body as array
+     *
      * @return array<string, mixed>|null
      */
     public function getBody(): ?array

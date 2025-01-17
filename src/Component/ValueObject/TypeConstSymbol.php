@@ -21,6 +21,6 @@ readonly class TypeConstSymbol implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeConstSymbol;
+        return (string) $this->typeConstSymbol;
     }
 }

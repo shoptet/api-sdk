@@ -97,6 +97,7 @@ final class EntityFactory
      */
     protected function getSetter(string $property): ?ReflectionMethod
     {
+        $property = $this->underscoreToCamelCase($property);
         $method = 'set' . ucfirst($property);
         return $this->reflection->hasMethod($method) ? $this->reflection->getMethod($method) : null;
     }
@@ -332,5 +333,10 @@ final class EntityFactory
 
     private function __clone()
     {
+    }
+
+    private function underscoreToCamelCase(string $property): string
+    {
+        return str_replace('_', '', ucwords($property, '_'));
     }
 }

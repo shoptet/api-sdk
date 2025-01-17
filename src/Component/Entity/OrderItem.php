@@ -43,6 +43,7 @@ class OrderItem extends Entity
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
     protected ?ProductFlags $productFlags;
+    protected ?DocumentConsumptionTax $consumptionTax;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -361,6 +362,17 @@ class OrderItem extends Entity
     public function setProductFlags(?ProductFlags $productFlags): static
     {
         $this->productFlags = $productFlags;
+        return $this;
+    }
+
+    public function getConsumptionTax(): ?DocumentConsumptionTax
+    {
+        return $this->consumptionTax;
+    }
+
+    public function setConsumptionTax(?DocumentConsumptionTax $consumptionTax): static
+    {
+        $this->consumptionTax = $consumptionTax;
         return $this;
     }
 }

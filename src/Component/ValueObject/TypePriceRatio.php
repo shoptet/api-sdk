@@ -21,6 +21,6 @@ readonly class TypePriceRatio implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typePriceRatio;
+        return (string) $this->typePriceRatio;
     }
 }

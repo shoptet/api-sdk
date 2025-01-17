@@ -5,10 +5,19 @@ namespace Shoptet\Api\Sdk\Php\Response;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Factory\Entity\EntityFactory;
 
+/**
+ * Converts response from API in entity
+ */
 class EntityResponse extends AbstractResponse
 {
     protected ?Entity $body;
 
+    /**
+     * Converts raw response body to entity.
+     * Returns null if response is not successful or response entity class is not set.
+     *
+     * @return Entity|null
+     */
     public function getBody(): ?Entity
     {
         if ($this->isServerError()) {

@@ -2,7 +2,8 @@
 
 require_once '/vendor/autoload.php';
 
-\Shoptet\Api\Sdk\Php\Sdk::setAccessToken('ENTER_SHOPTET_ACCESS_TOKEN');
+\Shoptet\Api\Sdk\Php\Sdk::setPartnerDomainUrl('https://123.myshoptet.com');
+\Shoptet\Api\Sdk\Php\Sdk::authorizeRequest('ENTER_TOKEN_ID');
 
 /**
  * Call endpoint with array $requestBody example:

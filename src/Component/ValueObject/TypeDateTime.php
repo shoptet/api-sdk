@@ -24,6 +24,6 @@ readonly class TypeDateTime implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeDateTime ?? '';
+        return (string) $this->typeDateTime;
     }
 }

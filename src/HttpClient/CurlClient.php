@@ -13,8 +13,18 @@ use Shoptet\Api\Sdk\Php\Sdk;
 
 class CurlClient implements ClientInterface
 {
+    /**
+     * @const int default timeout in seconds. You can change it by calling setTimeout() method.
+     */
     private const int DEFAULT_TIMEOUT = 80;
+
+    /**
+     * @const int default connect timeout in seconds. You can change it by calling setConnectTimeout() method.
+     */
     private const int DEFAULT_CONNECT_TIMEOUT = 30;
+
+    protected const string HEADER_DEPRECATED_ENDPOINT = 'X-Shoptet-Deprecated';
+    protected const string HEADER_SUNSET = 'Sunset';
 
     /**
      * cURL synchronous requests handle.
@@ -37,6 +47,10 @@ class CurlClient implements ClientInterface
     }
 
     /**
+     * @inheritDoc
+     *
+     * This implementation uses cURL to send the request.
+     *
      * @throws InvalidArgumentException
      * @throws NetworkException
      * @throws RequestException
@@ -114,7 +128,7 @@ class CurlClient implements ClientInterface
             ]
         );
 
-        //@todo log deprecated header
+        $this->checkHeaders($rHeaders, $endpoint);
         //@todo rateLimiter
 
         return $this->responseFactory
@@ -125,6 +139,14 @@ class CurlClient implements ClientInterface
             ->setEndpoint($endpoint);
     }
 
+    /**
+     * Add custom cURL option. Check https://www.php.net/manual/en/function.curl-setopt.php for available options.
+     *
+     * @param int|string $option
+     * @param int|string $value
+     *
+     * @return ClientInterface
+     */
     public function addOption(int|string $option, int|string $value): ClientInterface
     {
         $this->customOptions[$option] = $value;
@@ -235,6 +257,26 @@ class CurlClient implements ClientInterface
         }
 
         return $opts;
+    }
+
+    /**
+     * @param array<string, string> $headers
+     * @param Endpoint $endpoint
+     * @return void
+     */
+    protected function checkHeaders(array $headers, Endpoint $endpoint): void
+    {
+        if (array_key_exists(self::HEADER_DEPRECATED_ENDPOINT, $headers)) {
+            Sdk::getLogger()->notice(
+                sprintf(
+                    '%s: Endpoint %s %s is marked as deprecated.%s',
+                    __CLASS__,
+                    $endpoint->getMethod(),
+                    $endpoint->getUrl(),
+                    array_key_exists(self::HEADER_SUNSET, $headers) ? sprintf(' Sunset date "%s".', $headers[self::HEADER_SUNSET]) : ''
+                )
+            );
+        }
     }
 
     protected function closeCurlHandle(): void

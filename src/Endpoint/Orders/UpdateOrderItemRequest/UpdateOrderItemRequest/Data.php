@@ -3,8 +3,10 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderItemRequest\UpdateOrderItemRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\ConsumptionTaxId;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderItemRequest\UpdateOrderItemRequest\Data\ConsumptionTax;
 
 class Data extends Entity
 {
@@ -31,6 +33,8 @@ class Data extends Entity
     protected ?string $priceRatio;
     protected ?int $recyclingFeeId;
     protected ?float $statusId;
+    protected ?ConsumptionTaxId $consumptionTaxId;
+    protected ?ConsumptionTax $consumptionTax;
 
     public function getItemType(): string
     {
@@ -282,6 +286,28 @@ class Data extends Entity
     public function setStatusId(?float $statusId): static
     {
         $this->statusId = $statusId;
+        return $this;
+    }
+
+    public function getConsumptionTaxId(): ?ConsumptionTaxId
+    {
+        return $this->consumptionTaxId;
+    }
+
+    public function setConsumptionTaxId(?ConsumptionTaxId $consumptionTaxId): static
+    {
+        $this->consumptionTaxId = $consumptionTaxId;
+        return $this;
+    }
+
+    public function getConsumptionTax(): ?ConsumptionTax
+    {
+        return $this->consumptionTax;
+    }
+
+    public function setConsumptionTax(?ConsumptionTax $consumptionTax): static
+    {
+        $this->consumptionTax = $consumptionTax;
         return $this;
     }
 }

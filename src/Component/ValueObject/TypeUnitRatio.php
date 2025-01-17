@@ -21,6 +21,6 @@ readonly class TypeUnitRatio implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeUnitRatio;
+        return (string) $this->typeUnitRatio;
     }
 }

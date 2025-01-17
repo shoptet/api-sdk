@@ -8,6 +8,10 @@ use Shoptet\Api\Sdk\Php\Exception\OutOfRangeException;
 use Shoptet\Api\Sdk\Php\Exception\RuntimeException;
 use Shoptet\Api\Sdk\Php\Response\ResponseInterface;
 
+/**
+ * Abstract class representing pageable endpoints for GET requests. It is often used for endpoints that
+ * return a list of some entities i.e. products, orders, etc.
+ */
 abstract class PageableGet extends Get
 {
     protected Paginator $paginator;

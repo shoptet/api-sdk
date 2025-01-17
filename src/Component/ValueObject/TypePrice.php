@@ -24,6 +24,6 @@ readonly class TypePrice implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typePrice ?? '';
+        return (string) $this->typePrice;
     }
 }

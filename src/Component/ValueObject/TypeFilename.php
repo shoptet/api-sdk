@@ -27,6 +27,6 @@ readonly class TypeFilename implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeFilename;
+        return (string) $this->typeFilename;
     }
 }

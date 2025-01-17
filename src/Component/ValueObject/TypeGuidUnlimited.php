@@ -21,6 +21,6 @@ readonly class TypeGuidUnlimited implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeGuidUnlimited;
+        return (string) $this->typeGuidUnlimited;
     }
 }

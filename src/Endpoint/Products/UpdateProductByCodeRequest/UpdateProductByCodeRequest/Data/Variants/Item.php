@@ -35,6 +35,7 @@ class Item extends Entity
     protected ?bool $negativeStockAllowed;
     protected ?MeasureUnit $measureUnit;
     protected ?int $recyclingFeeId;
+    protected ?int $consumptionTaxId;
     protected ?int $amountDecimalPlaces;
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
@@ -289,6 +290,17 @@ class Item extends Entity
     public function setRecyclingFeeId(?int $recyclingFeeId): static
     {
         $this->recyclingFeeId = $recyclingFeeId;
+        return $this;
+    }
+
+    public function getConsumptionTaxId(): ?int
+    {
+        return $this->consumptionTaxId;
+    }
+
+    public function setConsumptionTaxId(?int $consumptionTaxId): static
+    {
+        $this->consumptionTaxId = $consumptionTaxId;
         return $this;
     }
 

@@ -24,6 +24,6 @@ readonly class TypeDate implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeDate ?? '';
+        return (string) $this->typeDate;
     }
 }

@@ -10,6 +10,9 @@ use Shoptet\Api\Sdk\Php\Exception\LogicException;
 use Shoptet\Api\Sdk\Php\Exception\OutOfRangeException;
 use Shoptet\Api\Sdk\Php\Exception\RuntimeException;
 
+/**
+ * Abstract representation of response from API
+ */
 abstract class AbstractResponse implements ResponseInterface
 {
     /**
@@ -18,6 +21,10 @@ abstract class AbstractResponse implements ResponseInterface
     protected array $headers;
     protected int $statusCode;
     protected string $rawBody;
+
+    /**
+     * @var Endpoint endpoint related to this response
+     */
     protected Endpoint $endpoint;
 
     /**

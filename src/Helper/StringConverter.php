@@ -7,6 +7,8 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\ValueObjectInterface;
 class StringConverter
 {
     /**
+     * Convert array<string|int, string>|string|int|float|bool|ValueObjectInterface value into string representation
+     *
      * @param array<string|int, string>|string|int|float|bool|ValueObjectInterface $value
      * @return string
      */

@@ -21,6 +21,6 @@ readonly class TypeDimension implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeDimension;
+        return (string) $this->typeDimension;
     }
 }

@@ -24,6 +24,6 @@ readonly class TypePositiveAmount implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typePositiveAmount ?? '';
+        return (string) $this->typePositiveAmount;
     }
 }

@@ -29,6 +29,7 @@ class InvoiceItem extends Entity
     protected ?RecyclingFee $recyclingFee;
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
+    protected DocumentConsumptionTax $consumptionTax;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -237,6 +238,17 @@ class InvoiceItem extends Entity
         ?ItemSpecificSurchargeParameters $specificSurchargeParameters,
     ): static {
         $this->specificSurchargeParameters = $specificSurchargeParameters;
+        return $this;
+    }
+
+    public function getConsumptionTax(): DocumentConsumptionTax
+    {
+        return $this->consumptionTax;
+    }
+
+    public function setConsumptionTax(DocumentConsumptionTax $consumptionTax): static
+    {
+        $this->consumptionTax = $consumptionTax;
         return $this;
     }
 }

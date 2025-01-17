@@ -4,6 +4,10 @@ namespace Shoptet\Api\Sdk\Php;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Shoptet\Api\Sdk\Php\Authorization\AuthorizationFacade;
+use Shoptet\Api\Sdk\Php\Authorization\OAuth;
+use Shoptet\Api\Sdk\Php\Authorization\Token\FileTokenStorage;
+use Shoptet\Api\Sdk\Php\Authorization\Token\TokenStorage;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticle;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleSection;
@@ -83,6 +87,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DownloadDeliveryNoteAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNote;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotes;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfDeliveryNotes;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCoupons;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCouponsRequest\BulkDeleteDiscountCouponsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsRequest\CreateDiscountCouponsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsSet;
@@ -169,6 +175,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderShippingRequest\UpdateOrderSh
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderStatus;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderStatusRequest\UpdateOrderStatusRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateRemarksForOrder;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateRemarksForOrderRequest\UpdateRemarksForOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetDetailOfPage;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetListOfPages;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\GetInformationAboutPayment;
@@ -231,6 +238,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\GetDetailOfSurchargeParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetDetailOfVariantParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetLastProductChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfConsumptionTaxes;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfFilteringParameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfParametricCategories;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductAlternativeProducts;
@@ -375,10 +383,12 @@ class Sdk
 {
     protected const string DEFAULT_BASE_URI = 'https://api.myshoptet.com';
     protected const array DEFAULT_HEADERS = ['Content-Type' => 'application/vnd.shoptet.v1.0'];
+    protected const string DEFAULT_FILE_STORAGE_PATH = '/tmp/shoptet-api';
 
-    protected static ClientInterface $httpClient;
     protected static EndpointFactory $endpointFactory;
     protected static LoggerInterface $logger;
+    protected static TokenStorage $tokenStorage;
+    protected static string $partnerDomainUrl;
 
     public static function getBaseUri(): string
     {
@@ -390,9 +400,49 @@ class Sdk
         self::getEndpointFactory()->setBaseUri($baseUri);
     }
 
-    public static function setAccessToken(string $token): void
+    public static function setTokenStorage(TokenStorage $tokenStorage): void
     {
-        self::setHeader('Shoptet-Access-Token', $token);
+        self::$tokenStorage = $tokenStorage;
+    }
+
+    public static function setPartnerDomainUrl(string $partnerDomainUrl): void
+    {
+        self::$partnerDomainUrl = $partnerDomainUrl;
+    }
+
+    protected static function getTokenStorage(): TokenStorage
+    {
+        if (!isset(self::$tokenStorage)) {
+            self::$tokenStorage = new FileTokenStorage(self::DEFAULT_FILE_STORAGE_PATH);
+        }
+        return self::$tokenStorage;
+    }
+
+    protected static function createOauth(): OAuth
+    {
+        if (!isset(self::$partnerDomainUrl)) {
+            throw new LogicException('Partner domain URL is not set. Call `setPartnerDomainUrl` first');
+        }
+        return new OAuth(self::getHttpClient(), self::$partnerDomainUrl);
+    }
+
+    public static function createAuthorizationFacade(): AuthorizationFacade
+    {
+        $tokenStorage = self::getTokenStorage();
+        $oAuth = self::createOauth();
+        return new AuthorizationFacade($tokenStorage, $oAuth);
+    }
+
+    public static function authorizeRequest(string $tokenId): void
+    {
+        $authorizationFacade = self::createAuthorizationFacade();
+        $authorizationFacade->authorizeRequest($tokenId);
+    }
+
+    public static function createFreshPublicApiToken(string $tokenId, string $oAuthAccessTokenId): void
+    {
+        $authorizationFacade = self::createAuthorizationFacade();
+        $authorizationFacade->createFreshPublicApiToken($tokenId, $oAuthAccessTokenId);
     }
 
     /**
@@ -2008,6 +2058,26 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
+     * @see https://api.docs.shoptet.com/openapi/Products/getlistofconsumptiontaxes
+     */
+    public static function getListOfConsumptionTaxes(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfConsumptionTaxes::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
      * @see https://api.docs.shoptet.com/openapi/Products/getlistofrecyclingfeecategories
      */
     public static function getListOfRecyclingFeeCategories(array $queryParams = []): ResponseInterface
@@ -3077,6 +3147,7 @@ class Sdk
 
     /**
      * @param string $code [2018000012]
+     * @param array<string, mixed>|UpdateRemarksForOrderRequest $requestBody
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -3085,14 +3156,19 @@ class Sdk
      *
      * @throws LogicException
      * @throws RuntimeException
+     * @throws ReflectionException
      *
      * @see https://api.docs.shoptet.com/openapi/Orders/updateremarksfororder
      */
-    public static function updateRemarksForOrder(string $code, array $queryParams = []): ResponseInterface
-    {
+    public static function updateRemarksForOrder(
+        string $code,
+        array|UpdateRemarksForOrderRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(UpdateRemarksForOrder::class)
             ->addPathParam('code', $code)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -6035,6 +6111,31 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(CreateDiscountCoupons::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|BulkDeleteDiscountCouponsRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/bulkdeletediscountcoupons
+     */
+    public static function bulkDeleteDiscountCoupons(
+        array|BulkDeleteDiscountCouponsRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(BulkDeleteDiscountCoupons::class)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();

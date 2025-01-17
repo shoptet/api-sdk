@@ -14,6 +14,9 @@ use Shoptet\Api\Sdk\Php\Helper\StringConverter;
 use Shoptet\Api\Sdk\Php\HttpClient\ClientInterface;
 use Shoptet\Api\Sdk\Php\Response\ResponseInterface;
 
+/**
+ * Abstract class representing endpoints for requests.
+ */
 abstract class Endpoint
 {
     /**
@@ -32,27 +35,40 @@ abstract class Endpoint
      * @var array<string, bool>
      */
     protected array $supportedQueryParams = [];
+
+    /**
+     * @var string request method (GET, POST, PATCH, DELETE ...) defined in child class
+     */
     protected string $method;
     protected ?Entity $body = null;
 
     /**
+     * Endpoint constructor.
+     *
+     * @param string $baseUri base URI of the API / or partner eshop domain
      * @param array<string, string> $headers
+     * @param ClientInterface $httpClient HTTP client class for managing sending requests
      */
-    public function __construct(protected readonly string $baseUri, protected readonly array $headers, protected readonly ClientInterface $httpClient)
-    {
+    public function __construct(
+        protected readonly string $baseUri,
+        protected readonly array $headers,
+        protected readonly ClientInterface $httpClient
+    ) {
     }
 
     /**
-     * @return class-string<Entity>|null
+     * @return class-string<Entity>|null entity class for request body
      */
     abstract public function getRequestEntityClass(): ?string;
 
     /**
-     * @return class-string<Entity>|null
+     * @return class-string<Entity>|null entity class for response body
      */
     abstract public function getResponseEntityClass(): ?string;
 
     /**
+     * Executes the request. Validates the entity and sends the request via HTTP client.
+     *
      * @throws LogicException
      * @throws RuntimeException
      */
@@ -155,6 +171,9 @@ abstract class Endpoint
     }
 
     /**
+     * Validates the entity before sending the request. Checks if all required path and query params are set.
+     * And if all unsupported params is not. If not, throws EndpointValidationException.
+     *
      * @return void
      * @throws EndpointValidationException
      */
@@ -229,5 +248,8 @@ abstract class Endpoint
         }
     }
 
+    /**
+     * @return string endpoint path i.e. /products/{id}
+     */
     abstract protected function getEndpoint(): string;
 }

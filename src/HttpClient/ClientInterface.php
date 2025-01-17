@@ -11,6 +11,12 @@ use Shoptet\Api\Sdk\Php\Response\ResponseInterface;
 interface ClientInterface
 {
     /**
+     * Executes the request for given endpoint and returns the response.
+     *
+     * @param Endpoint $endpoint endpoint representation to be requested
+     *
+     * @return ResponseInterface response from the endpoint in the form of ResponseInterface
+     *
      * @throws LogicException
      * @throws RuntimeException
      */
@@ -23,7 +29,7 @@ interface ClientInterface
     public function setResponseFactory(ResponseFactoryInterface $responseFactory): ClientInterface;
 
     /**
-     * @return int Timeout in seconds
+     * @return int timeout in seconds
      */
     public function getTimeout(): int;
 

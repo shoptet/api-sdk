@@ -22,6 +22,6 @@ readonly class TypeCustomerFieldValue implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeCustomerFieldValue;
+        return (string) $this->typeCustomerFieldValue;
     }
 }

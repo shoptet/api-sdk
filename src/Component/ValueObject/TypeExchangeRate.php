@@ -21,6 +21,6 @@ readonly class TypeExchangeRate implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeExchangeRate;
+        return (string) $this->typeExchangeRate;
     }
 }

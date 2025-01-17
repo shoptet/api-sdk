@@ -21,6 +21,6 @@ readonly class TypeWeight implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeWeight;
+        return (string) $this->typeWeight;
     }
 }

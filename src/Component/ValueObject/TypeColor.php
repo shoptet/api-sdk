@@ -21,6 +21,6 @@ readonly class TypeColor implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeColor;
+        return (string) $this->typeColor;
     }
 }

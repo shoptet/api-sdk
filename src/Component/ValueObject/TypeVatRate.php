@@ -21,6 +21,6 @@ readonly class TypeVatRate implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeVatRate;
+        return (string) $this->typeVatRate;
     }
 }

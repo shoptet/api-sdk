@@ -24,6 +24,6 @@ readonly class TypeAmount implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeAmount ?? '';
+        return (string) $this->typeAmount;
     }
 }

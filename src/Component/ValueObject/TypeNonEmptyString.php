@@ -21,6 +21,6 @@ readonly class TypeNonEmptyString implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeNonEmptyString;
+        return (string) $this->typeNonEmptyString;
     }
 }

@@ -21,6 +21,6 @@ readonly class TypeCurrencyCode implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeCurrencyCode;
+        return (string) $this->typeCurrencyCode;
     }
 }

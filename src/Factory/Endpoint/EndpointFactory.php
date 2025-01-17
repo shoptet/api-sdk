@@ -20,6 +20,8 @@ class EndpointFactory
     }
 
     /**
+     * Create endpoint instance by given class-string. You can than execute (send request) on this endpoint.
+     *
      * @param class-string $endpoint
      * @throws InvalidArgumentException
      */
@@ -40,6 +42,8 @@ class EndpointFactory
     }
 
     /**
+     * Create endpoint instance by given HTTP method and URL. You can than execute (send request) on this endpoint.
+     *
      * @param string $method
      * @param string $url
      * @return Endpoint
@@ -68,6 +72,12 @@ class EndpointFactory
         return $this->baseUri;
     }
 
+    /**
+     * Set base domain for endpoints to be created. These endpoints request will be sent to this domain.
+     *
+     * @param string $baseUri
+     * @return EndpointFactory
+     */
     public function setBaseUri(string $baseUri): EndpointFactory
     {
         $this->baseUri = $baseUri;
@@ -83,6 +93,8 @@ class EndpointFactory
     }
 
     /**
+     * Set headers for endpoints to be created. These headers will be sent with each request to the endpoint.
+     *
      * @param array<string, string> $headers
      */
     public function setHeaders(array $headers): EndpointFactory

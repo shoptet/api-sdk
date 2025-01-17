@@ -24,6 +24,6 @@ readonly class TypeGuid implements ValueObjectInterface
 
     public function __toString(): string
     {
-        return $this->typeGuid;
+        return (string) $this->typeGuid;
     }
 }

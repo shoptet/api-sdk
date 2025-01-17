@@ -5,6 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants;
 use Shoptet\Api\Sdk\Php\Component\Entity\ActionPrice;
 use Shoptet\Api\Sdk\Php\Component\Entity\AvailabilityShort;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductConsumptionTax;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\MeasureUnit;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerPricelistPrices;
@@ -49,6 +50,7 @@ class Item extends Entity
     protected ?AvailabilityShort $availabilityWhenSoldOut;
     protected string $negativeStockAllowed;
     protected ?RecyclingFeeCategory $recyclingFee;
+    protected ?ProductConsumptionTax $consumptionTax;
     protected ?string $heurekaCPC;
     protected ?ZboziCZ $zboziCZ;
     protected ?bool $atypicalBilling;
@@ -395,6 +397,17 @@ class Item extends Entity
     public function setRecyclingFee(?RecyclingFeeCategory $recyclingFee): static
     {
         $this->recyclingFee = $recyclingFee;
+        return $this;
+    }
+
+    public function getConsumptionTax(): ?ProductConsumptionTax
+    {
+        return $this->consumptionTax;
+    }
+
+    public function setConsumptionTax(?ProductConsumptionTax $consumptionTax): static
+    {
+        $this->consumptionTax = $consumptionTax;
         return $this;
     }
 
