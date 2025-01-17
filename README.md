@@ -1,6 +1,6 @@
 # Shoptet API SDK PHP
 
-The official PHP library for the Shoptet REST API.
+The official PHP library for the Shoptet REST API
 
 ## Documentation
 
