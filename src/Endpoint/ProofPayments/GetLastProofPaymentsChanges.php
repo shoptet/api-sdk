@@ -14,7 +14,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChangesRespon
 class GetLastProofPaymentsChanges extends PageableGet
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false, 'page' => false, 'itemsPerPage' => false, 'from' => true];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'page' => false,
+        'itemsPerPage' => false,
+        'from' => true,
+        'changeType' => false,
+    ];
 
     public function getRequestEntityClass(): null
     {

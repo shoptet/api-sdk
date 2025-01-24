@@ -13,6 +13,8 @@ class Data extends Entity
     protected ?TypeGuid $parentGuid;
     protected ?string $description;
     protected ?string $secondDescription;
+
+    /** @deprecated */
     protected ?string $imageName;
     protected ?TypeFilename $sourceImageName;
     protected ?TypeGuid $sortBefore;
@@ -82,11 +84,17 @@ class Data extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getImageName(): ?string
     {
         return $this->imageName;
     }
 
+    /**
+     * @deprecated
+     */
     public function setImageName(?string $imageName): static
     {
         $this->imageName = $imageName;

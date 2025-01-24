@@ -10,6 +10,8 @@ class Article extends Entity
 {
     protected float $id;
     protected ?float $defaultSectionId;
+
+    /** @deprecated */
     protected ?float $sectionId;
     protected ?SectionIds $sectionIds;
     protected string $title;
@@ -20,6 +22,8 @@ class Article extends Entity
     protected ?string $redirectUrl;
     protected ?string $content;
     protected ?string $metaTitle;
+
+    /** @deprecated */
     protected ?string $metaKeywords;
     protected ?string $metaDescription;
     protected ?TypeDateTime $publishDate;
@@ -51,11 +55,17 @@ class Article extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getSectionId(): ?float
     {
         return $this->sectionId;
     }
 
+    /**
+     * @deprecated
+     */
     public function setSectionId(?float $sectionId): static
     {
         $this->sectionId = $sectionId;
@@ -161,11 +171,17 @@ class Article extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getMetaKeywords(): ?string
     {
         return $this->metaKeywords;
     }
 
+    /**
+     * @deprecated
+     */
     public function setMetaKeywords(?string $metaKeywords): static
     {
         $this->metaKeywords = $metaKeywords;

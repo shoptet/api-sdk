@@ -42,6 +42,8 @@ class ProofPaymentDetail extends Entity
     protected ?float $cashdeskId;
     protected ?TypeGuidUnlimited $customerGuid;
     protected ?float $customerProfileId;
+
+    /** @deprecated */
     protected ?string $identificationNumber;
     protected ?string $remark;
     protected float $varSymbol;
@@ -411,11 +413,17 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getIdentificationNumber(): ?string
     {
         return $this->identificationNumber;
     }
 
+    /**
+     * @deprecated
+     */
     public function setIdentificationNumber(?string $identificationNumber): static
     {
         $this->identificationNumber = $identificationNumber;

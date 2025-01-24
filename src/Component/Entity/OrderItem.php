@@ -39,6 +39,8 @@ class OrderItem extends Entity
     protected float $itemId;
     protected ?string $warrantyDescription;
     protected TypePositiveAmount $amountCompleted;
+
+    /** @deprecated */
     protected ?SurchargeParametersTexts $surchargeParametersTexts;
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
@@ -320,11 +322,17 @@ class OrderItem extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getSurchargeParametersTexts(): ?SurchargeParametersTexts
     {
         return $this->surchargeParametersTexts;
     }
 
+    /**
+     * @deprecated
+     */
     public function setSurchargeParametersTexts(?SurchargeParametersTexts $surchargeParametersTexts): static
     {
         $this->surchargeParametersTexts = $surchargeParametersTexts;

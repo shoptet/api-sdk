@@ -14,7 +14,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 class GetLastChangesInDistributionList extends PageableGet
 {
     protected array $supportedPathParams = ['code' => true];
-    protected array $supportedQueryParams = ['language' => false, 'page' => false, 'itemsPerPage' => false, 'from' => true];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'page' => false,
+        'itemsPerPage' => false,
+        'from' => true,
+        'changeType' => false,
+    ];
 
     public function getRequestEntityClass(): null
     {

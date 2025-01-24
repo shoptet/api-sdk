@@ -8,6 +8,7 @@ class RelatedProduct extends Entity
 {
     protected TypeGuidUnlimited $guid;
     protected int $priority;
+    protected ?string $visibility;
 
     public function getGuid(): TypeGuidUnlimited
     {
@@ -28,6 +29,17 @@ class RelatedProduct extends Entity
     public function setPriority(int $priority): static
     {
         $this->priority = $priority;
+        return $this;
+    }
+
+    public function getVisibility(): ?string
+    {
+        return $this->visibility;
+    }
+
+    public function setVisibility(?string $visibility): static
+    {
+        $this->visibility = $visibility;
         return $this;
     }
 }

@@ -44,7 +44,11 @@ class Product extends Entity
     protected ?string $xmlFeedName;
     protected ?string $metaTitle;
     protected ?bool $adult;
+
+    /** @deprecated */
     protected ?bool $atypicalBilling;
+
+    /** @deprecated */
     protected ?bool $atypicalShipping;
     protected ?bool $allowIPlatba;
     protected ?bool $allowOnlinePayments;
@@ -307,22 +311,34 @@ class Product extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getAtypicalBilling(): ?bool
     {
         return $this->atypicalBilling;
     }
 
+    /**
+     * @deprecated
+     */
     public function setAtypicalBilling(?bool $atypicalBilling): static
     {
         $this->atypicalBilling = $atypicalBilling;
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getAtypicalShipping(): ?bool
     {
         return $this->atypicalShipping;
     }
 
+    /**
+     * @deprecated
+     */
     public function setAtypicalShipping(?bool $atypicalShipping): static
     {
         $this->atypicalShipping = $atypicalShipping;

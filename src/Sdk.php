@@ -199,6 +199,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\AddItemToProductSet;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\AddItemToProductSetRequest\AddItemToProductSetRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\AddRelatedProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\AddRelatedProductRequest\AddRelatedProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateConsumptionTax;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateConsumptionTaxRequest\CreateConsumptionTaxRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameterRequest\CreateFilteringParameterRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameterValue;
@@ -222,6 +224,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterRequest\CreateVa
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterValue;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterValueRequest\CreateVariantParameterValueRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteAllProductImagesInGallery;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteConsumptionTax;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteFilteringParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteFilteringParameterValue;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteOneProductImage;
@@ -275,6 +278,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\SetRelatedProducts;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\SetRelatedProductsRequest\SetRelatedProductsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\SteGiftsToProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\SteGiftsToProductRequest\SteGiftsToProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateConsumptionTax;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateConsumptionTaxRequest\UpdateConsumptionTaxRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameterRequest\UpdateFilteringParameterRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameterValue;
@@ -1033,6 +1038,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2069,6 +2075,81 @@ class Sdk
     }
 
     /**
+     * @param array<string, mixed>|CreateConsumptionTaxRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Products/createconsumptiontax
+     */
+    public static function createConsumptionTax(
+        array|CreateConsumptionTaxRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateConsumptionTax::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [8] consumption tax identifier
+     * @param array<string, mixed>|UpdateConsumptionTaxRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Products/updateconsumptiontax
+     */
+    public static function updateConsumptionTax(
+        string $id,
+        array|UpdateConsumptionTaxRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateConsumptionTax::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [8] consumption tax identifier
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Products/deleteconsumptiontax
+     */
+    public static function deleteConsumptionTax(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteConsumptionTax::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -2112,6 +2193,7 @@ class Sdk
      * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
      * @param array{
      *     language?: string,
+     *     visible?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2192,6 +2274,7 @@ class Sdk
      * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
      * @param array{
      *     language?: string,
+     *     visible?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3279,6 +3362,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3610,6 +3694,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3705,6 +3790,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3996,6 +4082,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -4366,6 +4453,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5357,6 +5445,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6045,6 +6134,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from: string,
+     *     changeType?: string,
      * } $queryParams
      *
      * @return ResponseInterface

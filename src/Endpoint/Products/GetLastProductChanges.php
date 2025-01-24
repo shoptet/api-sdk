@@ -14,7 +14,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\GetLastProductChangesResponse\GetLastP
 class GetLastProductChanges extends PageableGet
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false, 'page' => false, 'itemsPerPage' => false, 'from' => true];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'page' => false,
+        'itemsPerPage' => false,
+        'from' => true,
+        'changeType' => false,
+    ];
 
     public function getRequestEntityClass(): null
     {

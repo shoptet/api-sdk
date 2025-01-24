@@ -18,6 +18,8 @@ class Data extends Entity
     protected ?float $specSymbol;
     protected ?float $billingMethodId;
     protected ?string $orderCode;
+
+    /** @deprecated */
     protected ?UseItemIds $useItemIds;
     protected ?Items $items;
 
@@ -109,11 +111,17 @@ class Data extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getUseItemIds(): ?UseItemIds
     {
         return $this->useItemIds;
     }
 
+    /**
+     * @deprecated
+     */
     public function setUseItemIds(?UseItemIds $useItemIds): static
     {
         $this->useItemIds = $useItemIds;

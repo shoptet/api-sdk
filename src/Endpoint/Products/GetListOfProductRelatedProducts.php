@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductRelatedProductsRespons
 class GetListOfProductRelatedProducts extends Get
 {
     protected array $supportedPathParams = ['guid' => true];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'visible' => false];
 
     public function getRequestEntityClass(): null
     {

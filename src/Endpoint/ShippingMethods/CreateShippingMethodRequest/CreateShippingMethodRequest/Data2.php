@@ -10,6 +10,8 @@ class Data2 extends Entity
 {
     protected string $name;
     protected ?string $description;
+
+    /** @deprecated */
     protected ?string $shippingCompanyCode;
     protected string $shippingMethodCode;
     protected ?bool $visibility;
@@ -39,11 +41,17 @@ class Data2 extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getShippingCompanyCode(): ?string
     {
         return $this->shippingCompanyCode;
     }
 
+    /**
+     * @deprecated
+     */
     public function setShippingCompanyCode(?string $shippingCompanyCode): static
     {
         $this->shippingCompanyCode = $shippingCompanyCode;
