@@ -237,3 +237,11 @@ There are 3 base types of Exceptions:
 - `Shoptet\Api\Sdk\Php\Exception\LogicException`
 - `Shoptet\Api\Sdk\Php\Exception\RuntimeException`
 - `Shoptet\Api\Sdk\Php\Exception\ReflectionException`
+
+### Tests
+
+To run unit tests, use the following command:
+
+```bash
+composer test:unit
+```

@@ -62,7 +62,7 @@ class OAuth
         $response = $endpoint->execute();
         $body = $response->getBody();
 
-        if (!$response->isSuccess() || $body === null) {
+        if (!$response->isSuccess() || !$body) {
             throw new ObtainAccessTokenFailedException(
                 sprintf('Server error! (Response: "%s")', json_encode($body))
             );

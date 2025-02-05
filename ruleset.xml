@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<ruleset name="Shoptet">
+  <description>Setup for Shoptet API SDK in PHP</description>
+
+  <file>src</file>
+  <file>tests</file>
+
+  <block>Standards</block>
+  <rule ref="PSR12">
+    <exclude name="PSR12.Files.FileHeader"/>
+    <exclude name="PSR12.Namespaces.CompoundNamespaceDepth"/>
+    <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+    <exclude name="PSR1.Files.SideEffects" />
+    <exclude name="Generic.Files.LineLength.TooLong" />
+    <exclude name="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase" />
+  </rule>
+  <rule ref="PSR2.Methods.FunctionCallSignature">
+    <properties>
+      <property name="allowMultipleArguments" value="true" />
+    </properties>
+  </rule>
+  <rule ref="Squiz.Classes.ValidClassName">
+    <severity>0</severity>
+  </rule>
+  <rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+    <note>Exclude check for multiple classes within tests</note>
+  </rule>
+  <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+    <note>Exclude camelCaps method check for tests</note>
+  </rule>
+
+  <block>Arrays</block>
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+  <rule ref="Squiz.Arrays.ArrayDeclaration">
+    <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.CommaAfterLast" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
+    <note>Forces no space in empty array and comma after last element</note>
+  </rule>
+  <rule ref="Generic.Arrays.ArrayIndent" />
+
+  <block>PHP generic</block>
+  <rule ref="Generic.PHP.ForbiddenFunctions" type="array" note="sizeof=>count,delete=>unset,print=>null,is_null=>null,create_function=>null">
+    <properties>
+      <property name="forbiddenFunctions" type="array">
+        <element key="sizeof" value="count"/>
+        <element key="is_null" value="null"/>
+        <element key="delete" value="unset"/>
+        <element key="print" value="echo"/>
+        <element key="create_function" value="null"/>
+      </property>
+    </properties>
+  </rule>
+  <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag" />
+  <rule ref="Generic.PHP.NoSilencedErrors">
+    <properties>
+      <property name="error" value="true" />
+    </properties>
+  </rule>
+
+  <rule ref="Generic.PHP.BacktickOperator" />
+  <rule ref="Generic.PHP.DeprecatedFunctions" />
+  <rule ref="Squiz.PHP.DiscouragedFunctions" note="error_log(), print_r(), var_dump()" />
+  <rule ref="Squiz.PHP.LowercasePHPFunctions" />
+  <rule ref="Squiz.PHP.NonExecutableCode" />
+  <rule ref="PSR12.Files.OpenTag" />
+
+  <block>Formatting</block>
+  <rule ref="Generic.Formatting.SpaceAfterCast" />
+
+  <block>Whitespace</block>
+  <fixme>
+    - Opening of array should increase indentation,
+    - double opening of anything should increase indentation just once
+  </fixme>
+  <rule ref="Squiz.WhiteSpace.SemicolonSpacing" note="No space before semicolon" />
+
+  <block>Commenting</block>
+  <rule ref="Generic.Commenting.Fixme" />
+  <rule ref="Squiz.Commenting.EmptyCatchComment" />
+
+  <block>Strings</block>
+  <rule ref="Squiz.Strings.ConcatenationSpacing">
+    <properties>
+      <property name="spacing" value="1" />
+      <property name="ignoreNewlines" value="true" />
+    </properties>
+  </rule>
+  <rule ref="Squiz.Strings.EchoedStrings" />
+
+  <block>Namespace</block>
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration" />
+  <rule ref="PSR2.Namespaces.UseDeclaration">
+    <note>Generates wrong code in some cases, using custom sniff</note>
+    <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations" />
+  </rule>
+
+  <block>Naming</block>
+  <rule ref="Generic.NamingConventions.ConstructorName" />
+
+  <block>Operators</block>
+  <rule ref="Squiz.Operators.ValidLogicalOperators" note="Forbids use or 'and' and 'or' operators" />
+
+  <block>Slevomat Coding Standard</block>
+  <config name="installed_paths" value="../../slevomat/coding-standard" /><!-- relative path from PHPCS source location -->
+
+  <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+  <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
+  <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
+  <rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing">
+    <properties>
+      <property name="linesCountBeforeNamespace" type="int" value="1" />
+      <property name="linesCountAfterNamespace" type="int" value="1" />
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile" />
+  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+    <properties>
+      <property name="searchAnnotations" type="bool" value="true" />
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
+  <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+    <properties>
+      <property name="linesCountBeforeFirstUse" type="int" value="1" />
+      <property name="linesCountBetweenUseTypes" type="int" value="0" />
+      <property name="linesCountAfterLastUse" type="int" value="1" />
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
+  <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
+
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>
