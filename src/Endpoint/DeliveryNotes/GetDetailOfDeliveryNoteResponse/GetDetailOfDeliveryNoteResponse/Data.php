@@ -2,8 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNoteResponse\GetDetailOfDeliveryNoteResponse;
 
+use Shoptet\Api\Sdk\Php\Component\Entity\DeliveryNote;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNoteResponse\GetDetailOfDeliveryNoteResponse\Data\DeliveryNote;
 
 class Data extends Entity
 {

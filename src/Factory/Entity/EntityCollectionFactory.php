@@ -12,8 +12,6 @@ use Shoptet\Api\Sdk\Php\Exception\ReflectionException;
 
 /**
  * @template TValue
- * @todo cleanup!
- * @todo This is more builder than factory. Rename?
  */
 final class EntityCollectionFactory
 {

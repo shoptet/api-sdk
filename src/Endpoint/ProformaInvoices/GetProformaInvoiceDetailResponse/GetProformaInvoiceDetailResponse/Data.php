@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetailResponse\GetProformaInvoiceDetailResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetailResponse\GetProformaInvoiceDetailResponse\Data\ProformaInvoice;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProformaInvoice;
 
 class Data extends Entity
 {

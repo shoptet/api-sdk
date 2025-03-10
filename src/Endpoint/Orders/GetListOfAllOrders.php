@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\Order;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfAllOrdersResponse\GetListOfAllOrdersResponse;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfAllOrdersResponse\GetListOfAllO
  * @method GetListOfAllOrders setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllOrders extends Get
+class GetListOfAllOrders extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -48,5 +50,10 @@ class GetListOfAllOrders extends Get
     public function getEndpoint(): string
     {
         return '/api/orders/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return Order::class;
     }
 }

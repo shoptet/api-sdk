@@ -7,6 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 class Data extends Entity
 {
     protected ?string $paramName;
+    protected ?string $displayName;
     protected ?string $paramIndex;
     protected ?int $priority;
 
@@ -18,6 +19,17 @@ class Data extends Entity
     public function setParamName(?string $paramName): static
     {
         $this->paramName = $paramName;
+        return $this;
+    }
+
+    public function getDisplayName(): ?string
+    {
+        return $this->displayName;
+    }
+
+    public function setDisplayName(?string $displayName): static
+    {
+        $this->displayName = $displayName;
         return $this;
     }
 

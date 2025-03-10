@@ -4,6 +4,9 @@ namespace Shoptet\Api\Sdk\Php;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Shoptet\Api\Sdk\Php\Async\JobNotFoundException;
+use Shoptet\Api\Sdk\Php\Async\JobResultProcessor;
+use Shoptet\Api\Sdk\Php\Async\SnapshotResultData;
 use Shoptet\Api\Sdk\Php\Authorization\AuthorizationFacade;
 use Shoptet\Api\Sdk\Php\Authorization\OAuth;
 use Shoptet\Api\Sdk\Php\Authorization\Token\FileTokenStorage;
@@ -104,6 +107,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsageRequest\UpdateDiscountCouponsUsageRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
+use Shoptet\Api\Sdk\Php\Endpoint\DocumentExport\GeneralDocumentDownload;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionListRequest\CreateEmailDistributionListRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailsDistributionList;
@@ -130,6 +134,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProofPaymentsRequest\InvoiceLinkProofPaymentsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetailResponse\GetJobDetailResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetListOfJobs;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderGift;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderGiftRequest\AddOrderGiftRequest;
@@ -308,6 +313,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameterValue;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameterValueRequest\UpdateVariantParameterValueRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\DownloadProformaInvoicePdf;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetLastProformaInvoiceChanges;
+use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfAllProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPayment;
@@ -317,6 +323,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentRequest\CreateP
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DeleteProofPayment;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DownloadProofOfPaymentPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChanges;
+use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfAllProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetProofPaymentDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetProofPaymentDetailByOrderCode;
@@ -3740,6 +3747,38 @@ class Sdk
     }
 
     /**
+     * @param array{
+     *     language?: string,
+     *     include?: string,
+     *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
+     *     codeFrom?: string,
+     *     codeTo?: string,
+     *     proformaInvoiceCodeFrom?: string,
+     *     proformaInvoiceCodeTo?: string,
+     *     isValid?: string,
+     *     paid?: string,
+     *     currencyCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlistofallproformainvoices
+     */
+    public static function getListOfAllProformaInvoices(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllProformaInvoices::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param string $code [2018000035]
      * @param array{
      *     language?: string,
@@ -3930,6 +3969,35 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DeleteProofPayment::class)
             ->addPathParam('code', $code)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
+     *     taxDateFrom?: string,
+     *     taxDateTo?: string,
+     *     isValid?: string,
+     *     currencyCode?: string,
+     *     closed?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlistofallproofpayments
+     */
+    public static function getListOfAllProofPayments(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllProofPayments::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -4566,6 +4634,41 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DownloadDeliveryNoteAsPdf::class)
             ->addPathParam('code', $code)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $type [proofPayment] See tables for all document types
+     * @param string $format [xmlPohodaCz] See tables for all document formats
+     * @param array{
+     *     language?: string,
+     *     currency?: string,
+     *     codeFrom?: string,
+     *     codeTo?: string,
+     *     dateFrom?: string,
+     *     dateTo?: string,
+     *     taxDateFrom?: string,
+     *     taxDateTo?: string,
+     *     include?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Document-export/generaldocumentdownload
+     */
+    public static function generalDocumentDownload(
+        string $type,
+        string $format,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(GeneralDocumentDownload::class)
+            ->addPathParam('type', $type)
+            ->addPathParam('format', $format)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -7232,5 +7335,23 @@ class Sdk
             );
         }
         return self::$endpointFactory;
+    }
+
+    public static function processSnapshotResult(string $jobId): SnapshotResultData
+    {
+        $jobDetail = Sdk::getJobDetail($jobId);
+
+        if ($jobDetail->getStatusCode() === 404) {
+            throw new JobNotFoundException();
+        }
+
+        if ($jobDetail->getStatusCode() !== 200) {
+            throw new RuntimeException('An Error occured while processing job result');
+        }
+        /** @var GetJobDetailResponse $jobDetailBody */
+        $jobDetailBody = $jobDetail->getBody();
+        $jobProcessor = new JobResultProcessor(self::getEndpointFactory());
+
+        return $jobProcessor->processSnapshot($jobDetailBody);
     }
 }

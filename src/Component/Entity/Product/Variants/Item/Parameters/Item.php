@@ -9,6 +9,7 @@ class Item extends Entity
     protected ?string $paramName;
     protected string $paramIndex;
     protected string $paramValue;
+    protected ?string $displayName;
     protected ?string $rawValue;
     protected ?string $color;
     protected ?string $image;
@@ -44,6 +45,17 @@ class Item extends Entity
     public function setParamValue(string $paramValue): static
     {
         $this->paramValue = $paramValue;
+        return $this;
+    }
+
+    public function getDisplayName(): ?string
+    {
+        return $this->displayName;
+    }
+
+    public function setDisplayName(?string $displayName): static
+    {
+        $this->displayName = $displayName;
         return $this;
     }
 

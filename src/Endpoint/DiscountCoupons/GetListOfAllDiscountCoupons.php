@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\DiscountCoupon;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfAllDiscountCouponsResponse\GetListOfAllDiscountCouponsResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
  * @method GetListOfAllDiscountCoupons setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllDiscountCoupons extends Get
+class GetListOfAllDiscountCoupons extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -43,5 +45,10 @@ class GetListOfAllDiscountCoupons extends Get
     public function getEndpoint(): string
     {
         return '/api/discount-coupons/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return DiscountCoupon::class;
     }
 }

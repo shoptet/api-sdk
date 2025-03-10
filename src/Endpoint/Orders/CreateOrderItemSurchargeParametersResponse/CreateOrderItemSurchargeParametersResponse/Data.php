@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemSurchargeParametersResponse\CreateOrderItemSurchargeParametersResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemSurchargeParametersResponse\CreateOrderItemSurchargeParametersResponse\Data\Order;
+use Shoptet\Api\Sdk\Php\Component\Entity\Order;
 
 class Data extends Entity
 {

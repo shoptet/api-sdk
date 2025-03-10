@@ -5,6 +5,7 @@ namespace Shoptet\Api\Sdk\Php\HttpClient;
 use Shoptet\Api\Sdk\Php\Endpoint\Endpoint;
 use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 use Shoptet\Api\Sdk\Php\Exception\NetworkException;
+use Shoptet\Api\Sdk\Php\Exception\RateLimitExceededException;
 use Shoptet\Api\Sdk\Php\Exception\RequestException;
 use Shoptet\Api\Sdk\Php\Exception\RuntimeException;
 use Shoptet\Api\Sdk\Php\Factory\Response\ResponseFactoryInterface;
@@ -36,6 +37,11 @@ class CurlClient implements ClientInterface
      * @var array<int|string, mixed>
      */
     protected array $customOptions = [];
+
+    /**
+     * @const int threshold for throwing an exception when rate limit usage reaches this percentage.
+     */
+    private const int RATE_LIMITER_PERCENTAGE_EXCEEDED = 100;
 
     public function __construct(protected ResponseFactoryInterface $responseFactory)
     {
@@ -129,7 +135,7 @@ class CurlClient implements ClientInterface
         );
 
         $this->checkHeaders($rHeaders, $endpoint);
-        //@todo rateLimiter
+        $this->checkRateLimiter($rHeaders, $rStatusCode, $endpoint);
 
         return $this->responseFactory
             ->createResponse()
@@ -279,6 +285,42 @@ class CurlClient implements ClientInterface
         }
     }
 
+    /**
+     * Handles API rate limiting based on response headers.
+     *
+     * @param array<string, string> $headers
+     * @return void
+     */
+    protected function checkRateLimiter(array $headers, int $statusCode, Endpoint $endpoint): void
+    {
+        $percentage = $this->calculateRateLimiterPercentage($headers);
+
+        if ($percentage === null) {
+            return;
+        }
+
+        if ($percentage >= self::RATE_LIMITER_PERCENTAGE_EXCEEDED) {
+            $message = sprintf(
+                '%s: API rate limit exceeded in %s %s.',
+                __CLASS__,
+                $endpoint->getMethod(),
+                $endpoint->getUrl()
+            );
+
+            $retryAfter = $headers['Retry-After'] ?? null;
+
+            if ($retryAfter !== null) {
+                $message .= sprintf(' Retry after %s', $headers['Retry-After']);
+            }
+
+            if ($statusCode === 429) {
+                throw new RateLimitExceededException($message, $retryAfter);
+            } else {
+                Sdk::getLogger()->debug($message);
+            }
+        }
+    }
+
     protected function closeCurlHandle(): void
     {
         if ($this->handle !== null) {
@@ -286,4 +328,30 @@ class CurlClient implements ClientInterface
             $this->handle = null;
         }
     }
+
+    /**
+     * Extracts and calculates the rate limiter percentage from headers.
+     *
+     * @param array<string, string> $headers
+     * @return float|null
+     */
+    private function calculateRateLimiterPercentage(array $headers): ?float
+    {
+        $bucketFilling = $headers['X-RateLimit-Bucket-Filling'] ?? null;
+
+        if ($bucketFilling === null) {
+            return null;
+        }
+
+        $bucketParts = explode('/', $bucketFilling);
+
+        if (count($bucketParts) !== 2) {
+            return null;
+        }
+
+        [$current, $max] = array_map('intval', $bucketParts);
+
+        return $max > 0 ? ($current / $max) * 100 : null;
+    }
+
 }

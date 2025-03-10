@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataReques
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\UpdateShippingDataRequest\Data\DeliveryAddress;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\UpdateShippingDataRequest\Data\Price;
 
@@ -14,7 +14,7 @@ class Data extends Entity
     protected ?string $additionalText;
     protected ?Price $price;
     protected ?TypeCurrencyCode $currency;
-    protected ?TypeDateTime $expires;
+    protected ?TypeDateTimeRequest $expires;
     protected ?DeliveryAddress $deliveryAddress;
     protected string $trackingNumber;
     protected ?string $branchId;
@@ -64,12 +64,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getExpires(): ?TypeDateTime
+    public function getExpires(): ?TypeDateTimeRequest
     {
         return $this->expires;
     }
 
-    public function setExpires(?TypeDateTime $expires): static
+    public function setExpires(?TypeDateTimeRequest $expires): static
     {
         $this->expires = $expires;
         return $this;

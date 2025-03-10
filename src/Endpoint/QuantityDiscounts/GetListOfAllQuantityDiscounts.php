@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\QuantityDiscount;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetListOfAllQuantityDiscountsResponse\GetListOfAllQuantityDiscountsResponse;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetListOfAllQuantityDiscounts
  * @method GetListOfAllQuantityDiscounts setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllQuantityDiscounts extends Get
+class GetListOfAllQuantityDiscounts extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -38,5 +40,10 @@ class GetListOfAllQuantityDiscounts extends Get
     public function getEndpoint(): string
     {
         return '/api/quantity-discounts/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return QuantityDiscount::class;
     }
 }

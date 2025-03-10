@@ -2,6 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products;
 
+use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImagesRequest\CreateProductImagesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImagesResponse\CreateProductImagesResponse;
@@ -12,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImagesResponse\CreateProd
  * @method CreateProductImages setBody(null|array|CreateProductImagesRequest $entity)
  * @method null|CreateProductImagesRequest getBody()
  */
-class CreateProductImages extends Post
+class CreateProductImages extends Post implements AsyncEndpoint
 {
     protected array $supportedPathParams = ['guid' => true, 'gallery' => true];
     protected array $supportedQueryParams = ['language' => false];

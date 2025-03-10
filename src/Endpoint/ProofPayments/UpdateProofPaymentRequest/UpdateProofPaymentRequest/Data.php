@@ -4,12 +4,12 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\UpdateProofPaymentRequest\U
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 
 class Data extends Entity
 {
     protected ?TypeDate $taxDate;
-    protected ?TypeDateTime $issueDate;
+    protected ?TypeDateTimeRequest $issueDate;
     protected ?float $varSymbol;
     protected ?string $constSymbol;
     protected ?float $specSymbol;
@@ -34,12 +34,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getIssueDate(): ?TypeDateTime
+    public function getIssueDate(): ?TypeDateTimeRequest
     {
         return $this->issueDate;
     }
 
-    public function setIssueDate(?TypeDateTime $issueDate): static
+    public function setIssueDate(?TypeDateTimeRequest $issueDate): static
     {
         $this->issueDate = $issueDate;
         return $this;

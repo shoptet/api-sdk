@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetailsResponse\GetListOfAllPricelistDetailsResponse;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetailsResponse
  * @method GetListOfAllPricelistDetails setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllPricelistDetails extends Get
+class GetListOfAllPricelistDetails extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = ['id' => true];
 
@@ -44,5 +46,10 @@ class GetListOfAllPricelistDetails extends Get
     public function getEndpoint(): string
     {
         return '/api/pricelists/{id}/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return PricelistDetail::class;
     }
 }

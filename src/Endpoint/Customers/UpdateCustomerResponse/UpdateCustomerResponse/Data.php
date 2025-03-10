@@ -2,8 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerResponse\UpdateCustomerResponse;
 
+use Shoptet\Api\Sdk\Php\Component\Entity\Customer;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerResponse\UpdateCustomerResponse\Data\Customer;
 
 class Data extends Entity
 {

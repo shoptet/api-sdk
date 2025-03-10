@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\Invoice;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfAllInvoicesResponse\GetListOfAllInvoicesResponse;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfAllInvoicesResponse\GetListOf
  * @method GetListOfAllInvoices setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllInvoices extends Get
+class GetListOfAllInvoices extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -53,5 +55,10 @@ class GetListOfAllInvoices extends Get
     public function getEndpoint(): string
     {
         return '/api/invoices/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return Invoice::class;
     }
 }

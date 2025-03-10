@@ -3,6 +3,8 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Webhooks\RegisterNewWebhookRequest\RegisterNewWebhookRequest\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
+use Shoptet\Api\Sdk\Php\Webhook\Event;
 
 class Item extends Entity
 {
@@ -14,8 +16,15 @@ class Item extends Entity
         return $this->event;
     }
 
-    public function setEvent(string $event): static
+    public function setEvent(Event|string $event): static
     {
+        if (is_string($event)) {
+            if (Event::tryFrom($event) === null) {
+                throw new InvalidArgumentException(sprintf('"%s" is not valid webhook event type value', $event));
+            }
+        } else {
+            $event = $event->value;
+        }
         $this->event = $event;
         return $this;
     }

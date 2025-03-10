@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotesResponse\GetListOfAllDeliveryNotesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
  * @method GetListOfAllDeliveryNotes setBody(null $entity)
  * @method null getBody()
  */
-class GetListOfAllDeliveryNotes extends Get
+class GetListOfAllDeliveryNotes extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -42,5 +44,10 @@ class GetListOfAllDeliveryNotes extends Get
     public function getEndpoint(): string
     {
         return '/api/delivery-notes/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return CreditNote::class;
     }
 }

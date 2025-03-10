@@ -6,6 +6,7 @@ use ReflectionClass;
 use ReflectionException as CoreReflectionException;
 use ReflectionMethod;
 use ReflectionNamedType;
+use ReflectionUnionType;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\ValueObjectInterface;
@@ -15,8 +16,6 @@ use Shoptet\Api\Sdk\Php\Sdk;
 
 /**
  * @template TValue
- * @todo cleanup!
- * @todo This is more builder than factory. Rename?
  */
 final class EntityFactory
 {
@@ -87,6 +86,8 @@ final class EntityFactory
         } elseif (is_array($value)) {
             /** @var array<string, mixed> $value */
             $this->processArrayValueProperty($setter, $value);
+        } elseif ($value instanceof \UnitEnum) {
+            $this->processScalarValueProperty($setter, $value);
         } else {
             throw new InvalidArgumentException(sprintf('Trying to process unsupported property type "%s".', gettype($value)));
         }
@@ -117,7 +118,8 @@ final class EntityFactory
                 $this->entity,
                 null
             );
-        } else {
+            return;
+        } elseif ($parameterType instanceof ReflectionNamedType) {
             if (!$parameterType->isBuiltin()) {
                 /** @var class-string $parameterTypeName */
                 $parameterTypeName = $parameterType->getName();
@@ -128,11 +130,10 @@ final class EntityFactory
                         null
                     )
                 );
-            } else {
-                //@todo To discussion - Often a silent error do we really want to throw this exception?
-                throw new InvalidArgumentException('Trying to set value null to nun-nullable parameter');
+                return;
             }
         }
+        throw new InvalidArgumentException('Trying to set value null to nun-nullable parameter');
     }
 
     /**
@@ -145,21 +146,35 @@ final class EntityFactory
     {
         $parameterType = $this->getSingleParameterType($setter);
 
-        if ($parameterType->isBuiltin()) {
-            $setter->invoke(
-                $this->entity,
-                $value
-            );
-        } else {
-            /** @var class-string $parameterTypeName */
-            $parameterTypeName = $parameterType->getName();
-            $setter->invoke(
-                $this->entity,
-                $this->processValueObjectProperty(
-                    $parameterTypeName,
+        if ($parameterType instanceof ReflectionNamedType) {
+            if ($parameterType->isBuiltin()) {
+                $setter->invoke(
+                    $this->entity,
                     $value
-                )
-            );
+                );
+            } else {
+                /** @var class-string $parameterTypeName */
+                $parameterTypeName = $parameterType->getName();
+                $setter->invoke(
+                    $this->entity,
+                    $this->processValueObjectProperty(
+                        $parameterTypeName,
+                        $value
+                    )
+                );
+            }
+        } else {
+            try {
+                $setter->invoke($this->entity, $value);
+            } catch (ReflectionException $e) {
+                throw new InvalidArgumentException(
+                    sprintf(
+                        'Trying to set value "%s" of union parameter in setter "%s"',
+                        var_export($value, true),
+                        $setter->getName()
+                    )
+                );
+            }
         }
     }
 
@@ -173,6 +188,10 @@ final class EntityFactory
     protected function processArrayValueProperty(ReflectionMethod $setter, array $value): void
     {
         $parameterType = $this->getSingleParameterType($setter);
+
+        if (!($parameterType instanceof ReflectionNamedType)) {
+            throw new InvalidArgumentException('Unsupported parameter type');
+        }
 
         /** @var class-string<EntityCollection<TValue>>|class-string<Entity> $parameterTypeName */
         $parameterTypeName = $parameterType->getName();
@@ -273,7 +292,7 @@ final class EntityFactory
     /**
      * @param class-string<EntityCollection<TValue>> $entityCollectionClass
      * @param non-empty-array<string, array<string, mixed>> $value
-     * @return EntityCollection<mixed> @todo I don't understand why phpstan require mixed type to be here and not the TValue?
+     * @return EntityCollection<mixed>
      * @throws ReflectionException
      * @throws InvalidArgumentException
      */
@@ -285,7 +304,7 @@ final class EntityFactory
     /**
      * @throws InvalidArgumentException
      */
-    protected function getSingleParameterType(ReflectionMethod $method): ReflectionNamedType
+    protected function getSingleParameterType(ReflectionMethod $method): ReflectionNamedType|ReflectionUnionType
     {
         $parameters = $method->getParameters();
         if (count($parameters) === 0) {
@@ -295,6 +314,8 @@ final class EntityFactory
         $parameter = current($parameters);
         $type = $parameter->getType();
         if ($type instanceof ReflectionNamedType) {
+            return $type;
+        } elseif ($type instanceof ReflectionUnionType) {
             return $type;
         } else {
             throw new InvalidArgumentException(sprintf('Unsupported parameter type "%s"', $parameter->getName()));

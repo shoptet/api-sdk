@@ -2,6 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles;
 
+use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
+use Shoptet\Api\Sdk\Php\Component\Entity\Article;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\GetListAllArticlesResponse\GetListAllArticlesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
@@ -11,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
  * @method GetListAllArticles setBody(null $entity)
  * @method null getBody()
  */
-class GetListAllArticles extends Get
+class GetListAllArticles extends Get implements SnapshotEndpoint
 {
     protected array $supportedPathParams = [];
 
@@ -40,5 +42,10 @@ class GetListAllArticles extends Get
     public function getEndpoint(): string
     {
         return '/api/articles/snapshot';
+    }
+
+    public function getSnapshotResultEntityClass(): string
+    {
+        return Article::class;
     }
 }

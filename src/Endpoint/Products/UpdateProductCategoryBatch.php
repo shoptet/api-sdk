@@ -2,6 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products;
 
+use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryBatchRequest\UpdateProductCategoryBatchRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryBatchResponse\UpdateProductCategoryBatchResponse;
@@ -12,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryBatchResponse\Upd
  * @method UpdateProductCategoryBatch setBody(null|array|UpdateProductCategoryBatchRequest $entity)
  * @method null|UpdateProductCategoryBatchRequest getBody()
  */
-class UpdateProductCategoryBatch extends Patch
+class UpdateProductCategoryBatch extends Patch implements AsyncEndpoint
 {
     protected array $supportedPathParams = [];
     protected array $supportedQueryParams = ['language' => false];

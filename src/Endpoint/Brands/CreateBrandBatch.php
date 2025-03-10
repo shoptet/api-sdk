@@ -2,6 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Brands;
 
+use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrandBatchRequest\CreateBrandBatchRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrandBatchResponse\CreateBrandBatchResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
@@ -12,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
  * @method CreateBrandBatch setBody(null|array|CreateBrandBatchRequest $entity)
  * @method null|CreateBrandBatchRequest getBody()
  */
-class CreateBrandBatch extends Post
+class CreateBrandBatch extends Post implements AsyncEndpoint
 {
     protected array $supportedPathParams = [];
     protected array $supportedQueryParams = ['language' => false];

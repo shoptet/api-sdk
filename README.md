@@ -28,8 +28,6 @@ SDK require the following extensions and libraries in order to work properly:
 
 You can install the sdk via [Composer](http://getcomposer.org/). Run the following command:
 
-**@todo** Currently not working as it's not public
-
 ```bash
 composer require shoptet/api-sdk-php
 ```
@@ -144,6 +142,21 @@ try {
 }
 ```
 
+### Webhooks
+List of supported webhooks can be found in `\Shoptet\Api\Sdk\Php\Webhook\Event` enum.
+
+Use the enum above or plain string in request body to register new webhook.
+```php
+Sdk::registerNewWebhook([
+    'data' => [
+        [
+            'event' => \Shoptet\Api\Sdk\Php\Webhook\Event::BRAND_CREATE,
+            'url' => 'https://my-domain.com/shoptet-webhook-consumer/brand-create'
+        ]
+    ],
+]);
+```
+
 ### Custom header
 
 ```php
@@ -173,6 +186,23 @@ $httpClient->setConnectTimeout(90);
 
 echo $httpClient->getTimeout(); // 60
 echo $httpClient->getConnectTimeout(); // 90
+```
+
+### Handling Rate Limits
+When the API rate limit is exceeded, the SDK throws a `RateLimitExceededException`.
+You can handle this exception by retrying the request after the suggested `Retry-After` date.
+For more information, see the [Rate Limiting](https://api.docs.shoptet.com/openapi/section/basic-principles/rate-limiting) section in the API documentation.
+
+```php
+try {
+    // ... Prepare the order entity
+    // Send the request, which may exceed the rate limit
+    $response = \Shoptet\Api\Sdk\Php\Sdk::createOrder($orderEntity);
+} catch (\Shoptet\Api\Sdk\Php\Exception\RateLimitExceededException $e) {
+    // Try again after Retry-After
+    $retryAfter = $e->getRetryAfter();
+    // ...
+}
 ```
 
 ### Custom cURL options
@@ -226,6 +256,22 @@ Default Logger is the `Psr\Log\NullLogger` - So the logs end up in the void.
 
 ```php
 \Shoptet\Api\Sdk\Php\Sdk::setLogger($logger);
+```
+
+### Handeling snapshot endpoints result
+
+If you need to process snapshot job result, i.e. `/api/products/snapshot`, you can use `JobResultProcessor` or Sdk helper method `Sdk::processSnapshotResult`.
+This method gets job result file path from response and processes it.
+
+It returns an iterator over snapshot job result data. This method use Generator to process data with
+smaller memory footprint.
+
+```php
+$snapshotResultData = Sdk::processSnapshotResult('3xhzjz2');
+
+foreach ($snapshotResultData as $entity) {
+    // do something with entity
+}
 ```
 
 ### Exceptions

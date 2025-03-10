@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilename;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest\Data2\SectionIds;
 
@@ -24,7 +24,7 @@ class Data2 extends Entity
     /** @deprecated */
     protected ?string $metaKeywords;
     protected ?string $metaDescription;
-    protected ?TypeDateTime $publishDate;
+    protected ?TypeDateTimeRequest $publishDate;
     protected ?bool $visible;
     protected ?string $access;
     protected ?TypeFilename $sourceImageName;
@@ -163,12 +163,12 @@ class Data2 extends Entity
         return $this;
     }
 
-    public function getPublishDate(): ?TypeDateTime
+    public function getPublishDate(): ?TypeDateTimeRequest
     {
         return $this->publishDate;
     }
 
-    public function setPublishDate(?TypeDateTime $publishDate): static
+    public function setPublishDate(?TypeDateTimeRequest $publishDate): static
     {
         $this->publishDate = $publishDate;
         return $this;

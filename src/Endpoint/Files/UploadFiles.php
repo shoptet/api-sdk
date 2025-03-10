@@ -2,6 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Files;
 
+use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFilesRequest\UploadFilesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFilesResponse\UploadFilesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
@@ -12,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
  * @method UploadFiles setBody(null|array|UploadFilesRequest $entity)
  * @method null|UploadFilesRequest getBody()
  */
-class UploadFiles extends Post
+class UploadFiles extends Post implements AsyncEndpoint
 {
     protected array $supportedPathParams = [];
     protected array $supportedQueryParams = ['language' => false];

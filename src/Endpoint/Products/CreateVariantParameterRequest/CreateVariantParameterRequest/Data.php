@@ -9,6 +9,7 @@ class Data extends Entity
 {
     protected string $paramName;
     protected ?string $paramIndex;
+    protected ?string $displayName;
     protected ?int $priority;
     protected ?ProductVariantParameterValues $values;
 
@@ -31,6 +32,17 @@ class Data extends Entity
     public function setParamIndex(?string $paramIndex): static
     {
         $this->paramIndex = $paramIndex;
+        return $this;
+    }
+
+    public function getDisplayName(): ?string
+    {
+        return $this->displayName;
+    }
+
+    public function setDisplayName(?string $displayName): static
+    {
+        $this->displayName = $displayName;
         return $this;
     }
 

@@ -2,6 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products;
 
+use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductImagesSourceRequest\UpdateProductImagesSourceRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductImagesSourceResponse\UpdateProductImagesSourceResponse;
@@ -12,7 +13,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductImagesSourceResponse\Upda
  * @method UpdateProductImagesSource setBody(null|array|UpdateProductImagesSourceRequest $entity)
  * @method null|UpdateProductImagesSourceRequest getBody()
  */
-class UpdateProductImagesSource extends Patch
+class UpdateProductImagesSource extends Patch implements AsyncEndpoint
 {
     protected array $supportedPathParams = ['guid' => true, 'gallery' => true];
     protected array $supportedQueryParams = ['language' => false];

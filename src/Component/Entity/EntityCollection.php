@@ -6,6 +6,7 @@ use ArrayAccess;
 use ArrayIterator;
 use Countable;
 use IteratorAggregate;
+use JsonSerializable;
 use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 use Traversable;
 
@@ -15,7 +16,7 @@ use Traversable;
  * @implements IteratorAggregate<int, TValue>
  * @implements EntityCollectionInterface<TValue>
  */
-abstract class EntityCollection implements EntityCollectionInterface, ArrayAccess, IteratorAggregate, Countable
+abstract class EntityCollection implements EntityCollectionInterface, ArrayAccess, IteratorAggregate, Countable, JsonSerializable
 {
     /**
      * @var array<int, TValue>
@@ -212,5 +213,13 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
     public function map(callable $callback): static
     {
         return new static(array_map($callback, $this->data));
+    }
+
+    /**
+     * @return array<int, TValue>
+     */
+    public function jsonSerialize(): array
+    {
+        return $this->toArray();
     }
 }

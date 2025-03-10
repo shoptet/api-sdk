@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderResponse\CreateInvoiceFromOrderResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderResponse\CreateInvoiceFromOrderResponse\Data\Invoice;
+use Shoptet\Api\Sdk\Php\Component\Entity\Invoice;
 
 class Data extends Entity
 {

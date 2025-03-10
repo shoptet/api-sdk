@@ -4,19 +4,19 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetailResponse\Get
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Paginator;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetailResponse\GetPricelistDetailResponse\Data\Pricelist;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistDetail;
 
 class Data extends Entity
 {
-    protected Pricelist $pricelist;
+    protected PricelistDetail $pricelist;
     protected ?Paginator $paginator;
 
-    public function getPricelist(): Pricelist
+    public function getPricelist(): PricelistDetail
     {
         return $this->pricelist;
     }
 
-    public function setPricelist(Pricelist $pricelist): static
+    public function setPricelist(PricelistDetail $pricelist): static
     {
         $this->pricelist = $pricelist;
         return $this;

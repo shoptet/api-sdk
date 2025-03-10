@@ -2,8 +2,8 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteResponse\UpdateCreditNoteResponse;
 
+use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteResponse\UpdateCreditNoteResponse\Data\CreditNote;
 
 class Data extends Entity
 {
