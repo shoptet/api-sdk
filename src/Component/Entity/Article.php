@@ -10,9 +10,6 @@ class Article extends Entity
 {
     protected float $id;
     protected ?float $defaultSectionId;
-
-    /** @deprecated */
-    protected ?float $sectionId;
     protected ?SectionIds $sectionIds;
     protected string $title;
     protected string $language;
@@ -26,8 +23,8 @@ class Article extends Entity
     /** @deprecated */
     protected ?string $metaKeywords;
     protected ?string $metaDescription;
-    protected ?TypeDateTime $publishDate;
-    protected ?TypeDateTime $changeDate;
+    protected TypeDateTime $publishDate;
+    protected TypeDateTime $changeDate;
     protected bool $visible;
     protected string $access;
     protected ?string $image;
@@ -52,23 +49,6 @@ class Article extends Entity
     public function setDefaultSectionId(?float $defaultSectionId): static
     {
         $this->defaultSectionId = $defaultSectionId;
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getSectionId(): ?float
-    {
-        return $this->sectionId;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function setSectionId(?float $sectionId): static
-    {
-        $this->sectionId = $sectionId;
         return $this;
     }
 
@@ -199,23 +179,23 @@ class Article extends Entity
         return $this;
     }
 
-    public function getPublishDate(): ?TypeDateTime
+    public function getPublishDate(): TypeDateTime
     {
         return $this->publishDate;
     }
 
-    public function setPublishDate(?TypeDateTime $publishDate): static
+    public function setPublishDate(TypeDateTime $publishDate): static
     {
         $this->publishDate = $publishDate;
         return $this;
     }
 
-    public function getChangeDate(): ?TypeDateTime
+    public function getChangeDate(): TypeDateTime
     {
         return $this->changeDate;
     }
 
-    public function setChangeDate(?TypeDateTime $changeDate): static
+    public function setChangeDate(TypeDateTime $changeDate): static
     {
         $this->changeDate = $changeDate;
         return $this;

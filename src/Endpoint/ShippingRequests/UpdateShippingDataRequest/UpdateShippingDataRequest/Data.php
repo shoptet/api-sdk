@@ -14,7 +14,7 @@ class Data extends Entity
     protected ?string $additionalText;
     protected ?Price $price;
     protected ?TypeCurrencyCode $currency;
-    protected ?TypeDateTimeRequest $expires;
+    protected TypeDateTimeRequest $expires;
     protected ?DeliveryAddress $deliveryAddress;
     protected string $trackingNumber;
     protected ?string $branchId;
@@ -64,12 +64,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getExpires(): ?TypeDateTimeRequest
+    public function getExpires(): TypeDateTimeRequest
     {
         return $this->expires;
     }
 
-    public function setExpires(?TypeDateTimeRequest $expires): static
+    public function setExpires(TypeDateTimeRequest $expires): static
     {
         $this->expires = $expires;
         return $this;

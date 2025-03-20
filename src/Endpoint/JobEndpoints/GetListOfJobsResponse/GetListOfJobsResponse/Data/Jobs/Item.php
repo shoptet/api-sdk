@@ -10,9 +10,9 @@ class Item extends Entity
     protected string $jobId;
     protected string $endpoint;
     protected TypeDateTime $creationTime;
-    protected ?TypeDateTime $completionTime;
+    protected TypeDateTime $completionTime;
     protected string $status;
-    protected ?TypeDateTime $validUntil;
+    protected TypeDateTime $validUntil;
     protected ?string $language;
 
     public function getJobId(): string
@@ -48,12 +48,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCompletionTime(): ?TypeDateTime
+    public function getCompletionTime(): TypeDateTime
     {
         return $this->completionTime;
     }
 
-    public function setCompletionTime(?TypeDateTime $completionTime): static
+    public function setCompletionTime(TypeDateTime $completionTime): static
     {
         $this->completionTime = $completionTime;
         return $this;
@@ -70,12 +70,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getValidUntil(): ?TypeDateTime
+    public function getValidUntil(): TypeDateTime
     {
         return $this->validUntil;
     }
 
-    public function setValidUntil(?TypeDateTime $validUntil): static
+    public function setValidUntil(TypeDateTime $validUntil): static
     {
         $this->validUntil = $validUntil;
         return $this;

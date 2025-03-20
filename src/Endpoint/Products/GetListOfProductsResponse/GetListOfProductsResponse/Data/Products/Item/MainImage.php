@@ -12,7 +12,7 @@ class MainImage extends Entity
     protected string $cdnName;
     protected float $priority;
     protected ?string $description;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
 
     public function getName(): string
     {
@@ -69,12 +69,12 @@ class MainImage extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

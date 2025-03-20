@@ -18,7 +18,7 @@ class Order extends Entity
     protected string $guid;
     protected ?string $externalCode;
     protected TypeDateTime $creationTime;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?string $email;
     protected ?string $phone;
     protected ?string $birthDate;
@@ -92,12 +92,12 @@ class Order extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

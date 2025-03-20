@@ -12,7 +12,7 @@ class Item extends Entity
     protected TypeAmount $amount;
     protected TypeAmount $claim;
     protected ?string $location;
-    protected ?TypeDateTime $lastAmountUpdate;
+    protected TypeDateTime $lastAmountUpdate;
 
     public function getStockId(): int
     {
@@ -58,12 +58,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getLastAmountUpdate(): ?TypeDateTime
+    public function getLastAmountUpdate(): TypeDateTime
     {
         return $this->lastAmountUpdate;
     }
 
-    public function setLastAmountUpdate(?TypeDateTime $lastAmountUpdate): static
+    public function setLastAmountUpdate(TypeDateTime $lastAmountUpdate): static
     {
         $this->lastAmountUpdate = $lastAmountUpdate;
         return $this;

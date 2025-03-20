@@ -3,19 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest\Data1;
-use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest\Data2;
+use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest\Data;
 
 class CreateArticleRequest extends Entity
 {
-    protected Data1|Data2 $data;
+    protected Data $data;
 
-    public function getData(): Data1|Data2
+    public function getData(): Data
     {
         return $this->data;
     }
 
-    public function setData(Data1|Data2 $data): static
+    public function setData(Data $data): static
     {
         $this->data = $data;
         return $this;

@@ -21,7 +21,7 @@ class Item extends Entity
 {
     protected string $code;
     protected ?string $ean;
-    protected ?TypeAmount $stock;
+    protected TypeAmount $stock;
     protected ?string $unit;
     protected ?TypeWeight $weight;
     protected TypeDimension $width;
@@ -38,7 +38,7 @@ class Item extends Entity
     protected bool $includingVat;
     protected string $vatRate;
     protected string $currencyCode;
-    protected ?TypeAmount $minStockSupply;
+    protected TypeAmount $minStockSupply;
     protected ?ActionPrice $actionPrice;
     protected ?string $image;
     protected ?bool $isProductDefaultImage;
@@ -81,12 +81,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getStock(): ?TypeAmount
+    public function getStock(): TypeAmount
     {
         return $this->stock;
     }
 
-    public function setStock(?TypeAmount $stock): static
+    public function setStock(TypeAmount $stock): static
     {
         $this->stock = $stock;
         return $this;
@@ -268,12 +268,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinStockSupply(): ?TypeAmount
+    public function getMinStockSupply(): TypeAmount
     {
         return $this->minStockSupply;
     }
 
-    public function setMinStockSupply(?TypeAmount $minStockSupply): static
+    public function setMinStockSupply(TypeAmount $minStockSupply): static
     {
         $this->minStockSupply = $minStockSupply;
         return $this;

@@ -15,9 +15,9 @@ class Item extends Entity
     protected string $code;
     protected TypeDateTime $creationTime;
     protected string $discountType;
-    protected ?TypePrice $amount;
+    protected TypePrice $amount;
     protected ?TypePriceRatio $ratio;
-    protected ?TypePrice $minPrice;
+    protected TypePrice $minPrice;
     protected ?TypeCurrencyCode $currency;
     protected TypeGuid $template;
     protected ?string $shippingPrice;
@@ -60,12 +60,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): ?TypePrice
+    public function getAmount(): TypePrice
     {
         return $this->amount;
     }
 
-    public function setAmount(?TypePrice $amount): static
+    public function setAmount(TypePrice $amount): static
     {
         $this->amount = $amount;
         return $this;
@@ -82,12 +82,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinPrice(): ?TypePrice
+    public function getMinPrice(): TypePrice
     {
         return $this->minPrice;
     }
 
-    public function setMinPrice(?TypePrice $minPrice): static
+    public function setMinPrice(TypePrice $minPrice): static
     {
         $this->minPrice = $minPrice;
         return $this;

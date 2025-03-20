@@ -5,123 +5,216 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2315eb4-bb5d-4927-b0c5-c6c54075b1ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/sdk-tests.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/AsyncEndpoint.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/JobFailedException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/JobIsNotFinishedException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/JobNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/JobResultProcessor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/JobStatuses.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/SnapshotEndpoint.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Async/SnapshotResultData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/CreditNote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/CreditNote/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/Accounts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/Accounts/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/CustomerGroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/DeliveryAddress.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/Remarks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Customer/Remarks/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/DeliveryNote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/DeliveryNote/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Invoice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Invoice/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Notes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Notes/AdditionalFields.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Notes/AdditionalFields/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/PaymentMethods.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/PaymentMethods/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/ShippingDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Shippings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Shippings/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Shippings/Item/Shipping.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Source.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/Order/Status.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/PricelistDetail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/PricelistDetail/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/ProformaInvoice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Entity/ProformaInvoice/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/ValueObject/TypeDateTimeRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/DocumentExport/GeneralDocumentDownload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/DocumentExport/GeneralDocumentDownloadResponse/GeneralDocumentDownloadResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/DocumentExport/GeneralDocumentDownloadResponse/GeneralDocumentDownloadResponse/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetListOfAllProformaInvoices.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetListOfAllProformaInvoicesResponse/GetListOfAllProformaInvoicesResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetListOfAllProformaInvoicesResponse/GetListOfAllProformaInvoicesResponse/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProofPayments/GetListOfAllProofPayments.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProofPayments/GetListOfAllProofPaymentsResponse/GetListOfAllProofPaymentsResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Endpoint/ProofPayments/GetListOfAllProofPaymentsResponse/GetListOfAllProofPaymentsResponse/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exception/RateLimitExceededException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Webhook/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Endpoint/Orders/OrderBatchInsertion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Endpoint/Orders/OrderBatchInsertionRequest/OrderBatchInsertionRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Endpoint/Orders/OrderBatchInsertionResponse/OrderBatchInsertionResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Endpoint/Orders/OrderBatchInsertionResponse/OrderBatchInsertionResponse/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/api-sdk-php.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Entity/EntityCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/EntityCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item/Parameters/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item/Parameters/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data1.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/GetListAllArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/GetListAllArticles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/ArticleList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/ArticleList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Brand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/CreditNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/CreditNote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/DiscountCoupon.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/DiscountCoupon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/DiscussionPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/DiscussionPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/OrderItem/MainImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/OrderItem/MainImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Product/Images/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Product/Images/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item/PerStockAmounts/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/Product/Variants/Item/PerStockAmounts/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/ProformaInvoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/ProformaInvoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Entity/ShipmentCarrierCountry.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Entity/ShipmentCarrierCountry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data1/SectionIds.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data/SectionIds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/CreateArticleRequest/CreateArticleRequest/Data2/SectionIds.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Endpoint/Articles/UpdateArticleRequest/UpdateArticleRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Articles/UpdateArticleRequest/UpdateArticleRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Brands/CreateBrandBatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Brands/CreateBrandBatch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromInvoiceResponse/CreateCreditNoteFromInvoiceResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromInvoiceResponse/CreateCreditNoteFromInvoiceResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPaymentResponse/CreateCreditNoteFromProofOfPaymentResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPaymentResponse/CreateCreditNoteFromProofOfPaymentResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemResponse/CreateCreditNoteItemResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemResponse/CreateCreditNoteItemResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetCreditNoteDetailResponse/GetCreditNoteDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetCreditNoteDetailResponse/GetCreditNoteDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetListOfAllCreditNotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetListOfAllCreditNotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/UpdateCreditNoteResponse/UpdateCreditNoteResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/UpdateCreditNoteResponse/UpdateCreditNoteResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetListOfAllCustomers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Customers/GetListOfAllCustomers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetDetailOfDeliveryNoteResponse/GetDetailOfDeliveryNoteResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetDetailOfDeliveryNoteResponse/GetDetailOfDeliveryNoteResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetListOfAllDeliveryNotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetListOfAllDeliveryNotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/GetListOfAllDiscountCoupons.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/GetListOfAllDiscountCoupons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Brands/CreateBrandRequest/CreateBrandRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Brands/CreateBrandRequest/CreateBrandRequest/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Brands/UpdateBrandRequest/UpdateBrandRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Brands/UpdateBrandRequest/UpdateBrandRequest/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromInvoiceResponse/CreateCreditNoteFromInvoiceResponse/Data/CreditNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromInvoiceResponse/CreateCreditNoteFromInvoiceResponse/Data/CreditNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPaymentResponse/CreateCreditNoteFromProofOfPaymentResponse/Data/CreditNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteFromProofOfPaymentResponse/CreateCreditNoteFromProofOfPaymentResponse/Data/CreditNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemRequest/CreateCreditNoteItemRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemRequest/CreateCreditNoteItemRequest/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemResponse/CreateCreditNoteItemResponse/Data/CreditNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/CreateCreditNoteItemResponse/CreateCreditNoteItemResponse/Data/CreditNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetCreditNoteDetailResponse/GetCreditNoteDetailResponse/Data/CreditNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/GetCreditNoteDetailResponse/GetCreditNoteDetailResponse/Data/CreditNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/UpdateCreditNoteResponse/UpdateCreditNoteResponse/Data/CreditNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/CreditNotes/UpdateCreditNoteResponse/UpdateCreditNoteResponse/Data/CreditNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/Accounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/Accounts/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/CustomerGroup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/DeliveryAddress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/Remarks.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data/Customer/Remarks/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/Accounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/Accounts/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/CustomerGroup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/DeliveryAddress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/Remarks.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/GetCustomerDetailResponse/GetCustomerDetailResponse/Data/Customer/Remarks/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/Accounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/Accounts/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/CustomerGroup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/DeliveryAddress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/Remarks.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse/Data/Customer/Remarks/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetDetailOfDeliveryNoteResponse/GetDetailOfDeliveryNoteResponse/Data/DeliveryNote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/DeliveryNotes/GetDetailOfDeliveryNoteResponse/GetDetailOfDeliveryNoteResponse/Data/DeliveryNote/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/CreateDiscountCouponsResponse/CreateDiscountCouponsResponse/Data/Coupons/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/CreateDiscountCouponsResponse/CreateDiscountCouponsResponse/Data/Coupons/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/CreateDiscountCouponsSetResponse/CreateDiscountCouponsSetResponse/Data/Coupons/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/DiscountCoupons/CreateDiscountCouponsSetResponse/CreateDiscountCouponsSetResponse/Data/Coupons/Item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Endpoint/EndpointMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/EndpointMap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Files/UploadFiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Files/UploadFiles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/CreateInvoiceFromOrderResponse/CreateInvoiceFromOrderResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Invoices/CreateInvoiceFromOrderResponse/CreateInvoiceFromOrderResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/GetInvoiceDetailResponse/GetInvoiceDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Invoices/GetInvoiceDetailResponse/GetInvoiceDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/GetListOfAllInvoices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Invoices/GetListOfAllInvoices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/InvoiceLinkProofPaymentsResponse/InvoiceLinkProofPaymentsResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Invoices/InvoiceLinkProofPaymentsResponse/InvoiceLinkProofPaymentsResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetListOfAllOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/GetListOfAllOrders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetListOfAllPricelistDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetListOfAllPricelistDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetPricelistDetailResponse/GetPricelistDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetPricelistDetailResponse/GetPricelistDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/CreateProductImages.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/CreateProductImages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterRequest/CreateVariantParameterRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterRequest/CreateVariantParameterRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterResponse/CreateVariantParameterResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterResponse/CreateVariantParameterResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterValueResponse/CreateVariantParameterValueResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/CreateVariantParameterValueResponse/CreateVariantParameterValueResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetDetailOfVariantParameterResponse/GetDetailOfVariantParameterResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetDetailOfVariantParameterResponse/GetDetailOfVariantParameterResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfAllProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfAllProducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfVariantParametersResponse/GetListOfVariantParametersResponse/Data/Parameters/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfVariantParametersResponse/GetListOfVariantParametersResponse/Data/Parameters/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/ProductBatchUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/ProductBatchUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/UpdateProductCategoryBatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/UpdateProductCategoryBatch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/UpdateProductImagesSource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/UpdateProductImagesSource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterRequest/UpdateVariantParameterRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterRequest/UpdateVariantParameterRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterResponse/UpdateVariantParameterResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterResponse/UpdateVariantParameterResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterValueResponse/UpdateVariantParameterValueResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/UpdateVariantParameterValueResponse/UpdateVariantParameterValueResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetProformaInvoiceDetailResponse/GetProformaInvoiceDetailResponse/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetProformaInvoiceDetailResponse/GetProformaInvoiceDetailResponse/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/ProofPayments/CreateProofPaymentRequest/CreateProofPaymentRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/ProofPayments/CreateProofPaymentRequest/CreateProofPaymentRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/ProofPayments/UpdateProofPaymentRequest/UpdateProofPaymentRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/ProofPayments/UpdateProofPaymentRequest/UpdateProofPaymentRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/QuantityDiscounts/GetListOfAllQuantityDiscounts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/QuantityDiscounts/GetListOfAllQuantityDiscounts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/CreateInvoiceFromOrderResponse/CreateInvoiceFromOrderResponse/Data/Invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/CreateInvoiceFromOrderResponse/CreateInvoiceFromOrderResponse/Data/Invoice/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/GetInvoiceDetailResponse/GetInvoiceDetailResponse/Data/Invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/GetInvoiceDetailResponse/GetInvoiceDetailResponse/Data/Invoice/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/InvoiceLinkProofPaymentsResponse/InvoiceLinkProofPaymentsResponse/Data/Invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Invoices/InvoiceLinkProofPaymentsResponse/InvoiceLinkProofPaymentsResponse/Data/Invoice/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/JobEndpoints/GetJobDetailResponse/GetJobDetailResponse/Data/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/JobEndpoints/GetJobDetailResponse/GetJobDetailResponse/Data/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/JobEndpoints/GetListOfJobsResponse/GetListOfJobsResponse/Data/Jobs/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/JobEndpoints/GetListOfJobsResponse/GetListOfJobsResponse/Data/Jobs/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/AddOrderShippingResponse/AddOrderShippingResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemResponse/CreateOrderItemResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderItemSurchargeParametersResponse/CreateOrderItemSurchargeParametersResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderPaymentResponse/CreateOrderPaymentResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/CreateOrderResponse/CreateOrderResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetListOfOrdersResponse/GetListOfOrdersResponse/Data/Orders/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Orders/GetListOfOrdersResponse/GetListOfOrdersResponse/Data/Orders/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/GetOrderDetailResponse/GetOrderDetailResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/OrderCopyResponse/OrderCopyResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderHeadResponse/UpdateOrderHeadResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Items.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Notes/AdditionalFields.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Notes/AdditionalFields/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/PaymentMethods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/PaymentMethods/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/ShippingDetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Shippings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Shippings/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Shippings/Item/Shipping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Source.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Orders/UpdateOrderStatusResponse/UpdateOrderStatusResponse/Data/Order/Status.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetPricelistDetailResponse/GetPricelistDetailResponse/Data/Pricelist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/PriceLists/GetPricelistDetailResponse/GetPricelistDetailResponse/Data/Pricelist/Item.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsResponse/GetListOfProductsResponse/Data/Products/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsResponse/GetListOfProductsResponse/Data/Products/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsResponse/GetListOfProductsResponse/Data/Products/Item/MainImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsResponse/GetListOfProductsResponse/Data/Products/Item/MainImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsReviewsResponse/GetListOfProductsReviewsResponse/Data/Reviews/Item/Reaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Products/GetListOfProductsReviewsResponse/GetListOfProductsReviewsResponse/Data/Reviews/Item/Reaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetProformaInvoiceDetailResponse/GetProformaInvoiceDetailResponse/Data/ProformaInvoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/ProformaInvoices/GetProformaInvoiceDetailResponse/GetProformaInvoiceDetailResponse/Data/ProformaInvoice/Items.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Endpoint/ShippingRequests/UpdateShippingDataRequest/UpdateShippingDataRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/ShippingRequests/UpdateShippingDataRequest/UpdateShippingDataRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/UnsubscribedEmails/CreateUnsubscribedEmailRequest/CreateUnsubscribedEmailRequest/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/UnsubscribedEmails/CreateUnsubscribedEmailRequest/CreateUnsubscribedEmailRequest/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Endpoint/Webhooks/RegisterNewWebhookRequest/RegisterNewWebhookRequest/Data/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Webhooks/RegisterNewWebhookRequest/RegisterNewWebhookRequest/Data/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/Entity/EntityCollectionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/Entity/EntityCollectionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/Entity/EntityFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/Entity/EntityFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HttpClient/CurlClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpClient/CurlClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Endpoint/Stocks/GetStockMovementsResponse/GetStockMovementsResponse/Data/Movements/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Endpoint/Stocks/GetStockMovementsResponse/GetStockMovementsResponse/Data/Movements/Item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sdk.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sdk.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,27 +278,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/malcik/repo/api-sdk-php",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/malcik/repo/api-sdk-php&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\home\malcik\repo\api-sdk-php" />
+      <recent name="\\wsl.localhost\Ubuntu\home\malcik\repo\api-sdk-php\.github" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\home\malcik\repo\api-sdk-php" />
+      <recent name="\\wsl.localhost\Ubuntu\home\malcik\repo\api-sdk-php\.github" />
     </key>
   </component>
   <component name="RunManager">
@@ -239,7 +334,9 @@
       <workItem from="1726061611815" duration="2520000" />
       <workItem from="1726229046164" duration="1371000" />
       <workItem from="1734432943440" duration="1345000" />
-      <workItem from="1741640067232" duration="330000" />
+      <workItem from="1741640067232" duration="2942000" />
+      <workItem from="1741768142711" duration="5000" />
+      <workItem from="1742150804174" duration="7172000" />
     </task>
     <servers />
   </component>

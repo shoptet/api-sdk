@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
 class ShipmentCarrierCountry extends Entity
 {
     protected string $countryCode;
-    protected ?TypePrice $maxCod;
+    protected TypePrice $maxCod;
     protected ?string $codCurrencyCode;
     protected int $maxWeight;
 
@@ -22,12 +22,12 @@ class ShipmentCarrierCountry extends Entity
         return $this;
     }
 
-    public function getMaxCod(): ?TypePrice
+    public function getMaxCod(): TypePrice
     {
         return $this->maxCod;
     }
 
-    public function setMaxCod(?TypePrice $maxCod): static
+    public function setMaxCod(TypePrice $maxCod): static
     {
         $this->maxCod = $maxCod;
         return $this;

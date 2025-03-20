@@ -29,7 +29,7 @@ class Product extends Entity
     protected ?Supplier $supplier;
     protected string $visibility;
     protected TypeDateTime $creationTime;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?string $shortDescription;
     protected ?string $description;
     protected ?string $metaDescription;
@@ -146,12 +146,12 @@ class Product extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

@@ -12,7 +12,7 @@ class Data extends Entity
 {
     protected string $itemType;
     protected ?string $code;
-    protected ?TypeAmount $amount;
+    protected TypeAmount $amount;
     protected ?string $name;
     protected ?string $variantName;
     protected ?string $amountUnit;
@@ -46,12 +46,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getAmount(): ?TypeAmount
+    public function getAmount(): TypeAmount
     {
         return $this->amount;
     }
 
-    public function setAmount(?TypeAmount $amount): static
+    public function setAmount(TypeAmount $amount): static
     {
         $this->amount = $amount;
         return $this;

@@ -14,7 +14,7 @@ class Item extends Entity
     protected TypeAmount $actualAmount;
     protected TypeAmount $amountChange;
     protected ?string $changedBy;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?string $orderCode;
     protected ?TypeGuidUnlimited $productGuid;
     protected ?TypeAmount $sumAmount;
@@ -74,12 +74,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

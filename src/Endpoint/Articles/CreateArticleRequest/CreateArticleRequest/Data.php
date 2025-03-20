@@ -1,17 +1,17 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleRequest\UpdateArticleRequest;
+namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilename;
-use Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleRequest\UpdateArticleRequest\Data\SectionIds;
+use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest\Data\SectionIds;
 
 class Data extends Entity
 {
-    protected ?string $title;
+    protected string $title;
     protected ?string $language;
-    protected ?float $defaultSectionId;
+    protected float $defaultSectionId;
     protected ?SectionIds $sectionIds;
     protected ?string $indexName;
     protected ?string $redirectUrl;
@@ -27,12 +27,12 @@ class Data extends Entity
     protected ?TypeFilename $sourceImageName;
     protected ?TypeFilename $sourceOgImageName;
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setTitle(?string $title): static
+    public function setTitle(string $title): static
     {
         $this->title = $title;
         return $this;
@@ -49,12 +49,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getDefaultSectionId(): ?float
+    public function getDefaultSectionId(): float
     {
         return $this->defaultSectionId;
     }
 
-    public function setDefaultSectionId(?float $defaultSectionId): static
+    public function setDefaultSectionId(float $defaultSectionId): static
     {
         $this->defaultSectionId = $defaultSectionId;
         return $this;
