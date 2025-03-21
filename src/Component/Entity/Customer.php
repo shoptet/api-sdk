@@ -22,7 +22,7 @@ class Customer extends Entity
     protected ?Pricelist $priceList;
     protected ?string $remark;
     protected TypePriceRatio $priceRatio;
-    protected ?TypeDate $birthDate;
+    protected TypeDate $birthDate;
     protected Accounts $accounts;
     protected bool $disabledOrders;
     protected Remarks $remarks;
@@ -127,12 +127,12 @@ class Customer extends Entity
         return $this;
     }
 
-    public function getBirthDate(): ?TypeDate
+    public function getBirthDate(): TypeDate
     {
         return $this->birthDate;
     }
 
-    public function setBirthDate(?TypeDate $birthDate): static
+    public function setBirthDate(TypeDate $birthDate): static
     {
         $this->birthDate = $birthDate;
         return $this;

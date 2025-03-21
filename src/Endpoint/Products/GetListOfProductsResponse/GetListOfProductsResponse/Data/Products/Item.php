@@ -19,7 +19,7 @@ class Item extends Entity
     protected ?string $url;
     protected string $visibility;
     protected TypeDateTime $creationTime;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?BrandNamed $brand;
     protected ?Supplier $supplier;
     protected DefaultCategory $defaultCategory;
@@ -93,12 +93,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

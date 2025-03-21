@@ -165,6 +165,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfRemarksForOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderGiftSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderGiftsList;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertion;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertionRequest\OrderBatchInsertionRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderCopy;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderCopyRequest\OrderCopyRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderGiftSettings;
@@ -3383,6 +3385,31 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetLastOrderChanges::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|OrderBatchInsertionRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Orders/orderbatchinsertion
+     */
+    public static function orderBatchInsertion(
+        array|OrderBatchInsertionRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(OrderBatchInsertion::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }

@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes;
 
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromProofOfPaymentRequest\CreateCreditNoteFromProofOfPaymentRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromProofOfPaymentResponse\CreateCreditNoteFromProofOfPaymentResponse;
-use Shoptet\Api\Sdk\Php\Endpoint\Get;
+use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
  * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnotefromproofofpayment
@@ -12,7 +12,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
  * @method CreateCreditNoteFromProofOfPayment setBody(null|array|CreateCreditNoteFromProofOfPaymentRequest $entity)
  * @method null|CreateCreditNoteFromProofOfPaymentRequest getBody()
  */
-class CreateCreditNoteFromProofOfPayment extends Get
+class CreateCreditNoteFromProofOfPayment extends Post
 {
     protected array $supportedPathParams = ['code' => true];
     protected array $supportedQueryParams = ['language' => false];

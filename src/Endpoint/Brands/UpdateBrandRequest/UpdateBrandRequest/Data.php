@@ -9,6 +9,12 @@ class Data extends Entity
     protected ?string $name;
     protected ?string $indexName;
     protected ?string $brandWeb;
+    protected ?string $postalAddress;
+    protected ?string $contactEmail;
+    protected ?string $europeanResellerPostalAddress;
+    protected ?string $europeanResellerContactEmail;
+    protected ?string $manufacturingCompanyName;
+    protected ?string $europeanResellerManufacturingCompanyName;
     protected ?bool $showInCategoriesMenu;
     protected ?bool $showInBrandList;
     protected ?string $description;
@@ -45,6 +51,73 @@ class Data extends Entity
     public function setBrandWeb(?string $brandWeb): static
     {
         $this->brandWeb = $brandWeb;
+        return $this;
+    }
+
+    public function getPostalAddress(): ?string
+    {
+        return $this->postalAddress;
+    }
+
+    public function setPostalAddress(?string $postalAddress): static
+    {
+        $this->postalAddress = $postalAddress;
+        return $this;
+    }
+
+    public function getContactEmail(): ?string
+    {
+        return $this->contactEmail;
+    }
+
+    public function setContactEmail(?string $contactEmail): static
+    {
+        $this->contactEmail = $contactEmail;
+        return $this;
+    }
+
+    public function getEuropeanResellerPostalAddress(): ?string
+    {
+        return $this->europeanResellerPostalAddress;
+    }
+
+    public function setEuropeanResellerPostalAddress(?string $europeanResellerPostalAddress): static
+    {
+        $this->europeanResellerPostalAddress = $europeanResellerPostalAddress;
+        return $this;
+    }
+
+    public function getEuropeanResellerContactEmail(): ?string
+    {
+        return $this->europeanResellerContactEmail;
+    }
+
+    public function setEuropeanResellerContactEmail(?string $europeanResellerContactEmail): static
+    {
+        $this->europeanResellerContactEmail = $europeanResellerContactEmail;
+        return $this;
+    }
+
+    public function getManufacturingCompanyName(): ?string
+    {
+        return $this->manufacturingCompanyName;
+    }
+
+    public function setManufacturingCompanyName(?string $manufacturingCompanyName): static
+    {
+        $this->manufacturingCompanyName = $manufacturingCompanyName;
+        return $this;
+    }
+
+    public function getEuropeanResellerManufacturingCompanyName(): ?string
+    {
+        return $this->europeanResellerManufacturingCompanyName;
+    }
+
+    public function setEuropeanResellerManufacturingCompanyName(
+        ?string $europeanResellerManufacturingCompanyName,
+    ): static {
+        $this->europeanResellerManufacturingCompanyName = $europeanResellerManufacturingCompanyName;
         return $this;
     }
 

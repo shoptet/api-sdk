@@ -11,7 +11,7 @@ class ArticleList extends Entity
     protected ?float $sectionId;
     protected string $title;
     protected ?string $url;
-    protected ?TypeDateTime $publishDate;
+    protected TypeDateTime $publishDate;
     protected bool $visible;
     protected ?string $image;
 
@@ -70,12 +70,12 @@ class ArticleList extends Entity
         return $this;
     }
 
-    public function getPublishDate(): ?TypeDateTime
+    public function getPublishDate(): TypeDateTime
     {
         return $this->publishDate;
     }
 
-    public function setPublishDate(?TypeDateTime $publishDate): static
+    public function setPublishDate(TypeDateTime $publishDate): static
     {
         $this->publishDate = $publishDate;
         return $this;

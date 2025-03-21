@@ -12,7 +12,7 @@ class Item extends Entity
     protected string $cdnName;
     protected ?int $priority;
     protected ?string $description;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?bool $isMainImage;
 
     public function getName(): string
@@ -70,12 +70,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

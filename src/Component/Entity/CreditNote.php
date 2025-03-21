@@ -16,8 +16,8 @@ class CreditNote extends Entity
     protected ?string $proofPaymentCode;
     protected TypeDateTime $creationTime;
     protected TypeDateTime $changeTime;
-    protected ?TypeDate $dueDate;
-    protected ?TypeDate $taxDate;
+    protected TypeDate $dueDate;
+    protected TypeDate $taxDate;
     protected float $varSymbol;
     protected ?int $constSymbol;
     protected ?float $specSymbol;
@@ -114,23 +114,23 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getDueDate(): ?TypeDate
+    public function getDueDate(): TypeDate
     {
         return $this->dueDate;
     }
 
-    public function setDueDate(?TypeDate $dueDate): static
+    public function setDueDate(TypeDate $dueDate): static
     {
         $this->dueDate = $dueDate;
         return $this;
     }
 
-    public function getTaxDate(): ?TypeDate
+    public function getTaxDate(): TypeDate
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(?TypeDate $taxDate): static
+    public function setTaxDate(TypeDate $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;

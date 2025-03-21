@@ -7,17 +7,17 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
 
 class Reaction extends Entity
 {
-    protected ?TypeDateTime $reactionCreated;
+    protected TypeDateTime $reactionCreated;
     protected ?string $reactionFullName;
     protected ?string $reactionEmail;
     protected ?string $reactionText;
 
-    public function getReactionCreated(): ?TypeDateTime
+    public function getReactionCreated(): TypeDateTime
     {
         return $this->reactionCreated;
     }
 
-    public function setReactionCreated(?TypeDateTime $reactionCreated): static
+    public function setReactionCreated(TypeDateTime $reactionCreated): static
     {
         $this->reactionCreated = $reactionCreated;
         return $this;

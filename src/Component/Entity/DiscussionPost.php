@@ -14,7 +14,7 @@ class DiscussionPost extends Entity
     protected ?string $email;
     protected ?string $title;
     protected ?string $content;
-    protected ?TypeDateTime $creationDate;
+    protected TypeDateTime $creationDate;
     protected bool $authorized;
 
     public function getId(): float
@@ -105,12 +105,12 @@ class DiscussionPost extends Entity
         return $this;
     }
 
-    public function getCreationDate(): ?TypeDateTime
+    public function getCreationDate(): TypeDateTime
     {
         return $this->creationDate;
     }
 
-    public function setCreationDate(?TypeDateTime $creationDate): static
+    public function setCreationDate(TypeDateTime $creationDate): static
     {
         $this->creationDate = $creationDate;
         return $this;

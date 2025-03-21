@@ -16,7 +16,7 @@ class Item extends Entity
     protected string $code;
     protected string $guid;
     protected TypeDateTime $creationTime;
-    protected ?TypeDateTime $changeTime;
+    protected TypeDateTime $changeTime;
     protected ?string $fullName;
     protected ?string $company;
     protected ?string $email;
@@ -65,12 +65,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
