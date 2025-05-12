@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCodeNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest\Data\Values;
 
 class Data extends Entity
 {
-    protected ?TypeCurrencyCode $currency;
+    protected ?TypeCurrencyCodeNullable $currency;
     protected ?string $displayName;
     protected string $name;
     protected ?string $code;
@@ -19,12 +19,12 @@ class Data extends Entity
     protected ?string $googleMapping;
     protected Values $values;
 
-    public function getCurrency(): ?TypeCurrencyCode
+    public function getCurrency(): ?TypeCurrencyCodeNullable
     {
         return $this->currency;
     }
 
-    public function setCurrency(?TypeCurrencyCode $currency): static
+    public function setCurrency(?TypeCurrencyCodeNullable $currency): static
     {
         $this->currency = $currency;
         return $this;

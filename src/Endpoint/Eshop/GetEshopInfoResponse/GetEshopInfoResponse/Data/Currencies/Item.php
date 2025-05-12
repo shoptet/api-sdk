@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoRe
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeExchangeRate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\Currencies\Item\BankAccount;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\Currencies\Item\Display;
 
@@ -22,7 +22,7 @@ class Item extends Entity
     protected int $priceDecimalPlaces;
     protected int $documentPriceDecimalPlaces;
     protected string $rounding;
-    protected TypePrice $minimalOrderValue;
+    protected TypePriceNullable $minimalOrderValue;
     protected BankAccount $bankAccount;
 
     public function getCode(): string
@@ -157,12 +157,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinimalOrderValue(): TypePrice
+    public function getMinimalOrderValue(): TypePriceNullable
     {
         return $this->minimalOrderValue;
     }
 
-    public function setMinimalOrderValue(TypePrice $minimalOrderValue): static
+    public function setMinimalOrderValue(TypePriceNullable $minimalOrderValue): static
     {
         $this->minimalOrderValue = $minimalOrderValue;
         return $this;

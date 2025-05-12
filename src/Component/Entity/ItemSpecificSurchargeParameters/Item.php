@@ -3,13 +3,13 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\ItemSpecificSurchargeParameters;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class Item extends Entity
 {
     protected string $relationId;
     protected string $name;
-    protected TypePrice $price;
+    protected TypePriceNullable $price;
 
     public function getRelationId(): string
     {
@@ -33,12 +33,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getPrice(): TypePrice
+    public function getPrice(): TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(TypePrice $price): static
+    public function setPrice(TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;

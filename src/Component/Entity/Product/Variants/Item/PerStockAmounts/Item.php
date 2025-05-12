@@ -3,16 +3,16 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerStockAmounts;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected int $stockId;
-    protected TypeAmount $amount;
-    protected TypeAmount $claim;
+    protected TypeAmountNullable $amount;
+    protected TypeAmountNullable $claim;
     protected ?string $location;
-    protected TypeDateTime $lastAmountUpdate;
+    protected TypeDateTimeNullable $lastAmountUpdate;
 
     public function getStockId(): int
     {
@@ -25,23 +25,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
     }
 
-    public function getClaim(): TypeAmount
+    public function getClaim(): TypeAmountNullable
     {
         return $this->claim;
     }
 
-    public function setClaim(TypeAmount $claim): static
+    public function setClaim(TypeAmountNullable $claim): static
     {
         $this->claim = $claim;
         return $this;
@@ -58,12 +58,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getLastAmountUpdate(): TypeDateTime
+    public function getLastAmountUpdate(): TypeDateTimeNullable
     {
         return $this->lastAmountUpdate;
     }
 
-    public function setLastAmountUpdate(TypeDateTime $lastAmountUpdate): static
+    public function setLastAmountUpdate(TypeDateTimeNullable $lastAmountUpdate): static
     {
         $this->lastAmountUpdate = $lastAmountUpdate;
         return $this;

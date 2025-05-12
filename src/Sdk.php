@@ -222,6 +222,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductGiftRequest\CreateProduct
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImages;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImagesRequest\CreateProductImagesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateRelatedFileLink;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateRelatedFileLinkRequest\CreateRelatedFileLinkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterValue;
@@ -365,6 +367,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Templates\GetListingOfHtmlCodes;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmail;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmailRequest\CreateUnsubscribedEmailRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\GetListingOfUnsubscribedEmails;
+use Shoptet\Api\Sdk\Php\Endpoint\VolumeDiscounts\GetListOfVolumeDiscounts;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\DeleteRegisteredWebhook;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GenerateWebhookSignatureKey;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetDetailOfRegisteredWebhooks;
@@ -1037,6 +1040,34 @@ class Sdk
             ->addPathParam('guid', $guid)
             ->addPathParam('gallery', $gallery)
             ->addPathParam('imageName', $imageName)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
+     * @param array<string, mixed>|CreateRelatedFileLinkRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Products/createrelatedfilelink
+     */
+    public static function createRelatedFileLink(
+        string $guid,
+        array|CreateRelatedFileLinkRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateRelatedFileLink::class)
+            ->addPathParam('guid', $guid)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -6871,6 +6902,29 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DeleteQuantityDiscount::class)
             ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     customerGroupCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/openapi/Volume-discounts/getlistofvolumediscounts
+     */
+    public static function getListOfVolumeDiscounts(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfVolumeDiscounts::class)
             ->setQueryParams($queryParams)
             ->execute();
     }

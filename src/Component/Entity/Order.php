@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Order\ShippingDetails;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Shippings;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Source;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Status;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Order extends Entity
@@ -17,8 +17,8 @@ class Order extends Entity
     protected string $code;
     protected string $guid;
     protected ?string $externalCode;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?string $email;
     protected ?string $phone;
     protected ?string $birthDate;
@@ -31,7 +31,7 @@ class Order extends Entity
     protected ?string $vatMode;
     protected ?BillingMethod $billingMethod;
     protected ?PaymentMethod $paymentMethod;
-    protected ?Shipping $shipping;
+    protected Shipping $shipping;
     protected ?ShippingDetails $shippingDetails;
     protected string $adminUrl;
     protected ?Status $status;
@@ -81,23 +81,23 @@ class Order extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -235,12 +235,12 @@ class Order extends Entity
         return $this;
     }
 
-    public function getShipping(): ?Shipping
+    public function getShipping(): Shipping
     {
         return $this->shipping;
     }
 
-    public function setShipping(?Shipping $shipping): static
+    public function setShipping(Shipping $shipping): static
     {
         $this->shipping = $shipping;
         return $this;

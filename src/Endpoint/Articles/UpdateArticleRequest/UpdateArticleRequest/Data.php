@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleRequest\UpdateArtic
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilename;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilenameNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleRequest\UpdateArticleRequest\Data\SectionIds;
 
 class Data extends Entity
@@ -24,8 +24,8 @@ class Data extends Entity
     protected ?TypeDateTimeRequest $publishDate;
     protected ?bool $visible;
     protected ?string $access;
-    protected ?TypeFilename $sourceImageName;
-    protected ?TypeFilename $sourceOgImageName;
+    protected ?TypeFilenameNullable $sourceImageName;
+    protected ?TypeFilenameNullable $sourceOgImageName;
 
     public function getTitle(): ?string
     {
@@ -176,23 +176,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSourceImageName(): ?TypeFilename
+    public function getSourceImageName(): ?TypeFilenameNullable
     {
         return $this->sourceImageName;
     }
 
-    public function setSourceImageName(?TypeFilename $sourceImageName): static
+    public function setSourceImageName(?TypeFilenameNullable $sourceImageName): static
     {
         $this->sourceImageName = $sourceImageName;
         return $this;
     }
 
-    public function getSourceOgImageName(): ?TypeFilename
+    public function getSourceOgImageName(): ?TypeFilenameNullable
     {
         return $this->sourceOgImageName;
     }
 
-    public function setSourceOgImageName(?TypeFilename $sourceOgImageName): static
+    public function setSourceOgImageName(?TypeFilenameNullable $sourceOgImageName): static
     {
         $this->sourceOgImageName = $sourceOgImageName;
         return $this;

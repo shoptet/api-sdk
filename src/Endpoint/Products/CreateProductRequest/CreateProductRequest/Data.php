@@ -28,6 +28,7 @@ class Data extends Entity
     protected TypeGuid $defaultCategoryGuid;
     protected ?string $brandCode;
     protected ?string $internalNote;
+    protected ?bool $preauthorizationRequired;
     protected ?TypeGuid $supplierGuid;
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
@@ -190,6 +191,17 @@ class Data extends Entity
     public function setInternalNote(?string $internalNote): static
     {
         $this->internalNote = $internalNote;
+        return $this;
+    }
+
+    public function getPreauthorizationRequired(): ?bool
+    {
+        return $this->preauthorizationRequired;
+    }
+
+    public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
+    {
+        $this->preauthorizationRequired = $preauthorizationRequired;
         return $this;
     }
 

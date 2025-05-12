@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\UpdateShippingDataRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCodeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\UpdateShippingDataRequest\Data\DeliveryAddress;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\UpdateShippingDataRequest\Data\Price;
@@ -13,7 +13,7 @@ class Data extends Entity
     protected ?string $description;
     protected ?string $additionalText;
     protected ?Price $price;
-    protected ?TypeCurrencyCode $currency;
+    protected ?TypeCurrencyCodeNullable $currency;
     protected TypeDateTimeRequest $expires;
     protected ?DeliveryAddress $deliveryAddress;
     protected string $trackingNumber;
@@ -53,12 +53,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getCurrency(): ?TypeCurrencyCode
+    public function getCurrency(): ?TypeCurrencyCodeNullable
     {
         return $this->currency;
     }
 
-    public function setCurrency(?TypeCurrencyCode $currency): static
+    public function setCurrency(?TypeCurrencyCodeNullable $currency): static
     {
         $this->currency = $currency;
         return $this;

@@ -2,14 +2,14 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
 
 class ActionPrice extends Entity
 {
     protected TypePrice $price;
-    protected TypeDate $fromDate;
-    protected TypeDate $toDate;
+    protected TypeDateNullable $fromDate;
+    protected TypeDateNullable $toDate;
 
     public function getPrice(): TypePrice
     {
@@ -22,23 +22,23 @@ class ActionPrice extends Entity
         return $this;
     }
 
-    public function getFromDate(): TypeDate
+    public function getFromDate(): TypeDateNullable
     {
         return $this->fromDate;
     }
 
-    public function setFromDate(TypeDate $fromDate): static
+    public function setFromDate(TypeDateNullable $fromDate): static
     {
         $this->fromDate = $fromDate;
         return $this;
     }
 
-    public function getToDate(): TypeDate
+    public function getToDate(): TypeDateNullable
     {
         return $this->toDate;
     }
 
-    public function setToDate(TypeDate $toDate): static
+    public function setToDate(TypeDateNullable $toDate): static
     {
         $this->toDate = $toDate;
         return $this;

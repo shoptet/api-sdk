@@ -12,6 +12,8 @@ class ShipmentAddress extends Entity
     protected ?string $zipCode;
     protected ?string $houseNumber;
     protected ?string $contactPhone;
+    protected string $senderName;
+    protected string $contactPerson;
     protected ?string $contactEmail;
     protected ?bool $isDefault;
     protected ?string $type;
@@ -101,6 +103,28 @@ class ShipmentAddress extends Entity
     public function setContactPhone(?string $contactPhone): static
     {
         $this->contactPhone = $contactPhone;
+        return $this;
+    }
+
+    public function getSenderName(): string
+    {
+        return $this->senderName;
+    }
+
+    public function setSenderName(string $senderName): static
+    {
+        $this->senderName = $senderName;
+        return $this;
+    }
+
+    public function getContactPerson(): string
+    {
+        return $this->contactPerson;
+    }
+
+    public function setContactPerson(string $contactPerson): static
+    {
+        $this->contactPerson = $contactPerson;
         return $this;
     }
 

@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCodeRequest\Updat
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\MeasureUnit;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDimension;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCodeRequest\UpdateProductByCodeRequest\Data\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCodeRequest\UpdateProductByCodeRequest\Data\Variants\Item\StocksLocations;
@@ -30,7 +30,7 @@ class Item extends Entity
     protected ?float $availabilityWhenSoldOutId;
     protected ?string $image;
     protected ?Parameters $parameters;
-    protected ?TypePositiveAmount $minStockSupply;
+    protected ?TypePositiveAmountNullable $minStockSupply;
     protected ?StocksLocations $stocksLocations;
     protected ?bool $negativeStockAllowed;
     protected ?MeasureUnit $measureUnit;
@@ -238,12 +238,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinStockSupply(): ?TypePositiveAmount
+    public function getMinStockSupply(): ?TypePositiveAmountNullable
     {
         return $this->minStockSupply;
     }
 
-    public function setMinStockSupply(?TypePositiveAmount $minStockSupply): static
+    public function setMinStockSupply(?TypePositiveAmountNullable $minStockSupply): static
     {
         $this->minStockSupply = $minStockSupply;
         return $this;

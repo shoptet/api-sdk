@@ -7,11 +7,8 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 readonly class TypePositiveAmount implements ValueObjectInterface
 {
     public function __construct(
-        public ?string $typePositiveAmount,
+        public string $typePositiveAmount,
     ) {
-        if ($this->typePositiveAmount === null) {
-            return;
-        }
         if (!preg_match('/^[0-9]+\.[0-9]{3}$/', $this->typePositiveAmount)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typePositiveAmount', $this->typePositiveAmount));
         }

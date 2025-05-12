@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetDetailOfEmailDistributionListResponse\GetDetailOfEmailDistributionListResponse\Data\Emails;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected string $email;
-    protected TypeDateTime $added;
+    protected TypeDateTimeNullable $added;
 
     public function getEmail(): string
     {
@@ -21,12 +21,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAdded(): TypeDateTime
+    public function getAdded(): TypeDateTimeNullable
     {
         return $this->added;
     }
 
-    public function setAdded(TypeDateTime $added): static
+    public function setAdded(TypeDateTimeNullable $added): static
     {
         $this->added = $added;
         return $this;

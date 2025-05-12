@@ -3,14 +3,14 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductImagesResponse\GetListOfProductImagesResponse\Data\Images;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected string $name;
     protected ?int $priority;
     protected ?string $description;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $changeTime;
     protected string $seoName;
     protected string $cdnName;
     protected bool $isMainImage;
@@ -48,12 +48,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

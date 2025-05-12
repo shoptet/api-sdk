@@ -3,20 +3,21 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryRequest\UpdateProductCategoryRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilename;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilenameNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 
 class Data extends Entity
 {
     protected ?TypeGuid $guid;
     protected ?string $name;
-    protected ?TypeGuid $parentGuid;
+    protected ?TypeGuidNullable $parentGuid;
     protected ?string $description;
     protected ?string $secondDescription;
 
     /** @deprecated */
     protected ?string $imageName;
-    protected ?TypeFilename $sourceImageName;
+    protected ?TypeFilenameNullable $sourceImageName;
     protected ?TypeGuid $sortBefore;
     protected ?TypeGuid $sortAfter;
     protected ?string $indexName;
@@ -26,8 +27,8 @@ class Data extends Entity
     protected ?bool $visible;
     protected ?string $customerVisibility;
     protected ?string $productOrdering;
-    protected ?TypeGuid $similarProductsCategory;
-    protected ?TypeGuid $relatedProductsCategory;
+    protected ?TypeGuidNullable $similarProductsCategory;
+    protected ?TypeGuidNullable $relatedProductsCategory;
 
     public function getGuid(): ?TypeGuid
     {
@@ -51,12 +52,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getParentGuid(): ?TypeGuid
+    public function getParentGuid(): ?TypeGuidNullable
     {
         return $this->parentGuid;
     }
 
-    public function setParentGuid(?TypeGuid $parentGuid): static
+    public function setParentGuid(?TypeGuidNullable $parentGuid): static
     {
         $this->parentGuid = $parentGuid;
         return $this;
@@ -101,12 +102,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSourceImageName(): ?TypeFilename
+    public function getSourceImageName(): ?TypeFilenameNullable
     {
         return $this->sourceImageName;
     }
 
-    public function setSourceImageName(?TypeFilename $sourceImageName): static
+    public function setSourceImageName(?TypeFilenameNullable $sourceImageName): static
     {
         $this->sourceImageName = $sourceImageName;
         return $this;
@@ -211,23 +212,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSimilarProductsCategory(): ?TypeGuid
+    public function getSimilarProductsCategory(): ?TypeGuidNullable
     {
         return $this->similarProductsCategory;
     }
 
-    public function setSimilarProductsCategory(?TypeGuid $similarProductsCategory): static
+    public function setSimilarProductsCategory(?TypeGuidNullable $similarProductsCategory): static
     {
         $this->similarProductsCategory = $similarProductsCategory;
         return $this;
     }
 
-    public function getRelatedProductsCategory(): ?TypeGuid
+    public function getRelatedProductsCategory(): ?TypeGuidNullable
     {
         return $this->relatedProductsCategory;
     }
 
-    public function setRelatedProductsCategory(?TypeGuid $relatedProductsCategory): static
+    public function setRelatedProductsCategory(?TypeGuidNullable $relatedProductsCategory): static
     {
         $this->relatedProductsCategory = $relatedProductsCategory;
         return $this;

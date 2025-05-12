@@ -2,7 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class DiscussionPost extends Entity
 {
@@ -14,7 +14,7 @@ class DiscussionPost extends Entity
     protected ?string $email;
     protected ?string $title;
     protected ?string $content;
-    protected TypeDateTime $creationDate;
+    protected TypeDateTimeNullable $creationDate;
     protected bool $authorized;
 
     public function getId(): float
@@ -105,12 +105,12 @@ class DiscussionPost extends Entity
         return $this;
     }
 
-    public function getCreationDate(): TypeDateTime
+    public function getCreationDate(): TypeDateTimeNullable
     {
         return $this->creationDate;
     }
 
-    public function setCreationDate(TypeDateTime $creationDate): static
+    public function setCreationDate(TypeDateTimeNullable $creationDate): static
     {
         $this->creationDate = $creationDate;
         return $this;

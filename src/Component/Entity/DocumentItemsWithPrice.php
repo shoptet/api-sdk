@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\DocumentItemsWithPrice\DisplayPrices;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
@@ -16,7 +16,7 @@ class DocumentItemsWithPrice extends Entity
     protected ?string $name;
     protected ?string $variantName;
     protected ?string $brand;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
     protected ?string $remark;
     protected TypePriceRatio $priceRatio;
@@ -95,12 +95,12 @@ class DocumentItemsWithPrice extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

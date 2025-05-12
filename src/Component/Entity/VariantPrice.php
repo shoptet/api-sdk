@@ -2,45 +2,45 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeProductPriceRatio;
 
 class VariantPrice extends Entity
 {
-    protected TypePrice $price;
-    protected TypePrice $commonPrice;
-    protected TypePrice $buyPrice;
+    protected TypePriceNullable $price;
+    protected TypePriceNullable $commonPrice;
+    protected TypePriceNullable $buyPrice;
     protected TypeProductPriceRatio $priceRatio;
-    protected ?ActionPrice $actionPrice;
+    protected ActionPrice $actionPrice;
 
-    public function getPrice(): TypePrice
+    public function getPrice(): TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(TypePrice $price): static
+    public function setPrice(TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;
     }
 
-    public function getCommonPrice(): TypePrice
+    public function getCommonPrice(): TypePriceNullable
     {
         return $this->commonPrice;
     }
 
-    public function setCommonPrice(TypePrice $commonPrice): static
+    public function setCommonPrice(TypePriceNullable $commonPrice): static
     {
         $this->commonPrice = $commonPrice;
         return $this;
     }
 
-    public function getBuyPrice(): TypePrice
+    public function getBuyPrice(): TypePriceNullable
     {
         return $this->buyPrice;
     }
 
-    public function setBuyPrice(TypePrice $buyPrice): static
+    public function setBuyPrice(TypePriceNullable $buyPrice): static
     {
         $this->buyPrice = $buyPrice;
         return $this;
@@ -57,12 +57,12 @@ class VariantPrice extends Entity
         return $this;
     }
 
-    public function getActionPrice(): ?ActionPrice
+    public function getActionPrice(): ActionPrice
     {
         return $this->actionPrice;
     }
 
-    public function setActionPrice(?ActionPrice $actionPrice): static
+    public function setActionPrice(ActionPrice $actionPrice): static
     {
         $this->actionPrice = $actionPrice;
         return $this;

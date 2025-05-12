@@ -3,18 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetailResponse\GetJobDetailResponse\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Job extends Entity
 {
     protected string $jobId;
     protected string $endpoint;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $completionTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $completionTime;
     protected ?string $duration;
     protected string $status;
     protected ?string $resultUrl;
-    protected TypeDateTime $validUntil;
+    protected TypeDateTimeNullable $validUntil;
     protected ?string $log;
     protected ?string $language;
 
@@ -40,23 +40,23 @@ class Job extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getCompletionTime(): TypeDateTime
+    public function getCompletionTime(): TypeDateTimeNullable
     {
         return $this->completionTime;
     }
 
-    public function setCompletionTime(TypeDateTime $completionTime): static
+    public function setCompletionTime(TypeDateTimeNullable $completionTime): static
     {
         $this->completionTime = $completionTime;
         return $this;
@@ -95,12 +95,12 @@ class Job extends Entity
         return $this;
     }
 
-    public function getValidUntil(): TypeDateTime
+    public function getValidUntil(): TypeDateTimeNullable
     {
         return $this->validUntil;
     }
 
-    public function setValidUntil(TypeDateTime $validUntil): static
+    public function setValidUntil(TypeDateTimeNullable $validUntil): static
     {
         $this->validUntil = $validUntil;
         return $this;

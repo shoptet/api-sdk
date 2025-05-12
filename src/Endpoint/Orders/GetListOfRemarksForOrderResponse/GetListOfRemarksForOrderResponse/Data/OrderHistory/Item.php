@@ -3,13 +3,13 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfRemarksForOrderResponse\GetListOfRemarksForOrderResponse\Data\OrderHistory;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfRemarksForOrderResponse\GetListOfRemarksForOrderResponse\Data\OrderHistory\Item\User;
 
 class Item extends Entity
 {
     protected float $id;
-    protected TypeDateTime $creationTime;
+    protected TypeDateTimeNullable $creationTime;
     protected string $text;
     protected ?User $user;
     protected bool $system;
@@ -26,12 +26,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;

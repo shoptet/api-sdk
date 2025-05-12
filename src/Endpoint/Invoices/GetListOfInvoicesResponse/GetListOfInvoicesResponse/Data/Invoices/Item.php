@@ -4,8 +4,8 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfInvoicesResponse\GetLis
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Price;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
@@ -14,13 +14,13 @@ class Item extends Entity
     protected bool $isValid;
     protected ?string $proformaInvoiceCode;
     protected ?string $orderCode;
-    protected TypeDateTime $creationTime;
+    protected TypeDateTimeNullable $creationTime;
     protected ?string $billCompany;
     protected ?string $billFullName;
     protected Price $price;
-    protected ?TypeDateTime $changeTime;
-    protected ?TypeDate $dueDate;
-    protected ?TypeDate $taxDate;
+    protected ?TypeDateTimeNullable $changeTime;
+    protected ?TypeDateNullable $dueDate;
+    protected ?TypeDateNullable $taxDate;
 
     public function getCode(): string
     {
@@ -77,12 +77,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -121,34 +121,34 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): ?TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(?TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
     }
 
-    public function getDueDate(): ?TypeDate
+    public function getDueDate(): ?TypeDateNullable
     {
         return $this->dueDate;
     }
 
-    public function setDueDate(?TypeDate $dueDate): static
+    public function setDueDate(?TypeDateNullable $dueDate): static
     {
         $this->dueDate = $dueDate;
         return $this;
     }
 
-    public function getTaxDate(): ?TypeDate
+    public function getTaxDate(): ?TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(?TypeDate $taxDate): static
+    public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;

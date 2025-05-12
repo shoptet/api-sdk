@@ -2,15 +2,15 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Webhook extends Entity
 {
     protected int $id;
     protected string $event;
     protected string $url;
-    protected TypeDateTime $created;
-    protected TypeDateTime $updated;
+    protected TypeDateTimeNullable $created;
+    protected TypeDateTimeNullable $updated;
 
     public function getId(): int
     {
@@ -45,23 +45,23 @@ class Webhook extends Entity
         return $this;
     }
 
-    public function getCreated(): TypeDateTime
+    public function getCreated(): TypeDateTimeNullable
     {
         return $this->created;
     }
 
-    public function setCreated(TypeDateTime $created): static
+    public function setCreated(TypeDateTimeNullable $created): static
     {
         $this->created = $created;
         return $this;
     }
 
-    public function getUpdated(): TypeDateTime
+    public function getUpdated(): TypeDateTimeNullable
     {
         return $this->updated;
     }
 
-    public function setUpdated(TypeDateTime $updated): static
+    public function setUpdated(TypeDateTimeNullable $updated): static
     {
         $this->updated = $updated;
         return $this;

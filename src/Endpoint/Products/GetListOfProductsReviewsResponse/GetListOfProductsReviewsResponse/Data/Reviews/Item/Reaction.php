@@ -3,21 +3,21 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsReviewsResponse\GetListOfProductsReviewsResponse\Data\Reviews\Item;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Reaction extends Entity
 {
-    protected TypeDateTime $reactionCreated;
+    protected TypeDateTimeNullable $reactionCreated;
     protected ?string $reactionFullName;
     protected ?string $reactionEmail;
     protected ?string $reactionText;
 
-    public function getReactionCreated(): TypeDateTime
+    public function getReactionCreated(): TypeDateTimeNullable
     {
         return $this->reactionCreated;
     }
 
-    public function setReactionCreated(TypeDateTime $reactionCreated): static
+    public function setReactionCreated(TypeDateTimeNullable $reactionCreated): static
     {
         $this->reactionCreated = $reactionCreated;
         return $this;

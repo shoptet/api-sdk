@@ -6,9 +6,9 @@ use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\DisplayPrices;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\MainImage;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\Status;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\SurchargeParametersTexts;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 
@@ -25,7 +25,7 @@ class OrderItem extends Entity
     protected ?string $remark;
     protected TypeWeight $weight;
     protected ?string $additionalField;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
     protected TypePriceRatio $priceRatio;
     protected Status $status;
@@ -38,7 +38,7 @@ class OrderItem extends Entity
     protected ?string $supplierName;
     protected float $itemId;
     protected ?string $warrantyDescription;
-    protected TypePositiveAmount $amountCompleted;
+    protected TypePositiveAmountNullable $amountCompleted;
 
     /** @deprecated */
     protected ?SurchargeParametersTexts $surchargeParametersTexts;
@@ -168,12 +168,12 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
@@ -311,12 +311,12 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getAmountCompleted(): TypePositiveAmount
+    public function getAmountCompleted(): TypePositiveAmountNullable
     {
         return $this->amountCompleted;
     }
 
-    public function setAmountCompleted(TypePositiveAmount $amountCompleted): static
+    public function setAmountCompleted(TypePositiveAmountNullable $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
         return $this;

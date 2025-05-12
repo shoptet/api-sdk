@@ -3,18 +3,19 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsReviewsResponse\GetListOfProductsReviewsResponse\Data\Reviews;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsReviewsResponse\GetListOfProductsReviewsResponse\Data\Reviews\Item\Reaction;
 
 class Item extends Entity
 {
     protected TypeGuid $guid;
-    protected TypeDateTime $date;
+    protected TypeDateTimeNullable $date;
     protected ?string $orderCode;
     protected float $rating;
     protected string $productName;
-    protected ?TypeGuid $productGuid;
+    protected ?TypeGuidUnlimited $productGuid;
     protected ?string $description;
     protected ?string $fullName;
     protected ?string $email;
@@ -22,7 +23,7 @@ class Item extends Entity
     protected bool $authorized;
     protected bool $visible;
     protected Reaction $reaction;
-    protected TypeDateTime $updated;
+    protected TypeDateTimeNullable $updated;
 
     public function getGuid(): TypeGuid
     {
@@ -35,12 +36,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getDate(): TypeDateTime
+    public function getDate(): TypeDateTimeNullable
     {
         return $this->date;
     }
 
-    public function setDate(TypeDateTime $date): static
+    public function setDate(TypeDateTimeNullable $date): static
     {
         $this->date = $date;
         return $this;
@@ -79,12 +80,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getProductGuid(): ?TypeGuid
+    public function getProductGuid(): ?TypeGuidUnlimited
     {
         return $this->productGuid;
     }
 
-    public function setProductGuid(?TypeGuid $productGuid): static
+    public function setProductGuid(?TypeGuidUnlimited $productGuid): static
     {
         $this->productGuid = $productGuid;
         return $this;
@@ -167,12 +168,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getUpdated(): TypeDateTime
+    public function getUpdated(): TypeDateTimeNullable
     {
         return $this->updated;
     }
 
-    public function setUpdated(TypeDateTime $updated): static
+    public function setUpdated(TypeDateTimeNullable $updated): static
     {
         $this->updated = $updated;
         return $this;

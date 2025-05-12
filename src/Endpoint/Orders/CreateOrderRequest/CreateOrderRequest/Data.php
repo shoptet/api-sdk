@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest\Data\BillingAddress;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest\Data\Currency;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest\Data\DeliveryAddress;
@@ -24,13 +24,13 @@ class Data extends Entity
     protected ?string $phone;
     protected ?string $birthDate;
     protected ?bool $vatPayer;
-    protected ?TypeGuid $paymentMethodGuid;
-    protected ?TypeGuid $shippingGuid;
+    protected ?TypeGuidNullable $paymentMethodGuid;
+    protected ?TypeGuidNullable $shippingGuid;
     protected ?ShippingDetails $shippingDetails;
     protected ?bool $paid;
     protected ?float $billingMethodCode;
     protected ?string $clientIPAddress;
-    protected ?TypeGuid $customerGuid;
+    protected ?TypeGuidNullable $customerGuid;
     protected ?BillingAddress $billingAddress;
     protected ?bool $addressesEqual;
     protected ?DeliveryAddress $deliveryAddress;
@@ -161,23 +161,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getPaymentMethodGuid(): ?TypeGuid
+    public function getPaymentMethodGuid(): ?TypeGuidNullable
     {
         return $this->paymentMethodGuid;
     }
 
-    public function setPaymentMethodGuid(?TypeGuid $paymentMethodGuid): static
+    public function setPaymentMethodGuid(?TypeGuidNullable $paymentMethodGuid): static
     {
         $this->paymentMethodGuid = $paymentMethodGuid;
         return $this;
     }
 
-    public function getShippingGuid(): ?TypeGuid
+    public function getShippingGuid(): ?TypeGuidNullable
     {
         return $this->shippingGuid;
     }
 
-    public function setShippingGuid(?TypeGuid $shippingGuid): static
+    public function setShippingGuid(?TypeGuidNullable $shippingGuid): static
     {
         $this->shippingGuid = $shippingGuid;
         return $this;
@@ -227,12 +227,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getCustomerGuid(): ?TypeGuid
+    public function getCustomerGuid(): ?TypeGuidNullable
     {
         return $this->customerGuid;
     }
 
-    public function setCustomerGuid(?TypeGuid $customerGuid): static
+    public function setCustomerGuid(?TypeGuidNullable $customerGuid): static
     {
         $this->customerGuid = $customerGuid;
         return $this;

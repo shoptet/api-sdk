@@ -3,16 +3,16 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetListOfJobsResponse\GetListOfJobsResponse\Data\Jobs;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected string $jobId;
     protected string $endpoint;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $completionTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $completionTime;
     protected string $status;
-    protected TypeDateTime $validUntil;
+    protected TypeDateTimeNullable $validUntil;
     protected ?string $language;
 
     public function getJobId(): string
@@ -37,23 +37,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getCompletionTime(): TypeDateTime
+    public function getCompletionTime(): TypeDateTimeNullable
     {
         return $this->completionTime;
     }
 
-    public function setCompletionTime(TypeDateTime $completionTime): static
+    public function setCompletionTime(TypeDateTimeNullable $completionTime): static
     {
         $this->completionTime = $completionTime;
         return $this;
@@ -70,12 +70,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getValidUntil(): TypeDateTime
+    public function getValidUntil(): TypeDateTimeNullable
     {
         return $this->validUntil;
     }
 
-    public function setValidUntil(TypeDateTime $validUntil): static
+    public function setValidUntil(TypeDateTimeNullable $validUntil): static
     {
         $this->validUntil = $validUntil;
         return $this;

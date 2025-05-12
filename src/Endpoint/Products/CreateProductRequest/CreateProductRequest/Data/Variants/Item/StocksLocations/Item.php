@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\StocksLocations;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 
 class Item extends Entity
 {
     protected int $stockId;
-    protected ?TypeAmount $amount;
+    protected ?TypeAmountNullable $amount;
     protected ?string $location;
 
     public function getStockId(): int
@@ -22,12 +22,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): ?TypeAmount
+    public function getAmount(): ?TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(?TypeAmount $amount): static
+    public function setAmount(?TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

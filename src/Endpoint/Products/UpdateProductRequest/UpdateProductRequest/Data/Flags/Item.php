@@ -3,13 +3,13 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest\Data\Flags;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 
 class Item extends Entity
 {
     protected string $code;
-    protected ?TypeDate $dateFrom;
-    protected ?TypeDate $dateTo;
+    protected ?TypeDateNullable $dateFrom;
+    protected ?TypeDateNullable $dateTo;
 
     public function getCode(): string
     {
@@ -22,23 +22,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getDateFrom(): ?TypeDate
+    public function getDateFrom(): ?TypeDateNullable
     {
         return $this->dateFrom;
     }
 
-    public function setDateFrom(?TypeDate $dateFrom): static
+    public function setDateFrom(?TypeDateNullable $dateFrom): static
     {
         $this->dateFrom = $dateFrom;
         return $this;
     }
 
-    public function getDateTo(): ?TypeDate
+    public function getDateTo(): ?TypeDateNullable
     {
         return $this->dateTo;
     }
 
-    public function setDateTo(?TypeDate $dateTo): static
+    public function setDateTo(?TypeDateNullable $dateTo): static
     {
         $this->dateTo = $dateTo;
         return $this;

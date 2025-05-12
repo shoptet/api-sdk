@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountR
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeColor;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountRequest\UpdateQuantityDiscountRequest\Data\CustomerGroupCodes;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountRequest\UpdateQuantityDiscountRequest\Data\Settings;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountRequest\UpdateQuantityDiscountRequest\Data\Targeting;
@@ -13,8 +13,8 @@ class Data extends Entity
 {
     protected ?string $title;
     protected ?bool $isActive;
-    protected ?TypeDate $validFrom;
-    protected ?TypeDate $validTo;
+    protected ?TypeDateNullable $validFrom;
+    protected ?TypeDateNullable $validTo;
     protected ?bool $displayFlag;
     protected ?TypeColor $flagColor;
     protected ?CustomerGroupCodes $customerGroupCodes;
@@ -47,23 +47,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getValidFrom(): ?TypeDate
+    public function getValidFrom(): ?TypeDateNullable
     {
         return $this->validFrom;
     }
 
-    public function setValidFrom(?TypeDate $validFrom): static
+    public function setValidFrom(?TypeDateNullable $validFrom): static
     {
         $this->validFrom = $validFrom;
         return $this;
     }
 
-    public function getValidTo(): ?TypeDate
+    public function getValidTo(): ?TypeDateNullable
     {
         return $this->validTo;
     }
 
-    public function setValidTo(?TypeDate $validTo): static
+    public function setValidTo(?TypeDateNullable $validTo): static
     {
         $this->validTo = $validTo;
         return $this;

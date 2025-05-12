@@ -2,19 +2,19 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class ShipmentCoDPrice extends Entity
 {
-    protected TypePrice $value;
+    protected TypePriceNullable $value;
     protected string $currencyCode;
 
-    public function getValue(): TypePrice
+    public function getValue(): TypePriceNullable
     {
         return $this->value;
     }
 
-    public function setValue(TypePrice $value): static
+    public function setValue(TypePriceNullable $value): static
     {
         $this->value = $value;
         return $this;

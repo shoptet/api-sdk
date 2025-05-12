@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFilesResponse\GetListOfUploadedFilesResponse\Data\Images;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected ?string $name;
-    protected ?TypeDateTime $created;
+    protected ?TypeDateTimeNullable $created;
 
     public function getName(): ?string
     {
@@ -21,12 +21,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreated(): ?TypeDateTime
+    public function getCreated(): ?TypeDateTimeNullable
     {
         return $this->created;
     }
 
-    public function setCreated(?TypeDateTime $created): static
+    public function setCreated(?TypeDateTimeNullable $created): static
     {
         $this->created = $created;
         return $this;

@@ -4,8 +4,8 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemRequest\CreateOrder
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\ConsumptionTaxId;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemRequest\CreateOrderItemRequest\Data\SurchargeParameters;
 
 class Data extends Entity
@@ -22,10 +22,10 @@ class Data extends Entity
     protected ?string $variantName;
     protected ?string $brand;
     protected ?string $supplierName;
-    protected ?TypeGuid $productGuid;
+    protected ?TypeGuidNullable $productGuid;
     protected ?string $remark;
     protected ?string $warrantyDescription;
-    protected ?TypePositiveAmount $amountCompleted;
+    protected ?TypePositiveAmountNullable $amountCompleted;
     protected ?string $additionalField;
     protected ?string $amount;
     protected ?string $amountUnit;
@@ -168,12 +168,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getProductGuid(): ?TypeGuid
+    public function getProductGuid(): ?TypeGuidNullable
     {
         return $this->productGuid;
     }
 
-    public function setProductGuid(?TypeGuid $productGuid): static
+    public function setProductGuid(?TypeGuidNullable $productGuid): static
     {
         $this->productGuid = $productGuid;
         return $this;
@@ -201,12 +201,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getAmountCompleted(): ?TypePositiveAmount
+    public function getAmountCompleted(): ?TypePositiveAmountNullable
     {
         return $this->amountCompleted;
     }
 
-    public function setAmountCompleted(?TypePositiveAmount $amountCompleted): static
+    public function setAmountCompleted(?TypePositiveAmountNullable $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
         return $this;

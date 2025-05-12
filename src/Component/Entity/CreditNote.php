@@ -3,8 +3,8 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote\Items;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightUnlimited;
 
 class CreditNote extends Entity
@@ -14,20 +14,20 @@ class CreditNote extends Entity
     protected ?string $invoiceCode;
     protected ?string $orderCode;
     protected ?string $proofPaymentCode;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
-    protected TypeDate $dueDate;
-    protected TypeDate $taxDate;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
+    protected TypeDateNullable $dueDate;
+    protected TypeDateNullable $taxDate;
     protected float $varSymbol;
     protected ?int $constSymbol;
     protected ?float $specSymbol;
     protected ?bool $restocked;
     protected ?string $stockAmountChangeType;
-    protected ?TypeWeightUnlimited $weight;
-    protected ?TypeWeightUnlimited $completePackageWeight;
-    protected BillingMethod $billingMethod;
+    protected TypeWeightUnlimited $weight;
+    protected TypeWeightUnlimited $completePackageWeight;
+    protected ?BillingMethod $billingMethod;
     protected BillingAddress $billingAddress;
-    protected ?Address $deliveryAddress;
+    protected Address $deliveryAddress;
     protected bool $addressesEqual;
     protected Price $price;
     protected DocumentCustomer $customer;
@@ -36,6 +36,7 @@ class CreditNote extends Entity
     protected ?string $documentRemark;
     protected bool $vatPayer;
     protected ?string $vatMode;
+    protected ?string $reasonRemark;
 
     public function getCode(): string
     {
@@ -92,45 +93,45 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
     }
 
-    public function getDueDate(): TypeDate
+    public function getDueDate(): TypeDateNullable
     {
         return $this->dueDate;
     }
 
-    public function setDueDate(TypeDate $dueDate): static
+    public function setDueDate(TypeDateNullable $dueDate): static
     {
         $this->dueDate = $dueDate;
         return $this;
     }
 
-    public function getTaxDate(): TypeDate
+    public function getTaxDate(): TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(TypeDate $taxDate): static
+    public function setTaxDate(TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;
@@ -191,34 +192,34 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getWeight(): ?TypeWeightUnlimited
+    public function getWeight(): TypeWeightUnlimited
     {
         return $this->weight;
     }
 
-    public function setWeight(?TypeWeightUnlimited $weight): static
+    public function setWeight(TypeWeightUnlimited $weight): static
     {
         $this->weight = $weight;
         return $this;
     }
 
-    public function getCompletePackageWeight(): ?TypeWeightUnlimited
+    public function getCompletePackageWeight(): TypeWeightUnlimited
     {
         return $this->completePackageWeight;
     }
 
-    public function setCompletePackageWeight(?TypeWeightUnlimited $completePackageWeight): static
+    public function setCompletePackageWeight(TypeWeightUnlimited $completePackageWeight): static
     {
         $this->completePackageWeight = $completePackageWeight;
         return $this;
     }
 
-    public function getBillingMethod(): BillingMethod
+    public function getBillingMethod(): ?BillingMethod
     {
         return $this->billingMethod;
     }
 
-    public function setBillingMethod(BillingMethod $billingMethod): static
+    public function setBillingMethod(?BillingMethod $billingMethod): static
     {
         $this->billingMethod = $billingMethod;
         return $this;
@@ -235,12 +236,12 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getDeliveryAddress(): ?Address
+    public function getDeliveryAddress(): Address
     {
         return $this->deliveryAddress;
     }
 
-    public function setDeliveryAddress(?Address $deliveryAddress): static
+    public function setDeliveryAddress(Address $deliveryAddress): static
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;
@@ -331,6 +332,17 @@ class CreditNote extends Entity
     public function setVatMode(?string $vatMode): static
     {
         $this->vatMode = $vatMode;
+        return $this;
+    }
+
+    public function getReasonRemark(): ?string
+    {
+        return $this->reasonRemark;
+    }
+
+    public function setReasonRemark(?string $reasonRemark): static
+    {
+        $this->reasonRemark = $reasonRemark;
         return $this;
     }
 }

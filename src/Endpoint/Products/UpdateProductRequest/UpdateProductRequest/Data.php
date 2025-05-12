@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProdu
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest\Data\CategoryGuids;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest\Data\DescriptiveParameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest\Data\FilteringParameters;
@@ -28,7 +29,8 @@ class Data extends Entity
     protected ?TypeGuid $defaultCategoryGuid;
     protected ?string $brandCode;
     protected ?string $internalNote;
-    protected ?TypeGuid $supplierGuid;
+    protected ?bool $preauthorizationRequired;
+    protected ?TypeGuidNullable $supplierGuid;
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
     protected ?Flags $flags;
@@ -193,12 +195,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSupplierGuid(): ?TypeGuid
+    public function getPreauthorizationRequired(): ?bool
+    {
+        return $this->preauthorizationRequired;
+    }
+
+    public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
+    {
+        $this->preauthorizationRequired = $preauthorizationRequired;
+        return $this;
+    }
+
+    public function getSupplierGuid(): ?TypeGuidNullable
     {
         return $this->supplierGuid;
     }
 
-    public function setSupplierGuid(?TypeGuid $supplierGuid): static
+    public function setSupplierGuid(?TypeGuidNullable $supplierGuid): static
     {
         $this->supplierGuid = $supplierGuid;
         return $this;

@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest\Data1\Logo;
 
 class Data1 extends Entity
@@ -17,7 +17,7 @@ class Data1 extends Entity
     protected ?bool $visibility;
     protected ?bool $wholesale;
     protected ?Logo $logo;
-    protected ?TypePrice $minimalShippingPrice;
+    protected ?TypePriceNullable $minimalShippingPrice;
 
     public function getName(): string
     {
@@ -102,12 +102,12 @@ class Data1 extends Entity
         return $this;
     }
 
-    public function getMinimalShippingPrice(): ?TypePrice
+    public function getMinimalShippingPrice(): ?TypePriceNullable
     {
         return $this->minimalShippingPrice;
     }
 
-    public function setMinimalShippingPrice(?TypePrice $minimalShippingPrice): static
+    public function setMinimalShippingPrice(?TypePriceNullable $minimalShippingPrice): static
     {
         $this->minimalShippingPrice = $minimalShippingPrice;
         return $this;

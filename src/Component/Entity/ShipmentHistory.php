@@ -2,14 +2,14 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class ShipmentHistory extends Entity
 {
     protected string $fromStatus;
     protected string $toStatus;
-    protected TypeDateTime $realDatetime;
-    protected TypeDateTime $providerDatetime;
+    protected TypeDateTimeNullable $realDatetime;
+    protected TypeDateTimeNullable $providerDatetime;
     protected string $note;
 
     public function getFromStatus(): string
@@ -34,23 +34,23 @@ class ShipmentHistory extends Entity
         return $this;
     }
 
-    public function getRealDatetime(): TypeDateTime
+    public function getRealDatetime(): TypeDateTimeNullable
     {
         return $this->realDatetime;
     }
 
-    public function setRealDatetime(TypeDateTime $realDatetime): static
+    public function setRealDatetime(TypeDateTimeNullable $realDatetime): static
     {
         $this->realDatetime = $realDatetime;
         return $this;
     }
 
-    public function getProviderDatetime(): TypeDateTime
+    public function getProviderDatetime(): TypeDateTimeNullable
     {
         return $this->providerDatetime;
     }
 
-    public function setProviderDatetime(TypeDateTime $providerDatetime): static
+    public function setProviderDatetime(TypeDateTimeNullable $providerDatetime): static
     {
         $this->providerDatetime = $providerDatetime;
         return $this;

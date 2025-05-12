@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoice
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Price;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
@@ -12,11 +12,11 @@ class Item extends Entity
     protected ?float $varSymbol;
     protected bool $isValid;
     protected ?string $orderCode;
-    protected TypeDateTime $creationTime;
+    protected TypeDateTimeNullable $creationTime;
     protected ?string $billCompany;
     protected ?string $billFullName;
     protected Price $price;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $changeTime;
 
     public function getCode(): string
     {
@@ -62,12 +62,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -106,12 +106,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
