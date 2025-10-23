@@ -5,23 +5,23 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\XyDiscount\CustomerGroups;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeColor;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 
 class XyDiscount extends Entity
 {
     protected int $id;
     protected string $title;
-    protected TypeDate $validFrom;
-    protected TypeDate $validTo;
+    protected TypeDateNullable $validFrom;
+    protected TypeDateNullable $validTo;
     protected ?CustomerGroups $customerGroups;
     protected TypeAmount $xAmount;
     protected TypeAmount $yAmount;
     protected ?string $description;
     protected ?string $termsAndConditionsUrl;
     protected bool $displayFlag;
-    protected ?TypeColor $flagColor;
+    protected TypeColor $flagColor;
     protected bool $displayBanner;
-    protected ?TypeColor $bannerColor;
+    protected TypeColor $bannerColor;
     protected ?int $priority;
     protected ?int $usageCount;
     protected XyDiscountTargetingResponse $xTargeting;
@@ -50,23 +50,23 @@ class XyDiscount extends Entity
         return $this;
     }
 
-    public function getValidFrom(): TypeDate
+    public function getValidFrom(): TypeDateNullable
     {
         return $this->validFrom;
     }
 
-    public function setValidFrom(TypeDate $validFrom): static
+    public function setValidFrom(TypeDateNullable $validFrom): static
     {
         $this->validFrom = $validFrom;
         return $this;
     }
 
-    public function getValidTo(): TypeDate
+    public function getValidTo(): TypeDateNullable
     {
         return $this->validTo;
     }
 
-    public function setValidTo(TypeDate $validTo): static
+    public function setValidTo(TypeDateNullable $validTo): static
     {
         $this->validTo = $validTo;
         return $this;
@@ -138,12 +138,12 @@ class XyDiscount extends Entity
         return $this;
     }
 
-    public function getFlagColor(): ?TypeColor
+    public function getFlagColor(): TypeColor
     {
         return $this->flagColor;
     }
 
-    public function setFlagColor(?TypeColor $flagColor): static
+    public function setFlagColor(TypeColor $flagColor): static
     {
         $this->flagColor = $flagColor;
         return $this;
@@ -160,12 +160,12 @@ class XyDiscount extends Entity
         return $this;
     }
 
-    public function getBannerColor(): ?TypeColor
+    public function getBannerColor(): TypeColor
     {
         return $this->bannerColor;
     }
 
-    public function setBannerColor(?TypeColor $bannerColor): static
+    public function setBannerColor(TypeColor $bannerColor): static
     {
         $this->bannerColor = $bannerColor;
         return $this;

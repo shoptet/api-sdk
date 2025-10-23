@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetWebhookNotificationResponse\GetWebhookNotificationResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/getwebhooknotification
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getwebhooknotification
  *
  * @method GetWebhookNotification setBody(null $entity)
  * @method null getBody()

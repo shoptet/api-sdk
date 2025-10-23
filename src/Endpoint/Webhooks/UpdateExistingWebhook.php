@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\UpdateExistingWebhookRequest\UpdateExi
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\UpdateExistingWebhookResponse\UpdateExistingWebhookResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/updateexistingwebhook
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/updateexistingwebhook
  *
  * @method UpdateExistingWebhook setBody(null|array|UpdateExistingWebhookRequest $entity)
  * @method null|UpdateExistingWebhookRequest getBody()

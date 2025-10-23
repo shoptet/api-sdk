@@ -11,6 +11,11 @@ use Shoptet\Api\Sdk\Php\Authorization\AuthorizationFacade;
 use Shoptet\Api\Sdk\Php\Authorization\OAuth;
 use Shoptet\Api\Sdk\Php\Authorization\Token\FileTokenStorage;
 use Shoptet\Api\Sdk\Php\Authorization\Token\TokenStorage;
+use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\AddAlternativeProduct;
+use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\AddAlternativeProductRequest\AddAlternativeProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\GetListOfProductAlternativeProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\SetAlternativeProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\SetAlternativeProductsRequest\SetAlternativeProductsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticle;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArticleRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleSection;
@@ -35,6 +40,24 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\GetDetailOfBrand;
 use Shoptet\Api\Sdk\Php\Endpoint\Brands\GetListofBrands;
 use Shoptet\Api\Sdk\Php\Endpoint\Brands\UpdateBrand;
 use Shoptet\Api\Sdk\Php\Endpoint\Brands\UpdateBrandRequest\UpdateBrandRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategoryRequest\CreateProductCategoryRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\DeleteProductCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductCategories;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductsOrderInCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetProductCategoryDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategoryBatch;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategoryBatchRequest\UpdateProductCategoryBatchRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategoryRequest\UpdateProductCategoryRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductOrderInCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductOrderInCategoryRequest\UpdateProductOrderInCategoryRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\CreateConsumptionTax;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\CreateConsumptionTaxRequest\CreateConsumptionTaxRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\DeleteConsumptionTax;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\GetListOfConsumptionTaxes;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\UpdateConsumptionTax;
+use Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\UpdateConsumptionTaxRequest\UpdateConsumptionTaxRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoice;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceRequest\CreateCreditNoteFromInvoiceRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromProofOfPayment;
@@ -54,37 +77,37 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNote;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteItem;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteItemRequest\UpdateCreditNoteItemRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteRequest\UpdateCreditNoteRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\CreateCustomerAccount;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\CreateCustomerAccountRequest\CreateCustomerAccountRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\DeleteCustomerAccount;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\GetDetailOfCustomerAccount;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\GetListOfCustomerAccounts;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\UpdateCustomerAccount;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\UpdateCustomerAccountRequest\UpdateCustomerAccountRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddress;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddressRequest\CreateDeliveryAddressRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\DeleteCustomerDeliveryAddress;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\GeListOfCustomerDeliveryAddresses;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\GetDetailOfCustomerDeliveryAddress;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\UpdateCustomerDeliveryAddress;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\UpdateCustomerDeliveryAddressRequest\UpdateCustomerDeliveryAddressRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemark;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemarkRequest\CreateCustomerRemarkRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\DeleteCustomerRemark;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\GetDetailOfCustomerRemark;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\GetListOfCustomerRemarks;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemark;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemarkRequest\UpdateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerAccount;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerAccountRequest\CreateCustomerAccountRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRemark;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRemarkRequest\CreateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateDeliveryAddress;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateDeliveryAddressRequest\CreateDeliveryAddressRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerAccount;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerDeliveryAddress;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerRemark;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GeListOfCustomerDeliveryAddresses;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetDetailOfCustomerAccount;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetDetailOfCustomerDeliveryAddress;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetDetailOfCustomerRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfAllCustomers;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerAccounts;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerGroups;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRegions;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRemarks;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomers;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerAccount;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerAccountRequest\UpdateCustomerAccountRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerDeliveryAddress;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerDeliveryAddressRequest\UpdateCustomerDeliveryAddressRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRemark;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRemarkRequest\UpdateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRequest\UpdateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DownloadDeliveryNoteAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNote;
@@ -107,7 +130,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsageRequest\UpdateDiscountCouponsUsageRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
-use Shoptet\Api\Sdk\Php\Endpoint\DocumentExport\GeneralDocumentDownload;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionListRequest\CreateEmailDistributionListRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailsDistributionList;
@@ -115,76 +137,116 @@ use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailsDistribution
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetDetailOfEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetLastChangesInDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetListingOfEmailDistributionLists;
+use Shoptet\Api\Sdk\Php\Endpoint\Endpoints\GetListOfAvailableEndpoints;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDesign;
+use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfo;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopMandatoryFields;
+use Shoptet\Api\Sdk\Php\Endpoint\Exports\GeneralDocumentDownload;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFiles;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFile;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFileRequest\UploadFileRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFiles;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFilesRequest\UploadFilesRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\CreateFilteringParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\CreateFilteringParameterRequest\CreateFilteringParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\CreateFilteringParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\CreateFilteringParameterValueRequest\CreateFilteringParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\DeleteFilteringParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\DeleteFilteringParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\GetDetailOfFilteringParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\GetListOfFilteringParameters;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\UpdateFilteringParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\UpdateFilteringParameterRequest\UpdateFilteringParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\UpdateFilteringParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\FilteringParameters\UpdateFilteringParameterValueRequest\UpdateFilteringParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\CreateProductFlag;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\CreateProductFlagRequest\CreateProductFlagRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\DeleteProductFlag;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\GetListOfProductsFlags;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\UpdateProductFlag;
+use Shoptet\Api\Sdk\Php\Endpoint\Flags\UpdateProductFlagRequest\UpdateProductFlagRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Gifts\GetOrderGiftSettings;
+use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettings;
+use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettingsRequest\UpdateOrderGiftSettingsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\CreateInvoiceFromOrderRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromProformaInvoice;
+use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromProformaInvoiceRequest\CreateInvoiceFromProformaInvoiceRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\DownloadInvoiceAsIsdoc;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\DownloadInvoiceAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetInvoiceDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetLastInvoiceChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfAllInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfInvoices;
+use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProformaInvoices;
+use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProformaInvoicesRequest\InvoiceLinkProformaInvoicesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProofPaymentsRequest\InvoiceLinkProofPaymentsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetailResponse\GetJobDetailResponse;
-use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetListOfJobs;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderGift;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderGiftRequest\AddOrderGiftRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderShipping;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\AddOrderShippingRequest\AddOrderShippingRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetailResponse\GetJobDetailResponse;
+use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetListOfJobs;
+use Shoptet\Api\Sdk\Php\Endpoint\MeasureUnits\GetListOfProductsMeasureUnits;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGift;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGiftRequest\AddOrderGiftRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\DeleteOrderGift;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\GetOrderGiftsList;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\CreateOrderRemark;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\CreateOrderRemarkRequest\CreateOrderRemarkRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\DeleteOrderHistoryItem;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\GetListOfAllRemarks;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\GetListOfRemarksForOrder;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\CreateOrderItem;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\CreateOrderItemRequest\CreateOrderItemRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\CreateOrderItemSurchargeParameters;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\CreateOrderItemSurchargeParametersRequest\CreateOrderItemSurchargeParametersRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\DeleteOrderItem;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\DeleteOrderItemSurchargeParameters;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\UpdateOrderItem;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderItems\UpdateOrderItemRequest\UpdateOrderItemRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderPayment\CreateOrderPayment;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderPayment\CreateOrderPaymentRequest\CreateOrderPaymentRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderPayment\UpdateOrderPayment;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderPayment\UpdateOrderPaymentRequest\UpdateOrderPaymentRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\AddOrderShipping;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\AddOrderShippingRequest\AddOrderShippingRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\UpdateOrderShipping;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\UpdateOrderShippingRequest\UpdateOrderShippingRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrder;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItem;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemRequest\CreateOrderItemRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemSurchargeParameters;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderItemSurchargeParametersRequest\CreateOrderItemSurchargeParametersRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderPayment;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderPaymentRequest\CreateOrderPaymentRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRemark;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRemarkRequest\CreateOrderRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrder;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrderGift;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrderHistoryItem;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrderItem;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrderItemSurchargeParameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\DownloadOrderAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetLastOrderChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfAllOrders;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderSources;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderStatuses;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrders;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfRemarksForOrder;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderClaims;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderGiftSettings;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderGiftsList;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertion;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertionRequest\OrderBatchInsertionRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderCopy;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderCopyRequest\OrderCopyRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderGiftSettings;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderGiftSettingsRequest\UpdateOrderGiftSettingsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderHead;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderHeadRequest\UpdateOrderHeadRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderItem;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderItemRequest\UpdateOrderItemRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderPayment;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderPaymentRequest\UpdateOrderPaymentRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderShipping;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderShippingRequest\UpdateOrderShippingRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderStatus;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderStatusRequest\UpdateOrderStatusRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateRemarksForOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateRemarksForOrderRequest\UpdateRemarksForOrderRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Pages\CreatePage;
+use Shoptet\Api\Sdk\Php\Endpoint\Pages\CreatePageRequest\CreatePageRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Pages\DeletePage;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetDetailOfPage;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetListOfPages;
+use Shoptet\Api\Sdk\Php\Endpoint\Pages\UpdatePage;
+use Shoptet\Api\Sdk\Php\Endpoint\Pages\UpdatePageRequest\UpdatePageRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryRequest\CreateParametricCategoryRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\DeleteParametricCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetListOfParametricCategories;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetParametricCategoryDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\UpdateParametricCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\UpdateParametricCategoryRequest\UpdateParametricCategoryRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\GetInformationAboutPayment;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatus;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatusRequest\UpdatePaymentStatusRequest;
@@ -200,130 +262,66 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceLists;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddAlternativeProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddAlternativeProductRequest\AddAlternativeProductRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddItemToProductSet;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddItemToProductSetRequest\AddItemToProductSetRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddRelatedProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\AddRelatedProductRequest\AddRelatedProductRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateConsumptionTax;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateConsumptionTaxRequest\CreateConsumptionTaxRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameterRequest\CreateFilteringParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateFilteringParameterValueRequest\CreateFilteringParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailability;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailabilityRequest\CreateProductAvailabilityRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\DeleteProductAvailability;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\GetListOfProductsAvailabilities;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\UpdateProductAvailability;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\UpdateProductAvailabilityRequest\UpdateProductAvailabilityRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\CreateProductGift;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\CreateProductGiftRequest\CreateProductGiftRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\GetListOfProductGifts;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProduct;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImages;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImagesRequest\CreateProductImagesRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteAllProductImagesInGallery;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteOneProductImage;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetListOfProductImages;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetProductImagesUpdate;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetProductImagesUpdateRequest\GetProductImagesUpdateRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\UpdateProductImagesSource;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\UpdateProductImagesSourceRequest\UpdateProductImagesSourceRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLink;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLinkRequest\CreateRelatedFileLinkRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\DeleteOneProductRelatedFile;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductSets\AddItemToProductSet;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductSets\AddItemToProductSetRequest\AddItemToProductSetRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductSets\SetProductSetItems;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductSets\SetProductSetItemsRequest\SetProductSetItemsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductCategory;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductCategoryRequest\CreateProductCategoryRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductFlag;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductFlagRequest\CreateProductFlagRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductGift;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductGiftRequest\CreateProductGiftRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImages;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductImagesRequest\CreateProductImagesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateSurchargeParameterValueRequest\CreateSurchargeParameterValueRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterRequest\CreateVariantParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateVariantParameterValueRequest\CreateVariantParameterValueRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteAllProductImagesInGallery;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteConsumptionTax;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteFilteringParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteFilteringParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteOneProductImage;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProductCategory;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProductFlag;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProductVariant;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteSurchargeParameterByIndex;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteSurchargeParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteVariantParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteVariantParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetDetailOfFilteringParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetDetailOfSurchargeParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetDetailOfVariantParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetLastProductChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfConsumptionTaxes;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfFilteringParameters;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfParametricCategories;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductAlternativeProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductCategories;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductGifts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductImages;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductRelatedProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductUnits;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductWarranties;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProductsAndPricelistPrices;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsAvailabilities;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsFlags;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsMeasureUnits;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsOrderInCategory;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsReviews;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfRecyclingFeeCategories;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfSurchargeParameters;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfVariantParameters;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetParametricCategoryDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductCategoryDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductDetailByCode;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductImagesUpdate;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductImagesUpdateRequest\GetProductImagesUpdateRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdate;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdateRequest\ProductBatchUpdateRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopy;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopyRequest\ProductCopyRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetAlternativeProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetAlternativeProductsRequest\SetAlternativeProductsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetProductSetItems;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetProductSetItemsRequest\SetProductSetItemsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetRelatedProducts;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SetRelatedProductsRequest\SetRelatedProductsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SteGiftsToProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\SteGiftsToProductRequest\SteGiftsToProductRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateConsumptionTax;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateConsumptionTaxRequest\UpdateConsumptionTaxRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameterRequest\UpdateFilteringParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateFilteringParameterValueRequest\UpdateFilteringParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\UnlinkAllProductRelatedFiles;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCode;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCodeRequest\UpdateProductByCodeRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategory;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryBatch;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryBatchRequest\UpdateProductCategoryBatchRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductCategoryRequest\UpdateProductCategoryRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductFlag;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductFlagRequest\UpdateProductFlagRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductImagesSource;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductImagesSourceRequest\UpdateProductImagesSourceRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductOrderInCategory;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductOrderInCategoryRequest\UpdateProductOrderInCategoryRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateSurchargeParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateSurchargeParameterRequest\UpdateSurchargeParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateSurchargeParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateSurchargeParameterValueRequest\UpdateSurchargeParameterValueRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameter;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameterRequest\UpdateVariantParameterRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameterValue;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateVariantParameterValueRequest\UpdateVariantParameterValueRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\DownloadProformaInvoicePdf;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetLastProformaInvoiceChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfAllProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Project\GetProjectDomainList;
+use Shoptet\Api\Sdk\Php\Endpoint\Project\GetProjectSalesChannels;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPayment;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByOrderCode;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByProformaInvoiceCode;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentRequest\CreateProofPaymentRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DeleteProofPayment;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DownloadProofOfPaymentPdf;
+use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DownloadProofPaymentAsIsdoc;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfAllProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfProofPayments;
@@ -342,6 +340,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetListOfAllQuantityDiscounts
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetListOfQuantityDiscounts;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscount;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountRequest\UpdateQuantityDiscountRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\RecyclingFees\GetListOfRecyclingFeeCategories;
+use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\AddRelatedProduct;
+use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\AddRelatedProductRequest\AddRelatedProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\GetListOfProductRelatedProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProductsRequest\SetRelatedProductsRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfEshopReviews;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethods;
@@ -357,14 +363,40 @@ use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovementsLastMove;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\UpdateQuantityInStock;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\UpdateQuantityInStockRequest\UpdateQuantityInStockRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\GetListOfSuppliers;
-use Shoptet\Api\Sdk\Php\Endpoint\SystemEndpoints\GetListOfAvailableEndpoints;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameterValueRequest\CreateSurchargeParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\DeleteSurchargeParameterByIndex;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\DeleteSurchargeParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\GetDetailOfSurchargeParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\GetListOfSurchargeParameters;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\UpdateSurchargeParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\UpdateSurchargeParameterRequest\UpdateSurchargeParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\UpdateSurchargeParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\UpdateSurchargeParameterValueRequest\UpdateSurchargeParameterValueRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\CreateAndEditHtmlCodes;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\CreateAndEditHtmlCodesRequest\CreateAndEditHtmlCodesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\DeleteHtmlCode;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\GetListingOfHtmlCodes;
+use Shoptet\Api\Sdk\Php\Endpoint\Units\GetListOfProductUnits;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmail;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmailRequest\CreateUnsubscribedEmailRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\GetListingOfUnsubscribedEmails;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\CreateVariantParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\CreateVariantParameterRequest\CreateVariantParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\CreateVariantParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\CreateVariantParameterValueRequest\CreateVariantParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\DeleteVariantParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\DeleteVariantParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\GetDetailOfVariantParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\GetListOfVariantParameters;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameter;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameterRequest\UpdateVariantParameterRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameterValue;
+use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameterValueRequest\UpdateVariantParameterValueRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\VolumeDiscounts\GetListOfVolumeDiscounts;
+use Shoptet\Api\Sdk\Php\Endpoint\Warranties\GetListOfProductWarranties;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\DeleteRegisteredWebhook;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GenerateWebhookSignatureKey;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetDetailOfRegisteredWebhooks;
@@ -517,7 +549,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Eshop/geteshopinfo
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopinfo
      */
     public static function getEshopInfo(array $queryParams = []): ResponseInterface
     {
@@ -537,7 +569,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Eshop/geteshopdesign
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopdesign
      */
     public static function getEshopDesign(array $queryParams = []): ResponseInterface
     {
@@ -557,7 +589,27 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Eshop/geteshopmandatoryfields
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopdocumentsettings
+     */
+    public static function getEshopDocumentSettings(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetEshopDocumentSettings::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopmandatoryfields
      */
     public static function getEshopMandatoryFields(array $queryParams = []): ResponseInterface
     {
@@ -572,6 +624,30 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofeshopreviews
+     */
+    public static function getListOfEshopReviews(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfEshopReviews::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     availabilityId?: string,
+     *     availabilityWhenSoldOutId?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
      *     visibility?: string,
@@ -582,6 +658,8 @@ class Sdk
      *     categoryGuid?: string,
      *     flag?: string,
      *     include?: string,
+     *     productCodes?: string,
+     *     productGuids?: string,
      *     supplierGuid?: string,
      *     changeTimeFrom?: string,
      *     changeTimeTo?: string,
@@ -592,7 +670,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlistofproducts
      */
     public static function getListOfProducts(array $queryParams = []): ResponseInterface
     {
@@ -615,7 +693,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/createproduct
      */
     public static function createProduct(
         array|CreateProductRequest $requestBody,
@@ -641,7 +719,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/productcopy
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productcopy
      */
     public static function productCopy(
         string $guid,
@@ -660,6 +738,10 @@ class Sdk
      * @param array{
      *     language?: string,
      *     include?: string,
+     *     productCodes?: string,
+     *     productGuids?: string,
+     *     availabilityId?: string,
+     *     availabilityWhenSoldOutId?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
      *     visibility?: string,
@@ -679,12 +761,32 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofallproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlistofallproducts
      */
     public static function getListOfAllProducts(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAllProducts::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlistofallproductsandpricelistprices
+     */
+    public static function getListOfAllProductsAndPricelistPrices(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllProductsAndPricelistPrices::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -701,7 +803,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getproductdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getproductdetail
      */
     public static function getProductDetail(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -726,7 +828,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/updateproduct
      */
     public static function updateProduct(
         string $guid,
@@ -752,7 +854,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/deleteproduct
      */
     public static function deleteProduct(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -775,7 +877,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/productbatchupdate
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productbatchupdate
      */
     public static function productBatchUpdate(
         array|ProductBatchUpdateRequest $requestBody,
@@ -800,7 +902,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getproductdetailbycode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getproductdetailbycode
      */
     public static function getProductDetailByCode(string $code, array $queryParams = []): ResponseInterface
     {
@@ -825,7 +927,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductbycode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/updateproductbycode
      */
     public static function updateProductByCode(
         string $code,
@@ -851,7 +953,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteproductvariant
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/deleteproductvariant
      */
     public static function deleteProductVariant(string $code, array $queryParams = []): ResponseInterface
     {
@@ -874,7 +976,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductimages
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/getlistofproductimages
      */
     public static function getListOfProductImages(
         string $guid,
@@ -902,7 +1004,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteallproductimagesingallery
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/deleteallproductimagesingallery
      */
     public static function deleteAllProductImagesInGallery(
         string $guid,
@@ -931,7 +1033,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getproductimagesupdate
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/getproductimagesupdate
      */
     public static function getProductImagesUpdate(
         string $guid,
@@ -962,7 +1064,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createproductimages
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/createproductimages
      */
     public static function createProductImages(
         string $guid,
@@ -993,7 +1095,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductimagessource
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/updateproductimagessource
      */
     public static function updateProductImagesSource(
         string $guid,
@@ -1024,7 +1126,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteoneproductimage
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/deleteoneproductimage
      */
     public static function deleteOneProductImage(
         string $guid,
@@ -1037,6 +1139,83 @@ class Sdk
             ->addPathParam('guid', $guid)
             ->addPathParam('gallery', $gallery)
             ->addPathParam('imageName', $imageName)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
+     * @param array<string, mixed>|CreateRelatedFileLinkRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-related-files/createrelatedfilelink
+     */
+    public static function createRelatedFileLink(
+        string $guid,
+        array|CreateRelatedFileLinkRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateRelatedFileLink::class)
+            ->addPathParam('guid', $guid)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/unlinkallproductrelatedfiles
+     */
+    public static function unlinkAllProductRelatedFiles(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(UnlinkAllProductRelatedFiles::class)
+            ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [92d77e60-7481-11e8-8216-002590dad85e] Product's guid
+     * @param string $id [232] Related file id
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-related-files/deleteoneproductrelatedfile
+     */
+    public static function deleteOneProductRelatedFile(
+        string $guid,
+        string $id,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteOneProductRelatedFile::class)
+            ->addPathParam('guid', $guid)
+            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -1055,7 +1234,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlastproductchanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlastproductchanges
      */
     public static function getLastProductChanges(array $queryParams): ResponseInterface
     {
@@ -1077,7 +1256,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductcategories
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/getlistofproductcategories
      */
     public static function getListOfProductCategories(array $queryParams = []): ResponseInterface
     {
@@ -1099,7 +1278,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createproductcategory
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/createproductcategory
      */
     public static function createProductCategory(
         array|CreateProductCategoryRequest $requestBody,
@@ -1123,7 +1302,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getproductcategorydetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/getproductcategorydetail
      */
     public static function getProductCategoryDetail(string $categoryGuid, array $queryParams = []): ResponseInterface
     {
@@ -1147,7 +1326,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductcategory
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updateproductcategory
      */
     public static function updateProductCategory(
         string $categoryGuid,
@@ -1175,7 +1354,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteproductcategory
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/deleteproductcategory
      */
     public static function deleteProductCategory(string $categoryGuid, array $queryParams = []): ResponseInterface
     {
@@ -1198,7 +1377,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductcategorybatch
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updateproductcategorybatch
      */
     public static function updateProductCategoryBatch(
         array|UpdateProductCategoryBatchRequest $requestBody,
@@ -1224,7 +1403,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductsorderincategory
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/getlistofproductsorderincategory
      */
     public static function getListOfProductsOrderInCategory(
         string $categoryGuid,
@@ -1250,7 +1429,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductorderincategory
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updateproductorderincategory
      */
     public static function updateProductOrderInCategory(
         string $categoryGuid,
@@ -1278,12 +1457,38 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofparametriccategories
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/getlistofparametriccategories
      */
     public static function getListOfParametricCategories(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfParametricCategories::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateParametricCategoryRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     include?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/createparametriccategory
+     */
+    public static function createParametricCategory(
+        array|CreateParametricCategoryRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateParametricCategory::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -1299,7 +1504,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getparametriccategorydetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/getparametriccategorydetail
      */
     public static function getParametricCategoryDetail(
         string $categoryGuid,
@@ -1307,6 +1512,56 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(GetParametricCategoryDetail::class)
+            ->addPathParam('categoryGuid', $categoryGuid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $categoryGuid [5c498fb7-70ac-11e9-9208-08002774f818] Guid of parametric category.
+     * @param array<string, mixed>|UpdateParametricCategoryRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/updateparametriccategory
+     */
+    public static function updateParametricCategory(
+        string $categoryGuid,
+        array|UpdateParametricCategoryRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateParametricCategory::class)
+            ->addPathParam('categoryGuid', $categoryGuid)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $categoryGuid [5c498fb7-70ac-11e9-9208-08002774f818] Guid of parametric category.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/deleteparametriccategory
+     */
+    public static function deleteParametricCategory(string $categoryGuid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteParametricCategory::class)
             ->addPathParam('categoryGuid', $categoryGuid)
             ->setQueryParams($queryParams)
             ->execute();
@@ -1322,7 +1577,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductsflags
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/getlistofproductsflags
      */
     public static function getListOfProductsFlags(array $queryParams = []): ResponseInterface
     {
@@ -1344,7 +1599,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createproductflag
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/createproductflag
      */
     public static function createProductFlag(
         array|CreateProductFlagRequest $requestBody,
@@ -1370,7 +1625,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateproductflag
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/updateproductflag
      */
     public static function updateProductFlag(
         string $code,
@@ -1396,7 +1651,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteproductflag
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/deleteproductflag
      */
     public static function deleteProductFlag(string $code, array $queryParams = []): ResponseInterface
     {
@@ -1417,7 +1672,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductsmeasureunits
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Measure-units/getlistofproductsmeasureunits
      */
     public static function getListOfProductsMeasureUnits(array $queryParams = []): ResponseInterface
     {
@@ -1437,12 +1692,87 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductsavailabilities
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/getlistofproductsavailabilities
      */
     public static function getListOfProductsAvailabilities(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfProductsAvailabilities::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateProductAvailabilityRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/createproductavailability
+     */
+    public static function createProductAvailability(
+        array|CreateProductAvailabilityRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateProductAvailability::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [123] product availability ID
+     * @param array<string, mixed>|UpdateProductAvailabilityRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/updateproductavailability
+     */
+    public static function updateProductAvailability(
+        string $id,
+        array|UpdateProductAvailabilityRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateProductAvailability::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [123] product availability ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/deleteproductavailability
+     */
+    public static function deleteProductAvailability(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteProductAvailability::class)
+            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -1459,7 +1789,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofsurchargeparameters
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/getlistofsurchargeparameters
      */
     public static function getListOfSurchargeParameters(array $queryParams = []): ResponseInterface
     {
@@ -1481,7 +1811,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createsurchargeparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/createsurchargeparameter
      */
     public static function createSurchargeParameter(
         array|CreateSurchargeParameterRequest $requestBody,
@@ -1505,7 +1835,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getdetailofsurchargeparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/getdetailofsurchargeparameter
      */
     public static function getDetailOfSurchargeParameter(string $code, array $queryParams = []): ResponseInterface
     {
@@ -1529,7 +1859,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatesurchargeparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/updatesurchargeparameter
      */
     public static function updateSurchargeParameter(
         string $code,
@@ -1557,7 +1887,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createsurchargeparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/createsurchargeparametervalue
      */
     public static function createSurchargeParameterValue(
         string $code,
@@ -1583,7 +1913,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletesurchargeparameterbyindex
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/deletesurchargeparameterbyindex
      */
     public static function deleteSurchargeParameterByIndex(string $code, array $queryParams = []): ResponseInterface
     {
@@ -1606,7 +1936,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletesurchargeparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/deletesurchargeparametervalue
      */
     public static function deleteSurchargeParameterValue(
         string $paramIndex,
@@ -1635,7 +1965,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatesurchargeparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/updatesurchargeparametervalue
      */
     public static function updateSurchargeParameterValue(
         string $paramIndex,
@@ -1664,7 +1994,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistoffilteringparameters
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/getlistoffilteringparameters
      */
     public static function getListOfFilteringParameters(array $queryParams = []): ResponseInterface
     {
@@ -1686,7 +2016,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createfilteringparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/createfilteringparameter
      */
     public static function createFilteringParameter(
         array|CreateFilteringParameterRequest $requestBody,
@@ -1710,7 +2040,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getdetailoffilteringparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/getdetailoffilteringparameter
      */
     public static function getDetailOfFilteringParameter(string $code, array $queryParams = []): ResponseInterface
     {
@@ -1734,7 +2064,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatefilteringparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/updatefilteringparameter
      */
     public static function updateFilteringParameter(
         string $code,
@@ -1762,7 +2092,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createfilteringparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/createfilteringparametervalue
      */
     public static function createFilteringParameterValue(
         string $code,
@@ -1788,7 +2118,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletefilteringparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/deletefilteringparameter
      */
     public static function deleteFilteringParameter(string $code, array $queryParams = []): ResponseInterface
     {
@@ -1811,7 +2141,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletefilteringparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/deletefilteringparametervalue
      */
     public static function deleteFilteringParameterValue(
         string $code,
@@ -1840,7 +2170,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatefilteringparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/updatefilteringparametervalue
      */
     public static function updateFilteringParameterValue(
         string $code,
@@ -1870,7 +2200,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofvariantparameters
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/getlistofvariantparameters
      */
     public static function getListOfVariantParameters(array $queryParams = []): ResponseInterface
     {
@@ -1892,7 +2222,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createvariantparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/createvariantparameter
      */
     public static function createVariantParameter(
         array|CreateVariantParameterRequest $requestBody,
@@ -1916,7 +2246,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getdetailofvariantparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/getdetailofvariantparameter
      */
     public static function getDetailOfVariantParameter(string $paramIndex, array $queryParams = []): ResponseInterface
     {
@@ -1940,7 +2270,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatevariantparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/updatevariantparameter
      */
     public static function updateVariantParameter(
         string $paramIndex,
@@ -1968,7 +2298,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createvariantparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/createvariantparametervalue
      */
     public static function createVariantParameterValue(
         string $paramIndex,
@@ -1994,7 +2324,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletevariantparameter
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/deletevariantparameter
      */
     public static function deleteVariantParameter(string $paramIndex, array $queryParams = []): ResponseInterface
     {
@@ -2017,7 +2347,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deletevariantparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/deletevariantparametervalue
      */
     public static function deleteVariantParameterValue(
         string $paramIndex,
@@ -2046,7 +2376,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updatevariantparametervalue
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/updatevariantparametervalue
      */
     public static function updateVariantParameterValue(
         string $paramIndex,
@@ -2073,7 +2403,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofconsumptiontaxes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/getlistofconsumptiontaxes
      */
     public static function getListOfConsumptionTaxes(array $queryParams = []): ResponseInterface
     {
@@ -2095,7 +2425,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createconsumptiontax
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/createconsumptiontax
      */
     public static function createConsumptionTax(
         array|CreateConsumptionTaxRequest $requestBody,
@@ -2121,7 +2451,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/updateconsumptiontax
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/updateconsumptiontax
      */
     public static function updateConsumptionTax(
         string $id,
@@ -2147,7 +2477,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/deleteconsumptiontax
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/deleteconsumptiontax
      */
     public static function deleteConsumptionTax(string $id, array $queryParams = []): ResponseInterface
     {
@@ -2168,7 +2498,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofrecyclingfeecategories
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Recycling-fees/getlistofrecyclingfeecategories
      */
     public static function getListOfRecyclingFeeCategories(array $queryParams = []): ResponseInterface
     {
@@ -2188,7 +2518,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductwarranties
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Warranties/getlistofproductwarranties
      */
     public static function getListOfProductWarranties(array $queryParams = []): ResponseInterface
     {
@@ -2210,7 +2540,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductalternativeproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Alternative-products/getlistofproductalternativeproducts
      */
     public static function getListOfProductAlternativeProducts(
         string $guid,
@@ -2236,7 +2566,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/addalternativeproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Alternative-products/addalternativeproduct
      */
     public static function addAlternativeProduct(
         string $guid,
@@ -2264,7 +2594,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/setalternativeproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Alternative-products/setalternativeproducts
      */
     public static function setAlternativeProducts(
         string $guid,
@@ -2291,7 +2621,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductrelatedproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Related-products/getlistofproductrelatedproducts
      */
     public static function getListOfProductRelatedProducts(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -2315,7 +2645,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/addrelatedproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Related-products/addrelatedproduct
      */
     public static function addRelatedProduct(
         string $guid,
@@ -2343,7 +2673,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/setrelatedproducts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Related-products/setrelatedproducts
      */
     public static function setRelatedProducts(
         string $guid,
@@ -2371,7 +2701,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/additemtoproductset
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-sets/additemtoproductset
      */
     public static function addItemToProductSet(
         string $guid,
@@ -2399,7 +2729,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/setproductsetitems
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-sets/setproductsetitems
      */
     public static function setProductSetItems(
         string $guid,
@@ -2424,7 +2754,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductunits
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Units/getlistofproductunits
      */
     public static function getListOfProductUnits(array $queryParams = []): ResponseInterface
     {
@@ -2445,7 +2775,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductgifts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/getlistofproductgifts
      */
     public static function getListOfProductGifts(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -2469,7 +2799,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/createproductgift
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/createproductgift
      */
     public static function createProductGift(
         string $guid,
@@ -2497,7 +2827,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/stegiftstoproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/stegiftstoproduct
      */
     public static function steGiftsToProduct(
         string $guid,
@@ -2529,7 +2859,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Products/getlistofproductsreviews
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviews
      */
     public static function getListOfProductsReviews(array $queryParams): ResponseInterface
     {
@@ -2549,7 +2879,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/getlistofpricelists
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getlistofpricelists
      */
     public static function getListOfPriceLists(array $queryParams = []): ResponseInterface
     {
@@ -2571,7 +2901,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/createpricelist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/createpricelist
      */
     public static function createPricelist(
         array|CreatePricelistRequest $requestBody,
@@ -2599,7 +2929,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/getpricelistdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getpricelistdetail
      */
     public static function getPricelistDetail(string $id, array $queryParams = []): ResponseInterface
     {
@@ -2623,7 +2953,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/updatepricelist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/updatepricelist
      */
     public static function updatePricelist(
         string $id,
@@ -2649,7 +2979,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/deletepricelist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/deletepricelist
      */
     public static function deletePricelist(string $id, array $queryParams = []): ResponseInterface
     {
@@ -2683,13 +3013,53 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Price-lists/getlistofallpricelistdetails
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getlistofallpricelistdetails
      */
     public static function getListOfAllPricelistDetails(string $id, array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAllPricelistDetails::class)
             ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Project/getprojectdomainlist
+     */
+    public static function getProjectDomainList(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetProjectDomainList::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Project/getprojectsaleschannels
+     */
+    public static function getProjectSalesChannels(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetProjectSalesChannels::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -2714,6 +3084,7 @@ class Sdk
      *     changeTimeFrom?: string,
      *     changeTimeTo?: string,
      *     sourceId?: string,
+     *     orderCodes?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2721,7 +3092,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlistoforders
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistoforders
      */
     public static function getListOfOrders(array $queryParams = []): ResponseInterface
     {
@@ -2750,7 +3121,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/createorder
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/createorder
      */
     public static function createOrder(
         array|CreateOrderRequest $requestBody,
@@ -2766,7 +3137,32 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     orderCodes?: string,
+     *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
+     *     userId?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-history/getlistofallremarks
+     */
+    public static function getListOfAllRemarks(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllRemarks::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
      *     include?: string,
+     *     orderCodes?: string,
      *     statusId?: string,
      *     shippingGuid?: string,
      *     shippingCompanyCode?: string,
@@ -2789,7 +3185,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlistofallorders
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistofallorders
      */
     public static function getListOfAllOrders(array $queryParams = []): ResponseInterface
     {
@@ -2811,7 +3207,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getorderdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getorderdetail
      */
     public static function getOrderDetail(string $code, array $queryParams = []): ResponseInterface
     {
@@ -2833,7 +3229,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/deleteorder
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/deleteorder
      */
     public static function deleteOrder(string $code, array $queryParams = []): ResponseInterface
     {
@@ -2857,7 +3253,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateorderhead
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/updateorderhead
      */
     public static function updateOrderHead(
         string $code,
@@ -2887,7 +3283,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/createorderitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/createorderitem
      */
     public static function createOrderItem(
         string $code,
@@ -2917,7 +3313,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateorderitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/updateorderitem
      */
     public static function updateOrderItem(
         string $code,
@@ -2946,7 +3342,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/deleteorderitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/deleteorderitem
      */
     public static function deleteOrderItem(string $code, string $id, array $queryParams = []): ResponseInterface
     {
@@ -2972,7 +3368,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/createorderitemsurchargeparameters
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/createorderitemsurchargeparameters
      */
     public static function createOrderItemSurchargeParameters(
         string $code,
@@ -3002,7 +3398,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/deleteorderitemsurchargeparameters
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/deleteorderitemsurchargeparameters
      */
     public static function deleteOrderItemSurchargeParameters(
         string $code,
@@ -3032,7 +3428,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/createorderpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-payment/createorderpayment
      */
     public static function createOrderPayment(
         string $code,
@@ -3061,7 +3457,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateorderpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-payment/updateorderpayment
      */
     public static function updateOrderPayment(
         string $code,
@@ -3091,7 +3487,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/addordershipping
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-shipping/addordershipping
      */
     public static function addOrderShipping(
         string $code,
@@ -3120,7 +3516,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateordershipping
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-shipping/updateordershipping
      */
     public static function updateOrderShipping(
         string $code,
@@ -3148,7 +3544,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/downloadorderaspdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/downloadorderaspdf
      */
     public static function downloadOrderAsPdf(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3171,7 +3567,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlistofremarksfororder
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-history/getlistofremarksfororder
      */
     public static function getListOfRemarksForOrder(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3195,7 +3591,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/createorderremark
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-history/createorderremark
      */
     public static function createOrderRemark(
         string $code,
@@ -3222,7 +3618,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/deleteorderhistoryitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-history/deleteorderhistoryitem
      */
     public static function deleteOrderHistoryItem(
         string $code,
@@ -3250,7 +3646,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateremarksfororder
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/updateremarksfororder
      */
     public static function updateRemarksForOrder(
         string $code,
@@ -3281,7 +3677,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateorderstatus
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/updateorderstatus
      */
     public static function updateOrderStatus(
         string $code,
@@ -3310,7 +3706,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/ordercopy
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/ordercopy
      */
     public static function orderCopy(
         string $code,
@@ -3335,7 +3731,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlistoforderstatuses
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistoforderstatuses
      */
     public static function getListOfOrderStatuses(array $queryParams = []): ResponseInterface
     {
@@ -3355,7 +3751,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlistofordersources
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistofordersources
      */
     public static function getListOfOrderSources(array $queryParams = []): ResponseInterface
     {
@@ -3379,12 +3775,37 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getlastorderchanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlastorderchanges
      */
     public static function getLastOrderChanges(array $queryParams): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetLastOrderChanges::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     includeClosedAndCancelledOrders?: string,
+     *     productCode?: string,
+     *     orderCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getorderclaims
+     */
+    public static function getOrderClaims(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetOrderClaims::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -3401,7 +3822,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/orderbatchinsertion
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/orderbatchinsertion
      */
     public static function orderBatchInsertion(
         array|OrderBatchInsertionRequest $requestBody,
@@ -3424,7 +3845,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getordergiftslist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-gifts/getordergiftslist
      */
     public static function getOrderGiftsList(array $queryParams = []): ResponseInterface
     {
@@ -3446,7 +3867,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/addordergift
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-gifts/addordergift
      */
     public static function addOrderGift(
         array|AddOrderGiftRequest $requestBody,
@@ -3470,7 +3891,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/deleteordergift
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-gifts/deleteordergift
      */
     public static function deleteOrderGift(string $id, array $queryParams = []): ResponseInterface
     {
@@ -3491,7 +3912,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/getordergiftsettings
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Gifts/getordergiftsettings
      */
     public static function getOrderGiftSettings(array $queryParams = []): ResponseInterface
     {
@@ -3513,7 +3934,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Orders/updateordergiftsettings
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Gifts/updateordergiftsettings
      */
     public static function updateOrderGiftSettings(
         array|UpdateOrderGiftSettingsRequest $requestBody,
@@ -3547,7 +3968,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/getlistofinvoices
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getlistofinvoices
      */
     public static function getListOfInvoices(array $queryParams = []): ResponseInterface
     {
@@ -3588,7 +4009,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/getlistofallinvoices
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getlistofallinvoices
      */
     public static function getListOfAllInvoices(array $queryParams = []): ResponseInterface
     {
@@ -3609,7 +4030,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/getinvoicedetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getinvoicedetail
      */
     public static function getInvoiceDetail(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3634,7 +4055,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/createinvoicefromorder
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/createinvoicefromorder
      */
     public static function createInvoiceFromOrder(
         string $code,
@@ -3650,7 +4071,65 @@ class Sdk
     }
 
     /**
-     * @param string $code [2018000053] Code of order
+     * @param string $code [2018000053] Code of proforma invoice
+     * @param array<string, mixed>|CreateInvoiceFromProformaInvoiceRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     suppressExistenceCheck?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/createinvoicefromproformainvoice
+     */
+    public static function createInvoiceFromProformaInvoice(
+        string $code,
+        array|CreateInvoiceFromProformaInvoiceRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateInvoiceFromProformaInvoice::class)
+            ->addPathParam('code', $code)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [2018000053] Code of the invoice
+     * @param array<string, mixed>|InvoiceLinkProformaInvoicesRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     include?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/invoicelinkproformainvoices
+     */
+    public static function invoiceLinkProformaInvoices(
+        string $code,
+        array|InvoiceLinkProformaInvoicesRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(InvoiceLinkProformaInvoices::class)
+            ->addPathParam('code', $code)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [2018000053] Code of the invoice
      * @param array<string, mixed>|InvoiceLinkProofPaymentsRequest $requestBody
      * @param array{
      *     language?: string,
@@ -3663,7 +4142,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/invoicelinkproofpayments
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/invoicelinkproofpayments
      */
     public static function invoiceLinkProofPayments(
         string $code,
@@ -3689,7 +4168,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/downloadinvoiceaspdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/downloadinvoiceaspdf
      */
     public static function downloadInvoiceAsPdf(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3711,7 +4190,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/downloadinvoiceasisdoc
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/downloadinvoiceasisdoc
      */
     public static function downloadInvoiceAsIsdoc(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3736,7 +4215,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Invoices/getlastinvoicechanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getlastinvoicechanges
      */
     public static function getLastInvoiceChanges(array $queryParams): ResponseInterface
     {
@@ -3763,7 +4242,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlistofproformainvoices
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlistofproformainvoices
      */
     public static function getListOfProformaInvoices(array $queryParams = []): ResponseInterface
     {
@@ -3795,7 +4274,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlistofallproformainvoices
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlistofallproformainvoices
      */
     public static function getListOfAllProformaInvoices(array $queryParams = []): ResponseInterface
     {
@@ -3817,7 +4296,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getproformainvoicedetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getproformainvoicedetail
      */
     public static function getProformaInvoiceDetail(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3839,7 +4318,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/downloadproformainvoicepdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/downloadproformainvoicepdf
      */
     public static function downloadProformaInvoicePdf(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3864,7 +4343,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlastproformainvoicechanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlastproformainvoicechanges
      */
     public static function getLastProformaInvoiceChanges(array $queryParams): ResponseInterface
     {
@@ -3893,7 +4372,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlistofproofpayments
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlistofproofpayments
      */
     public static function getListOfProofPayments(array $queryParams = []): ResponseInterface
     {
@@ -3915,7 +4394,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpayment
      */
     public static function createProofPayment(
         array|CreateProofPaymentRequest $requestBody,
@@ -3939,7 +4418,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getproofpaymentdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getproofpaymentdetail
      */
     public static function getProofPaymentDetail(string $code, array $queryParams = []): ResponseInterface
     {
@@ -3963,7 +4442,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/updateproofpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/updateproofpayment
      */
     public static function updateProofPayment(
         string $code,
@@ -3989,7 +4468,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/deleteproofpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/deleteproofpayment
      */
     public static function deleteProofPayment(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4019,7 +4498,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlistofallproofpayments
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlistofallproofpayments
      */
     public static function getListOfAllProofPayments(array $queryParams = []): ResponseInterface
     {
@@ -4040,7 +4519,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getproofpaymentdetailbyordercode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getproofpaymentdetailbyordercode
      */
     public static function getProofPaymentDetailByOrderCode(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4062,7 +4541,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpaymentbyordercode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpaymentbyordercode
      */
     public static function createProofPaymentByOrderCode(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4084,7 +4563,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getproofpaymentdetailbyproformainvoicecode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getproofpaymentdetailbyproformainvoicecode
      */
     public static function getProofPaymentDetailByProformaInvoiceCode(
         string $code,
@@ -4108,7 +4587,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpaymentbyproformainvoicecode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpaymentbyproformainvoicecode
      */
     public static function createProofPaymentByProformaInvoiceCode(
         string $code,
@@ -4134,7 +4613,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/proofpaymentdocumentsettings
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/proofpaymentdocumentsettings
      */
     public static function proofPaymentDocumentSettings(
         string $code,
@@ -4160,12 +4639,34 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/downloadproofofpaymentpdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/downloadproofofpaymentpdf
      */
     public static function downloadProofOfPaymentPdf(string $code, array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(DownloadProofOfPaymentPdf::class)
+            ->addPathParam('code', $code)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [P-2015000248-01]
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/downloadproofpaymentasisdoc
+     */
+    public static function downloadProofPaymentAsIsdoc(string $code, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DownloadProofPaymentAsIsdoc::class)
             ->addPathParam('code', $code)
             ->setQueryParams($queryParams)
             ->execute();
@@ -4185,7 +4686,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlastproofpaymentschanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlastproofpaymentschanges
      */
     public static function getLastProofPaymentsChanges(array $queryParams): ResponseInterface
     {
@@ -4213,7 +4714,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlistofcreditnotes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlistofcreditnotes
      */
     public static function getListOfCreditNotes(array $queryParams = []): ResponseInterface
     {
@@ -4253,7 +4754,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlistofallcreditnotes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlistofallcreditnotes
      */
     public static function getListOfAllCreditNotes(array $queryParams = []): ResponseInterface
     {
@@ -4275,7 +4776,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/getcreditnotedetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getcreditnotedetail
      */
     public static function getCreditNoteDetail(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4299,7 +4800,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/updatecreditnote
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/updatecreditnote
      */
     public static function updateCreditNote(
         string $code,
@@ -4325,7 +4826,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/deletecreditnote
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/deletecreditnote
      */
     public static function deleteCreditNote(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4347,7 +4848,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/restockcreditnote
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/restockcreditnote
      */
     public static function restockCreditNote(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4372,7 +4873,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnotefrominvoice
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnotefrominvoice
      */
     public static function createCreditNoteFromInvoice(
         string $code,
@@ -4400,7 +4901,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnotefromproofofpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnotefromproofofpayment
      */
     public static function createCreditNoteFromProofOfPayment(
         string $code,
@@ -4428,7 +4929,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnoteitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnoteitem
      */
     public static function createCreditNoteItem(
         string $code,
@@ -4457,7 +4958,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/updatecreditnoteitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/updatecreditnoteitem
      */
     public static function updateCreditNoteItem(
         string $code,
@@ -4486,7 +4987,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/deletecreditnoteitem
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/deletecreditnoteitem
      */
     public static function deleteCreditNoteItem(string $code, string $id, array $queryParams = []): ResponseInterface
     {
@@ -4509,7 +5010,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/downloadcreditnotepdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/downloadcreditnotepdf
      */
     public static function downloadCreditNotePdf(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4531,7 +5032,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/downloadcreditnoteasisdoc
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/downloadcreditnoteasisdoc
      */
     public static function downloadCreditNoteAsIsdoc(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4556,7 +5057,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlastcreditnotechanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlastcreditnotechanges
      */
     public static function getLastCreditNoteChanges(array $queryParams): ResponseInterface
     {
@@ -4580,7 +5081,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getlistofdeliverynotes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getlistofdeliverynotes
      */
     public static function getListOfDeliveryNotes(array $queryParams = []): ResponseInterface
     {
@@ -4610,7 +5111,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getlistofalldeliverynotes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getlistofalldeliverynotes
      */
     public static function getListOfAllDeliveryNotes(array $queryParams = []): ResponseInterface
     {
@@ -4632,7 +5133,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getdetailofdeliverynote
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getdetailofdeliverynote
      */
     public static function getDetailOfDeliveryNote(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4654,7 +5155,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Delivery-notes/downloaddeliverynoteaspdf
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/downloaddeliverynoteaspdf
      */
     public static function downloadDeliveryNoteAsPdf(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4685,7 +5186,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Document-export/generaldocumentdownload
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Exports/generaldocumentdownload
      */
     public static function generalDocumentDownload(
         string $type,
@@ -4710,7 +5211,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/getlistofstocks
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getlistofstocks
      */
     public static function getListOfStocks(array $queryParams = []): ResponseInterface
     {
@@ -4731,7 +5232,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/getstockdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getstockdetail
      */
     public static function getStockDetail(string $stockId, array $queryParams = []): ResponseInterface
     {
@@ -4759,7 +5260,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/getstockmovements
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getstockmovements
      */
     public static function getStockMovements(string $stockId, array $queryParams = []): ResponseInterface
     {
@@ -4783,7 +5284,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/updatequantityinstock
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/updatequantityinstock
      */
     public static function updateQuantityInStock(
         string $stockId,
@@ -4809,7 +5310,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/getstockmovementslastmove
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getstockmovementslastmove
      */
     public static function getStockMovementsLastMove(string $stockId, array $queryParams = []): ResponseInterface
     {
@@ -4837,7 +5338,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Stocks/getproductsuppliesinstock
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getproductsuppliesinstock
      */
     public static function getProductSuppliesInStock(string $stockId, array $queryParams = []): ResponseInterface
     {
@@ -4860,7 +5361,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Suppliers/getlistofsuppliers
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Suppliers/getlistofsuppliers
      */
     public static function getListOfSuppliers(array $queryParams = []): ResponseInterface
     {
@@ -4882,7 +5383,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/getlistofbrands
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/getlistofbrands
      */
     public static function getListofBrands(array $queryParams = []): ResponseInterface
     {
@@ -4904,7 +5405,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/createbrand
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrand
      */
     public static function createBrand(
         array|CreateBrandRequest $requestBody,
@@ -4928,7 +5429,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/getdetailofbrand
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/getdetailofbrand
      */
     public static function getDetailOfBrand(string $code, array $queryParams = []): ResponseInterface
     {
@@ -4952,7 +5453,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/updatebrand
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/updatebrand
      */
     public static function updateBrand(
         string $code,
@@ -4979,7 +5480,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/deletebrand
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/deletebrand
      */
     public static function deleteBrand(string $code, array $queryParams = []): ResponseInterface
     {
@@ -5002,7 +5503,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Brands/createbrandbatch
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrandbatch
      */
     public static function createBrandBatch(
         array|CreateBrandBatchRequest $requestBody,
@@ -5029,7 +5530,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomers
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomers
      */
     public static function getListOfCustomers(array $queryParams = []): ResponseInterface
     {
@@ -5044,6 +5545,8 @@ class Sdk
      * @param array{
      *     language?: string,
      *     suppressMandatoryFieldsCheck?: string,
+     *     sendRegistrationEmail?: string,
+     *     language?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5052,7 +5555,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/createcustomer
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/createcustomer
      */
     public static function createCustomer(
         array|CreateCustomerRequest $requestBody,
@@ -5079,7 +5582,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofallcustomers
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofallcustomers
      */
     public static function getListOfAllCustomers(array $queryParams = []): ResponseInterface
     {
@@ -5100,7 +5603,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getcustomerdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getcustomerdetail
      */
     public static function getCustomerDetail(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -5124,7 +5627,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/updatecustomer
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/updatecustomer
      */
     public static function updateCustomer(
         string $guid,
@@ -5150,7 +5653,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/deletecustomer
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/deletecustomer
      */
     public static function deleteCustomer(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -5174,7 +5677,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomeraccounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/getlistofcustomeraccounts
      */
     public static function getListOfCustomerAccounts(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -5198,7 +5701,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/createcustomeraccount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/createcustomeraccount
      */
     public static function createCustomerAccount(
         string $guid,
@@ -5225,7 +5728,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getdetailofcustomeraccount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/getdetailofcustomeraccount
      */
     public static function getDetailOfCustomerAccount(
         string $guid,
@@ -5254,7 +5757,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/updatecustomeraccount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/updatecustomeraccount
      */
     public static function updateCustomerAccount(
         string $guid,
@@ -5283,7 +5786,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/deletecustomeraccount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/deletecustomeraccount
      */
     public static function deleteCustomerAccount(
         string $guid,
@@ -5311,7 +5814,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/gelistofcustomerdeliveryaddresses
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/gelistofcustomerdeliveryaddresses
      */
     public static function geListOfCustomerDeliveryAddresses(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -5335,7 +5838,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/createdeliveryaddress
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/createdeliveryaddress
      */
     public static function createDeliveryAddress(
         string $guid,
@@ -5362,7 +5865,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getdetailofcustomerdeliveryaddress
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/getdetailofcustomerdeliveryaddress
      */
     public static function getDetailOfCustomerDeliveryAddress(
         string $guid,
@@ -5391,7 +5894,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/updatecustomerdeliveryaddress
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/updatecustomerdeliveryaddress
      */
     public static function updateCustomerDeliveryAddress(
         string $guid,
@@ -5420,7 +5923,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/deletecustomerdeliveryaddress
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/deletecustomerdeliveryaddress
      */
     public static function deleteCustomerDeliveryAddress(
         string $guid,
@@ -5448,7 +5951,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomerremarks
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/getlistofcustomerremarks
      */
     public static function getListOfCustomerRemarks(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -5472,7 +5975,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/createcustomerremark
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/createcustomerremark
      */
     public static function createCustomerRemark(
         string $guid,
@@ -5499,7 +6002,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getdetailofcustomerremark
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/getdetailofcustomerremark
      */
     public static function getDetailOfCustomerRemark(
         string $guid,
@@ -5528,7 +6031,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/updatecustomerremark
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/updatecustomerremark
      */
     public static function updateCustomerRemark(
         string $guid,
@@ -5557,7 +6060,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/deletecustomerremark
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/deletecustomerremark
      */
     public static function deleteCustomerRemark(string $guid, string $id, array $queryParams = []): ResponseInterface
     {
@@ -5583,7 +6086,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlastcustomerchanges
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlastcustomerchanges
      */
     public static function getLastCustomerChanges(array $queryParams): ResponseInterface
     {
@@ -5603,7 +6106,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomerregions
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomerregions
      */
     public static function getListOfCustomerRegions(array $queryParams = []): ResponseInterface
     {
@@ -5623,7 +6126,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomergroups
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomergroups
      */
     public static function getListOfCustomerGroups(array $queryParams = []): ResponseInterface
     {
@@ -5643,7 +6146,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Templates/getlistingofhtmlcodes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/getlistingofhtmlcodes
      */
     public static function getListingOfHtmlCodes(array $queryParams = []): ResponseInterface
     {
@@ -5665,7 +6168,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Templates/createandedithtmlcodes
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/createandedithtmlcodes
      */
     public static function createAndEditHtmlCodes(
         array|CreateAndEditHtmlCodesRequest $requestBody,
@@ -5689,7 +6192,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Templates/deletehtmlcode
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/deletehtmlcode
      */
     public static function deleteHtmlCode(string $location, array $queryParams = []): ResponseInterface
     {
@@ -5711,7 +6214,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Payment-gateways/getinformationaboutpayment
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-gateways/getinformationaboutpayment
      */
     public static function getInformationAboutPayment(string $paymentCode, array $queryParams = []): ResponseInterface
     {
@@ -5727,6 +6230,8 @@ class Sdk
      * @param array<string, mixed>|UpdatePaymentStatusRequest $requestBody
      * @param array{
      *     language?: string,
+     *     suppressDocumentGeneration?: string,
+     *     suppressEmailSending?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5735,7 +6240,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Payment-gateways/updatepaymentstatus
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-gateways/updatepaymentstatus
      */
     public static function updatePaymentStatus(
         string $paymentCode,
@@ -5762,7 +6267,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/getoverviewofregisteredwebhooks
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getoverviewofregisteredwebhooks
      */
     public static function getOverviewOfRegisteredWebhooks(array $queryParams = []): ResponseInterface
     {
@@ -5784,7 +6289,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/registernewwebhook
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/registernewwebhook
      */
     public static function registerNewWebhook(
         array|RegisterNewWebhookRequest $requestBody,
@@ -5808,7 +6313,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/getdetailofregisteredwebhooks
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getdetailofregisteredwebhooks
      */
     public static function getDetailOfRegisteredWebhooks(string $id, array $queryParams = []): ResponseInterface
     {
@@ -5832,7 +6337,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/updateexistingwebhook
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/updateexistingwebhook
      */
     public static function updateExistingWebhook(
         string $id,
@@ -5858,7 +6363,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/deleteregisteredwebhook
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/deleteregisteredwebhook
      */
     public static function deleteRegisteredWebhook(string $id, array $queryParams = []): ResponseInterface
     {
@@ -5879,7 +6384,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/generatewebhooksignaturekey
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/generatewebhooksignaturekey
      */
     public static function generateWebhookSignatureKey(array $queryParams = []): ResponseInterface
     {
@@ -5905,7 +6410,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Webhooks/getwebhooknotification
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getwebhooknotification
      */
     public static function getWebhookNotification(array $queryParams = []): ResponseInterface
     {
@@ -5925,7 +6430,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Shipping-methods/getlistofshippingmethods
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/getlistofshippingmethods
      */
     public static function getListOfShippingMethods(array $queryParams = []): ResponseInterface
     {
@@ -5947,7 +6452,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Shipping-methods/createshippingmethod
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/createshippingmethod
      */
     public static function createShippingMethod(
         array|CreateShippingMethodRequest $requestBody,
@@ -5972,7 +6477,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Shipping-requests/getshippingrequestforcartdetails
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/getshippingrequestforcartdetails
      */
     public static function getShippingRequestForCartDetails(
         string $shippingRequestCode,
@@ -6001,7 +6506,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Shipping-requests/updateshippingdata
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/updateshippingdata
      */
     public static function updateShippingData(
         string $shippingRequestCode,
@@ -6030,7 +6535,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Shipping-requests/getshippingrequestforgettingorderstatus
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/getshippingrequestforgettingorderstatus
      */
     public static function getShippingRequestForGettingOrderStatus(
         string $shippingRequestCode,
@@ -6055,7 +6560,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Payment-methods/getlistingofpaymentmethods
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/getlistingofpaymentmethods
      */
     public static function getListingOfPaymentMethods(array $queryParams = []): ResponseInterface
     {
@@ -6077,7 +6582,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Payment-methods/createpaymentmethod
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/createpaymentmethod
      */
     public static function createPaymentMethod(
         array|CreatePaymentMethodRequest $requestBody,
@@ -6101,7 +6606,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Payment-methods/deletepaymentmethod
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/deletepaymentmethod
      */
     public static function deletePaymentMethod(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -6125,7 +6630,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Unsubscribed-emails/getlistingofunsubscribedemails
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Unsubscribed-emails/getlistingofunsubscribedemails
      */
     public static function getListingOfUnsubscribedEmails(array $queryParams = []): ResponseInterface
     {
@@ -6147,7 +6652,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Unsubscribed-emails/createunsubscribedemail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Unsubscribed-emails/createunsubscribedemail
      */
     public static function createUnsubscribedEmail(
         array|CreateUnsubscribedEmailRequest $requestBody,
@@ -6170,7 +6675,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getlistingofemaildistributionlists
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getlistingofemaildistributionlists
      */
     public static function getListingOfEmailDistributionLists(array $queryParams = []): ResponseInterface
     {
@@ -6192,7 +6697,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/createemaildistributionlist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/createemaildistributionlist
      */
     public static function createEmailDistributionList(
         array|CreateEmailDistributionListRequest $requestBody,
@@ -6218,7 +6723,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getdetailofemaildistributionlist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getdetailofemaildistributionlist
      */
     public static function getDetailOfEmailDistributionList(string $code, array $queryParams = []): ResponseInterface
     {
@@ -6242,7 +6747,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/createemailsdistributionlist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/createemailsdistributionlist
      */
     public static function createEmailsDistributionList(
         string $code,
@@ -6272,7 +6777,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getlastchangesindistributionlist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getlastchangesindistributionlist
      */
     public static function getLastChangesInDistributionList(string $code, array $queryParams): ResponseInterface
     {
@@ -6301,7 +6806,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/getlistofdiscountcoupons
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getlistofdiscountcoupons
      */
     public static function getListOfDiscountCoupons(array $queryParams = []): ResponseInterface
     {
@@ -6323,7 +6828,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/creatediscountcoupons
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/creatediscountcoupons
      */
     public static function createDiscountCoupons(
         array|CreateDiscountCouponsRequest $requestBody,
@@ -6348,7 +6853,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/bulkdeletediscountcoupons
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/bulkdeletediscountcoupons
      */
     public static function bulkDeleteDiscountCoupons(
         array|BulkDeleteDiscountCouponsRequest $requestBody,
@@ -6382,7 +6887,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/getlistofalldiscountcoupons
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getlistofalldiscountcoupons
      */
     public static function getListOfAllDiscountCoupons(array $queryParams): ResponseInterface
     {
@@ -6403,7 +6908,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/getdetailofdiscountcoupon
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getdetailofdiscountcoupon
      */
     public static function getDetailOfDiscountCoupon(string $code, array $queryParams = []): ResponseInterface
     {
@@ -6425,7 +6930,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/deletediscountcoupon
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/deletediscountcoupon
      */
     public static function deleteDiscountCoupon(string $code, array $queryParams = []): ResponseInterface
     {
@@ -6448,7 +6953,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/creatediscountcouponsset
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/creatediscountcouponsset
      */
     public static function createDiscountCouponsSet(
         array|CreateDiscountCouponsSetRequest $requestBody,
@@ -6475,7 +6980,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/updatediscountcouponsusage
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/updatediscountcouponsusage
      */
     public static function updateDiscountCouponsUsage(
         string $code,
@@ -6500,7 +7005,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/gettemplatesofdiscountcoupons
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/gettemplatesofdiscountcoupons
      */
     public static function getTemplatesOfDiscountCoupons(array $queryParams = []): ResponseInterface
     {
@@ -6522,7 +7027,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/creatediscountcouponstemplate
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/creatediscountcouponstemplate
      */
     public static function createDiscountCouponsTemplate(
         array|CreateDiscountCouponsTemplateRequest $requestBody,
@@ -6546,7 +7051,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discount-coupons/deletediscountcouponstemplate
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/deletediscountcouponstemplate
      */
     public static function deleteDiscountCouponsTemplate(string $guid, array $queryParams = []): ResponseInterface
     {
@@ -6572,7 +7077,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/getlistofxydiscounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/getlistofxydiscounts
      */
     public static function getListOfXYDiscounts(array $queryParams = []): ResponseInterface
     {
@@ -6594,7 +7099,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/createxydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/createxydiscount
      */
     public static function createXYDiscount(
         array|CreateXYDiscountRequest $requestBody,
@@ -6618,7 +7123,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/getdetailofxydiscounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/getdetailofxydiscounts
      */
     public static function getDetailOfXYDiscounts(string $id, array $queryParams = []): ResponseInterface
     {
@@ -6642,7 +7147,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/updatexydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/updatexydiscount
      */
     public static function updateXYDiscount(
         string $id,
@@ -6668,7 +7173,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/deletexydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/deletexydiscount
      */
     public static function deleteXYDiscount(string $id, array $queryParams = []): ResponseInterface
     {
@@ -6689,7 +7194,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/getxydiscountssettings
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/getxydiscountssettings
      */
     public static function getXYDiscountsSettings(array $queryParams = []): ResponseInterface
     {
@@ -6711,7 +7216,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/XY-discounts/updatexydiscountsettings
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/updatexydiscountsettings
      */
     public static function updateXYDiscountSettings(
         array|UpdateXYDiscountSettingsRequest $requestBody,
@@ -6742,7 +7247,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/getlistofquantitydiscounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/getlistofquantitydiscounts
      */
     public static function getListOfQuantityDiscounts(array $queryParams = []): ResponseInterface
     {
@@ -6764,7 +7269,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/createquantitydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/createquantitydiscount
      */
     public static function createQuantityDiscount(
         array|CreateQuantityDiscountRequest $requestBody,
@@ -6793,7 +7298,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/getlistofallquantitydiscounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/getlistofallquantitydiscounts
      */
     public static function getListOfAllQuantityDiscounts(array $queryParams = []): ResponseInterface
     {
@@ -6814,7 +7319,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/getdetailofquantitydiscounts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/getdetailofquantitydiscounts
      */
     public static function getDetailOfQuantityDiscounts(string $id, array $queryParams = []): ResponseInterface
     {
@@ -6838,7 +7343,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/updatequantitydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/updatequantitydiscount
      */
     public static function updateQuantityDiscount(
         string $id,
@@ -6864,13 +7369,36 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/deletequantitydiscount
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/deletequantitydiscount
      */
     public static function deleteQuantityDiscount(string $id, array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(DeleteQuantityDiscount::class)
             ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     customerGroupCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Volume-discounts/getlistofvolumediscounts
+     */
+    public static function getListOfVolumeDiscounts(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfVolumeDiscounts::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -6887,7 +7415,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/getlistofarticles
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistofarticles
      */
     public static function getListOfArticles(array $queryParams = []): ResponseInterface
     {
@@ -6909,7 +7437,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/createarticle
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/createarticle
      */
     public static function createArticle(
         array|CreateArticleRequest $requestBody,
@@ -6940,7 +7468,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/getlistallarticles
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistallarticles
      */
     public static function getListAllArticles(array $queryParams = []): ResponseInterface
     {
@@ -6961,7 +7489,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/getdetailofarticle
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getdetailofarticle
      */
     public static function getDetailOfArticle(string $articleId, array $queryParams = []): ResponseInterface
     {
@@ -6985,7 +7513,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/updatearticle
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/updatearticle
      */
     public static function updateArticle(
         string $articleId,
@@ -7011,7 +7539,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/deletearticle
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/deletearticle
      */
     public static function deleteArticle(string $articleId, array $queryParams = []): ResponseInterface
     {
@@ -7032,7 +7560,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/getlistofarticlesections
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistofarticlesections
      */
     public static function getListOfArticleSections(array $queryParams = []): ResponseInterface
     {
@@ -7054,7 +7582,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/createarticlesection
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/createarticlesection
      */
     public static function createArticleSection(
         array|CreateArticleSectionRequest $requestBody,
@@ -7078,7 +7606,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/getdetailofarticlesection
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getdetailofarticlesection
      */
     public static function getDetailOfArticleSection(
         string $articleSectionId,
@@ -7104,7 +7632,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/updatearticlesection
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/updatearticlesection
      */
     public static function updateArticleSection(
         string $articleSectionId,
@@ -7131,7 +7659,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Articles/deletearticlesection
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/deletearticlesection
      */
     public static function deleteArticleSection(string $articleSectionId, array $queryParams = []): ResponseInterface
     {
@@ -7154,12 +7682,37 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Pages/getlistofpages
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/getlistofpages
      */
     public static function getListOfPages(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfPages::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreatePageRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/createpage
+     */
+    public static function createPage(
+        array|CreatePageRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreatePage::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -7175,13 +7728,63 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Pages/getdetailofpage
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/getdetailofpage
      */
     public static function getDetailOfPage(string $pageId, array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetDetailOfPage::class)
             ->addPathParam('pageId', $pageId)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $pageId [1] page ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/deletepage
+     */
+    public static function deletePage(string $pageId, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeletePage::class)
+            ->addPathParam('pageId', $pageId)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $pageId [1] page ID
+     * @param array<string, mixed>|UpdatePageRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/updatepage
+     */
+    public static function updatePage(
+        string $pageId,
+        array|UpdatePageRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdatePage::class)
+            ->addPathParam('pageId', $pageId)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -7202,7 +7805,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Discussions/getlistofdiscussionposts
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/getlistofdiscussionposts
      */
     public static function getListOfDiscussionPosts(array $queryParams = []): ResponseInterface
     {
@@ -7227,7 +7830,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Job-endpoints/getlistofjobs
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Jobs/getlistofjobs
      */
     public static function getListOfJobs(array $queryParams = []): ResponseInterface
     {
@@ -7248,7 +7851,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Job-endpoints/getjobdetail
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Jobs/getjobdetail
      */
     public static function getJobDetail(string $jobId, array $queryParams = []): ResponseInterface
     {
@@ -7269,7 +7872,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/Files/getlistofuploadedfiles
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/getlistofuploadedfiles
      */
     public static function getListOfUploadedFiles(array $queryParams = []): ResponseInterface
     {
@@ -7291,7 +7894,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Files/uploadfiles
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/uploadfiles
      */
     public static function uploadFiles(
         array|UploadFilesRequest $requestBody,
@@ -7316,7 +7919,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/openapi/Files/uploadfile
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/uploadfile
      */
     public static function uploadFile(
         array|UploadFileRequest $requestBody,
@@ -7340,7 +7943,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/openapi/System-endpoints/getlistofavailableendpoints
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Endpoints/getlistofavailableendpoints
      */
     public static function getListOfAvailableEndpoints(array $queryParams = []): ResponseInterface
     {

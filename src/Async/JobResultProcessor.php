@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Async;
 
 use Generator;
-use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetailResponse\GetJobDetailResponse;
+use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetailResponse\GetJobDetailResponse;
 use Shoptet\Api\Sdk\Php\Exception\LogicException;
 use Shoptet\Api\Sdk\Php\Exception\RuntimeException;
 use Shoptet\Api\Sdk\Php\Factory\Endpoint\EndpointFactory;

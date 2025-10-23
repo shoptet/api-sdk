@@ -3,13 +3,13 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChangesResponse\GetLastCustomerChangesResponse\Data\Changes;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Item extends Entity
 {
     protected TypeGuidUnlimited $guid;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $changeTime;
     protected string $changeType;
 
     public function getGuid(): TypeGuidUnlimited
@@ -23,12 +23,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

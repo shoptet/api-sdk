@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote;
+use Shoptet\Api\Sdk\Php\Component\Entity\DeliveryNoteSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotesResponse\GetListOfAllDeliveryNotesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getlistofalldeliverynotes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getlistofalldeliverynotes
  *
  * @method GetListOfAllDeliveryNotes setBody(null $entity)
  * @method null getBody()
@@ -48,6 +48,6 @@ class GetListOfAllDeliveryNotes extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return CreditNote::class;
+        return DeliveryNoteSnapshot::class;
     }
 }

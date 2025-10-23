@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\DeletePricelistResponse\DeletePricelistResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/deletepricelist
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/deletepricelist
  *
  * @method DeletePricelist setBody(null $entity)
  * @method null getBody()

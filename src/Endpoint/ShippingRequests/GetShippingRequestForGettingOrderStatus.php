@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForGettingOrderStatusResponse\GetShippingRequestForGettingOrderStatusResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Shipping-requests/getshippingrequestforgettingorderstatus
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/getshippingrequestforgettingorderstatus
  *
  * @method GetShippingRequestForGettingOrderStatus setBody(null $entity)
  * @method null getBody()

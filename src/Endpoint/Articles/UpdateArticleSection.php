@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleSectionResponse\UpdateArt
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/updatearticlesection
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/updatearticlesection
  *
  * @method UpdateArticleSection setBody(null|array|UpdateArticleSectionRequest $entity)
  * @method null|UpdateArticleSectionRequest getBody()

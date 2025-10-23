@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\DeleteXYDiscountResponse\DeleteXYDiscountResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/XY-discounts/deletexydiscount
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/deletexydiscount
  *
  * @method DeleteXYDiscount setBody(null $entity)
  * @method null getBody()

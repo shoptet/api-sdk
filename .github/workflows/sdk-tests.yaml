@@ -2,7 +2,9 @@ name: Shoptet API-SDK tests
 
 on:
   pull_request:
+    types: [opened, reopened, synchronize]
   push:
+    branches: [master, main]
   schedule:
     - cron: '0 8 * * 1' # At 08:00 on Monday
 
@@ -44,7 +46,7 @@ jobs:
       - run: composer lint
 
   test-unit:
-    name: Lint
+    name: Unit test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/downloadproformainvoicepdf
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/downloadproformainvoicepdf
  *
  * @method DownloadProformaInvoicePdf setBody(null $entity)
  * @method null getBody()

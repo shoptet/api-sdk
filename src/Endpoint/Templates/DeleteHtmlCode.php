@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\DeleteHtmlCodeResponse\DeleteHtmlCodeResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Templates/deletehtmlcode
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/deletehtmlcode
  *
  * @method DeleteHtmlCode setBody(null $entity)
  * @method null getBody()

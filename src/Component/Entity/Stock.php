@@ -9,6 +9,8 @@ class Stock extends Entity
     protected bool $isDeliveryPoint;
     protected ?string $deliveryPointTitle;
     protected ?string $deliveryPointAddress;
+    protected string $type;
+    protected ?int $parentStockId;
 
     public function getId(): int
     {
@@ -62,6 +64,28 @@ class Stock extends Entity
     public function setDeliveryPointAddress(?string $deliveryPointAddress): static
     {
         $this->deliveryPointAddress = $deliveryPointAddress;
+        return $this;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): static
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    public function getParentStockId(): ?int
+    {
+        return $this->parentStockId;
+    }
+
+    public function setParentStockId(?int $parentStockId): static
+    {
+        $this->parentStockId = $parentStockId;
         return $this;
     }
 }

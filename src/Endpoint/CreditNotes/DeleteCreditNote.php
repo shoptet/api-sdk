@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\DeleteCreditNoteResponse\DeleteCred
 use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/deletecreditnote
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/deletecreditnote
  *
  * @method DeleteCreditNote setBody(null $entity)
  * @method null getBody()

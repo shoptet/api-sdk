@@ -5,8 +5,8 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetLis
 use Shoptet\Api\Sdk\Php\Component\Entity\BrandNamed;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Supplier;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetListOfProductsResponse\Data\Products\Item\DefaultCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetListOfProductsResponse\Data\Products\Item\MainImage;
@@ -18,14 +18,15 @@ class Item extends Entity
     protected string $type;
     protected ?string $url;
     protected string $visibility;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?BrandNamed $brand;
     protected ?Supplier $supplier;
     protected DefaultCategory $defaultCategory;
     protected ?MainImage $mainImage;
-    protected ?TypeAmount $voteAverageScore;
+    protected ?TypeAmountNullable $voteAverageScore;
     protected ?int $voteCount;
+    protected ?bool $preauthorizationRequired;
 
     public function getGuid(): TypeGuidUnlimited
     {
@@ -82,23 +83,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -148,12 +149,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getVoteAverageScore(): ?TypeAmount
+    public function getVoteAverageScore(): ?TypeAmountNullable
     {
         return $this->voteAverageScore;
     }
 
-    public function setVoteAverageScore(?TypeAmount $voteAverageScore): static
+    public function setVoteAverageScore(?TypeAmountNullable $voteAverageScore): static
     {
         $this->voteAverageScore = $voteAverageScore;
         return $this;
@@ -167,6 +168,17 @@ class Item extends Entity
     public function setVoteCount(?int $voteCount): static
     {
         $this->voteCount = $voteCount;
+        return $this;
+    }
+
+    public function getPreauthorizationRequired(): ?bool
+    {
+        return $this->preauthorizationRequired;
+    }
+
+    public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
+    {
+        $this->preauthorizationRequired = $preauthorizationRequired;
         return $this;
     }
 }

@@ -4,7 +4,7 @@ The official PHP library for the Shoptet REST API.
 
 ## Documentation
 
-See the [Shoptet API doc](https://shoptet.docs.apiary.io/#).
+See the [Shoptet API doc](https://api.docs.shoptet.com/shoptet-api/openapi/#).
 
 ## Requirements
 

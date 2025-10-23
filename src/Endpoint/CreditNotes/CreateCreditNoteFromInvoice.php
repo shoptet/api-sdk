@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceResponse
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnotefrominvoice
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnotefrominvoice
  *
  * @method CreateCreditNoteFromInvoice setBody(null|array|CreateCreditNoteFromInvoiceRequest $entity)
  * @method null|CreateCreditNoteFromInvoiceRequest getBody()

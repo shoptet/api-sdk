@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrandResponse\CreateBrandResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/createbrand
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrand
  *
  * @method CreateBrand setBody(null|array|CreateBrandRequest $entity)
  * @method null|CreateBrandRequest getBody()

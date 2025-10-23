@@ -5,15 +5,17 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 class Page extends Entity
 {
     protected float $id;
-    protected string $language;
+    protected ?string $language;
     protected string $title;
     protected ?string $content;
     protected string $url;
     protected ?string $linkText;
     protected ?string $metaTitle;
     protected ?string $metaDescription;
+    protected ?string $canonicalUrl;
     protected bool $visible;
     protected string $access;
+    protected ?string $ogImage;
 
     public function getId(): float
     {
@@ -26,12 +28,12 @@ class Page extends Entity
         return $this;
     }
 
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): static
+    public function setLanguage(?string $language): static
     {
         $this->language = $language;
         return $this;
@@ -103,6 +105,17 @@ class Page extends Entity
         return $this;
     }
 
+    public function getCanonicalUrl(): ?string
+    {
+        return $this->canonicalUrl;
+    }
+
+    public function setCanonicalUrl(?string $canonicalUrl): static
+    {
+        $this->canonicalUrl = $canonicalUrl;
+        return $this;
+    }
+
     public function isVisible(): bool
     {
         return $this->visible;
@@ -122,6 +135,17 @@ class Page extends Entity
     public function setAccess(string $access): static
     {
         $this->access = $access;
+        return $this;
+    }
+
+    public function getOgImage(): ?string
+    {
+        return $this->ogImage;
+    }
+
+    public function setOgImage(?string $ogImage): static
+    {
+        $this->ogImage = $ogImage;
         return $this;
     }
 }

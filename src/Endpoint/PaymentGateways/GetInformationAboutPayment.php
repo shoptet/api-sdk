@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\GetInformationAboutPaymentResponse\GetInformationAboutPaymentResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Payment-gateways/getinformationaboutpayment
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-gateways/getinformationaboutpayment
  *
  * @method GetInformationAboutPayment setBody(null $entity)
  * @method null getBody()

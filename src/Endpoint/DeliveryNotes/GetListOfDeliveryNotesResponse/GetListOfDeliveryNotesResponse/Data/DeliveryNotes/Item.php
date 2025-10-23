@@ -3,14 +3,14 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfDeliveryNotesResponse\GetListOfDeliveryNotesResponse\Data\DeliveryNotes;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
     protected string $code;
     protected bool $isValid;
     protected ?string $orderCode;
-    protected TypeDateTime $creationTime;
+    protected TypeDateTimeNullable $creationTime;
     protected ?string $billCompany;
     protected ?string $billFullName;
 
@@ -47,12 +47,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;

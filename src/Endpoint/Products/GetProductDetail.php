@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductDetailResponse\GetProductDetailResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/getproductdetail
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getproductdetail
  *
  * @method GetProductDetail setBody(null $entity)
  * @method null getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\DeleteBrandResponse\DeleteBrandResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/deletebrand
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/deletebrand
  *
  * @method DeleteBrand setBody(null $entity)
  * @method null getBody()

@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleResponse\CreateArticleRes
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/createarticle
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/createarticle
  *
  * @method CreateArticle setBody(null|array|CreateArticleRequest $entity)
  * @method null|CreateArticleRequest getBody()

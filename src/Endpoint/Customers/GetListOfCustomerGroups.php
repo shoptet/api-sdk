@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerGroupsResponse\GetLi
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomergroups
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomergroups
  *
  * @method GetListOfCustomerGroups setBody(null $entity)
  * @method null getBody()

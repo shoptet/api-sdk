@@ -37,7 +37,7 @@ class EntityResponse extends AbstractResponse
             return null;
         }
 
-        /** @var null|array<string, mixed> $arrBody */
+        /** @var array<string, mixed>|null $arrBody */
         $arrBody = json_decode($this->rawBody, true);
         if ($arrBody === null) {
             //cannot be processed - why?

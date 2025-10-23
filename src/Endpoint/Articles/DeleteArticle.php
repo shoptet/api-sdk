@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\DeleteArticleResponse\DeleteArticleRes
 use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/deletearticle
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/deletearticle
  *
  * @method DeleteArticle setBody(null $entity)
  * @method null getBody()

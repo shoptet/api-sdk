@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataRequest\Upda
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataResponse\UpdateShippingDataResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Shipping-requests/updateshippingdata
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/updateshippingdata
  *
  * @method UpdateShippingData setBody(null|array|UpdateShippingDataRequest $entity)
  * @method null|UpdateShippingDataRequest getBody()

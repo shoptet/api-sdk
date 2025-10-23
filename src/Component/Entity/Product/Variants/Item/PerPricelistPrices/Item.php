@@ -5,6 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerPricelis
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\PriceSales;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductOrderableAmount;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductPrices;
 use Shoptet\Api\Sdk\Php\Component\Entity\VariantPrice;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRate;
@@ -19,6 +20,7 @@ class Item extends Entity
     protected PriceSales $sales;
     protected ProductOrderableAmount $orderableAmount;
     protected int $pricelistId;
+    protected ?ProductPrices $prices;
 
     public function getCode(): string
     {
@@ -105,6 +107,17 @@ class Item extends Entity
     public function setPricelistId(int $pricelistId): static
     {
         $this->pricelistId = $pricelistId;
+        return $this;
+    }
+
+    public function getPrices(): ?ProductPrices
+    {
+        return $this->prices;
+    }
+
+    public function setPrices(?ProductPrices $prices): static
+    {
+        $this->prices = $prices;
         return $this;
     }
 }

@@ -6,7 +6,7 @@ use Closure;
 use Generator;
 use IteratorAggregate;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\JobEndpoints\GetJobDetailResponse\GetJobDetailResponse;
+use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetailResponse\GetJobDetailResponse;
 use Shoptet\Api\Sdk\Php\Exception\LogicException;
 
 /**

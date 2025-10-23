@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopyRequest\ProductCopyRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopyResponse\ProductCopyResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/productcopy
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productcopy
  *
  * @method ProductCopy setBody(null|array|ProductCopyRequest $entity)
  * @method null|ProductCopyRequest getBody()

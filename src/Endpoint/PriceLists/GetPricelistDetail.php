@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetailResponse\GetPricelistDetailResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/getpricelistdetail
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getpricelistdetail
  *
  * @method GetPricelistDetail setBody(null $entity)
  * @method null getBody()

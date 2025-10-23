@@ -2,14 +2,14 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 
 class MeasureUnit extends Entity
 {
     protected ?int $packagingUnitId;
-    protected TypePositiveAmount $packagingAmount;
+    protected TypePositiveAmountNullable $packagingAmount;
     protected ?int $measureUnitId;
-    protected TypePositiveAmount $measureAmount;
+    protected TypePositiveAmountNullable $measureAmount;
 
     public function getPackagingUnitId(): ?int
     {
@@ -22,12 +22,12 @@ class MeasureUnit extends Entity
         return $this;
     }
 
-    public function getPackagingAmount(): TypePositiveAmount
+    public function getPackagingAmount(): TypePositiveAmountNullable
     {
         return $this->packagingAmount;
     }
 
-    public function setPackagingAmount(TypePositiveAmount $packagingAmount): static
+    public function setPackagingAmount(TypePositiveAmountNullable $packagingAmount): static
     {
         $this->packagingAmount = $packagingAmount;
         return $this;
@@ -44,12 +44,12 @@ class MeasureUnit extends Entity
         return $this;
     }
 
-    public function getMeasureAmount(): TypePositiveAmount
+    public function getMeasureAmount(): TypePositiveAmountNullable
     {
         return $this->measureAmount;
     }
 
-    public function setMeasureAmount(TypePositiveAmount $measureAmount): static
+    public function setMeasureAmount(TypePositiveAmountNullable $measureAmount): static
     {
         $this->measureAmount = $measureAmount;
         return $this;

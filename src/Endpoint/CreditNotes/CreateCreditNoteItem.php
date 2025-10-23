@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteItemResponse\Create
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/createcreditnoteitem
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnoteitem
  *
  * @method CreateCreditNoteItem setBody(null|array|CreateCreditNoteItemRequest $entity)
  * @method null|CreateCreditNoteItemRequest getBody()

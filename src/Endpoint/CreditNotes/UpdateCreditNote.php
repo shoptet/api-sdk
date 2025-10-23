@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteResponse\UpdateCred
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/updatecreditnote
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/updatecreditnote
  *
  * @method UpdateCreditNote setBody(null|array|UpdateCreditNoteRequest $entity)
  * @method null|UpdateCreditNoteRequest getBody()

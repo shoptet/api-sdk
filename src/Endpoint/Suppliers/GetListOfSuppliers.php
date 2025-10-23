@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\GetListOfSuppliersResponse\GetListOfSuppliersResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Suppliers/getlistofsuppliers
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Suppliers/getlistofsuppliers
  *
  * @method GetListOfSuppliers setBody(null $entity)
  * @method null getBody()

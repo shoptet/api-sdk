@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderSourcesResponse\GetListOfOrderSourcesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/getlistofordersources
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistofordersources
  *
  * @method GetListOfOrderSources setBody(null $entity)
  * @method null getBody()

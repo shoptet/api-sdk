@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceRe
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbol;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceRequest\CreateCreditNoteFromInvoiceRequest\Data\Items;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceRequest\CreateCreditNoteFromInvoiceRequest\Data\UseItemIds;
 
@@ -12,8 +12,8 @@ class Data extends Entity
 {
     protected ?string $creditNoteCode;
     protected ?float $varSymbol;
-    protected ?TypeDate $dueDate;
-    protected ?TypeDate $taxDate;
+    protected ?TypeDateNullable $dueDate;
+    protected ?TypeDateNullable $taxDate;
     protected ?TypeConstSymbol $constSymbol;
     protected ?float $specSymbol;
     protected ?float $billingMethodId;
@@ -22,6 +22,7 @@ class Data extends Entity
     /** @deprecated */
     protected ?UseItemIds $useItemIds;
     protected ?Items $items;
+    protected ?string $reasonRemark;
 
     public function getCreditNoteCode(): ?string
     {
@@ -45,23 +46,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getDueDate(): ?TypeDate
+    public function getDueDate(): ?TypeDateNullable
     {
         return $this->dueDate;
     }
 
-    public function setDueDate(?TypeDate $dueDate): static
+    public function setDueDate(?TypeDateNullable $dueDate): static
     {
         $this->dueDate = $dueDate;
         return $this;
     }
 
-    public function getTaxDate(): ?TypeDate
+    public function getTaxDate(): ?TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(?TypeDate $taxDate): static
+    public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;
@@ -136,6 +137,17 @@ class Data extends Entity
     public function setItems(?Items $items): static
     {
         $this->items = $items;
+        return $this;
+    }
+
+    public function getReasonRemark(): ?string
+    {
+        return $this->reasonRemark;
+    }
+
+    public function setReasonRemark(?string $reasonRemark): static
+    {
+        $this->reasonRemark = $reasonRemark;
         return $this;
     }
 }

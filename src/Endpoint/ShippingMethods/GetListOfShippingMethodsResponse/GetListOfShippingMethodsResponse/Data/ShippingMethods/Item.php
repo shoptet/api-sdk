@@ -14,7 +14,7 @@ class Item extends Entity
     protected ?ShippingCompany $shippingCompany;
     protected ?string $trackingUrl;
     protected bool $visible;
-    protected int $priority;
+    protected ?int $priority;
     protected bool $wholesale;
     protected ?string $logoUrl;
 
@@ -84,12 +84,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getPriority(): int
+    public function getPriority(): ?int
     {
         return $this->priority;
     }
 
-    public function setPriority(int $priority): static
+    public function setPriority(?int $priority): static
     {
         $this->priority = $priority;
         return $this;

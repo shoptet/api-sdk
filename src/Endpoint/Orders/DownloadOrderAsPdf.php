@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Orders;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/downloadorderaspdf
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/downloadorderaspdf
  *
  * @method DownloadOrderAsPdf setBody(null $entity)
  * @method null getBody()

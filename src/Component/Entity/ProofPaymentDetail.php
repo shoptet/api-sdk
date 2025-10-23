@@ -3,23 +3,24 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentDetail\Source;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeExchangeRate;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class ProofPaymentDetail extends Entity
 {
     protected string $code;
     protected ?string $orderCode;
     protected ?string $proformaInvoiceCode;
-    protected TypeDateTime $createdAt;
-    protected TypeDateTime $updatedAt;
-    protected TypeDateTime $issueDate;
-    protected TypeDate $taxDate;
+    protected TypeDateTimeNullable $createdAt;
+    protected TypeDateTimeNullable $updatedAt;
+    protected TypeDateTimeNullable $issueDate;
+    protected TypeDateNullable $taxDate;
     protected bool $isValid;
     protected string $currencyCode;
-    protected TypePrice $payment;
+    protected TypePriceNullable $payment;
     protected bool $closed;
     protected ?string $billFullName;
     protected ?string $billCompany;
@@ -35,7 +36,7 @@ class ProofPaymentDetail extends Entity
     protected ?string $vatId;
     protected ?string $taxId;
     protected ?string $companyId;
-    protected string $language;
+    protected ?string $language;
     protected ?string $email;
     protected ?string $phone;
     protected Source $source;
@@ -49,7 +50,7 @@ class ProofPaymentDetail extends Entity
     protected float $varSymbol;
     protected ?string $constSymbol;
     protected ?float $specSymbol;
-    protected BillingMethod $billingMethod;
+    protected ?BillingMethod $billingMethod;
     protected ?string $billBankAccount;
     protected ?string $billIban;
     protected ?string $billBic;
@@ -60,6 +61,7 @@ class ProofPaymentDetail extends Entity
     protected ?string $invoiceCode;
     protected ProofPaymentVatBreakdown $vatBreakdown;
     protected ?string $vatMode;
+    protected TypeExchangeRate $invoicingExchangeRate;
 
     public function getCode(): string
     {
@@ -94,45 +96,45 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getCreatedAt(): TypeDateTime
+    public function getCreatedAt(): TypeDateTimeNullable
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(TypeDateTime $createdAt): static
+    public function setCreatedAt(TypeDateTimeNullable $createdAt): static
     {
         $this->createdAt = $createdAt;
         return $this;
     }
 
-    public function getUpdatedAt(): TypeDateTime
+    public function getUpdatedAt(): TypeDateTimeNullable
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(TypeDateTime $updatedAt): static
+    public function setUpdatedAt(TypeDateTimeNullable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
         return $this;
     }
 
-    public function getIssueDate(): TypeDateTime
+    public function getIssueDate(): TypeDateTimeNullable
     {
         return $this->issueDate;
     }
 
-    public function setIssueDate(TypeDateTime $issueDate): static
+    public function setIssueDate(TypeDateTimeNullable $issueDate): static
     {
         $this->issueDate = $issueDate;
         return $this;
     }
 
-    public function getTaxDate(): TypeDate
+    public function getTaxDate(): TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(TypeDate $taxDate): static
+    public function setTaxDate(TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;
@@ -160,12 +162,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getPayment(): TypePrice
+    public function getPayment(): TypePriceNullable
     {
         return $this->payment;
     }
 
-    public function setPayment(TypePrice $payment): static
+    public function setPayment(TypePriceNullable $payment): static
     {
         $this->payment = $payment;
         return $this;
@@ -336,12 +338,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): static
+    public function setLanguage(?string $language): static
     {
         $this->language = $language;
         return $this;
@@ -474,12 +476,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getBillingMethod(): BillingMethod
+    public function getBillingMethod(): ?BillingMethod
     {
         return $this->billingMethod;
     }
 
-    public function setBillingMethod(BillingMethod $billingMethod): static
+    public function setBillingMethod(?BillingMethod $billingMethod): static
     {
         $this->billingMethod = $billingMethod;
         return $this;
@@ -592,6 +594,17 @@ class ProofPaymentDetail extends Entity
     public function setVatMode(?string $vatMode): static
     {
         $this->vatMode = $vatMode;
+        return $this;
+    }
+
+    public function getInvoicingExchangeRate(): TypeExchangeRate
+    {
+        return $this->invoicingExchangeRate;
+    }
+
+    public function setInvoicingExchangeRate(TypeExchangeRate $invoicingExchangeRate): static
+    {
+        $this->invoicingExchangeRate = $invoicingExchangeRate;
         return $this;
     }
 }

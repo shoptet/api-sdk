@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\InvoiceItem\DisplayPrices;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
@@ -17,14 +17,17 @@ class InvoiceItem extends Entity
     protected ?string $name;
     protected ?string $variantName;
     protected ?string $brand;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
     protected ?string $remark;
     protected TypePriceRatio $priceRatio;
     protected ?TypeWeight $weight;
     protected ?string $additionalField;
     protected ItemPrice $itemPrice;
+
+    /** @deprecated */
     protected ?ItemPrice $buyPrice;
+    protected ?ItemPrice $purchasePrice;
     protected ?DisplayPrices $displayPrices;
     protected ?RecyclingFee $recyclingFee;
     protected ?ItemSurchargeParameters $surchargeParameters;
@@ -108,12 +111,12 @@ class InvoiceItem extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
@@ -185,14 +188,31 @@ class InvoiceItem extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getBuyPrice(): ?ItemPrice
     {
         return $this->buyPrice;
     }
 
+    /**
+     * @deprecated
+     */
     public function setBuyPrice(?ItemPrice $buyPrice): static
     {
         $this->buyPrice = $buyPrice;
+        return $this;
+    }
+
+    public function getPurchasePrice(): ?ItemPrice
+    {
+        return $this->purchasePrice;
+    }
+
+    public function setPurchasePrice(?ItemPrice $purchasePrice): static
+    {
+        $this->purchasePrice = $purchasePrice;
         return $this;
     }
 

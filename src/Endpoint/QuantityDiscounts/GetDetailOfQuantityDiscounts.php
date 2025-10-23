@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetDetailOfQuantityDiscountsResponse\GetDetailOfQuantityDiscountsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/getdetailofquantitydiscounts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/getdetailofquantitydiscounts
  *
  * @method GetDetailOfQuantityDiscounts setBody(null $entity)
  * @method null getBody()

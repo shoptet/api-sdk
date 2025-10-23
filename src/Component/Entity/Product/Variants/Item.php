@@ -6,30 +6,32 @@ use Shoptet\Api\Sdk\Php\Component\Entity\ActionPrice;
 use Shoptet\Api\Sdk\Php\Component\Entity\AvailabilityShort;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductConsumptionTax;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductPrices;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\MeasureUnit;
+use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\OssVatLevels;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerPricelistPrices;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerStockAmounts;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\ZboziCZ;
 use Shoptet\Api\Sdk\Php\Component\Entity\RecyclingFeeCategory;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDimension;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 
 class Item extends Entity
 {
     protected string $code;
     protected ?string $ean;
-    protected TypeAmount $stock;
+    protected TypeAmountNullable $stock;
     protected ?string $unit;
     protected ?TypeWeight $weight;
     protected TypeDimension $width;
     protected TypeDimension $height;
     protected TypeDimension $depth;
     protected bool $visible;
-    protected TypePrice $price;
-    protected TypePrice $commonPrice;
+    protected TypePriceNullable $price;
+    protected TypePriceNullable $commonPrice;
     protected ?string $manufacturerCode;
     protected ?string $pluCode;
     protected ?string $isbn;
@@ -38,8 +40,8 @@ class Item extends Entity
     protected bool $includingVat;
     protected string $vatRate;
     protected string $currencyCode;
-    protected TypeAmount $minStockSupply;
-    protected ?ActionPrice $actionPrice;
+    protected TypeAmountNullable $minStockSupply;
+    protected ActionPrice $actionPrice;
     protected ?string $image;
     protected ?bool $isProductDefaultImage;
     protected ?string $name;
@@ -58,6 +60,8 @@ class Item extends Entity
     protected ?PerStockAmounts $perStockAmounts;
     protected ?PerPricelistPrices $perPricelistPrices;
     protected ?string $url;
+    protected ?ProductPrices $prices;
+    protected ?OssVatLevels $ossVatLevels;
 
     public function getCode(): string
     {
@@ -81,12 +85,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getStock(): TypeAmount
+    public function getStock(): TypeAmountNullable
     {
         return $this->stock;
     }
 
-    public function setStock(TypeAmount $stock): static
+    public function setStock(TypeAmountNullable $stock): static
     {
         $this->stock = $stock;
         return $this;
@@ -158,23 +162,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getPrice(): TypePrice
+    public function getPrice(): TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(TypePrice $price): static
+    public function setPrice(TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;
     }
 
-    public function getCommonPrice(): TypePrice
+    public function getCommonPrice(): TypePriceNullable
     {
         return $this->commonPrice;
     }
 
-    public function setCommonPrice(TypePrice $commonPrice): static
+    public function setCommonPrice(TypePriceNullable $commonPrice): static
     {
         $this->commonPrice = $commonPrice;
         return $this;
@@ -268,23 +272,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinStockSupply(): TypeAmount
+    public function getMinStockSupply(): TypeAmountNullable
     {
         return $this->minStockSupply;
     }
 
-    public function setMinStockSupply(TypeAmount $minStockSupply): static
+    public function setMinStockSupply(TypeAmountNullable $minStockSupply): static
     {
         $this->minStockSupply = $minStockSupply;
         return $this;
     }
 
-    public function getActionPrice(): ?ActionPrice
+    public function getActionPrice(): ActionPrice
     {
         return $this->actionPrice;
     }
 
-    public function setActionPrice(?ActionPrice $actionPrice): static
+    public function setActionPrice(ActionPrice $actionPrice): static
     {
         $this->actionPrice = $actionPrice;
         return $this;
@@ -485,6 +489,28 @@ class Item extends Entity
     public function setUrl(?string $url): static
     {
         $this->url = $url;
+        return $this;
+    }
+
+    public function getPrices(): ?ProductPrices
+    {
+        return $this->prices;
+    }
+
+    public function setPrices(?ProductPrices $prices): static
+    {
+        $this->prices = $prices;
+        return $this;
+    }
+
+    public function getOssVatLevels(): ?OssVatLevels
+    {
+        return $this->ossVatLevels;
+    }
+
+    public function setOssVatLevels(?OssVatLevels $ossVatLevels): static
+    {
+        $this->ossVatLevels = $ossVatLevels;
         return $this;
     }
 }

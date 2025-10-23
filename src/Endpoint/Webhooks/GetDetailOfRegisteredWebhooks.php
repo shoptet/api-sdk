@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetDetailOfRegisteredWebhooksResponse\GetDetailOfRegisteredWebhooksResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/getdetailofregisteredwebhooks
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getdetailofregisteredwebhooks
  *
  * @method GetDetailOfRegisteredWebhooks setBody(null $entity)
  * @method null getBody()

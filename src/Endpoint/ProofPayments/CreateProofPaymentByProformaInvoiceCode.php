@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByProformaInvoiceCodeResponse\CreateProofPaymentByProformaInvoiceCodeResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpaymentbyproformainvoicecode
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpaymentbyproformainvoicecode
  *
  * @method CreateProofPaymentByProformaInvoiceCode setBody(null $entity)
  * @method null getBody()

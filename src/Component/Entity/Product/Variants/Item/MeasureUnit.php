@@ -3,18 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class MeasureUnit extends Entity
 {
     protected ?int $packagingUnitId;
     protected ?string $packagingUnitName;
-    protected TypeAmount $packagingAmount;
+    protected TypeAmountNullable $packagingAmount;
     protected ?int $measureUnitId;
     protected ?string $measureUnitName;
-    protected TypeAmount $measureAmount;
-    protected TypePrice $measurePrice;
+    protected TypeAmountNullable $measureAmount;
+    protected TypePriceNullable $measurePrice;
 
     public function getPackagingUnitId(): ?int
     {
@@ -38,12 +38,12 @@ class MeasureUnit extends Entity
         return $this;
     }
 
-    public function getPackagingAmount(): TypeAmount
+    public function getPackagingAmount(): TypeAmountNullable
     {
         return $this->packagingAmount;
     }
 
-    public function setPackagingAmount(TypeAmount $packagingAmount): static
+    public function setPackagingAmount(TypeAmountNullable $packagingAmount): static
     {
         $this->packagingAmount = $packagingAmount;
         return $this;
@@ -71,23 +71,23 @@ class MeasureUnit extends Entity
         return $this;
     }
 
-    public function getMeasureAmount(): TypeAmount
+    public function getMeasureAmount(): TypeAmountNullable
     {
         return $this->measureAmount;
     }
 
-    public function setMeasureAmount(TypeAmount $measureAmount): static
+    public function setMeasureAmount(TypeAmountNullable $measureAmount): static
     {
         $this->measureAmount = $measureAmount;
         return $this;
     }
 
-    public function getMeasurePrice(): TypePrice
+    public function getMeasurePrice(): TypePriceNullable
     {
         return $this->measurePrice;
     }
 
-    public function setMeasurePrice(TypePrice $measurePrice): static
+    public function setMeasurePrice(TypePriceNullable $measurePrice): static
     {
         $this->measurePrice = $measurePrice;
         return $this;

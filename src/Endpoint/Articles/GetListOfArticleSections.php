@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\GetListOfArticleSectionsResponse\GetLi
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/getlistofarticlesections
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistofarticlesections
  *
  * @method GetListOfArticleSections setBody(null $entity)
  * @method null getBody()

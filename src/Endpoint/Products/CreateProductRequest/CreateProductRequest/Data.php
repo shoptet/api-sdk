@@ -21,6 +21,7 @@ class Data extends Entity
     protected ?bool $adult;
     protected ?string $shortDescription;
     protected ?string $description;
+    protected ?string $additionalName;
     protected ?string $metaTitle;
     protected ?string $metaDescription;
     protected ?string $conditionGrade;
@@ -28,6 +29,7 @@ class Data extends Entity
     protected TypeGuid $defaultCategoryGuid;
     protected ?string $brandCode;
     protected ?string $internalNote;
+    protected ?bool $preauthorizationRequired;
     protected ?TypeGuid $supplierGuid;
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
@@ -116,6 +118,17 @@ class Data extends Entity
         return $this;
     }
 
+    public function getAdditionalName(): ?string
+    {
+        return $this->additionalName;
+    }
+
+    public function setAdditionalName(?string $additionalName): static
+    {
+        $this->additionalName = $additionalName;
+        return $this;
+    }
+
     public function getMetaTitle(): ?string
     {
         return $this->metaTitle;
@@ -190,6 +203,17 @@ class Data extends Entity
     public function setInternalNote(?string $internalNote): static
     {
         $this->internalNote = $internalNote;
+        return $this;
+    }
+
+    public function getPreauthorizationRequired(): ?bool
+    {
+        return $this->preauthorizationRequired;
+    }
+
+    public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
+    {
+        $this->preauthorizationRequired = $preauthorizationRequired;
         return $this;
     }
 

@@ -3,15 +3,15 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentVatBreakdown\Items;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRate;
 
 class Item extends Entity
 {
     protected TypeVatRate $vatRate;
-    protected TypePrice $priceWithVat;
-    protected TypePrice $priceWithoutVat;
-    protected TypePrice $vat;
+    protected TypePriceNullable $priceWithVat;
+    protected TypePriceNullable $priceWithoutVat;
+    protected TypePriceNullable $vat;
 
     public function getVatRate(): TypeVatRate
     {
@@ -24,34 +24,34 @@ class Item extends Entity
         return $this;
     }
 
-    public function getPriceWithVat(): TypePrice
+    public function getPriceWithVat(): TypePriceNullable
     {
         return $this->priceWithVat;
     }
 
-    public function setPriceWithVat(TypePrice $priceWithVat): static
+    public function setPriceWithVat(TypePriceNullable $priceWithVat): static
     {
         $this->priceWithVat = $priceWithVat;
         return $this;
     }
 
-    public function getPriceWithoutVat(): TypePrice
+    public function getPriceWithoutVat(): TypePriceNullable
     {
         return $this->priceWithoutVat;
     }
 
-    public function setPriceWithoutVat(TypePrice $priceWithoutVat): static
+    public function setPriceWithoutVat(TypePriceNullable $priceWithoutVat): static
     {
         $this->priceWithoutVat = $priceWithoutVat;
         return $this;
     }
 
-    public function getVat(): TypePrice
+    public function getVat(): TypePriceNullable
     {
         return $this->vat;
     }
 
-    public function setVat(TypePrice $vat): static
+    public function setVat(TypePriceNullable $vat): static
     {
         $this->vat = $vat;
         return $this;

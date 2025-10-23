@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\GetDetailOfBrandResponse\GetDetailOfBran
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/getdetailofbrand
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/getdetailofbrand
  *
  * @method GetDetailOfBrand setBody(null $entity)
  * @method null getBody()

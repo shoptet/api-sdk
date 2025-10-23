@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\GetListingOfHtmlCodesResponse\GetListingOfHtmlCodesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Templates/getlistingofhtmlcodes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/getlistingofhtmlcodes
  *
  * @method GetListingOfHtmlCodes setBody(null $entity)
  * @method null getBody()

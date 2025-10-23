@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPostsResponse\Ge
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discussions/getlistofdiscussionposts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/getlistofdiscussionposts
  *
  * @method GetListOfDiscussionPosts setBody(null $entity)
  * @method null getBody()

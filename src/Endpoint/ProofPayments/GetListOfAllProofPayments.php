@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentDetail;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfAllProofPaymentsResponse\GetListOfAllProofPaymentsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlistofallproofpayments
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlistofallproofpayments
  *
  * @method GetListOfAllProofPayments setBody(null $entity)
  * @method null getBody()
@@ -47,6 +47,6 @@ class GetListOfAllProofPayments extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return ProofPaymentDetail::class;
+        return ProofPaymentSnapshot::class;
     }
 }

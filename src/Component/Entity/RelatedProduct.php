@@ -9,6 +9,7 @@ class RelatedProduct extends Entity
     protected TypeGuidUnlimited $guid;
     protected int $priority;
     protected ?string $visibility;
+    protected ?string $linkType;
 
     public function getGuid(): TypeGuidUnlimited
     {
@@ -40,6 +41,17 @@ class RelatedProduct extends Entity
     public function setVisibility(?string $visibility): static
     {
         $this->visibility = $visibility;
+        return $this;
+    }
+
+    public function getLinkType(): ?string
+    {
+        return $this->linkType;
+    }
+
+    public function setLinkType(?string $linkType): static
+    {
+        $this->linkType = $linkType;
         return $this;
     }
 }

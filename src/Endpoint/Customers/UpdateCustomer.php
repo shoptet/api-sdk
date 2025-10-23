@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerResponse\UpdateCustomer
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/updatecustomer
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/updatecustomer
  *
  * @method UpdateCustomer setBody(null|array|UpdateCustomerRequest $entity)
  * @method null|UpdateCustomerRequest getBody()

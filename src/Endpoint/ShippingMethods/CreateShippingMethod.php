@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\Cre
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodResponse\CreateShippingMethodResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Shipping-methods/createshippingmethod
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/createshippingmethod
  *
  * @method CreateShippingMethod setBody(null|array|CreateShippingMethodRequest $entity)
  * @method null|CreateShippingMethodRequest getBody()

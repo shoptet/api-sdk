@@ -3,26 +3,26 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsSetResponse\CreateDiscountCouponsSetResponse\Data\Coupons;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCodeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 
 class Item extends Entity
 {
     protected string $code;
-    protected TypeDateTime $creationTime;
+    protected TypeDateTimeNullable $creationTime;
     protected string $discountType;
-    protected TypePrice $amount;
+    protected TypePriceNullable $amount;
     protected ?TypePriceRatio $ratio;
-    protected TypePrice $minPrice;
-    protected ?TypeCurrencyCode $currency;
+    protected TypePriceNullable $minPrice;
+    protected TypeCurrencyCodeNullable $currency;
     protected TypeGuid $template;
     protected ?string $shippingPrice;
-    protected TypeDate $validFrom;
-    protected TypeDate $validTo;
+    protected TypeDateNullable $validFrom;
+    protected TypeDateNullable $validTo;
     protected bool $reusable;
     protected int $usedCount;
     protected ?string $remark;
@@ -38,12 +38,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -60,12 +60,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): TypePrice
+    public function getAmount(): TypePriceNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypePrice $amount): static
+    public function setAmount(TypePriceNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
@@ -82,23 +82,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinPrice(): TypePrice
+    public function getMinPrice(): TypePriceNullable
     {
         return $this->minPrice;
     }
 
-    public function setMinPrice(TypePrice $minPrice): static
+    public function setMinPrice(TypePriceNullable $minPrice): static
     {
         $this->minPrice = $minPrice;
         return $this;
     }
 
-    public function getCurrency(): ?TypeCurrencyCode
+    public function getCurrency(): TypeCurrencyCodeNullable
     {
         return $this->currency;
     }
 
-    public function setCurrency(?TypeCurrencyCode $currency): static
+    public function setCurrency(TypeCurrencyCodeNullable $currency): static
     {
         $this->currency = $currency;
         return $this;
@@ -126,23 +126,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getValidFrom(): TypeDate
+    public function getValidFrom(): TypeDateNullable
     {
         return $this->validFrom;
     }
 
-    public function setValidFrom(TypeDate $validFrom): static
+    public function setValidFrom(TypeDateNullable $validFrom): static
     {
         $this->validFrom = $validFrom;
         return $this;
     }
 
-    public function getValidTo(): TypeDate
+    public function getValidTo(): TypeDateNullable
     {
         return $this->validTo;
     }
 
-    public function setValidTo(TypeDate $validTo): static
+    public function setValidTo(TypeDateNullable $validTo): static
     {
         $this->validTo = $validTo;
         return $this;

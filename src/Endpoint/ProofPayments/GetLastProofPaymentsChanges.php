@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChangesResponse\GetLastProofPaymentsChangesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlastproofpaymentschanges
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlastproofpaymentschanges
  *
  * @method GetLastProofPaymentsChanges setBody(null $entity)
  * @method null getBody()

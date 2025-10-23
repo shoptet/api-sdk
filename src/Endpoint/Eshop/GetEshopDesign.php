@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDesignResponse\GetEshopDesignResp
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Eshop/geteshopdesign
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopdesign
  *
  * @method GetEshopDesign setBody(null $entity)
  * @method null getBody()

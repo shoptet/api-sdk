@@ -2,7 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 
@@ -13,7 +13,7 @@ class DeliveryNoteItem extends Entity
     protected ?string $name;
     protected ?string $variantName;
     protected ?string $brand;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
     protected ?string $remark;
     protected ?TypeWeight $weight;
@@ -76,12 +76,12 @@ class DeliveryNoteItem extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetListOfStocksResponse\GetListOfStocksResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Stocks/getlistofstocks
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getlistofstocks
  *
  * @method GetListOfStocks setBody(null $entity)
  * @method null getBody()

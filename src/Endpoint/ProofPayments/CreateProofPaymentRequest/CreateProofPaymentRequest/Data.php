@@ -4,19 +4,19 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentRequest\C
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class Data extends Entity
 {
     protected ?string $proformaInvoiceCode;
     protected ?string $orderCode;
-    protected TypePrice $payment;
+    protected TypePriceNullable $payment;
     protected TypeCurrencyCode $currencyCode;
     protected float $varSymbol;
     protected ?TypeDateTimeRequest $issueDate;
-    protected ?TypeDate $taxDate;
+    protected ?TypeDateNullable $taxDate;
     protected ?string $constSymbol;
     protected ?float $specSymbol;
     protected ?int $invoiceBillingMethodId;
@@ -47,12 +47,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getPayment(): TypePrice
+    public function getPayment(): TypePriceNullable
     {
         return $this->payment;
     }
 
-    public function setPayment(TypePrice $payment): static
+    public function setPayment(TypePriceNullable $payment): static
     {
         $this->payment = $payment;
         return $this;
@@ -91,12 +91,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getTaxDate(): ?TypeDate
+    public function getTaxDate(): ?TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(?TypeDate $taxDate): static
+    public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsResponse\GetListOfShippingMethodsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Shipping-methods/getlistofshippingmethods
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/getlistofshippingmethods
  *
  * @method GetListOfShippingMethods setBody(null $entity)
  * @method null getBody()

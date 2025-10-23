@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertionResponse\OrderBatchIn
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/orderbatchinsertion
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/orderbatchinsertion
  *
  * @method OrderBatchInsertion setBody(null|array|OrderBatchInsertionRequest $entity)
  * @method null|OrderBatchInsertionRequest getBody()

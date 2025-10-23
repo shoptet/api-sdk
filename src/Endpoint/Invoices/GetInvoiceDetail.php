@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetInvoiceDetailResponse\GetInvoiceDetailResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Invoices/getinvoicedetail
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getinvoicedetail
  *
  * @method GetInvoiceDetail setBody(null $entity)
  * @method null getBody()

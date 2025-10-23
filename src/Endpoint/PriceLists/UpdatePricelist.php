@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePriceli
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistResponse\UpdatePricelistResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/updatepricelist
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/updatepricelist
  *
  * @method UpdatePricelist setBody(null|array|UpdatePricelistRequest $entity)
  * @method null|UpdatePricelistRequest getBody()

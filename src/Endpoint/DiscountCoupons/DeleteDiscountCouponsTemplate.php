@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\DeleteDiscountCouponsTemplateResponse\DeleteDiscountCouponsTemplateResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/deletediscountcouponstemplate
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/deletediscountcouponstemplate
  *
  * @method DeleteDiscountCouponsTemplate setBody(null $entity)
  * @method null getBody()

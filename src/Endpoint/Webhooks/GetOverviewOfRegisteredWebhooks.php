@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetOverviewOfRegisteredWebhooksResponse\GetOverviewOfRegisteredWebhooksResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/getoverviewofregisteredwebhooks
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/getoverviewofregisteredwebhooks
  *
  * @method GetOverviewOfRegisteredWebhooks setBody(null $entity)
  * @method null getBody()

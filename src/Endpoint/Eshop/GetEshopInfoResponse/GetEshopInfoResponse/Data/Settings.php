@@ -13,14 +13,16 @@ class Settings extends Entity
     protected int $maxProductAmount;
     protected int $maxEmailAmount;
     protected Pricelist $defaultPricelist;
-    protected string $eshopLanguage;
+    protected ?string $eshopLanguage;
     protected string $timezone;
     protected string $dateFormat;
     protected string $timeFormat;
     protected string $internals;
     protected bool $exchangeRateFlip;
     protected string $negativeStockAmount;
-    protected ?bool $oss;
+    protected bool $oss;
+    protected bool $stockControlDisabled;
+    protected bool $wholesaleSplitActive;
 
     public function isVatPayer(): bool
     {
@@ -88,12 +90,12 @@ class Settings extends Entity
         return $this;
     }
 
-    public function getEshopLanguage(): string
+    public function getEshopLanguage(): ?string
     {
         return $this->eshopLanguage;
     }
 
-    public function setEshopLanguage(string $eshopLanguage): static
+    public function setEshopLanguage(?string $eshopLanguage): static
     {
         $this->eshopLanguage = $eshopLanguage;
         return $this;
@@ -165,14 +167,36 @@ class Settings extends Entity
         return $this;
     }
 
-    public function getOss(): ?bool
+    public function isOss(): bool
     {
         return $this->oss;
     }
 
-    public function setOss(?bool $oss): static
+    public function setOss(bool $oss): static
     {
         $this->oss = $oss;
+        return $this;
+    }
+
+    public function isStockControlDisabled(): bool
+    {
+        return $this->stockControlDisabled;
+    }
+
+    public function setStockControlDisabled(bool $stockControlDisabled): static
+    {
+        $this->stockControlDisabled = $stockControlDisabled;
+        return $this;
+    }
+
+    public function isWholesaleSplitActive(): bool
+    {
+        return $this->wholesaleSplitActive;
+    }
+
+    public function setWholesaleSplitActive(bool $wholesaleSplitActive): static
+    {
+        $this->wholesaleSplitActive = $wholesaleSplitActive;
         return $this;
     }
 }

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChangesResponse\GetLas
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/getlastcustomerchanges
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlastcustomerchanges
  *
  * @method GetLastCustomerChanges setBody(null $entity)
  * @method null getBody()

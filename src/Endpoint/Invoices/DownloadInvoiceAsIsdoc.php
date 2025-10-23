@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Invoices/downloadinvoiceasisdoc
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/downloadinvoiceasisdoc
  *
  * @method DownloadInvoiceAsIsdoc setBody(null $entity)
  * @method null getBody()

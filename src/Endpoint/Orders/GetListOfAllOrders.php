@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\Order;
+use Shoptet\Api\Sdk\Php\Component\Entity\OrderSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfAllOrdersResponse\GetListOfAllOrdersResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/getlistofallorders
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistofallorders
  *
  * @method GetListOfAllOrders setBody(null $entity)
  * @method null getBody()
@@ -20,6 +20,7 @@ class GetListOfAllOrders extends Get implements SnapshotEndpoint
     protected array $supportedQueryParams = [
         'language' => false,
         'include' => false,
+        'orderCodes' => false,
         'statusId' => false,
         'shippingGuid' => false,
         'shippingCompanyCode' => false,
@@ -54,6 +55,6 @@ class GetListOfAllOrders extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return Order::class;
+        return OrderSnapshot::class;
     }
 }

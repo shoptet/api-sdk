@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetailResponse\GetProformaInvoiceDetailResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getproformainvoicedetail
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getproformainvoicedetail
  *
  * @method GetProformaInvoiceDetail setBody(null $entity)
  * @method null getBody()

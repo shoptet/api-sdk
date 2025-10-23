@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\GetDetailOfArticleResponse\GetDetailOf
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/getdetailofarticle
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getdetailofarticle
  *
  * @method GetDetailOfArticle setBody(null $entity)
  * @method null getBody()

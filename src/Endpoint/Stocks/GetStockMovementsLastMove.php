@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovementsLastMoveResponse\GetStockMovementsLastMoveResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Stocks/getstockmovementslastmove
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getstockmovementslastmove
  *
  * @method GetStockMovementsLastMove setBody(null $entity)
  * @method null getBody()

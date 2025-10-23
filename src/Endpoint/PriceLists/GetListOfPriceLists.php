@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceListsResponse\GetListOfPriceListsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/getlistofpricelists
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getlistofpricelists
  *
  * @method GetListOfPriceLists setBody(null $entity)
  * @method null getBody()

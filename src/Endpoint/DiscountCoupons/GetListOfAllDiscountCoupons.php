@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\DiscountCoupon;
+use Shoptet\Api\Sdk\Php\Component\Entity\DiscountCouponSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfAllDiscountCouponsResponse\GetListOfAllDiscountCouponsResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/getlistofalldiscountcoupons
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getlistofalldiscountcoupons
  *
  * @method GetListOfAllDiscountCoupons setBody(null $entity)
  * @method null getBody()
@@ -49,6 +49,6 @@ class GetListOfAllDiscountCoupons extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return DiscountCoupon::class;
+        return DiscountCouponSnapshot::class;
     }
 }

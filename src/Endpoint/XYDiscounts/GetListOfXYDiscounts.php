@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\GetListOfXYDiscountsResponse\GetListOfXYDiscountsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/XY-discounts/getlistofxydiscounts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/getlistofxydiscounts
  *
  * @method GetListOfXYDiscounts setBody(null $entity)
  * @method null getBody()

@@ -16,8 +16,8 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Product\SetItems;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\SurchargeParameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Warranty;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Product extends Entity
@@ -25,11 +25,12 @@ class Product extends Entity
     protected TypeGuidUnlimited $guid;
     protected string $type;
     protected ?string $name;
+    protected ?string $indexName;
     protected ?BrandNamed $brand;
     protected ?Supplier $supplier;
     protected string $visibility;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?string $shortDescription;
     protected ?string $description;
     protected ?string $metaDescription;
@@ -37,6 +38,7 @@ class Product extends Entity
     protected ?string $conditionGrade;
     protected ?string $conditionDescription;
     protected ?string $internalNote;
+    protected ?bool $preauthorizationRequired;
     protected DefaultCategory $defaultCategory;
     protected ?Categories $categories;
     protected ?DescriptiveParameters $descriptiveParameters;
@@ -53,7 +55,7 @@ class Product extends Entity
     protected ?bool $allowIPlatba;
     protected ?bool $allowOnlinePayments;
     protected ?string $sizeIdName;
-    protected ?TypeAmount $voteAverageScore;
+    protected ?TypeAmountNullable $voteAverageScore;
     protected ?int $voteCount;
     protected ?bool $isVariant;
     protected Variants $variants;
@@ -102,6 +104,17 @@ class Product extends Entity
         return $this;
     }
 
+    public function getIndexName(): ?string
+    {
+        return $this->indexName;
+    }
+
+    public function setIndexName(?string $indexName): static
+    {
+        $this->indexName = $indexName;
+        return $this;
+    }
+
     public function getBrand(): ?BrandNamed
     {
         return $this->brand;
@@ -135,23 +148,23 @@ class Product extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -231,6 +244,17 @@ class Product extends Entity
     public function setInternalNote(?string $internalNote): static
     {
         $this->internalNote = $internalNote;
+        return $this;
+    }
+
+    public function getPreauthorizationRequired(): ?bool
+    {
+        return $this->preauthorizationRequired;
+    }
+
+    public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
+    {
+        $this->preauthorizationRequired = $preauthorizationRequired;
         return $this;
     }
 
@@ -378,12 +402,12 @@ class Product extends Entity
         return $this;
     }
 
-    public function getVoteAverageScore(): ?TypeAmount
+    public function getVoteAverageScore(): ?TypeAmountNullable
     {
         return $this->voteAverageScore;
     }
 
-    public function setVoteAverageScore(?TypeAmount $voteAverageScore): static
+    public function setVoteAverageScore(?TypeAmountNullable $voteAverageScore): static
     {
         $this->voteAverageScore = $voteAverageScore;
         return $this;

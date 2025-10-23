@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfDeliveryNotesResponse\Ge
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getlistofdeliverynotes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getlistofdeliverynotes
  *
  * @method GetListOfDeliveryNotes setBody(null $entity)
  * @method null getBody()

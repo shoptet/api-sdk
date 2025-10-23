@@ -20,6 +20,7 @@ class Item extends Entity
     protected bool $wholesale;
     protected bool $tableLayout;
     protected bool $fullProfileRequired;
+    protected ?int $defaultDueDays;
 
     public function getId(): int
     {
@@ -161,6 +162,17 @@ class Item extends Entity
     public function setFullProfileRequired(bool $fullProfileRequired): static
     {
         $this->fullProfileRequired = $fullProfileRequired;
+        return $this;
+    }
+
+    public function getDefaultDueDays(): ?int
+    {
+        return $this->defaultDueDays;
+    }
+
+    public function setDefaultDueDays(?int $defaultDueDays): static
+    {
+        $this->defaultDueDays = $defaultDueDays;
         return $this;
     }
 }

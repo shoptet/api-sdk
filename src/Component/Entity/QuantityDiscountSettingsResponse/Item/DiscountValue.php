@@ -3,17 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\QuantityDiscountSettingsResponse\Item;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 
 class DiscountValue extends Entity
 {
-    protected float $priceRatio;
+    protected TypePriceRatio $priceRatio;
 
-    public function getPriceRatio(): float
+    public function getPriceRatio(): TypePriceRatio
     {
         return $this->priceRatio;
     }
 
-    public function setPriceRatio(float $priceRatio): static
+    public function setPriceRatio(TypePriceRatio $priceRatio): static
     {
         $this->priceRatio = $priceRatio;
         return $this;

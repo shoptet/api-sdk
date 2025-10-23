@@ -6,9 +6,21 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Item extends Entity
 {
+    protected int $id;
     protected ?string $name;
     protected string $url;
     protected ?int $size;
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+        return $this;
+    }
 
     public function getName(): ?string
     {

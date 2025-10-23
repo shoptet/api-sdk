@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetListOfProofPaymentsResponse\GetListOfProofPaymentsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/getlistofproofpayments
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getlistofproofpayments
  *
  * @method GetListOfProofPayments setBody(null $entity)
  * @method null getBody()

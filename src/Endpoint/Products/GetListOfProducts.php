@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetListOfProductsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/getlistofproducts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlistofproducts
  *
  * @method GetListOfProducts setBody(null $entity)
  * @method null getBody()
@@ -19,6 +19,8 @@ class GetListOfProducts extends PageableGet
         'language' => false,
         'page' => false,
         'itemsPerPage' => false,
+        'availabilityId' => false,
+        'availabilityWhenSoldOutId' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'visibility' => false,
@@ -29,6 +31,8 @@ class GetListOfProducts extends PageableGet
         'categoryGuid' => false,
         'flag' => false,
         'include' => false,
+        'productCodes' => false,
+        'productGuids' => false,
         'supplierGuid' => false,
         'changeTimeFrom' => false,
         'changeTimeTo' => false,

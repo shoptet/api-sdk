@@ -6,8 +6,8 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Customer\Accounts;
 use Shoptet\Api\Sdk\Php\Component\Entity\Customer\CustomerGroup;
 use Shoptet\Api\Sdk\Php\Component\Entity\Customer\DeliveryAddress;
 use Shoptet\Api\Sdk\Php\Component\Entity\Customer\Remarks;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 
@@ -16,13 +16,13 @@ class Customer extends Entity
     protected TypeGuidUnlimited $guid;
     protected BillingAddress $billingAddress;
     protected DeliveryAddress $deliveryAddress;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?CustomerGroup $customerGroup;
     protected ?Pricelist $priceList;
     protected ?string $remark;
     protected TypePriceRatio $priceRatio;
-    protected TypeDate $birthDate;
+    protected TypeDateNullable $birthDate;
     protected Accounts $accounts;
     protected bool $disabledOrders;
     protected Remarks $remarks;
@@ -61,23 +61,23 @@ class Customer extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -127,12 +127,12 @@ class Customer extends Entity
         return $this;
     }
 
-    public function getBirthDate(): TypeDate
+    public function getBirthDate(): TypeDateNullable
     {
         return $this->birthDate;
     }
 
-    public function setBirthDate(TypeDate $birthDate): static
+    public function setBirthDate(TypeDateNullable $birthDate): static
     {
         $this->birthDate = $birthDate;
         return $this;

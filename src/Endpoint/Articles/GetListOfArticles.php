@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\GetListOfArticlesResponse\GetListOfArt
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/getlistofarticles
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistofarticles
  *
  * @method GetListOfArticles setBody(null $entity)
  * @method null getBody()

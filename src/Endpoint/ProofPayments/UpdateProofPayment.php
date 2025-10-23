@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\UpdateProofPaymentRequest\UpdateP
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\UpdateProofPaymentResponse\UpdateProofPaymentResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/updateproofpayment
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/updateproofpayment
  *
  * @method UpdateProofPayment setBody(null|array|UpdateProofPaymentRequest $entity)
  * @method null|UpdateProofPaymentRequest getBody()

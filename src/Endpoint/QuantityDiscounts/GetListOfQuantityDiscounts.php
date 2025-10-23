@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\GetListOfQuantityDiscountsResponse\GetListOfQuantityDiscountsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/getlistofquantitydiscounts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/getlistofquantitydiscounts
  *
  * @method GetListOfQuantityDiscounts setBody(null $entity)
  * @method null getBody()

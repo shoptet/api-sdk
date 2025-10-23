@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetLastInvoiceChangesResponse\GetLastI
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Invoices/getlastinvoicechanges
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getlastinvoicechanges
  *
  * @method GetLastInvoiceChanges setBody(null $entity)
  * @method null getBody()

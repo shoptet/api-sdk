@@ -3,10 +3,11 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersResponse\Data\Orders;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\OrderPreAuthorization;
 use Shoptet\Api\Sdk\Php\Component\Entity\PaymentMethod;
 use Shoptet\Api\Sdk\Php\Component\Entity\Price;
 use Shoptet\Api\Sdk\Php\Component\Entity\Shipping;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersResponse\Data\Orders\Item\Source;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersResponse\Data\Orders\Item\Status;
@@ -15,8 +16,8 @@ class Item extends Entity
 {
     protected string $code;
     protected string $guid;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?string $fullName;
     protected ?string $company;
     protected ?string $email;
@@ -27,10 +28,11 @@ class Item extends Entity
     protected string $adminUrl;
     protected ?Status $status;
     protected ?Source $source;
-    protected ?Shipping $shipping;
+    protected Shipping $shipping;
     protected ?PaymentMethod $paymentMethod;
     protected Price $price;
     protected ?bool $paid;
+    protected ?OrderPreAuthorization $preAuthorization;
 
     public function getCode(): string
     {
@@ -54,23 +56,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -186,12 +188,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getShipping(): ?Shipping
+    public function getShipping(): Shipping
     {
         return $this->shipping;
     }
 
-    public function setShipping(?Shipping $shipping): static
+    public function setShipping(Shipping $shipping): static
     {
         $this->shipping = $shipping;
         return $this;
@@ -227,6 +229,17 @@ class Item extends Entity
     public function setPaid(?bool $paid): static
     {
         $this->paid = $paid;
+        return $this;
+    }
+
+    public function getPreAuthorization(): ?OrderPreAuthorization
+    {
+        return $this->preAuthorization;
+    }
+
+    public function setPreAuthorization(?OrderPreAuthorization $preAuthorization): static
+    {
+        $this->preAuthorization = $preAuthorization;
         return $this;
     }
 }

@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\PricelistDetail;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetailsResponse\GetListOfAllPricelistDetailsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/getlistofallpricelistdetails
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getlistofallpricelistdetails
  *
  * @method GetListOfAllPricelistDetails setBody(null $entity)
  * @method null getBody()
@@ -50,6 +50,6 @@ class GetListOfAllPricelistDetails extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return PricelistDetail::class;
+        return PricelistSnapshot::class;
     }
 }

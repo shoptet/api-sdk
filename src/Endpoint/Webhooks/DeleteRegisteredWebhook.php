@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\DeleteRegisteredWebhookResponse\DeleteRegisteredWebhookResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/deleteregisteredwebhook
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/deleteregisteredwebhook
  *
  * @method DeleteRegisteredWebhook setBody(null $entity)
  * @method null getBody()

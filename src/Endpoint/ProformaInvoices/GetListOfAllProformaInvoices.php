@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\ProformaInvoice;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProformaInvoiceSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfAllProformaInvoicesResponse\GetListOfAllProformaInvoicesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlistofallproformainvoices
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlistofallproformainvoices
  *
  * @method GetListOfAllProformaInvoices setBody(null $entity)
  * @method null getBody()
@@ -50,6 +50,6 @@ class GetListOfAllProformaInvoices extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return ProformaInvoice::class;
+        return ProformaInvoiceSnapshot::class;
     }
 }

@@ -4,19 +4,19 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelistResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelistResponse\CreatePricelistResponse\Data;
+use Shoptet\Api\Sdk\Php\Component\Entity\Pricelist;
 
 class CreatePricelistResponse extends Entity
 {
-    protected ?Data $data;
+    protected ?Pricelist $data;
     protected ?Errors $errors;
 
-    public function getData(): ?Data
+    public function getData(): ?Pricelist
     {
         return $this->data;
     }
 
-    public function setData(?Data $data): static
+    public function setData(?Pricelist $data): static
     {
         $this->data = $data;
         return $this;

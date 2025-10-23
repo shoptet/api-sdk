@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/downloadproofofpaymentpdf
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/downloadproofofpaymentpdf
  *
  * @method DownloadProofOfPaymentPdf setBody(null $entity)
  * @method null getBody()

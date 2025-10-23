@@ -8,7 +8,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdateRequest\ProductBatch
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdateResponse\ProductBatchUpdateResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/productbatchupdate
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productbatchupdate
  *
  * @method ProductBatchUpdate setBody(null|array|ProductBatchUpdateRequest $entity)
  * @method null|ProductBatchUpdateRequest getBody()

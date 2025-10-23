@@ -2,7 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class ArticleList extends Entity
 {
@@ -11,7 +11,7 @@ class ArticleList extends Entity
     protected ?float $sectionId;
     protected string $title;
     protected ?string $url;
-    protected TypeDateTime $publishDate;
+    protected TypeDateTimeNullable $publishDate;
     protected bool $visible;
     protected ?string $image;
 
@@ -70,12 +70,12 @@ class ArticleList extends Entity
         return $this;
     }
 
-    public function getPublishDate(): TypeDateTime
+    public function getPublishDate(): TypeDateTimeNullable
     {
         return $this->publishDate;
     }
 
-    public function setPublishDate(TypeDateTime $publishDate): static
+    public function setPublishDate(TypeDateTimeNullable $publishDate): static
     {
         $this->publishDate = $publishDate;
         return $this;

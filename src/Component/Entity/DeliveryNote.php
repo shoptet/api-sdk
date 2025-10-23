@@ -3,17 +3,17 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\DeliveryNote\Items;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class DeliveryNote extends Entity
 {
     protected string $code;
     protected bool $isValid;
     protected ?string $orderCode;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected BillingAddress $billingAddress;
-    protected ?Address $deliveryAddress;
+    protected Address $deliveryAddress;
     protected bool $addressesEqual;
     protected DocumentCustomer $customer;
     protected Items $items;
@@ -52,23 +52,23 @@ class DeliveryNote extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -85,12 +85,12 @@ class DeliveryNote extends Entity
         return $this;
     }
 
-    public function getDeliveryAddress(): ?Address
+    public function getDeliveryAddress(): Address
     {
         return $this->deliveryAddress;
     }
 
-    public function setDeliveryAddress(?Address $deliveryAddress): static
+    public function setDeliveryAddress(Address $deliveryAddress): static
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;

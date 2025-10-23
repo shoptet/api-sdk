@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\GetListofBrandsResponse\GetListofBrandsR
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/getlistofbrands
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/getlistofbrands
  *
  * @method GetListofBrands setBody(null $entity)
  * @method null getBody()

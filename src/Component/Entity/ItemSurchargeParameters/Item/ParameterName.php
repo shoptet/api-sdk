@@ -8,6 +8,7 @@ class ParameterName extends Entity
 {
     protected ?string $code;
     protected ?string $name;
+    protected ?bool $subscription;
 
     public function getCode(): ?string
     {
@@ -28,6 +29,17 @@ class ParameterName extends Entity
     public function setName(?string $name): static
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getSubscription(): ?bool
+    {
+        return $this->subscription;
+    }
+
+    public function setSubscription(?bool $subscription): static
+    {
+        $this->subscription = $subscription;
         return $this;
     }
 }

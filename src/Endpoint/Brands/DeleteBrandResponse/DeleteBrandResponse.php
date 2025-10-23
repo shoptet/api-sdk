@@ -4,18 +4,19 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Brands\DeleteBrandResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
+use Shoptet\Api\Sdk\Php\Endpoint\Brands\DeleteBrandResponse\DeleteBrandResponse\Data;
 
 class DeleteBrandResponse extends Entity
 {
-    protected null $data;
+    protected ?Data $data;
     protected ?Errors $errors;
 
-    public function getData(): null
+    public function getData(): ?Data
     {
         return $this->data;
     }
 
-    public function setData(null $data): static
+    public function setData(?Data $data): static
     {
         $this->data = $data;
         return $this;

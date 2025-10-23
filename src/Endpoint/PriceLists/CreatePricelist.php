@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelistRequest\CreatePriceli
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelistResponse\CreatePricelistResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Price-lists/createpricelist
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/createpricelist
  *
  * @method CreatePricelist setBody(null|array|CreatePricelistRequest $entity)
  * @method null|CreatePricelistRequest getBody()

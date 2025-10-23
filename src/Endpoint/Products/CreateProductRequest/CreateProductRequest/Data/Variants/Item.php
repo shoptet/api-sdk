@@ -6,15 +6,17 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\MeasureUnit;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDimension;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVariantCodeRequest;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\OssVatLevels;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\StocksLocations;
 
 class Item extends Entity
 {
-    protected ?string $code;
+    protected ?TypeVariantCodeRequest $code;
     protected ?string $ean;
     protected ?int $unitId;
     protected ?TypeWeightRequest $weight;
@@ -32,7 +34,7 @@ class Item extends Entity
     protected ?float $availabilityId;
     protected ?float $availabilityWhenSoldOutId;
     protected ?Parameters $parameters;
-    protected ?TypePositiveAmount $minStockSupply;
+    protected ?TypePositiveAmountNullable $minStockSupply;
     protected ?StocksLocations $stocksLocations;
     protected ?bool $negativeStockAllowed;
     protected ?MeasureUnit $measureUnit;
@@ -41,13 +43,14 @@ class Item extends Entity
     protected ?int $amountDecimalPlaces;
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
+    protected ?OssVatLevels $ossVatLevels;
 
-    public function getCode(): ?string
+    public function getCode(): ?TypeVariantCodeRequest
     {
         return $this->code;
     }
 
-    public function setCode(?string $code): static
+    public function setCode(?TypeVariantCodeRequest $code): static
     {
         $this->code = $code;
         return $this;
@@ -240,12 +243,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getMinStockSupply(): ?TypePositiveAmount
+    public function getMinStockSupply(): ?TypePositiveAmountNullable
     {
         return $this->minStockSupply;
     }
 
-    public function setMinStockSupply(?TypePositiveAmount $minStockSupply): static
+    public function setMinStockSupply(?TypePositiveAmountNullable $minStockSupply): static
     {
         $this->minStockSupply = $minStockSupply;
         return $this;
@@ -336,6 +339,17 @@ class Item extends Entity
     public function setAtypicalShipping(?bool $atypicalShipping): static
     {
         $this->atypicalShipping = $atypicalShipping;
+        return $this;
+    }
+
+    public function getOssVatLevels(): ?OssVatLevels
+    {
+        return $this->ossVatLevels;
+    }
+
+    public function setOssVatLevels(?OssVatLevels $ossVatLevels): static
+    {
+        $this->ossVatLevels = $ossVatLevels;
         return $this;
     }
 }

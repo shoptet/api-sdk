@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\RestockCreditNoteResponse\RestockCr
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/restockcreditnote
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/restockcreditnote
  *
  * @method RestockCreditNote setBody(null $entity)
  * @method null getBody()

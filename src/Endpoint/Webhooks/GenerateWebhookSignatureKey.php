@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GenerateWebhookSignatureKeyResponse\GenerateWebhookSignatureKeyResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/generatewebhooksignaturekey
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/generatewebhooksignaturekey
  *
  * @method GenerateWebhookSignatureKey setBody(null $entity)
  * @method null getBody()

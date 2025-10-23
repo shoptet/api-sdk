@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForCar
 use Shoptet\Api\Sdk\Php\Component\Entity\BrandNamed;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 
 class Item extends Entity
@@ -17,7 +17,7 @@ class Item extends Entity
     protected string $variantName;
     protected ?BrandNamed $brand;
     protected TypeWeight $weight;
-    protected TypePositiveAmount $amount;
+    protected TypePositiveAmountNullable $amount;
     protected ?string $amountUnit;
 
     public function getProductGuid(): TypeGuidUnlimited
@@ -97,12 +97,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): TypePositiveAmount
+    public function getAmount(): TypePositiveAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypePositiveAmount $amount): static
+    public function setAmount(TypePositiveAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequ
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductResponse\CreateProductResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/createproduct
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/createproduct
  *
  * @method CreateProduct setBody(null|array|CreateProductRequest $entity)
  * @method null|CreateProductRequest getBody()

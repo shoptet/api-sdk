@@ -3,43 +3,43 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class ActionPrice extends Entity
 {
-    protected ?TypePrice $price;
-    protected ?TypeDate $fromDate;
-    protected ?TypeDate $toDate;
+    protected ?TypePriceNullable $price;
+    protected ?TypeDateNullable $fromDate;
+    protected ?TypeDateNullable $toDate;
 
-    public function getPrice(): ?TypePrice
+    public function getPrice(): ?TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(?TypePrice $price): static
+    public function setPrice(?TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;
     }
 
-    public function getFromDate(): ?TypeDate
+    public function getFromDate(): ?TypeDateNullable
     {
         return $this->fromDate;
     }
 
-    public function setFromDate(?TypeDate $fromDate): static
+    public function setFromDate(?TypeDateNullable $fromDate): static
     {
         $this->fromDate = $fromDate;
         return $this;
     }
 
-    public function getToDate(): ?TypeDate
+    public function getToDate(): ?TypeDateNullable
     {
         return $this->toDate;
     }
 
-    public function setToDate(?TypeDate $toDate): static
+    public function setToDate(?TypeDateNullable $toDate): static
     {
         $this->toDate = $toDate;
         return $this;

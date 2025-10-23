@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Delivery-notes/downloaddeliverynoteaspdf
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/downloaddeliverynoteaspdf
  *
  * @method DownloadDeliveryNoteAsPdf setBody(null $entity)
  * @method null getBody()

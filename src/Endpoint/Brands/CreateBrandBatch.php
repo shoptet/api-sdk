@@ -8,7 +8,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrandBatchResponse\CreateBrandBatc
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/createbrandbatch
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrandbatch
  *
  * @method CreateBrandBatch setBody(null|array|CreateBrandBatchRequest $entity)
  * @method null|CreateBrandBatchRequest getBody()
