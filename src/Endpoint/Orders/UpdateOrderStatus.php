@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderStatusResponse\UpdateOrderSta
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/updateorderstatus
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/updateorderstatus
  *
  * @method UpdateOrderStatus setBody(null|array|UpdateOrderStatusRequest $entity)
  * @method null|UpdateOrderStatusRequest getBody()

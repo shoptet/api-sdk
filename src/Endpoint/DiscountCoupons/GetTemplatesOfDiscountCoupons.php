@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCouponsRe
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/gettemplatesofdiscountcoupons
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/gettemplatesofdiscountcoupons
  *
  * @method GetTemplatesOfDiscountCoupons setBody(null $entity)
  * @method null getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNoteResponse\G
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Delivery-notes/getdetailofdeliverynote
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/getdetailofdeliverynote
  *
  * @method GetDetailOfDeliveryNote setBody(null $entity)
  * @method null getBody()

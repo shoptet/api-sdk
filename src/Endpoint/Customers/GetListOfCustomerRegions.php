@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRegionsResponse\GetL
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomerregions
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomerregions
  *
  * @method GetListOfCustomerRegions setBody(null $entity)
  * @method null getBody()

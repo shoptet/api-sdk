@@ -2,13 +2,13 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class NotificationData extends Entity
 {
     protected int $eshopId;
     protected string $event;
-    protected TypeDateTime $eventCreated;
+    protected TypeDateTimeNullable $eventCreated;
     protected string $eventInstance;
 
     public function getEshopId(): int
@@ -33,12 +33,12 @@ class NotificationData extends Entity
         return $this;
     }
 
-    public function getEventCreated(): TypeDateTime
+    public function getEventCreated(): TypeDateTimeNullable
     {
         return $this->eventCreated;
     }
 
-    public function setEventCreated(TypeDateTime $eventCreated): static
+    public function setEventCreated(TypeDateTimeNullable $eventCreated): static
     {
         $this->eventCreated = $eventCreated;
         return $this;

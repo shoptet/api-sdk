@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFilesResponse\GetListOfU
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Files/getlistofuploadedfiles
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/getlistofuploadedfiles
  *
  * @method GetListOfUploadedFiles setBody(null $entity)
  * @method null getBody()

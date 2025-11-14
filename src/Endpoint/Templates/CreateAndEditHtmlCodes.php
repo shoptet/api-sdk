@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Templates\CreateAndEditHtmlCodesRequest\CreateA
 use Shoptet\Api\Sdk\Php\Endpoint\Templates\CreateAndEditHtmlCodesResponse\CreateAndEditHtmlCodesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Templates/createandedithtmlcodes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Templates/createandedithtmlcodes
  *
  * @method CreateAndEditHtmlCodes setBody(null|array|CreateAndEditHtmlCodesRequest $entity)
  * @method null|CreateAndEditHtmlCodesRequest getBody()

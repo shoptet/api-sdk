@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\GetListOfCreditNotesResponse\GetLis
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlistofcreditnotes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlistofcreditnotes
  *
  * @method GetListOfCreditNotes setBody(null $entity)
  * @method null getBody()

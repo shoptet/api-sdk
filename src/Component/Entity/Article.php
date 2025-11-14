@@ -4,7 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Article\SectionIds;
 use Shoptet\Api\Sdk\Php\Component\Entity\Article\Urls;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Article extends Entity
 {
@@ -12,7 +12,7 @@ class Article extends Entity
     protected ?float $defaultSectionId;
     protected ?SectionIds $sectionIds;
     protected string $title;
-    protected string $language;
+    protected ?string $language;
     protected ?string $indexName;
     protected ?string $url;
     protected ?Urls $urls;
@@ -23,8 +23,8 @@ class Article extends Entity
     /** @deprecated */
     protected ?string $metaKeywords;
     protected ?string $metaDescription;
-    protected TypeDateTime $publishDate;
-    protected TypeDateTime $changeDate;
+    protected TypeDateTimeNullable $publishDate;
+    protected TypeDateTimeNullable $changeDate;
     protected bool $visible;
     protected string $access;
     protected ?string $image;
@@ -74,12 +74,12 @@ class Article extends Entity
         return $this;
     }
 
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): static
+    public function setLanguage(?string $language): static
     {
         $this->language = $language;
         return $this;
@@ -179,23 +179,23 @@ class Article extends Entity
         return $this;
     }
 
-    public function getPublishDate(): TypeDateTime
+    public function getPublishDate(): TypeDateTimeNullable
     {
         return $this->publishDate;
     }
 
-    public function setPublishDate(TypeDateTime $publishDate): static
+    public function setPublishDate(TypeDateTimeNullable $publishDate): static
     {
         $this->publishDate = $publishDate;
         return $this;
     }
 
-    public function getChangeDate(): TypeDateTime
+    public function getChangeDate(): TypeDateTimeNullable
     {
         return $this->changeDate;
     }
 
-    public function setChangeDate(TypeDateTime $changeDate): static
+    public function setChangeDate(TypeDateTimeNullable $changeDate): static
     {
         $this->changeDate = $changeDate;
         return $this;

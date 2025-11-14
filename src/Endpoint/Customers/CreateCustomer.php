@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerResponse\CreateCustomer
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/createcustomer
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/createcustomer
  *
  * @method CreateCustomer setBody(null|array|CreateCustomerRequest $entity)
  * @method null|CreateCustomerRequest getBody()
@@ -15,7 +15,12 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 class CreateCustomer extends Post
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false, 'suppressMandatoryFieldsCheck' => false];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'suppressMandatoryFieldsCheck' => false,
+        'sendRegistrationEmail' => false,
+    ];
 
     public function getRequestEntityClass(): string
     {

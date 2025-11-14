@@ -7,8 +7,11 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 readonly class TypeWeightUnlimited implements ValueObjectInterface
 {
     public function __construct(
-        public string $typeWeightUnlimited,
+        public ?string $typeWeightUnlimited,
     ) {
+        if ($this->typeWeightUnlimited === null) {
+            return;
+        }
         if (!preg_match('/^[0-9]+\.[0-9]{3}$/', $this->typeWeightUnlimited)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeWeightUnlimited', $this->typeWeightUnlimited));
         }

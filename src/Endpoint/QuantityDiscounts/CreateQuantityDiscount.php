@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\CreateQuantityDiscountRequest
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\CreateQuantityDiscountResponse\CreateQuantityDiscountResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/createquantitydiscount
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/createquantitydiscount
  *
  * @method CreateQuantityDiscount setBody(null|array|CreateQuantityDiscountRequest $entity)
  * @method null|CreateQuantityDiscountRequest getBody()

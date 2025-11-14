@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerResponse\DeleteCustomer
 use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/deletecustomer
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/deletecustomer
  *
  * @method DeleteCustomer setBody(null $entity)
  * @method null getBody()

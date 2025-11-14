@@ -4,15 +4,15 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\Cr
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbol;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\CreateInvoiceFromOrderRequest\Data\ProofPaymentCodes;
 
 class Data extends Entity
 {
     protected ?string $invoiceCode;
     protected ?float $varSymbol;
-    protected ?TypeDate $dueDate;
-    protected ?TypeDate $taxDate;
+    protected ?TypeDateNullable $dueDate;
+    protected ?TypeDateNullable $taxDate;
     protected ?TypeConstSymbol $constSymbol;
     protected ?float $specSymbol;
     protected ?float $billingMethodId;
@@ -41,23 +41,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getDueDate(): ?TypeDate
+    public function getDueDate(): ?TypeDateNullable
     {
         return $this->dueDate;
     }
 
-    public function setDueDate(?TypeDate $dueDate): static
+    public function setDueDate(?TypeDateNullable $dueDate): static
     {
         $this->dueDate = $dueDate;
         return $this;
     }
 
-    public function getTaxDate(): ?TypeDate
+    public function getTaxDate(): ?TypeDateNullable
     {
         return $this->taxDate;
     }
 
-    public function setTaxDate(?TypeDate $taxDate): static
+    public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
         return $this;

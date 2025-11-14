@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity\OrderItem;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class MainImage extends Entity
 {
@@ -12,7 +12,7 @@ class MainImage extends Entity
     protected string $cdnName;
     protected float $priority;
     protected ?string $description;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $changeTime;
 
     public function getName(): string
     {
@@ -69,12 +69,12 @@ class MainImage extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

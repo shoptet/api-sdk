@@ -4,18 +4,18 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\QuantityDiscount\CustomerGroups;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeColor;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 
 class QuantityDiscount extends Entity
 {
     protected int $id;
     protected string $title;
-    protected TypeDate $validFrom;
-    protected TypeDate $validTo;
+    protected TypeDateNullable $validFrom;
+    protected TypeDateNullable $validTo;
     protected bool $timeUnlimited;
     protected ?CustomerGroups $customerGroups;
     protected bool $displayFlag;
-    protected ?TypeColor $flagColor;
+    protected TypeColor $flagColor;
     protected ?int $priority;
     protected bool $isActive;
     protected string $status;
@@ -46,23 +46,23 @@ class QuantityDiscount extends Entity
         return $this;
     }
 
-    public function getValidFrom(): TypeDate
+    public function getValidFrom(): TypeDateNullable
     {
         return $this->validFrom;
     }
 
-    public function setValidFrom(TypeDate $validFrom): static
+    public function setValidFrom(TypeDateNullable $validFrom): static
     {
         $this->validFrom = $validFrom;
         return $this;
     }
 
-    public function getValidTo(): TypeDate
+    public function getValidTo(): TypeDateNullable
     {
         return $this->validTo;
     }
 
-    public function setValidTo(TypeDate $validTo): static
+    public function setValidTo(TypeDateNullable $validTo): static
     {
         $this->validTo = $validTo;
         return $this;
@@ -101,12 +101,12 @@ class QuantityDiscount extends Entity
         return $this;
     }
 
-    public function getFlagColor(): ?TypeColor
+    public function getFlagColor(): TypeColor
     {
         return $this->flagColor;
     }
 
-    public function setFlagColor(?TypeColor $flagColor): static
+    public function setFlagColor(TypeColor $flagColor): static
     {
         $this->flagColor = $flagColor;
         return $this;

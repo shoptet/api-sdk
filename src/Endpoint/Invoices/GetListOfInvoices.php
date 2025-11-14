@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfInvoicesResponse\GetListOfInv
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Invoices/getlistofinvoices
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/getlistofinvoices
  *
  * @method GetListOfInvoices setBody(null $entity)
  * @method null getBody()

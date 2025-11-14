@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\GetListingOfPaymentMethodsResponse\GetListingOfPaymentMethodsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Payment-methods/getlistingofpaymentmethods
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/getlistingofpaymentmethods
  *
  * @method GetListingOfPaymentMethods setBody(null $entity)
  * @method null getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\DeleteQuantityDiscountResponse\DeleteQuantityDiscountResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Quantity-discounts/deletequantitydiscount
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/deletequantitydiscount
  *
  * @method DeleteQuantityDiscount setBody(null $entity)
  * @method null getBody()

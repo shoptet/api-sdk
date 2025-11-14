@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\GetCreditNoteDetailResponse\GetCred
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/getcreditnotedetail
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getcreditnotedetail
  *
  * @method GetCreditNoteDetail setBody(null $entity)
  * @method null getBody()

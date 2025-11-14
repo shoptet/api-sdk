@@ -13,12 +13,12 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
  * @property ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock[] $data
  * @method ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock[] toArray()
  * @method void set(int $key, ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock $item)
- * @method null|ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock get(int $key)
+ * @method ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock|null get(int $key)
  * @method void add(ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock $item)
- * @method null|ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock remove(int $key)
+ * @method ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock|null remove(int $key)
  * @method bool removeItem(ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock $item, bool $strict = true)
  * @method bool contains(ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock $item, bool $strict = true)
- * @method null|ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock offsetGet(int $offset)
+ * @method ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock|null offsetGet(int $offset)
  * @method void offsetSet(int $offset, ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock $value)
  */
 class Data extends EntityCollection

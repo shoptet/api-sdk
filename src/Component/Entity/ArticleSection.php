@@ -7,7 +7,7 @@ class ArticleSection extends Entity
     protected float $id;
     protected ?float $parentId;
     protected string $title;
-    protected string $language;
+    protected ?string $language;
     protected ?string $indexName;
     protected ?string $url;
     protected ?string $description;
@@ -61,12 +61,12 @@ class ArticleSection extends Entity
         return $this;
     }
 
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): static
+    public function setLanguage(?string $language): static
     {
         $this->language = $language;
         return $this;

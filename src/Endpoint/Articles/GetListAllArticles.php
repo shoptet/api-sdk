@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\Article;
+use Shoptet\Api\Sdk\Php\Component\Entity\ArticleSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Articles\GetListAllArticlesResponse\GetListAllArticlesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/getlistallarticles
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/getlistallarticles
  *
  * @method GetListAllArticles setBody(null $entity)
  * @method null getBody()
@@ -46,6 +46,6 @@ class GetListAllArticles extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return Article::class;
+        return ArticleSnapshot::class;
     }
 }

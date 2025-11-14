@@ -2,12 +2,12 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class ShipmentCarrierCountry extends Entity
 {
     protected string $countryCode;
-    protected TypePrice $maxCod;
+    protected TypePriceNullable $maxCod;
     protected ?string $codCurrencyCode;
     protected int $maxWeight;
 
@@ -22,12 +22,12 @@ class ShipmentCarrierCountry extends Entity
         return $this;
     }
 
-    public function getMaxCod(): TypePrice
+    public function getMaxCod(): TypePriceNullable
     {
         return $this->maxCod;
     }
 
-    public function setMaxCod(TypePrice $maxCod): static
+    public function setMaxCod(TypePriceNullable $maxCod): static
     {
         $this->maxCod = $maxCod;
         return $this;

@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatusRequest\Upda
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatusResponse\UpdatePaymentStatusResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Payment-gateways/updatepaymentstatus
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-gateways/updatepaymentstatus
  *
  * @method UpdatePaymentStatus setBody(null|array|UpdatePaymentStatusRequest $entity)
  * @method null|UpdatePaymentStatusRequest getBody()
@@ -15,7 +15,12 @@ use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatusResponse\Upd
 class UpdatePaymentStatus extends Patch
 {
     protected array $supportedPathParams = ['paymentCode' => true];
-    protected array $supportedQueryParams = ['language' => false];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'suppressDocumentGeneration' => false,
+        'suppressEmailSending' => false,
+    ];
 
     public function getRequestEntityClass(): string
     {

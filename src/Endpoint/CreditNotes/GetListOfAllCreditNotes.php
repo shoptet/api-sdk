@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote;
+use Shoptet\Api\Sdk\Php\Component\Entity\CreditNoteSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\GetListOfAllCreditNotesResponse\GetListOfAllCreditNotesResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlistofallcreditnotes
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlistofallcreditnotes
  *
  * @method GetListOfAllCreditNotes setBody(null $entity)
  * @method null getBody()
@@ -58,6 +58,6 @@ class GetListOfAllCreditNotes extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return CreditNote::class;
+        return CreditNoteSnapshot::class;
     }
 }

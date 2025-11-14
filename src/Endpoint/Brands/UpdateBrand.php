@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\UpdateBrandResponse\UpdateBrandResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Brands/updatebrand
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/updatebrand
  *
  * @method UpdateBrand setBody(null|array|UpdateBrandRequest $entity)
  * @method null|UpdateBrandRequest getBody()

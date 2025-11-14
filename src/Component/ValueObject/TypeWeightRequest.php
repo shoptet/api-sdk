@@ -7,8 +7,11 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 readonly class TypeWeightRequest implements ValueObjectInterface
 {
     public function __construct(
-        public string $typeWeightRequest,
+        public ?string $typeWeightRequest,
     ) {
+        if ($this->typeWeightRequest === null) {
+            return;
+        }
         if (!preg_match('/^[0-9]{1,5}\.[0-9]{3}$/', $this->typeWeightRequest)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeWeightRequest', $this->typeWeightRequest));
         }

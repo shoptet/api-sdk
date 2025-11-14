@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovementsResponse\GetStockMovementsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Stocks/getstockmovements
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getstockmovements
  *
  * @method GetStockMovements setBody(null $entity)
  * @method null getBody()

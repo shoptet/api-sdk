@@ -3,18 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest\Data;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate;
 
 class UpdateProductRequest extends Entity
 {
-    protected Data $data;
+    protected ProductUpdate $data;
 
-    public function getData(): Data
+    public function getData(): ProductUpdate
     {
         return $this->data;
     }
 
-    public function setData(Data $data): static
+    public function setData(ProductUpdate $data): static
     {
         $this->data = $data;
         return $this;

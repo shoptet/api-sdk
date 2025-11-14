@@ -73,7 +73,7 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
 
     /**
      * @param int $key
-     * @return null|TValue
+     * @return TValue|null
      */
     public function remove(int $key): mixed
     {

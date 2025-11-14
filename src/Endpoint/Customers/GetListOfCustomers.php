@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomersResponse\GetListOfC
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/getlistofcustomers
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomers
  *
  * @method GetListOfCustomers setBody(null $entity)
  * @method null getBody()

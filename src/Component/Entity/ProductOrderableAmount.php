@@ -2,30 +2,30 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 
 class ProductOrderableAmount extends Entity
 {
-    protected TypePositiveAmount $minimumAmount;
-    protected TypePositiveAmount $maximumAmount;
+    protected TypePositiveAmountNullable $minimumAmount;
+    protected TypePositiveAmountNullable $maximumAmount;
 
-    public function getMinimumAmount(): TypePositiveAmount
+    public function getMinimumAmount(): TypePositiveAmountNullable
     {
         return $this->minimumAmount;
     }
 
-    public function setMinimumAmount(TypePositiveAmount $minimumAmount): static
+    public function setMinimumAmount(TypePositiveAmountNullable $minimumAmount): static
     {
         $this->minimumAmount = $minimumAmount;
         return $this;
     }
 
-    public function getMaximumAmount(): TypePositiveAmount
+    public function getMaximumAmount(): TypePositiveAmountNullable
     {
         return $this->maximumAmount;
     }
 
-    public function setMaximumAmount(TypePositiveAmount $maximumAmount): static
+    public function setMaximumAmount(TypePositiveAmountNullable $maximumAmount): static
     {
         $this->maximumAmount = $maximumAmount;
         return $this;

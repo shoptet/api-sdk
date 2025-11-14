@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetListingOfEmailDistrib
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getlistingofemaildistributionlists
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getlistingofemaildistributionlists
  *
  * @method GetListingOfEmailDistributionLists setBody(null $entity)
  * @method null getBody()

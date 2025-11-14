@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCouponsReques
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCouponsResponse\BulkDeleteDiscountCouponsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/bulkdeletediscountcoupons
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/bulkdeletediscountcoupons
  *
  * @method BulkDeleteDiscountCoupons setBody(null|array|BulkDeleteDiscountCouponsRequest $entity)
  * @method null|BulkDeleteDiscountCouponsRequest getBody()

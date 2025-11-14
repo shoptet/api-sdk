@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetProductSuppliesInStockResponse\GetProductSuppliesInStockResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Stocks/getproductsuppliesinstock
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/getproductsuppliesinstock
  *
  * @method GetProductSuppliesInStock setBody(null $entity)
  * @method null getBody()

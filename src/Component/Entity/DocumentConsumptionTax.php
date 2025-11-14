@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class DocumentConsumptionTax extends Entity
 {
     protected TypeCurrencyCode $currency;
-    protected TypePrice $price;
+    protected TypePriceNullable $price;
 
     public function getCurrency(): TypeCurrencyCode
     {
@@ -21,12 +21,12 @@ class DocumentConsumptionTax extends Entity
         return $this;
     }
 
-    public function getPrice(): TypePrice
+    public function getPrice(): TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(TypePrice $price): static
+    public function setPrice(TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;

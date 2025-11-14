@@ -2,7 +2,7 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class WebhookNotification extends Entity
 {
@@ -10,9 +10,9 @@ class WebhookNotification extends Entity
     protected int $webhookId;
     protected string $webhookUrl;
     protected string $event;
-    protected TypeDateTime $eventCreated;
-    protected TypeDateTime $created;
-    protected TypeDateTime $attempted;
+    protected TypeDateTimeNullable $eventCreated;
+    protected TypeDateTimeNullable $created;
+    protected TypeDateTimeNullable $attempted;
     protected int $attempts;
     protected string $status;
     protected bool $active;
@@ -62,34 +62,34 @@ class WebhookNotification extends Entity
         return $this;
     }
 
-    public function getEventCreated(): TypeDateTime
+    public function getEventCreated(): TypeDateTimeNullable
     {
         return $this->eventCreated;
     }
 
-    public function setEventCreated(TypeDateTime $eventCreated): static
+    public function setEventCreated(TypeDateTimeNullable $eventCreated): static
     {
         $this->eventCreated = $eventCreated;
         return $this;
     }
 
-    public function getCreated(): TypeDateTime
+    public function getCreated(): TypeDateTimeNullable
     {
         return $this->created;
     }
 
-    public function setCreated(TypeDateTime $created): static
+    public function setCreated(TypeDateTimeNullable $created): static
     {
         $this->created = $created;
         return $this;
     }
 
-    public function getAttempted(): TypeDateTime
+    public function getAttempted(): TypeDateTimeNullable
     {
         return $this->attempted;
     }
 
-    public function setAttempted(TypeDateTime $attempted): static
+    public function setAttempted(TypeDateTimeNullable $attempted): static
     {
         $this->attempted = $attempted;
         return $this;

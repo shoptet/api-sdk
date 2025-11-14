@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfDiscountCouponsRespons
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/getlistofdiscountcoupons
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getlistofdiscountcoupons
  *
  * @method GetListOfDiscountCoupons setBody(null $entity)
  * @method null getBody()

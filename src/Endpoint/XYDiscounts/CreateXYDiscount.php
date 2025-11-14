@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\CreateXYDiscountRequest\CreateXYDis
 use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\CreateXYDiscountResponse\CreateXYDiscountResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/XY-discounts/createxydiscount
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/createxydiscount
  *
  * @method CreateXYDiscount setBody(null|array|CreateXYDiscountRequest $entity)
  * @method null|CreateXYDiscountRequest getBody()

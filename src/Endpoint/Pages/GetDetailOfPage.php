@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetDetailOfPageResponse\GetDetailOfPageResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Pages/getdetailofpage
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/getdetailofpage
  *
  * @method GetDetailOfPage setBody(null $entity)
  * @method null getBody()

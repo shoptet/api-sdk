@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetLastProformaInvoiceChangesResponse\GetLastProformaInvoiceChangesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlastproformainvoicechanges
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlastproformainvoicechanges
  *
  * @method GetLastProformaInvoiceChanges setBody(null $entity)
  * @method null getBody()

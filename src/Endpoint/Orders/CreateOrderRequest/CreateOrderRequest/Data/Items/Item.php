@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequ
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\ConsumptionTaxId;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest\Data\Items\Item\SurchargeParameters;
 
 class Item extends Entity
@@ -19,7 +19,7 @@ class Item extends Entity
     protected ?string $code;
     protected ?string $remark;
     protected ?string $warrantyDescription;
-    protected ?TypePositiveAmount $amountCompleted;
+    protected ?TypePositiveAmountNullable $amountCompleted;
     protected ?string $additionalField;
     protected ?string $amount;
     protected ?string $amountUnit;
@@ -135,12 +135,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmountCompleted(): ?TypePositiveAmount
+    public function getAmountCompleted(): ?TypePositiveAmountNullable
     {
         return $this->amountCompleted;
     }
 
-    public function setAmountCompleted(?TypePositiveAmount $amountCompleted): static
+    public function setAmountCompleted(?TypePositiveAmountNullable $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
         return $this;

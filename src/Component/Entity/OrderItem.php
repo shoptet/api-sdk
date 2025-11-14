@@ -6,9 +6,9 @@ use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\DisplayPrices;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\MainImage;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\Status;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\SurchargeParametersTexts;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 
@@ -25,20 +25,25 @@ class OrderItem extends Entity
     protected ?string $remark;
     protected TypeWeight $weight;
     protected ?string $additionalField;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
     protected TypePriceRatio $priceRatio;
     protected Status $status;
     protected ItemPrice $itemPrice;
     protected ?DisplayPrices $displayPrices;
+
+    /** @deprecated */
     protected ?ItemPrice $buyPrice;
+    protected ?ItemPrice $purchasePrice;
     protected RecyclingFee $recyclingFee;
     protected ?MainImage $mainImage;
     protected ?string $stockLocation;
     protected ?string $supplierName;
     protected float $itemId;
     protected ?string $warrantyDescription;
-    protected TypePositiveAmount $amountCompleted;
+
+    /** @deprecated */
+    protected TypePositiveAmountNullable $amountCompleted;
 
     /** @deprecated */
     protected ?SurchargeParametersTexts $surchargeParametersTexts;
@@ -168,12 +173,12 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
@@ -234,14 +239,31 @@ class OrderItem extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getBuyPrice(): ?ItemPrice
     {
         return $this->buyPrice;
     }
 
+    /**
+     * @deprecated
+     */
     public function setBuyPrice(?ItemPrice $buyPrice): static
     {
         $this->buyPrice = $buyPrice;
+        return $this;
+    }
+
+    public function getPurchasePrice(): ?ItemPrice
+    {
+        return $this->purchasePrice;
+    }
+
+    public function setPurchasePrice(?ItemPrice $purchasePrice): static
+    {
+        $this->purchasePrice = $purchasePrice;
         return $this;
     }
 
@@ -311,12 +333,18 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getAmountCompleted(): TypePositiveAmount
+    /**
+     * @deprecated
+     */
+    public function getAmountCompleted(): TypePositiveAmountNullable
     {
         return $this->amountCompleted;
     }
 
-    public function setAmountCompleted(TypePositiveAmount $amountCompleted): static
+    /**
+     * @deprecated
+     */
+    public function setAmountCompleted(TypePositiveAmountNullable $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
         return $this;

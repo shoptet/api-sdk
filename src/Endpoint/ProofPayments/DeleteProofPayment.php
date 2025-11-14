@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\DeleteProofPaymentResponse\DeleteProofPaymentResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/deleteproofpayment
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/deleteproofpayment
  *
  * @method DeleteProofPayment setBody(null $entity)
  * @method null getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersR
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/getlistoforders
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistoforders
  *
  * @method GetListOfOrders setBody(null $entity)
  * @method null getBody()
@@ -34,6 +34,7 @@ class GetListOfOrders extends PageableGet
         'changeTimeFrom' => false,
         'changeTimeTo' => false,
         'sourceId' => false,
+        'orderCodes' => false,
     ];
 
     public function getRequestEntityClass(): null

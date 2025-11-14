@@ -2,21 +2,21 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\UpdateArticleSectionResponse\UpdateArticleSectionResponse;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\Article;
+use Shoptet\Api\Sdk\Php\Component\Entity\ArticleSection;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Data extends Entity
 {
-    protected Article $article;
+    protected ArticleSection $articleSection;
 
-    public function getArticle(): Article
+    public function getArticleSection(): ArticleSection
     {
-        return $this->article;
+        return $this->articleSection;
     }
 
-    public function setArticle(Article $article): static
+    public function setArticleSection(ArticleSection $articleSection): static
     {
-        $this->article = $article;
+        $this->articleSection = $articleSection;
         return $this;
     }
 }

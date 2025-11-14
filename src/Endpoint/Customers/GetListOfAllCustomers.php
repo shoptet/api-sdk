@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Customers;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\Customer;
+use Shoptet\Api\Sdk\Php\Component\Entity\CustomerSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfAllCustomersResponse\GetListOfAllCustomersResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Customers/getlistofallcustomers
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofallcustomers
  *
  * @method GetListOfAllCustomers setBody(null $entity)
  * @method null getBody()
@@ -42,6 +42,6 @@ class GetListOfAllCustomers extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return Customer::class;
+        return CustomerSnapshot::class;
     }
 }

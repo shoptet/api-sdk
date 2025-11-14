@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleSectionResponse\CreateArt
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Articles/createarticlesection
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/createarticlesection
  *
  * @method CreateArticleSection setBody(null|array|CreateArticleSectionRequest $entity)
  * @method null|CreateArticleSectionRequest getBody()

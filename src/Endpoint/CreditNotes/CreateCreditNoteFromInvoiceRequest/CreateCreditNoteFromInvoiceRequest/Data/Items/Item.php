@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteFromInvoiceRequest\CreateCreditNoteFromInvoiceRequest\Data\Items;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 
 class Item extends Entity
 {
     protected int $invoiceItemId;
-    protected ?TypePositiveAmount $amount;
+    protected ?TypePositiveAmountNullable $amount;
 
     public function getInvoiceItemId(): int
     {
@@ -21,12 +21,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): ?TypePositiveAmount
+    public function getAmount(): ?TypePositiveAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(?TypePositiveAmount $amount): static
+    public function setAmount(?TypePositiveAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

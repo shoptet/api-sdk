@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\DeletePaymentMethodResponse\DeletePaymentMethodResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Payment-methods/deletepaymentmethod
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/deletepaymentmethod
  *
  * @method DeletePaymentMethod setBody(null $entity)
  * @method null getBody()

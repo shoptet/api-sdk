@@ -9,7 +9,7 @@ readonly class TypeFilename implements ValueObjectInterface
     public function __construct(
         public string $typeFilename,
     ) {
-        if (!preg_match('/^[0-9a-zA-Z\-.]+$/', $this->typeFilename)) {
+        if (!preg_match('/^[0-9a-zA-Z_\-.]+$/', $this->typeFilename)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeFilename', $this->typeFilename));
         }
         if (mb_strlen($this->typeFilename) < '1') {

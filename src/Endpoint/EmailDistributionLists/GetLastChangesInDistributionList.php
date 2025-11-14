@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetLastChangesInDistribu
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getlastchangesindistributionlist
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getlastchangesindistributionlist
  *
  * @method GetLastChangesInDistributionList setBody(null $entity)
  * @method null getBody()

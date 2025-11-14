@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByOrderCodeResponse\CreateProofPaymentByOrderCodeResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpaymentbyordercode
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpaymentbyordercode
  *
  * @method CreateProofPaymentByOrderCode setBody(null $entity)
  * @method null getBody()

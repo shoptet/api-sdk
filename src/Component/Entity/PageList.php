@@ -8,6 +8,7 @@ class PageList extends Entity
     protected string $title;
     protected ?string $url;
     protected ?bool $visible;
+    protected ?string $ogImage;
 
     public function getId(): float
     {
@@ -50,6 +51,17 @@ class PageList extends Entity
     public function setVisible(?bool $visible): static
     {
         $this->visible = $visible;
+        return $this;
+    }
+
+    public function getOgImage(): ?string
+    {
+        return $this->ogImage;
+    }
+
+    public function setOgImage(?string $ogImage): static
+    {
+        $this->ogImage = $ogImage;
         return $this;
     }
 }

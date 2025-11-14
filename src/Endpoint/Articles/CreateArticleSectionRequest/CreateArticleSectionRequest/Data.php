@@ -3,6 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleSectionRequest\CreateArticleSectionRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeFilenameNullable;
 
 class Data extends Entity
 {
@@ -24,6 +25,8 @@ class Data extends Entity
     protected ?string $metaDescription;
     protected ?bool $visible;
     protected ?string $access;
+    protected ?TypeFilenameNullable $sourceImageName;
+    protected ?TypeFilenameNullable $sourceOgImageName;
 
     public function getTitle(): string
     {
@@ -220,6 +223,28 @@ class Data extends Entity
     public function setAccess(?string $access): static
     {
         $this->access = $access;
+        return $this;
+    }
+
+    public function getSourceImageName(): ?TypeFilenameNullable
+    {
+        return $this->sourceImageName;
+    }
+
+    public function setSourceImageName(?TypeFilenameNullable $sourceImageName): static
+    {
+        $this->sourceImageName = $sourceImageName;
+        return $this;
+    }
+
+    public function getSourceOgImageName(): ?TypeFilenameNullable
+    {
+        return $this->sourceOgImageName;
+    }
+
+    public function setSourceOgImageName(?TypeFilenameNullable $sourceOgImageName): static
+    {
+        $this->sourceOgImageName = $sourceOgImageName;
         return $this;
     }
 }

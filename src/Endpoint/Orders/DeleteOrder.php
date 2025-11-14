@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delete;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrderResponse\DeleteOrderResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/deleteorder
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/deleteorder
  *
  * @method DeleteOrder setBody(null $entity)
  * @method null getBody()

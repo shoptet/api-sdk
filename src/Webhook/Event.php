@@ -54,6 +54,7 @@ enum Event: string
     case DISCOUNT_COUPON_MASS_CREATE = 'discountCoupon:massCreate';
     case DISCOUNT_COUPON_MASS_DELETE = 'discountCoupon:massDelete';
     case INVOICE_MASS_UPDATE = 'invoice:massUpdate';
+    case ORDER_MASS_CREATE = 'order:massCreate';
     case ORDER_MASS_UPDATE = 'order:massUpdate';
     case ADDON_SUSPEND = 'addon:suspend';
     case ADDON_APPROVE = 'addon:approve';

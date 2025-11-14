@@ -2,14 +2,14 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class SurchargeParameterValue extends Entity
 {
     protected int $id;
     protected string $valueIndex;
     protected string $description;
-    protected TypePrice $price;
+    protected TypePriceNullable $price;
     protected ?int $priority;
 
     public function getId(): int
@@ -45,12 +45,12 @@ class SurchargeParameterValue extends Entity
         return $this;
     }
 
-    public function getPrice(): TypePrice
+    public function getPrice(): TypePriceNullable
     {
         return $this->price;
     }
 
-    public function setPrice(TypePrice $price): static
+    public function setPrice(TypePriceNullable $price): static
     {
         $this->price = $price;
         return $this;

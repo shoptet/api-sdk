@@ -94,7 +94,7 @@ class CurlClient implements ClientInterface
                 'body' => $endpoint->getBody(),
             ]
         );
-        /** @var false|string $rBody */
+        /** @var string|false $rBody */
         $rBody = curl_exec($this->handle);
 
         $errno = curl_errno($this->handle);

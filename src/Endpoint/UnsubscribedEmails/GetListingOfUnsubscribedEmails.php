@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\GetListingOfUnsubscribedEmailsResponse\GetListingOfUnsubscribedEmailsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Unsubscribed-emails/getlistingofunsubscribedemails
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Unsubscribed-emails/getlistingofunsubscribedemails
  *
  * @method GetListingOfUnsubscribedEmails setBody(null $entity)
  * @method null getBody()

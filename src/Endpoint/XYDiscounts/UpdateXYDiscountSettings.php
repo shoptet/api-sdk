@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\UpdateXYDiscountSettingsRequest\Upd
 use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\UpdateXYDiscountSettingsResponse\UpdateXYDiscountSettingsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/XY-discounts/updatexydiscountsettings
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/updatexydiscountsettings
  *
  * @method UpdateXYDiscountSettings setBody(null|array|UpdateXYDiscountSettingsRequest $entity)
  * @method null|UpdateXYDiscountSettingsRequest getBody()

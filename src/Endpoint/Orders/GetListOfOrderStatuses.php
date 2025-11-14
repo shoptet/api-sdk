@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderStatusesResponse\GetListOfOrderStatusesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/getlistoforderstatuses
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/getlistoforderstatuses
  *
  * @method GetListOfOrderStatuses setBody(null $entity)
  * @method null getBody()

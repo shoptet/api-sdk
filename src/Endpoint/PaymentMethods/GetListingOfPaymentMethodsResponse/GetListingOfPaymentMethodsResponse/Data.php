@@ -9,6 +9,7 @@ class Data extends Entity
 {
     protected PaymentMethods $paymentMethods;
     protected bool $wholesaleActive;
+    protected bool $wholesaleSplitActive;
     protected ?string $defaultRetailMethod;
     protected ?string $defaultWholesaleMethod;
 
@@ -31,6 +32,17 @@ class Data extends Entity
     public function setWholesaleActive(bool $wholesaleActive): static
     {
         $this->wholesaleActive = $wholesaleActive;
+        return $this;
+    }
+
+    public function isWholesaleSplitActive(): bool
+    {
+        return $this->wholesaleSplitActive;
+    }
+
+    public function setWholesaleSplitActive(bool $wholesaleSplitActive): static
+    {
+        $this->wholesaleSplitActive = $wholesaleSplitActive;
         return $this;
     }
 

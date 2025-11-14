@@ -2,19 +2,21 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeExchangeRate;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class ProofPaymentsList extends Entity
 {
     protected string $code;
     protected ?string $orderCode;
     protected ?string $proformaInvoiceCode;
-    protected TypeDateTime $issueDate;
+    protected TypeDateTimeNullable $issueDate;
     protected ?string $billFullName;
-    protected TypePrice $payment;
+    protected TypePriceNullable $payment;
     protected bool $isValid;
     protected ?string $vatMode;
+    protected TypeExchangeRate $invoicingExchangeRate;
     protected ?string $invoiceCode;
     protected bool $closed;
 
@@ -51,12 +53,12 @@ class ProofPaymentsList extends Entity
         return $this;
     }
 
-    public function getIssueDate(): TypeDateTime
+    public function getIssueDate(): TypeDateTimeNullable
     {
         return $this->issueDate;
     }
 
-    public function setIssueDate(TypeDateTime $issueDate): static
+    public function setIssueDate(TypeDateTimeNullable $issueDate): static
     {
         $this->issueDate = $issueDate;
         return $this;
@@ -73,12 +75,12 @@ class ProofPaymentsList extends Entity
         return $this;
     }
 
-    public function getPayment(): TypePrice
+    public function getPayment(): TypePriceNullable
     {
         return $this->payment;
     }
 
-    public function setPayment(TypePrice $payment): static
+    public function setPayment(TypePriceNullable $payment): static
     {
         $this->payment = $payment;
         return $this;
@@ -103,6 +105,17 @@ class ProofPaymentsList extends Entity
     public function setVatMode(?string $vatMode): static
     {
         $this->vatMode = $vatMode;
+        return $this;
+    }
+
+    public function getInvoicingExchangeRate(): TypeExchangeRate
+    {
+        return $this->invoicingExchangeRate;
+    }
+
+    public function setInvoicingExchangeRate(TypeExchangeRate $invoicingExchangeRate): static
+    {
+        $this->invoicingExchangeRate = $invoicingExchangeRate;
         return $this;
     }
 

@@ -3,14 +3,14 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomersResponse\GetListOfCustomersResponse\Data\Customers;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Item extends Entity
 {
     protected TypeGuidUnlimited $guid;
-    protected TypeDateTime $creationTime;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $creationTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?string $billCompany;
     protected ?string $billFullName;
     protected string $adminUrl;
@@ -26,23 +26,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getCreationTime(): TypeDateTime
+    public function getCreationTime(): TypeDateTimeNullable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(TypeDateTime $creationTime): static
+    public function setCreationTime(TypeDateTimeNullable $creationTime): static
     {
         $this->creationTime = $creationTime;
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

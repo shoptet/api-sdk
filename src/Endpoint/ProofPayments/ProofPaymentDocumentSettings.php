@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\ProofPaymentDocumentSettingsReque
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\ProofPaymentDocumentSettingsResponse\ProofPaymentDocumentSettingsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/proofpaymentdocumentsettings
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/proofpaymentdocumentsettings
  *
  * @method ProofPaymentDocumentSettings setBody(null|array|ProofPaymentDocumentSettingsRequest $entity)
  * @method null|ProofPaymentDocumentSettingsRequest getBody()

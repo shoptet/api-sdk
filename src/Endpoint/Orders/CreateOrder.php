@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderResponse\CreateOrderResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/createorder
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/createorder
  *
  * @method CreateOrder setBody(null|array|CreateOrderRequest $entity)
  * @method null|CreateOrderRequest getBody()

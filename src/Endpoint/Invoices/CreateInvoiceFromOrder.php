@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderResponse\CreateI
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Invoices/createinvoicefromorder
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/createinvoicefromorder
  *
  * @method CreateInvoiceFromOrder setBody(null|array|CreateInvoiceFromOrderRequest $entity)
  * @method null|CreateInvoiceFromOrderRequest getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetListOfPagesResponse\GetListOfPagesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Pages/getlistofpages
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/getlistofpages
  *
  * @method GetListOfPages setBody(null $entity)
  * @method null getBody()

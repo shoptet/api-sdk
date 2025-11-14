@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoicesResponse\GetListOfProformaInvoicesResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proforma-invoices/getlistofproformainvoices
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/getlistofproformainvoices
  *
  * @method GetListOfProformaInvoices setBody(null $entity)
  * @method null getBody()

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\GetLastCreditNoteChangesResponse\Ge
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/getlastcreditnotechanges
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/getlastcreditnotechanges
  *
  * @method GetLastCreditNoteChanges setBody(null $entity)
  * @method null getBody()

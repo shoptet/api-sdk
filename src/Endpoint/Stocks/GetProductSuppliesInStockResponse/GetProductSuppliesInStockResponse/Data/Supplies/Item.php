@@ -3,18 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetProductSuppliesInStockResponse\GetProductSuppliesInStockResponse\Data\Supplies;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Item extends Entity
 {
     protected TypeGuidUnlimited $productGuid;
     protected string $code;
-    protected TypeAmount $amount;
-    protected TypeAmount $claim;
+    protected TypeAmountNullable $amount;
+    protected TypeAmountNullable $claim;
     protected ?string $location;
-    protected ?TypeDateTime $changeTime;
+    protected ?TypeDateTimeNullable $changeTime;
 
     public function getProductGuid(): TypeGuidUnlimited
     {
@@ -38,23 +38,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;
     }
 
-    public function getClaim(): TypeAmount
+    public function getClaim(): TypeAmountNullable
     {
         return $this->claim;
     }
 
-    public function setClaim(TypeAmount $claim): static
+    public function setClaim(TypeAmountNullable $claim): static
     {
         $this->claim = $claim;
         return $this;
@@ -71,12 +71,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): ?TypeDateTime
+    public function getChangeTime(): ?TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(?TypeDateTime $changeTime): static
+    public function setChangeTime(?TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;

@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequ
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductResponse\UpdateProductResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/updateproduct
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/updateproduct
  *
  * @method UpdateProduct setBody(null|array|UpdateProductRequest $entity)
  * @method null|UpdateProductRequest getBody()

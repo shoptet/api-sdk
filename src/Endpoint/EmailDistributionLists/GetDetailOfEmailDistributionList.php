@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetDetailOfEmailDistribu
 use Shoptet\Api\Sdk\Php\Endpoint\PageableGet;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/E-mail-distribution-lists/getdetailofemaildistributionlist
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/getdetailofemaildistributionlist
  *
  * @method GetDetailOfEmailDistributionList setBody(null $entity)
  * @method null getBody()

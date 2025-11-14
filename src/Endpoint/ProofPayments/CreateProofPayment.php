@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentRequest\CreateP
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentResponse\CreateProofPaymentResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/createproofpayment
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/createproofpayment
  *
  * @method CreateProofPayment setBody(null|array|CreateProofPaymentRequest $entity)
  * @method null|CreateProofPaymentRequest getBody()

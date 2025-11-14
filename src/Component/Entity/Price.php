@@ -4,36 +4,37 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeExchangeRate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class Price extends Entity
 {
-    protected TypePrice $vat;
-    protected TypePrice $toPay;
+    protected TypePriceNullable $vat;
+    protected TypePriceNullable $toPay;
     protected TypeCurrencyCode $currencyCode;
-    protected TypePrice $withoutVat;
-    protected TypePrice $withVat;
+    protected TypePriceNullable $withoutVat;
+    protected TypePriceNullable $withVat;
     protected TypeExchangeRate $exchangeRate;
-    protected ?TypePrice $partialPaymentAmount;
+    protected ?TypeExchangeRate $invoicingExchangeRate;
+    protected ?TypePriceNullable $partialPaymentAmount;
     protected ?string $partialPaymentType;
 
-    public function getVat(): TypePrice
+    public function getVat(): TypePriceNullable
     {
         return $this->vat;
     }
 
-    public function setVat(TypePrice $vat): static
+    public function setVat(TypePriceNullable $vat): static
     {
         $this->vat = $vat;
         return $this;
     }
 
-    public function getToPay(): TypePrice
+    public function getToPay(): TypePriceNullable
     {
         return $this->toPay;
     }
 
-    public function setToPay(TypePrice $toPay): static
+    public function setToPay(TypePriceNullable $toPay): static
     {
         $this->toPay = $toPay;
         return $this;
@@ -50,23 +51,23 @@ class Price extends Entity
         return $this;
     }
 
-    public function getWithoutVat(): TypePrice
+    public function getWithoutVat(): TypePriceNullable
     {
         return $this->withoutVat;
     }
 
-    public function setWithoutVat(TypePrice $withoutVat): static
+    public function setWithoutVat(TypePriceNullable $withoutVat): static
     {
         $this->withoutVat = $withoutVat;
         return $this;
     }
 
-    public function getWithVat(): TypePrice
+    public function getWithVat(): TypePriceNullable
     {
         return $this->withVat;
     }
 
-    public function setWithVat(TypePrice $withVat): static
+    public function setWithVat(TypePriceNullable $withVat): static
     {
         $this->withVat = $withVat;
         return $this;
@@ -83,12 +84,23 @@ class Price extends Entity
         return $this;
     }
 
-    public function getPartialPaymentAmount(): ?TypePrice
+    public function getInvoicingExchangeRate(): ?TypeExchangeRate
+    {
+        return $this->invoicingExchangeRate;
+    }
+
+    public function setInvoicingExchangeRate(?TypeExchangeRate $invoicingExchangeRate): static
+    {
+        $this->invoicingExchangeRate = $invoicingExchangeRate;
+        return $this;
+    }
+
+    public function getPartialPaymentAmount(): ?TypePriceNullable
     {
         return $this->partialPaymentAmount;
     }
 
-    public function setPartialPaymentAmount(?TypePrice $partialPaymentAmount): static
+    public function setPartialPaymentAmount(?TypePriceNullable $partialPaymentAmount): static
     {
         $this->partialPaymentAmount = $partialPaymentAmount;
         return $this;

@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetProofPaymentDetailByOrderCodeResponse\GetProofPaymentDetailByOrderCodeResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Proof-payments/getproofpaymentdetailbyordercode
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/getproofpaymentdetailbyordercode
  *
  * @method GetProofPaymentDetailByOrderCode setBody(null $entity)
  * @method null getBody()

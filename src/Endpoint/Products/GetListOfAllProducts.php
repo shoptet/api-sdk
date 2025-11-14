@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Products;
 
 use Shoptet\Api\Sdk\Php\Async\SnapshotEndpoint;
-use Shoptet\Api\Sdk\Php\Component\Entity\Product;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductSnapshot;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProductsResponse\GetListOfAllProductsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Products/getlistofallproducts
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/getlistofallproducts
  *
  * @method GetListOfAllProducts setBody(null $entity)
  * @method null getBody()
@@ -20,6 +20,10 @@ class GetListOfAllProducts extends Get implements SnapshotEndpoint
     protected array $supportedQueryParams = [
         'language' => false,
         'include' => false,
+        'productCodes' => false,
+        'productGuids' => false,
+        'availabilityId' => false,
+        'availabilityWhenSoldOutId' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'visibility' => false,
@@ -51,6 +55,6 @@ class GetListOfAllProducts extends Get implements SnapshotEndpoint
 
     public function getSnapshotResultEntityClass(): string
     {
-        return Product::class;
+        return ProductSnapshot::class;
     }
 }

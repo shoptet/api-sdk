@@ -5,7 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes;
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Credit-notes/downloadcreditnotepdf
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/downloadcreditnotepdf
  *
  * @method DownloadCreditNotePdf setBody(null $entity)
  * @method null getBody()

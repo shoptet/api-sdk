@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\GetXYDiscountsSettingsResponse\GetXYDiscountsSettingsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/XY-discounts/getxydiscountssettings
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/getxydiscountssettings
  *
  * @method GetXYDiscountsSettings setBody(null $entity)
  * @method null getBody()

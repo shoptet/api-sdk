@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopMandatoryFieldsResponse\GetEshopM
 use Shoptet\Api\Sdk\Php\Endpoint\Get;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Eshop/geteshopmandatoryfields
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopmandatoryfields
  *
  * @method GetEshopMandatoryFields setBody(null $entity)
  * @method null getBody()

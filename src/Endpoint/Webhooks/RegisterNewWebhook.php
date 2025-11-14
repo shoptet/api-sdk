@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\RegisterNewWebhookRequest\RegisterNewW
 use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\RegisterNewWebhookResponse\RegisterNewWebhookResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Webhooks/registernewwebhook
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/registernewwebhook
  *
  * @method RegisterNewWebhook setBody(null|array|RegisterNewWebhookRequest $entity)
  * @method null|RegisterNewWebhookRequest getBody()

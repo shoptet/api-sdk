@@ -3,21 +3,21 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovementsResponse\GetStockMovementsResponse\Data\Movements;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Item extends Entity
 {
     protected int $id;
     protected string $productCode;
-    protected TypeAmount $actualAmount;
-    protected TypeAmount $amountChange;
+    protected TypeAmountNullable $actualAmount;
+    protected TypeAmountNullable $amountChange;
     protected ?string $changedBy;
-    protected TypeDateTime $changeTime;
+    protected TypeDateTimeNullable $changeTime;
     protected ?string $orderCode;
     protected ?TypeGuidUnlimited $productGuid;
-    protected ?TypeAmount $sumAmount;
+    protected ?TypeAmountNullable $sumAmount;
 
     public function getId(): int
     {
@@ -41,23 +41,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getActualAmount(): TypeAmount
+    public function getActualAmount(): TypeAmountNullable
     {
         return $this->actualAmount;
     }
 
-    public function setActualAmount(TypeAmount $actualAmount): static
+    public function setActualAmount(TypeAmountNullable $actualAmount): static
     {
         $this->actualAmount = $actualAmount;
         return $this;
     }
 
-    public function getAmountChange(): TypeAmount
+    public function getAmountChange(): TypeAmountNullable
     {
         return $this->amountChange;
     }
 
-    public function setAmountChange(TypeAmount $amountChange): static
+    public function setAmountChange(TypeAmountNullable $amountChange): static
     {
         $this->amountChange = $amountChange;
         return $this;
@@ -74,12 +74,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTime
+    public function getChangeTime(): TypeDateTimeNullable
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTime $changeTime): static
+    public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
@@ -107,12 +107,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getSumAmount(): ?TypeAmount
+    public function getSumAmount(): ?TypeAmountNullable
     {
         return $this->sumAmount;
     }
 
-    public function setSumAmount(?TypeAmount $sumAmount): static
+    public function setSumAmount(?TypeAmountNullable $sumAmount): static
     {
         $this->sumAmount = $sumAmount;
         return $this;

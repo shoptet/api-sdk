@@ -7,8 +7,11 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 readonly class TypeColor implements ValueObjectInterface
 {
     public function __construct(
-        public string $typeColor,
+        public ?string $typeColor,
     ) {
+        if ($this->typeColor === null) {
+            return;
+        }
         if (!preg_match('/^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/', $this->typeColor)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeColor', $this->typeColor));
         }

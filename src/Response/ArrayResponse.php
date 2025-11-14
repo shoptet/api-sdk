@@ -23,7 +23,7 @@ class ArrayResponse extends AbstractResponse
             return null;
         }
         if (!isset($this->body)) {
-            /** @var null|array<string, mixed> $body */
+            /** @var array<string, mixed>|null $body */
             $body = json_decode($this->rawBody, true);
             $this->body = $body;
         }

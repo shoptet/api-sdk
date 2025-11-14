@@ -6,7 +6,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Get;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForCartDetailsResponse\GetShippingRequestForCartDetailsResponse;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Shipping-requests/getshippingrequestforcartdetails
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/getshippingrequestforcartdetails
  *
  * @method GetShippingRequestForCartDetails setBody(null $entity)
  * @method null getBody()

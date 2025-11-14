@@ -3,7 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\CreateCreditNoteItemRequest\CreateCreditNoteItemRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRate;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightRequest;
@@ -12,7 +12,7 @@ class Data extends Entity
 {
     protected string $itemType;
     protected ?string $code;
-    protected TypeAmount $amount;
+    protected TypeAmountNullable $amount;
     protected ?string $name;
     protected ?string $variantName;
     protected ?string $amountUnit;
@@ -46,12 +46,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmount
+    public function getAmount(): TypeAmountNullable
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmount $amount): static
+    public function setAmount(TypeAmountNullable $amount): static
     {
         $this->amount = $amount;
         return $this;

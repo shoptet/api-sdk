@@ -3,24 +3,26 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\OrderableAmount;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Price;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithoutVat;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Prices;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Sales;
 
 class Item extends Entity
 {
     protected string $code;
     protected ?string $currencyCode;
-    protected ?TypePrice $vatRate;
+    protected ?TypePriceNullable $vatRate;
     protected ?bool $includingVat;
     protected ?OrderableAmount $orderableAmount;
     protected ?Sales $sales;
     protected ?Price $price;
     protected ?PriceWithVat $priceWithVat;
     protected ?PriceWithoutVat $priceWithoutVat;
+    protected ?Prices $prices;
 
     public function getCode(): string
     {
@@ -44,12 +46,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getVatRate(): ?TypePrice
+    public function getVatRate(): ?TypePriceNullable
     {
         return $this->vatRate;
     }
 
-    public function setVatRate(?TypePrice $vatRate): static
+    public function setVatRate(?TypePriceNullable $vatRate): static
     {
         $this->vatRate = $vatRate;
         return $this;
@@ -118,6 +120,17 @@ class Item extends Entity
     public function setPriceWithoutVat(?PriceWithoutVat $priceWithoutVat): static
     {
         $this->priceWithoutVat = $priceWithoutVat;
+        return $this;
+    }
+
+    public function getPrices(): ?Prices
+    {
+        return $this->prices;
+    }
+
+    public function setPrices(?Prices $prices): static
+    {
+        $this->prices = $prices;
         return $this;
     }
 }

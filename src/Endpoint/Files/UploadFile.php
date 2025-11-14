@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFileResponse\UploadFileResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Files/uploadfile
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/uploadfile
  *
  * @method UploadFile setBody(null|array|UploadFileRequest $entity)
  * @method null|UploadFileRequest getBody()

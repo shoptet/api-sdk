@@ -3,12 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmailResponse\CreateUnsubscribedEmailResponse\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class UnsubscribedEmail extends Entity
 {
     protected string $email;
-    protected TypeDateTime $unsubscribedAt;
+    protected TypeDateTimeNullable $unsubscribedAt;
 
     public function getEmail(): string
     {
@@ -21,12 +21,12 @@ class UnsubscribedEmail extends Entity
         return $this;
     }
 
-    public function getUnsubscribedAt(): TypeDateTime
+    public function getUnsubscribedAt(): TypeDateTimeNullable
     {
         return $this->unsubscribedAt;
     }
 
-    public function setUnsubscribedAt(TypeDateTime $unsubscribedAt): static
+    public function setUnsubscribedAt(TypeDateTimeNullable $unsubscribedAt): static
     {
         $this->unsubscribedAt = $unsubscribedAt;
         return $this;

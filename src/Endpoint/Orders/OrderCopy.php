@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderCopyResponse\OrderCopyResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Orders/ordercopy
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/ordercopy
  *
  * @method OrderCopy setBody(null|array|OrderCopyRequest $entity)
  * @method null|OrderCopyRequest getBody()

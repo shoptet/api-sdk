@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsSetRespons
 use Shoptet\Api\Sdk\Php\Endpoint\Post;
 
 /**
- * @see https://api.docs.shoptet.com/openapi/Discount-coupons/creatediscountcouponsset
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/creatediscountcouponsset
  *
  * @method CreateDiscountCouponsSet setBody(null|array|CreateDiscountCouponsSetRequest $entity)
  * @method null|CreateDiscountCouponsSetRequest getBody()
