@@ -8,7 +8,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
 class Item extends Entity
 {
     protected TypeGuid $productGuid;
-    protected ?float $priority;
+    protected ?int $priority;
 
     public function getProductGuid(): TypeGuid
     {
@@ -21,12 +21,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getPriority(): ?float
+    public function getPriority(): ?int
     {
         return $this->priority;
     }
 
-    public function setPriority(?float $priority): static
+    public function setPriority(?int $priority): static
     {
         $this->priority = $priority;
         return $this;

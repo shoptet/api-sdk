@@ -7,19 +7,19 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class OrderHistory extends Entity
 {
-    protected float $id;
+    protected int $id;
     protected TypeDateTimeNullable $creationTime;
     protected string $text;
     protected ?User $user;
     protected bool $system;
     protected string $type;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
