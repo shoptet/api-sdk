@@ -15,7 +15,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 class CreateEmailDistributionList extends Post
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'itemsPerPage' => false];
 
     public function getRequestEntityClass(): string
     {

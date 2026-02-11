@@ -28,8 +28,8 @@ class Item extends Entity
     protected ?string $isbn;
     protected ?string $serialNo;
     protected ?string $mpn;
-    protected ?float $availabilityId;
-    protected ?float $availabilityWhenSoldOutId;
+    protected ?int $availabilityId;
+    protected ?int $availabilityWhenSoldOutId;
     protected ?string $image;
     protected ?Parameters $parameters;
     protected ?TypePositiveAmountNullable $minStockSupply;
@@ -41,6 +41,7 @@ class Item extends Entity
     protected ?int $amountDecimalPlaces;
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
+    protected ?bool $boxRestriction;
     protected ?OssVatLevels $ossVatLevels;
 
     public function getCode(): ?TypeVariantCodeRequest
@@ -197,23 +198,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAvailabilityId(): ?float
+    public function getAvailabilityId(): ?int
     {
         return $this->availabilityId;
     }
 
-    public function setAvailabilityId(?float $availabilityId): static
+    public function setAvailabilityId(?int $availabilityId): static
     {
         $this->availabilityId = $availabilityId;
         return $this;
     }
 
-    public function getAvailabilityWhenSoldOutId(): ?float
+    public function getAvailabilityWhenSoldOutId(): ?int
     {
         return $this->availabilityWhenSoldOutId;
     }
 
-    public function setAvailabilityWhenSoldOutId(?float $availabilityWhenSoldOutId): static
+    public function setAvailabilityWhenSoldOutId(?int $availabilityWhenSoldOutId): static
     {
         $this->availabilityWhenSoldOutId = $availabilityWhenSoldOutId;
         return $this;
@@ -337,6 +338,17 @@ class Item extends Entity
     public function setAtypicalShipping(?bool $atypicalShipping): static
     {
         $this->atypicalShipping = $atypicalShipping;
+        return $this;
+    }
+
+    public function getBoxRestriction(): ?bool
+    {
+        return $this->boxRestriction;
+    }
+
+    public function setBoxRestriction(?bool $boxRestriction): static
+    {
+        $this->boxRestriction = $boxRestriction;
         return $this;
     }
 

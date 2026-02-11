@@ -8,7 +8,7 @@ class Item extends Entity
 {
     protected string $code;
     protected ?string $title;
-    protected string $type;
+    protected ?string $type;
 
     public function getCode(): string
     {
@@ -32,12 +32,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(string $type): static
+    public function setType(?string $type): static
     {
         $this->type = $type;
         return $this;

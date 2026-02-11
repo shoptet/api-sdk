@@ -9,10 +9,16 @@ class Data extends Entity
 {
     protected ?TypeGuid $guid;
     protected ?string $vatRate;
+
+    /** @deprecated */
     protected ?string $itemPriceWithVat;
+
+    /** @deprecated */
     protected ?string $itemPriceWithoutVat;
+    protected ?string $unitPriceWithVat;
+    protected ?string $unitPriceWithoutVat;
     protected ?string $additionalField;
-    protected ?float $statusId;
+    protected ?int $statusId;
 
     public function getGuid(): ?TypeGuid
     {
@@ -36,25 +42,59 @@ class Data extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getItemPriceWithVat(): ?string
     {
         return $this->itemPriceWithVat;
     }
 
+    /**
+     * @deprecated
+     */
     public function setItemPriceWithVat(?string $itemPriceWithVat): static
     {
         $this->itemPriceWithVat = $itemPriceWithVat;
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getItemPriceWithoutVat(): ?string
     {
         return $this->itemPriceWithoutVat;
     }
 
+    /**
+     * @deprecated
+     */
     public function setItemPriceWithoutVat(?string $itemPriceWithoutVat): static
     {
         $this->itemPriceWithoutVat = $itemPriceWithoutVat;
+        return $this;
+    }
+
+    public function getUnitPriceWithVat(): ?string
+    {
+        return $this->unitPriceWithVat;
+    }
+
+    public function setUnitPriceWithVat(?string $unitPriceWithVat): static
+    {
+        $this->unitPriceWithVat = $unitPriceWithVat;
+        return $this;
+    }
+
+    public function getUnitPriceWithoutVat(): ?string
+    {
+        return $this->unitPriceWithoutVat;
+    }
+
+    public function setUnitPriceWithoutVat(?string $unitPriceWithoutVat): static
+    {
+        $this->unitPriceWithoutVat = $unitPriceWithoutVat;
         return $this;
     }
 
@@ -69,12 +109,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getStatusId(): ?float
+    public function getStatusId(): ?int
     {
         return $this->statusId;
     }
 
-    public function setStatusId(?float $statusId): static
+    public function setStatusId(?int $statusId): static
     {
         $this->statusId = $statusId;
         return $this;
