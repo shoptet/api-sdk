@@ -8,6 +8,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\PaymentMethod;
 use Shoptet\Api\Sdk\Php\Component\Entity\Price;
 use Shoptet\Api\Sdk\Php\Component\Entity\Shipping;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersResponse\Data\Orders\Item\Source;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrdersResponse\GetListOfOrdersResponse\Data\Orders\Item\Status;
@@ -33,6 +34,7 @@ class Item extends Entity
     protected Price $price;
     protected ?bool $paid;
     protected ?OrderPreAuthorization $preAuthorization;
+    protected ?TypeGuidNullable $salesChannelGuid;
 
     public function getCode(): string
     {
@@ -240,6 +242,17 @@ class Item extends Entity
     public function setPreAuthorization(?OrderPreAuthorization $preAuthorization): static
     {
         $this->preAuthorization = $preAuthorization;
+        return $this;
+    }
+
+    public function getSalesChannelGuid(): ?TypeGuidNullable
+    {
+        return $this->salesChannelGuid;
+    }
+
+    public function setSalesChannelGuid(?TypeGuidNullable $salesChannelGuid): static
+    {
+        $this->salesChannelGuid = $salesChannelGuid;
         return $this;
     }
 }

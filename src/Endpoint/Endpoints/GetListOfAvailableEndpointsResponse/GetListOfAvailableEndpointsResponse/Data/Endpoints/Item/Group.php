@@ -6,15 +6,15 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Group extends Entity
 {
-    protected float $id;
+    protected int $id;
     protected string $description;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
