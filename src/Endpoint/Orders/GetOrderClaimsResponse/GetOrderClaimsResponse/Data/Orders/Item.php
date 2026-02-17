@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 class Item extends Entity
 {
     protected string $orderCode;
-    protected float $statusId;
+    protected int $statusId;
     protected string $productCode;
     protected TypeAmountNullable $amount;
     protected TypePositiveAmountNullable $amountCompleted;
@@ -25,12 +25,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getStatusId(): float
+    public function getStatusId(): int
     {
         return $this->statusId;
     }
 
-    public function setStatusId(float $statusId): static
+    public function setStatusId(int $statusId): static
     {
         $this->statusId = $statusId;
         return $this;

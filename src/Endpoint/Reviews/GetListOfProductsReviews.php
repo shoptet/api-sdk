@@ -38,6 +38,6 @@ class GetListOfProductsReviews extends PageableGet
 
     public function getEndpoint(): string
     {
-        return '/api/products/reviews';
+        return '/api/reviews/products';
     }
 }

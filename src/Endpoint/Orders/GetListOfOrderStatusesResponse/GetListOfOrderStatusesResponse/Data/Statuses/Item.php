@@ -7,10 +7,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderStatusesResponse\GetListOf
 
 class Item extends Entity
 {
-    protected float $id;
+    protected int $id;
     protected string $name;
     protected bool $system;
-    protected float $order;
+    protected int $order;
     protected bool $markAsPaid;
     protected ?string $color;
     protected ?string $backgroundColor;
@@ -18,12 +18,12 @@ class Item extends Entity
     protected bool $stockClaimResolved;
     protected Documents $documents;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
@@ -51,12 +51,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getOrder(): float
+    public function getOrder(): int
     {
         return $this->order;
     }
 
-    public function setOrder(float $order): static
+    public function setOrder(int $order): static
     {
         $this->order = $order;
         return $this;

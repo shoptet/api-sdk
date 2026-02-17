@@ -6,43 +6,43 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class ArticleList extends Entity
 {
-    protected float $id;
-    protected ?float $defaultSectionId;
-    protected ?float $sectionId;
+    protected int $id;
+    protected ?int $defaultSectionId;
+    protected ?int $sectionId;
     protected string $title;
     protected ?string $url;
     protected TypeDateTimeNullable $publishDate;
     protected bool $visible;
     protected ?string $image;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getDefaultSectionId(): ?float
+    public function getDefaultSectionId(): ?int
     {
         return $this->defaultSectionId;
     }
 
-    public function setDefaultSectionId(?float $defaultSectionId): static
+    public function setDefaultSectionId(?int $defaultSectionId): static
     {
         $this->defaultSectionId = $defaultSectionId;
         return $this;
     }
 
-    public function getSectionId(): ?float
+    public function getSectionId(): ?int
     {
         return $this->sectionId;
     }
 
-    public function setSectionId(?float $sectionId): static
+    public function setSectionId(?int $sectionId): static
     {
         $this->sectionId = $sectionId;
         return $this;

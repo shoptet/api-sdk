@@ -46,6 +46,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Categories\DeleteProductCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductCategories;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductsOrderInCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetProductCategoryDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateCategoryProductsPriorityBatch;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateCategoryProductsPriorityBatchRequest\UpdateCategoryProductsPriorityBatchRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategoryBatch;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductCategoryBatchRequest\UpdateProductCategoryBatchRequest;
@@ -109,6 +111,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRegions;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomers;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomer;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRequest\UpdateCustomerRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrder;
+use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrderRequest\DeliveryNoteFromOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DownloadDeliveryNoteAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNote;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotes;
@@ -129,7 +133,12 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsageRequest\UpdateDiscountCouponsUsageRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\CreateDiscussionPosts;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\CreateDiscussionPostsRequest\CreateDiscussionPostsRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\DeleteDiscussionById;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPost;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPostRequest\UpdateDiscussionPostRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionListRequest\CreateEmailDistributionListRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailsDistributionList;
@@ -169,6 +178,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Flags\UpdateProductFlagRequest\UpdateProductFla
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\GetOrderGiftSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettingsRequest\UpdateOrderGiftSettingsRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Instores\GetInStoreDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Instores\GetListOfInStores;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\CreateInvoiceFromOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromProformaInvoice;
@@ -187,6 +198,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetailResponse\GetJobDetailResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetListOfJobs;
 use Shoptet\Api\Sdk\Php\Endpoint\MeasureUnits\GetListOfProductsMeasureUnits;
+use Shoptet\Api\Sdk\Php\Endpoint\OnlineStores\GetListOfOnlineStores;
+use Shoptet\Api\Sdk\Php\Endpoint\OnlineStores\GetOnlineStoreDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGift;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGiftRequest\AddOrderGiftRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\DeleteOrderGift;
@@ -212,6 +225,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\AddOrderShipping;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\AddOrderShippingRequest\AddOrderShippingRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\UpdateOrderShipping;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderShipping\UpdateOrderShippingRequest\UpdateOrderShippingRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\BulkOrderStatusChange;
+use Shoptet\Api\Sdk\Php\Endpoint\Orders\BulkOrderStatusChangeRequest\BulkOrderStatusChangeRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Orders\DeleteOrder;
@@ -308,13 +323,13 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCode;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCodeRequest\UpdateProductByCodeRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductRequest\UpdateProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\CreateProformaInvoiceFromOrder;
+use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\CreateProformaInvoiceFromOrderRequest\CreateProformaInvoiceFromOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\DownloadProformaInvoicePdf;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetLastProformaInvoiceChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfAllProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoices;
 use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetProformaInvoiceDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\Project\GetProjectDomainList;
-use Shoptet\Api\Sdk\Php\Endpoint\Project\GetProjectSalesChannels;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPayment;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByOrderCode;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByProformaInvoiceCode;
@@ -346,8 +361,21 @@ use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\AddRelatedProductRequest\AddRel
 use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\GetListOfProductRelatedProducts;
 use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProducts;
 use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProductsRequest\SetRelatedProductsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfEshopReviews;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReview;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReviewRequest\CreateProductReviewRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReview;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewRequest\CreateProjectReviewRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfEshopReviewsDeprecated;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviewsDeprecated;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReview;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReviewRequest\UpdateProductReviewRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProjectReview;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProjectReviewRequest\UpdateProjectReviewRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannels;
+use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailById;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethods;
@@ -631,12 +659,54 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofeshopreviews
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofeshopreviewsdeprecated
      */
-    public static function getListOfEshopReviews(array $queryParams = []): ResponseInterface
+    public static function getListOfEshopReviewsDeprecated(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
-            ->createEndpoint(GetListOfEshopReviews::class)
+            ->createEndpoint(GetListOfEshopReviewsDeprecated::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Online-stores/getlistofonlinestores
+     */
+    public static function getListOfOnlineStores(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfOnlineStores::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Online store ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Online-stores/getonlinestoredetail
+     */
+    public static function getOnlineStoreDetail(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetOnlineStoreDetail::class)
+            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -663,6 +733,7 @@ class Sdk
      *     supplierGuid?: string,
      *     changeTimeFrom?: string,
      *     changeTimeTo?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1227,6 +1298,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     from: string,
      *     changeType?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1249,6 +1321,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1391,11 +1464,37 @@ class Sdk
     }
 
     /**
+     * @param array<string, mixed>|UpdateCategoryProductsPriorityBatchRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updatecategoryproductsprioritybatch
+     */
+    public static function updateCategoryProductsPriorityBatch(
+        array|UpdateCategoryProductsPriorityBatchRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateCategoryProductsPriorityBatch::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param string $categoryGuid [5c498fb7-70ac-11e9-9208-08002774f818] Product category.
      * @param array{
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1450,6 +1549,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     include?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1782,6 +1882,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -1987,6 +2088,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2193,6 +2295,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     include?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2859,12 +2962,12 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviews
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviewsdeprecated
      */
-    public static function getListOfProductsReviews(array $queryParams): ResponseInterface
+    public static function getListOfProductsReviewsDeprecated(array $queryParams): ResponseInterface
     {
         return self::getEndpointFactory()
-            ->createEndpoint(GetListOfProductsReviews::class)
+            ->createEndpoint(GetListOfProductsReviewsDeprecated::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -2922,6 +3025,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     code?: string,
      *     guid?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3027,6 +3131,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     type?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3034,32 +3139,12 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Project/getprojectdomainlist
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Sales-channels/getsaleschannels
      */
-    public static function getProjectDomainList(array $queryParams = []): ResponseInterface
+    public static function getSalesChannels(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
-            ->createEndpoint(GetProjectDomainList::class)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Project/getprojectsaleschannels
-     */
-    public static function getProjectSalesChannels(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetProjectSalesChannels::class)
+            ->createEndpoint(GetSalesChannels::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -3085,6 +3170,7 @@ class Sdk
      *     changeTimeTo?: string,
      *     sourceId?: string,
      *     orderCodes?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3191,6 +3277,34 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAllOrders::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|BulkOrderStatusChangeRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     suppressDocumentGeneration?: string,
+     *     suppressEmailSending?: string,
+     *     suppressSmsSending?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/bulkorderstatuschange
+     */
+    public static function bulkOrderStatusChange(
+        array|BulkOrderStatusChangeRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(BulkOrderStatusChange::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -3722,6 +3836,34 @@ class Sdk
     }
 
     /**
+     * @param string $code [2018000053] Order code
+     * @param array<string, mixed>|DeliveryNoteFromOrderRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/deliverynotefromorder
+     */
+    public static function deliveryNoteFromOrder(
+        string $code,
+        array|DeliveryNoteFromOrderRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeliveryNoteFromOrder::class)
+            ->addPathParam('code', $code)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -3768,6 +3910,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     from: string,
      *     changeType?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3793,6 +3936,7 @@ class Sdk
      *     includeClosedAndCancelledOrders?: string,
      *     productCode?: string,
      *     orderCode?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -3950,6 +4094,48 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/In-stores/getlistofinstores
+     */
+    public static function getListOfInStores(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfInStores::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] In-store ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/In-stores/getinstoredetail
+     */
+    public static function getInStoreDetail(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetInStoreDetail::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
      *     isValid?: string,
@@ -3961,6 +4147,7 @@ class Sdk
      *     codeFrom?: string,
      *     codeTo?: string,
      *     varSymbol?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -4064,6 +4251,35 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(CreateInvoiceFromOrder::class)
+            ->addPathParam('code', $code)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [2018000053] Code of order
+     * @param array<string, mixed>|CreateProformaInvoiceFromOrderRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     suppressExistenceCheck?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proforma-invoices/createproformainvoicefromorder
+     */
+    public static function createProformaInvoiceFromOrder(
+        string $code,
+        array|CreateProformaInvoiceFromOrderRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateProformaInvoiceFromOrder::class)
             ->addPathParam('code', $code)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
@@ -4235,6 +4451,7 @@ class Sdk
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
      *     varSymbol?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -4365,6 +4582,7 @@ class Sdk
      *     issueDate?: string,
      *     isValid?: string,
      *     closed?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -4946,7 +5164,7 @@ class Sdk
 
     /**
      * @param string $code [2018000012] credit note code (number)
-     * @param string $id [198] credit note item id. Can be found in field `data.creditNote.items.itemId` in Credit note detail.  (number)
+     * @param string $id [198] credit note item id. Can be found in field `data.creditNote.items.itemId` in Credit note detail.
      * @param array<string, mixed>|UpdateCreditNoteItemRequest $requestBody
      * @param array{
      *     language?: string,
@@ -4977,7 +5195,7 @@ class Sdk
 
     /**
      * @param string $code [2018000012] credit note code (number)
-     * @param string $id [198] credit note item id. Can be found in field `data.creditNote.items.itemId` in Credit note detail.  (number)
+     * @param string $id [198] credit note item id. Can be found in field `data.creditNote.items.itemId` in Credit note detail.
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -5074,6 +5292,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     isValid?: string,
      *     orderCode?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5202,6 +5421,50 @@ class Sdk
     }
 
     /**
+     * @param string $guid [0199bdfd-0979-71fb-85ce-e483c61d391a] Sales channel GUID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Sales-channels/getsaleschannelsdetail
+     */
+    public static function getSalesChannelsDetail(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetSalesChannelsDetail::class)
+            ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [2] Sales channel ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Sales-channels/getsaleschannelsdetailbyid
+     */
+    public static function getSalesChannelsDetailById(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetSalesChannelsDetailById::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -5253,6 +5516,7 @@ class Sdk
      *     changeTimeFrom?: string,
      *     orderCode?: string,
      *     include?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5331,6 +5595,7 @@ class Sdk
      *     code?: string,
      *     onlyWithClaim?: string,
      *     changedFrom?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5354,6 +5619,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5376,6 +5642,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5523,6 +5790,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     email?: string,
      *     phone?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5670,6 +5938,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5807,6 +6076,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5944,6 +6214,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6260,6 +6531,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6403,6 +6675,7 @@ class Sdk
      *     event?: string,
      *     active?: string,
      *     from?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6553,6 +6826,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     salesChannelGuid?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6623,6 +6897,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     from?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6689,6 +6964,7 @@ class Sdk
      * @param array<string, mixed>|CreateEmailDistributionListRequest $requestBody
      * @param array{
      *     language?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6770,6 +7046,7 @@ class Sdk
      *     itemsPerPage?: int,
      *     from: string,
      *     changeType?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6799,6 +7076,7 @@ class Sdk
      *     reusable?: string,
      *     validFrom?: string,
      *     validTo?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -7408,6 +7686,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -7795,9 +8074,13 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     productGuid?: string,
+     *     articleId?: string,
+     *     pageId?: string,
+     *     customerGuid?: string,
      *     userEmail?: string,
      *     creationDateFrom?: string,
      *     creationDateTo?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -7816,13 +8099,91 @@ class Sdk
     }
 
     /**
+     * @param array<string, mixed>|CreateDiscussionPostsRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/creatediscussionposts
+     */
+    public static function createDiscussionPosts(
+        array|CreateDiscussionPostsRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateDiscussionPosts::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Discussion post id
+     * @param array<string, mixed>|UpdateDiscussionPostRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/updatediscussionpost
+     */
+    public static function updateDiscussionPost(
+        string $id,
+        array|UpdateDiscussionPostRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateDiscussionPost::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] ID of discussion
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/deletediscussionbyid
+     */
+    public static function deleteDiscussionById(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteDiscussionById::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
      * @param array{
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
      *     status?: string,
      *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
      *     completionTimeFrom?: string,
+     *     completionTimeTo?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -7949,6 +8310,161 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAvailableEndpoints::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     dateFrom: string,
+     *     dateTo: string,
+     *     changeTimeFrom: string,
+     *     productGuid: string,
+     *     orderCode: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviews
+     */
+    public static function getListOfProductsReviews(array $queryParams): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfProductsReviews::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateProductReviewRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/createproductreview
+     */
+    public static function createProductReview(
+        array|CreateProductReviewRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateProductReview::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $reviewId [1] review ID
+     * @param array<string, mixed>|UpdateProductReviewRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/updateproductreview
+     */
+    public static function updateProductReview(
+        string $reviewId,
+        array|UpdateProductReviewRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateProductReview::class)
+            ->addPathParam('reviewId', $reviewId)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofprojectreviews
+     */
+    public static function getListOfProjectReviews(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfProjectReviews::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateProjectReviewRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/createprojectreview
+     */
+    public static function createProjectReview(
+        array|CreateProjectReviewRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateProjectReview::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $reviewId [1] review ID
+     * @param array<string, mixed>|UpdateProjectReviewRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/updateprojectreview
+     */
+    public static function updateProjectReview(
+        string $reviewId,
+        array|UpdateProjectReviewRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateProjectReview::class)
+            ->addPathParam('reviewId', $reviewId)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }

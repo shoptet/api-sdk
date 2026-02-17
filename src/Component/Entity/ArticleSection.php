@@ -4,18 +4,18 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 class ArticleSection extends Entity
 {
-    protected float $id;
-    protected ?float $parentId;
+    protected int $id;
+    protected ?int $parentId;
     protected string $title;
     protected ?string $language;
     protected ?string $indexName;
     protected ?string $url;
     protected ?string $description;
     protected ?string $secondDescription;
-    protected ?float $limit;
-    protected ?float $homepageLimit;
+    protected ?int $limit;
+    protected ?int $homepageLimit;
     protected ?string $sorting;
-    protected ?float $perexLimit;
+    protected ?int $perexLimit;
     protected ?bool $hidePublishDate;
     protected ?bool $showPrevNext;
     protected ?bool $showOnHomepage;
@@ -28,23 +28,23 @@ class ArticleSection extends Entity
     protected ?string $image;
     protected ?string $ogImage;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getParentId(): ?float
+    public function getParentId(): ?int
     {
         return $this->parentId;
     }
 
-    public function setParentId(?float $parentId): static
+    public function setParentId(?int $parentId): static
     {
         $this->parentId = $parentId;
         return $this;
@@ -116,23 +116,23 @@ class ArticleSection extends Entity
         return $this;
     }
 
-    public function getLimit(): ?float
+    public function getLimit(): ?int
     {
         return $this->limit;
     }
 
-    public function setLimit(?float $limit): static
+    public function setLimit(?int $limit): static
     {
         $this->limit = $limit;
         return $this;
     }
 
-    public function getHomepageLimit(): ?float
+    public function getHomepageLimit(): ?int
     {
         return $this->homepageLimit;
     }
 
-    public function setHomepageLimit(?float $homepageLimit): static
+    public function setHomepageLimit(?int $homepageLimit): static
     {
         $this->homepageLimit = $homepageLimit;
         return $this;
@@ -149,12 +149,12 @@ class ArticleSection extends Entity
         return $this;
     }
 
-    public function getPerexLimit(): ?float
+    public function getPerexLimit(): ?int
     {
         return $this->perexLimit;
     }
 
-    public function setPerexLimit(?float $perexLimit): static
+    public function setPerexLimit(?int $perexLimit): static
     {
         $this->perexLimit = $perexLimit;
         return $this;
