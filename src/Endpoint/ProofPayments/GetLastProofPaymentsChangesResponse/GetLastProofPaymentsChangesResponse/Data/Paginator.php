@@ -6,62 +6,62 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Paginator extends Entity
 {
-    protected float $totalCount;
-    protected float $page;
-    protected float $pageCount;
-    protected float $itemsOnPage;
-    protected float $itemsPerPage;
+    protected int $totalCount;
+    protected int $page;
+    protected int $pageCount;
+    protected int $itemsOnPage;
+    protected int $itemsPerPage;
 
-    public function getTotalCount(): float
+    public function getTotalCount(): int
     {
         return $this->totalCount;
     }
 
-    public function setTotalCount(float $totalCount): static
+    public function setTotalCount(int $totalCount): static
     {
         $this->totalCount = $totalCount;
         return $this;
     }
 
-    public function getPage(): float
+    public function getPage(): int
     {
         return $this->page;
     }
 
-    public function setPage(float $page): static
+    public function setPage(int $page): static
     {
         $this->page = $page;
         return $this;
     }
 
-    public function getPageCount(): float
+    public function getPageCount(): int
     {
         return $this->pageCount;
     }
 
-    public function setPageCount(float $pageCount): static
+    public function setPageCount(int $pageCount): static
     {
         $this->pageCount = $pageCount;
         return $this;
     }
 
-    public function getItemsOnPage(): float
+    public function getItemsOnPage(): int
     {
         return $this->itemsOnPage;
     }
 
-    public function setItemsOnPage(float $itemsOnPage): static
+    public function setItemsOnPage(int $itemsOnPage): static
     {
         $this->itemsOnPage = $itemsOnPage;
         return $this;
     }
 
-    public function getItemsPerPage(): float
+    public function getItemsPerPage(): int
     {
         return $this->itemsPerPage;
     }
 
-    public function setItemsPerPage(float $itemsPerPage): static
+    public function setItemsPerPage(int $itemsPerPage): static
     {
         $this->itemsPerPage = $itemsPerPage;
         return $this;

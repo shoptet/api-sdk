@@ -3,6 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\InvoiceItem\DisplayPrices;
+use Shoptet\Api\Sdk\Php\Component\Entity\InvoiceItem\ItemPriceVatBreakdown;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
@@ -11,7 +12,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeight;
 class InvoiceItem extends Entity
 {
     protected ?TypeGuidUnlimited $productGuid;
-    protected float $itemId;
+    protected int $itemId;
     protected ?string $code;
     protected string $itemType;
     protected ?string $name;
@@ -24,6 +25,7 @@ class InvoiceItem extends Entity
     protected ?TypeWeight $weight;
     protected ?string $additionalField;
     protected ItemPrice $itemPrice;
+    protected ItemPrice $unitPrice;
 
     /** @deprecated */
     protected ?ItemPrice $buyPrice;
@@ -33,6 +35,7 @@ class InvoiceItem extends Entity
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
     protected DocumentConsumptionTax $consumptionTax;
+    protected ?ItemPriceVatBreakdown $itemPriceVatBreakdown;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -45,12 +48,12 @@ class InvoiceItem extends Entity
         return $this;
     }
 
-    public function getItemId(): float
+    public function getItemId(): int
     {
         return $this->itemId;
     }
 
-    public function setItemId(float $itemId): static
+    public function setItemId(int $itemId): static
     {
         $this->itemId = $itemId;
         return $this;
@@ -188,6 +191,17 @@ class InvoiceItem extends Entity
         return $this;
     }
 
+    public function getUnitPrice(): ItemPrice
+    {
+        return $this->unitPrice;
+    }
+
+    public function setUnitPrice(ItemPrice $unitPrice): static
+    {
+        $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
     /**
      * @deprecated
      */
@@ -269,6 +283,17 @@ class InvoiceItem extends Entity
     public function setConsumptionTax(DocumentConsumptionTax $consumptionTax): static
     {
         $this->consumptionTax = $consumptionTax;
+        return $this;
+    }
+
+    public function getItemPriceVatBreakdown(): ?ItemPriceVatBreakdown
+    {
+        return $this->itemPriceVatBreakdown;
+    }
+
+    public function setItemPriceVatBreakdown(?ItemPriceVatBreakdown $itemPriceVatBreakdown): static
+    {
+        $this->itemPriceVatBreakdown = $itemPriceVatBreakdown;
         return $this;
     }
 }

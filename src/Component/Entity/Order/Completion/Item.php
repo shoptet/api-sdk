@@ -16,9 +16,9 @@ class Item extends Entity
     protected ?string $variantName;
     protected TypeAmountNullable $amount;
     protected ?string $amountUnit;
-    protected ?float $itemId;
+    protected ?int $itemId;
     protected TypePositiveAmountNullable $amountCompleted;
-    protected ?float $parentProductSetItemId;
+    protected ?int $parentProductSetItemId;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -97,12 +97,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getItemId(): ?float
+    public function getItemId(): ?int
     {
         return $this->itemId;
     }
 
-    public function setItemId(?float $itemId): static
+    public function setItemId(?int $itemId): static
     {
         $this->itemId = $itemId;
         return $this;
@@ -119,12 +119,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getParentProductSetItemId(): ?float
+    public function getParentProductSetItemId(): ?int
     {
         return $this->parentProductSetItemId;
     }
 
-    public function setParentProductSetItemId(?float $parentProductSetItemId): static
+    public function setParentProductSetItemId(?int $parentProductSetItemId): static
     {
         $this->parentProductSetItemId = $parentProductSetItemId;
         return $this;

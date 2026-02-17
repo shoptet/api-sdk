@@ -6,16 +6,16 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Data extends Entity
 {
-    protected ?float $statusId;
+    protected ?int $statusId;
     protected ?bool $paid;
-    protected ?float $billingMethodId;
+    protected ?int $billingMethodId;
 
-    public function getStatusId(): ?float
+    public function getStatusId(): ?int
     {
         return $this->statusId;
     }
 
-    public function setStatusId(?float $statusId): static
+    public function setStatusId(?int $statusId): static
     {
         $this->statusId = $statusId;
         return $this;
@@ -32,12 +32,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getBillingMethodId(): ?float
+    public function getBillingMethodId(): ?int
     {
         return $this->billingMethodId;
     }
 
-    public function setBillingMethodId(?float $billingMethodId): static
+    public function setBillingMethodId(?int $billingMethodId): static
     {
         $this->billingMethodId = $billingMethodId;
         return $this;

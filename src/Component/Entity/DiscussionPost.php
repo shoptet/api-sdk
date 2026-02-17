@@ -3,13 +3,16 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class DiscussionPost extends Entity
 {
-    protected float $id;
-    protected ?float $parentId;
-    protected ?string $productGuid;
-    protected ?string $customerGuid;
+    protected int $id;
+    protected ?int $parentId;
+    protected ?TypeGuidUnlimited $productGuid;
+    protected ?int $articleId;
+    protected ?int $pageId;
+    protected ?TypeGuidUnlimited $customerGuid;
     protected ?string $name;
     protected ?string $email;
     protected ?string $title;
@@ -17,45 +20,67 @@ class DiscussionPost extends Entity
     protected TypeDateTimeNullable $creationDate;
     protected bool $authorized;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getParentId(): ?float
+    public function getParentId(): ?int
     {
         return $this->parentId;
     }
 
-    public function setParentId(?float $parentId): static
+    public function setParentId(?int $parentId): static
     {
         $this->parentId = $parentId;
         return $this;
     }
 
-    public function getProductGuid(): ?string
+    public function getProductGuid(): ?TypeGuidUnlimited
     {
         return $this->productGuid;
     }
 
-    public function setProductGuid(?string $productGuid): static
+    public function setProductGuid(?TypeGuidUnlimited $productGuid): static
     {
         $this->productGuid = $productGuid;
         return $this;
     }
 
-    public function getCustomerGuid(): ?string
+    public function getArticleId(): ?int
+    {
+        return $this->articleId;
+    }
+
+    public function setArticleId(?int $articleId): static
+    {
+        $this->articleId = $articleId;
+        return $this;
+    }
+
+    public function getPageId(): ?int
+    {
+        return $this->pageId;
+    }
+
+    public function setPageId(?int $pageId): static
+    {
+        $this->pageId = $pageId;
+        return $this;
+    }
+
+    public function getCustomerGuid(): ?TypeGuidUnlimited
     {
         return $this->customerGuid;
     }
 
-    public function setCustomerGuid(?string $customerGuid): static
+    public function setCustomerGuid(?TypeGuidUnlimited $customerGuid): static
     {
         $this->customerGuid = $customerGuid;
         return $this;

@@ -9,14 +9,14 @@ class Data extends Entity
 {
     protected string $title;
     protected ?string $language;
-    protected ?float $parentId;
+    protected ?int $parentId;
     protected ?string $indexName;
     protected ?string $description;
     protected ?string $secondDescription;
-    protected ?float $limit;
-    protected ?float $homepageLimit;
+    protected ?int $limit;
+    protected ?int $homepageLimit;
     protected ?string $sorting;
-    protected ?float $perexLimit;
+    protected ?int $perexLimit;
     protected ?bool $hidePublishDate;
     protected ?bool $showPrevNext;
     protected ?bool $showOnHomepage;
@@ -50,12 +50,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getParentId(): ?float
+    public function getParentId(): ?int
     {
         return $this->parentId;
     }
 
-    public function setParentId(?float $parentId): static
+    public function setParentId(?int $parentId): static
     {
         $this->parentId = $parentId;
         return $this;
@@ -94,23 +94,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getLimit(): ?float
+    public function getLimit(): ?int
     {
         return $this->limit;
     }
 
-    public function setLimit(?float $limit): static
+    public function setLimit(?int $limit): static
     {
         $this->limit = $limit;
         return $this;
     }
 
-    public function getHomepageLimit(): ?float
+    public function getHomepageLimit(): ?int
     {
         return $this->homepageLimit;
     }
 
-    public function setHomepageLimit(?float $homepageLimit): static
+    public function setHomepageLimit(?int $homepageLimit): static
     {
         $this->homepageLimit = $homepageLimit;
         return $this;
@@ -127,12 +127,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getPerexLimit(): ?float
+    public function getPerexLimit(): ?int
     {
         return $this->perexLimit;
     }
 
-    public function setPerexLimit(?float $perexLimit): static
+    public function setPerexLimit(?int $perexLimit): static
     {
         $this->perexLimit = $perexLimit;
         return $this;

@@ -6,15 +6,15 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 
 class Item extends Entity
 {
-    protected float $index;
+    protected int $index;
     protected ?string $text;
 
-    public function getIndex(): float
+    public function getIndex(): int
     {
         return $this->index;
     }
 
-    public function setIndex(float $index): static
+    public function setIndex(int $index): static
     {
         $this->index = $index;
         return $this;
