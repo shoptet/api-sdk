@@ -3,18 +3,18 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Orders\CreateOrderRequest\CreateOrderRequest\Data;
+use Shoptet\Api\Sdk\Php\Component\Entity\OrderCreate;
 
 class CreateOrderRequest extends Entity
 {
-    protected Data $data;
+    protected OrderCreate $data;
 
-    public function getData(): Data
+    public function getData(): OrderCreate
     {
         return $this->data;
     }
 
-    public function setData(Data $data): static
+    public function setData(OrderCreate $data): static
     {
         $this->data = $data;
         return $this;

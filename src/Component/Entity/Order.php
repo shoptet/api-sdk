@@ -6,11 +6,13 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Order\Completion;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Items;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Notes;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\PaymentMethods;
+use Shoptet\Api\Sdk\Php\Component\Entity\Order\PaymentTransactions;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\ShippingDetails;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Shippings;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Source;
 use Shoptet\Api\Sdk\Php\Component\Entity\Order\Status;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 
 class Order extends Entity
@@ -26,7 +28,7 @@ class Order extends Entity
     protected ?string $clientIPAddress;
     protected ?TypeGuidUnlimited $customerGuid;
     protected bool $cashDeskOrder;
-    protected float $stockId;
+    protected int $stockId;
     protected bool $addressesEqual;
     protected bool $vatPayer;
     protected ?string $vatMode;
@@ -37,6 +39,7 @@ class Order extends Entity
     protected string $adminUrl;
     protected ?Status $status;
     protected ?Source $source;
+    protected ?TypeGuidNullable $salesChannelGuid;
     protected Price $price;
     protected ?bool $paid;
     protected BillingAddress $billingAddress;
@@ -50,6 +53,7 @@ class Order extends Entity
     protected ?Notes $notes;
     protected ?OrderPreAuthorization $preAuthorization;
     protected ?Completion $completion;
+    protected ?PaymentTransactions $paymentTransactions;
 
     public function getCode(): string
     {
@@ -172,12 +176,12 @@ class Order extends Entity
         return $this;
     }
 
-    public function getStockId(): float
+    public function getStockId(): int
     {
         return $this->stockId;
     }
 
-    public function setStockId(float $stockId): static
+    public function setStockId(int $stockId): static
     {
         $this->stockId = $stockId;
         return $this;
@@ -290,6 +294,17 @@ class Order extends Entity
     public function setSource(?Source $source): static
     {
         $this->source = $source;
+        return $this;
+    }
+
+    public function getSalesChannelGuid(): ?TypeGuidNullable
+    {
+        return $this->salesChannelGuid;
+    }
+
+    public function setSalesChannelGuid(?TypeGuidNullable $salesChannelGuid): static
+    {
+        $this->salesChannelGuid = $salesChannelGuid;
         return $this;
     }
 
@@ -433,6 +448,17 @@ class Order extends Entity
     public function setCompletion(?Completion $completion): static
     {
         $this->completion = $completion;
+        return $this;
+    }
+
+    public function getPaymentTransactions(): ?PaymentTransactions
+    {
+        return $this->paymentTransactions;
+    }
+
+    public function setPaymentTransactions(?PaymentTransactions $paymentTransactions): static
+    {
+        $this->paymentTransactions = $paymentTransactions;
         return $this;
     }
 }

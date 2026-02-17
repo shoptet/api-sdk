@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\OrderBatchCreate\Settings;
 class OrderBatchCreate extends Entity
 {
     protected ?Settings $settings;
-    protected Order $data;
+    protected OrderCreate $data;
 
     public function getSettings(): ?Settings
     {
@@ -20,12 +20,12 @@ class OrderBatchCreate extends Entity
         return $this;
     }
 
-    public function getData(): Order
+    public function getData(): OrderCreate
     {
         return $this->data;
     }
 
-    public function setData(Order $data): static
+    public function setData(OrderCreate $data): static
     {
         $this->data = $data;
         return $this;

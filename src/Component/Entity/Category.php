@@ -15,7 +15,7 @@ class Category extends Entity
     protected string $indexName;
     protected string $url;
     protected TypeGuidNullable $parentGuid;
-    protected ?float $priority;
+    protected ?int $priority;
     protected ?string $menuTitle;
     protected ?string $title;
     protected ?string $metaTagDescription;
@@ -114,12 +114,12 @@ class Category extends Entity
         return $this;
     }
 
-    public function getPriority(): ?float
+    public function getPriority(): ?int
     {
         return $this->priority;
     }
 
-    public function setPriority(?float $priority): static
+    public function setPriority(?int $priority): static
     {
         $this->priority = $priority;
         return $this;

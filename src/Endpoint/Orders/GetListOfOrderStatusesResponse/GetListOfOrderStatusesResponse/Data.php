@@ -7,15 +7,15 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\GetListOfOrderStatusesResponse\GetListOf
 
 class Data extends Entity
 {
-    protected float $defaultStatus;
+    protected int $defaultStatus;
     protected Statuses $statuses;
 
-    public function getDefaultStatus(): float
+    public function getDefaultStatus(): int
     {
         return $this->defaultStatus;
     }
 
-    public function setDefaultStatus(float $defaultStatus): static
+    public function setDefaultStatus(int $defaultStatus): static
     {
         $this->defaultStatus = $defaultStatus;
         return $this;

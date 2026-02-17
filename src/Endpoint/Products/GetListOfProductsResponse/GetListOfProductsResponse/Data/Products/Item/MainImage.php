@@ -10,7 +10,7 @@ class MainImage extends Entity
     protected string $name;
     protected string $seoName;
     protected string $cdnName;
-    protected float $priority;
+    protected int $priority;
     protected ?string $description;
     protected TypeDateTimeNullable $changeTime;
 
@@ -47,12 +47,12 @@ class MainImage extends Entity
         return $this;
     }
 
-    public function getPriority(): float
+    public function getPriority(): int
     {
         return $this->priority;
     }
 
-    public function setPriority(float $priority): static
+    public function setPriority(int $priority): static
     {
         $this->priority = $priority;
         return $this;
