@@ -11,7 +11,7 @@ class Data extends Entity
 {
     protected string $title;
     protected ?string $language;
-    protected float $defaultSectionId;
+    protected int $defaultSectionId;
     protected ?SectionIds $sectionIds;
     protected ?string $indexName;
     protected ?string $redirectUrl;
@@ -49,12 +49,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getDefaultSectionId(): float
+    public function getDefaultSectionId(): int
     {
         return $this->defaultSectionId;
     }
 
-    public function setDefaultSectionId(float $defaultSectionId): static
+    public function setDefaultSectionId(int $defaultSectionId): static
     {
         $this->defaultSectionId = $defaultSectionId;
         return $this;

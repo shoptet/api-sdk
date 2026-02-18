@@ -57,6 +57,7 @@ class Item extends Entity
     protected ?ZboziCZ $zboziCZ;
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
+    protected ?bool $boxRestriction;
     protected ?PerStockAmounts $perStockAmounts;
     protected ?PerPricelistPrices $perPricelistPrices;
     protected ?string $url;
@@ -456,6 +457,17 @@ class Item extends Entity
     public function setAtypicalShipping(?bool $atypicalShipping): static
     {
         $this->atypicalShipping = $atypicalShipping;
+        return $this;
+    }
+
+    public function getBoxRestriction(): ?bool
+    {
+        return $this->boxRestriction;
+    }
+
+    public function setBoxRestriction(?bool $boxRestriction): static
+    {
+        $this->boxRestriction = $boxRestriction;
         return $this;
     }
 

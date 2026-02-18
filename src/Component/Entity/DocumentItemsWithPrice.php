@@ -3,6 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\DocumentItemsWithPrice\DisplayPrices;
+use Shoptet\Api\Sdk\Php\Component\Entity\DocumentItemsWithPrice\ItemPriceVatBreakdown;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
@@ -23,14 +24,16 @@ class DocumentItemsWithPrice extends Entity
     protected ?TypeWeight $weight;
     protected ?string $additionalField;
     protected ItemPrice $itemPrice;
+    protected ItemPrice $unitPrice;
 
     /** @deprecated */
     protected ?ItemPrice $buyPrice;
     protected ?ItemPrice $purchasePrice;
     protected ?DisplayPrices $displayPrices;
-    protected float $itemId;
+    protected int $itemId;
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
+    protected ?ItemPriceVatBreakdown $itemPriceVatBreakdown;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -175,6 +178,17 @@ class DocumentItemsWithPrice extends Entity
         return $this;
     }
 
+    public function getUnitPrice(): ItemPrice
+    {
+        return $this->unitPrice;
+    }
+
+    public function setUnitPrice(ItemPrice $unitPrice): static
+    {
+        $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
     /**
      * @deprecated
      */
@@ -214,12 +228,12 @@ class DocumentItemsWithPrice extends Entity
         return $this;
     }
 
-    public function getItemId(): float
+    public function getItemId(): int
     {
         return $this->itemId;
     }
 
-    public function setItemId(float $itemId): static
+    public function setItemId(int $itemId): static
     {
         $this->itemId = $itemId;
         return $this;
@@ -245,6 +259,17 @@ class DocumentItemsWithPrice extends Entity
         ?ItemSpecificSurchargeParameters $specificSurchargeParameters,
     ): static {
         $this->specificSurchargeParameters = $specificSurchargeParameters;
+        return $this;
+    }
+
+    public function getItemPriceVatBreakdown(): ?ItemPriceVatBreakdown
+    {
+        return $this->itemPriceVatBreakdown;
+    }
+
+    public function setItemPriceVatBreakdown(?ItemPriceVatBreakdown $itemPriceVatBreakdown): static
+    {
+        $this->itemPriceVatBreakdown = $itemPriceVatBreakdown;
         return $this;
     }
 }

@@ -4,15 +4,15 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 class ArticleUrls extends Entity
 {
-    protected float $sectionId;
+    protected int $sectionId;
     protected string $url;
 
-    public function getSectionId(): float
+    public function getSectionId(): int
     {
         return $this->sectionId;
     }
 
-    public function setSectionId(float $sectionId): static
+    public function setSectionId(int $sectionId): static
     {
         $this->sectionId = $sectionId;
         return $this;
