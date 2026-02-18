@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class Data extends Entity
 {
-    protected float $count;
+    protected int $count;
     protected string $discountType;
     protected ?TypePriceNullable $amount;
     protected ?string $ratio;
@@ -23,12 +23,12 @@ class Data extends Entity
     protected bool $reusable;
     protected ?string $remark;
 
-    public function getCount(): float
+    public function getCount(): int
     {
         return $this->count;
     }
 
-    public function setCount(float $count): static
+    public function setCount(int $count): static
     {
         $this->count = $count;
         return $this;

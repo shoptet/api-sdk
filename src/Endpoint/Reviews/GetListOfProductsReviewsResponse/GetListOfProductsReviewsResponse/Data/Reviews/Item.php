@@ -10,10 +10,11 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviewsResponse\GetLis
 
 class Item extends Entity
 {
+    protected int $id;
     protected TypeGuid $guid;
     protected TypeDateTimeNullable $date;
     protected ?string $orderCode;
-    protected float $rating;
+    protected int $rating;
     protected string $productName;
     protected ?TypeGuidUnlimited $productGuid;
     protected ?string $description;
@@ -24,6 +25,17 @@ class Item extends Entity
     protected bool $visible;
     protected Reaction $reaction;
     protected TypeDateTimeNullable $updated;
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+        return $this;
+    }
 
     public function getGuid(): TypeGuid
     {
@@ -58,12 +70,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getRating(): float
+    public function getRating(): int
     {
         return $this->rating;
     }
 
-    public function setRating(float $rating): static
+    public function setRating(int $rating): static
     {
         $this->rating = $rating;
         return $this;

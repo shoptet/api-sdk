@@ -3,6 +3,7 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\DisplayPrices;
+use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\ItemPriceVatBreakdown;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\MainImage;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\Status;
 use Shoptet\Api\Sdk\Php\Component\Entity\OrderItem\SurchargeParametersTexts;
@@ -30,6 +31,7 @@ class OrderItem extends Entity
     protected TypePriceRatio $priceRatio;
     protected Status $status;
     protected ItemPrice $itemPrice;
+    protected ItemPrice $unitPrice;
     protected ?DisplayPrices $displayPrices;
 
     /** @deprecated */
@@ -39,7 +41,7 @@ class OrderItem extends Entity
     protected ?MainImage $mainImage;
     protected ?string $stockLocation;
     protected ?string $supplierName;
-    protected float $itemId;
+    protected int $itemId;
     protected ?string $warrantyDescription;
 
     /** @deprecated */
@@ -51,6 +53,7 @@ class OrderItem extends Entity
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
     protected ?ProductFlags $productFlags;
     protected ?DocumentConsumptionTax $consumptionTax;
+    protected ?ItemPriceVatBreakdown $itemPriceVatBreakdown;
 
     public function getProductGuid(): ?TypeGuidUnlimited
     {
@@ -228,6 +231,17 @@ class OrderItem extends Entity
         return $this;
     }
 
+    public function getUnitPrice(): ItemPrice
+    {
+        return $this->unitPrice;
+    }
+
+    public function setUnitPrice(ItemPrice $unitPrice): static
+    {
+        $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
     public function getDisplayPrices(): ?DisplayPrices
     {
         return $this->displayPrices;
@@ -311,12 +325,12 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getItemId(): float
+    public function getItemId(): int
     {
         return $this->itemId;
     }
 
-    public function setItemId(float $itemId): static
+    public function setItemId(int $itemId): static
     {
         $this->itemId = $itemId;
         return $this;
@@ -409,6 +423,17 @@ class OrderItem extends Entity
     public function setConsumptionTax(?DocumentConsumptionTax $consumptionTax): static
     {
         $this->consumptionTax = $consumptionTax;
+        return $this;
+    }
+
+    public function getItemPriceVatBreakdown(): ?ItemPriceVatBreakdown
+    {
+        return $this->itemPriceVatBreakdown;
+    }
+
+    public function setItemPriceVatBreakdown(?ItemPriceVatBreakdown $itemPriceVatBreakdown): static
+    {
+        $this->itemPriceVatBreakdown = $itemPriceVatBreakdown;
         return $this;
     }
 }

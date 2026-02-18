@@ -9,6 +9,7 @@ class BankAccount extends Entity
     protected ?string $accountNumber;
     protected ?string $iban;
     protected ?string $bic;
+    protected ?string $ownerName;
 
     public function getAccountNumber(): ?string
     {
@@ -40,6 +41,17 @@ class BankAccount extends Entity
     public function setBic(?string $bic): static
     {
         $this->bic = $bic;
+        return $this;
+    }
+
+    public function getOwnerName(): ?string
+    {
+        return $this->ownerName;
+    }
+
+    public function setOwnerName(?string $ownerName): static
+    {
+        $this->ownerName = $ownerName;
         return $this;
     }
 }

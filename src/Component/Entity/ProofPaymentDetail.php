@@ -40,9 +40,9 @@ class ProofPaymentDetail extends Entity
     protected ?string $email;
     protected ?string $phone;
     protected Source $source;
-    protected ?float $cashdeskId;
+    protected ?int $cashdeskId;
     protected ?TypeGuidUnlimited $customerGuid;
-    protected ?float $customerProfileId;
+    protected ?int $customerProfileId;
 
     /** @deprecated */
     protected ?string $identificationNumber;
@@ -382,12 +382,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getCashdeskId(): ?float
+    public function getCashdeskId(): ?int
     {
         return $this->cashdeskId;
     }
 
-    public function setCashdeskId(?float $cashdeskId): static
+    public function setCashdeskId(?int $cashdeskId): static
     {
         $this->cashdeskId = $cashdeskId;
         return $this;
@@ -404,12 +404,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getCustomerProfileId(): ?float
+    public function getCustomerProfileId(): ?int
     {
         return $this->customerProfileId;
     }
 
-    public function setCustomerProfileId(?float $customerProfileId): static
+    public function setCustomerProfileId(?int $customerProfileId): static
     {
         $this->customerProfileId = $customerProfileId;
         return $this;

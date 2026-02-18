@@ -5,17 +5,17 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Articles\CreateArticleRequest\CreateArtic
 use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
 
 /**
- * @extends EntityCollection<float>
- * @property float[] $data
- * @method float[] toArray()
- * @method void set(int $key, float $item)
- * @method null|float get(int $key)
- * @method void add(float $item)
- * @method null|float remove(int $key)
- * @method bool removeItem(float $item, bool $strict = true)
- * @method bool contains(float $item, bool $strict = true)
- * @method null|float offsetGet(int $offset)
- * @method void offsetSet(int $offset, float $value)
+ * @extends EntityCollection<int>
+ * @property int[] $data
+ * @method int[] toArray()
+ * @method void set(int $key, int $item)
+ * @method null|int get(int $key)
+ * @method void add(int $item)
+ * @method null|int remove(int $key)
+ * @method bool removeItem(int $item, bool $strict = true)
+ * @method bool contains(int $item, bool $strict = true)
+ * @method null|int offsetGet(int $offset)
+ * @method void offsetSet(int $offset, int $value)
  */
 class SectionIds extends EntityCollection
 {
@@ -25,6 +25,6 @@ class SectionIds extends EntityCollection
      */
     public function getItemType(array $data): string
     {
-        return 'float';
+        return 'int';
     }
 }

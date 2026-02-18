@@ -14,7 +14,7 @@ class Data extends Entity
     protected ?TypeDate $taxDate;
     protected ?TypeConstSymbol $constSymbol;
     protected ?float $specSymbol;
-    protected ?float $billingMethodId;
+    protected ?int $billingMethodId;
 
     public function getInvoiceCode(): ?string
     {
@@ -82,12 +82,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getBillingMethodId(): ?float
+    public function getBillingMethodId(): ?int
     {
         return $this->billingMethodId;
     }
 
-    public function setBillingMethodId(?float $billingMethodId): static
+    public function setBillingMethodId(?int $billingMethodId): static
     {
         $this->billingMethodId = $billingMethodId;
         return $this;

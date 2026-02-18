@@ -11,6 +11,8 @@ class PriceWithoutVat extends Entity
 {
     protected ?TypePriceNullable $price;
     protected ?TypePriceNullable $commonPrice;
+
+    /** @deprecated */
     protected ?TypePriceNullable $buyPrice;
     protected ?TypePriceRatio $priceRatio;
     protected ?ActionPrice $actionPrice;
@@ -37,11 +39,17 @@ class PriceWithoutVat extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getBuyPrice(): ?TypePriceNullable
     {
         return $this->buyPrice;
     }
 
+    /**
+     * @deprecated
+     */
     public function setBuyPrice(?TypePriceNullable $buyPrice): static
     {
         $this->buyPrice = $buyPrice;
