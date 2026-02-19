@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/uploadfile
  *
- * @method UploadFile setBody(null|array|UploadFileRequest $entity)
+ * @method UploadFile setBody(null|array<string, mixed>|UploadFileRequest $entity)
  * @method null|UploadFileRequest getBody()
  */
 class UploadFile extends Post

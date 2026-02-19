@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Put;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Alternative-products/setalternativeproducts
  *
- * @method SetAlternativeProducts setBody(null|array|SetAlternativeProductsRequest $entity)
+ * @method SetAlternativeProducts setBody(null|array<string, mixed>|SetAlternativeProductsRequest $entity)
  * @method null|SetAlternativeProductsRequest getBody()
  */
 class SetAlternativeProducts extends Put

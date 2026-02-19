@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\CreateVariantParameterRespons
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/createvariantparameter
  *
- * @method CreateVariantParameter setBody(null|array|CreateVariantParameterRequest $entity)
+ * @method CreateVariantParameter setBody(null|array<string, mixed>|CreateVariantParameterRequest $entity)
  * @method null|CreateVariantParameterRequest getBody()
  */
 class CreateVariantParameter extends Post

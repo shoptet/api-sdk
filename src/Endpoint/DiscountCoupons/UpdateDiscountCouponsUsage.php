@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/updatediscountcouponsusage
  *
- * @method UpdateDiscountCouponsUsage setBody(null|array|UpdateDiscountCouponsUsageRequest $entity)
+ * @method UpdateDiscountCouponsUsage setBody(null|array<string, mixed>|UpdateDiscountCouponsUsageRequest $entity)
  * @method null|UpdateDiscountCouponsUsageRequest getBody()
  */
 class UpdateDiscountCouponsUsage extends Patch

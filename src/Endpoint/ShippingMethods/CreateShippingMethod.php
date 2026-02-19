@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodResponse\Cr
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/createshippingmethod
  *
- * @method CreateShippingMethod setBody(null|array|CreateShippingMethodRequest $entity)
+ * @method CreateShippingMethod setBody(null|array<string, mixed>|CreateShippingMethodRequest $entity)
  * @method null|CreateShippingMethodRequest getBody()
  */
 class CreateShippingMethod extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrand
  *
- * @method CreateBrand setBody(null|array|CreateBrandRequest $entity)
+ * @method CreateBrand setBody(null|array<string, mixed>|CreateBrandRequest $entity)
  * @method null|CreateBrandRequest getBody()
  */
 class CreateBrand extends Post

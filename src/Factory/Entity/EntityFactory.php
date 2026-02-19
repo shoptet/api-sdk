@@ -238,7 +238,7 @@ final class EntityFactory
         $valueObjectReflection = new ReflectionClass($valueObjectClass);
         if ($valueObjectReflection->implementsInterface(ValueObjectInterface::class)) {
             /** @var ReflectionClass<ValueObjectInterface> $valueObjectReflection */
-            return $valueObjectReflection;
+            return $valueObjectReflection; // @phpstan-ignore varTag.nativeType
         }
         return null;
     }

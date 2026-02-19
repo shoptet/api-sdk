@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Put;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-sets/setproductsetitems
  *
- * @method SetProductSetItems setBody(null|array|SetProductSetItemsRequest $entity)
+ * @method SetProductSetItems setBody(null|array<string, mixed>|SetProductSetItemsRequest $entity)
  * @method null|SetProductSetItemsRequest getBody()
  */
 class SetProductSetItems extends Put

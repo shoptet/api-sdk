@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/updatecustomerdeliveryaddress
  *
- * @method UpdateCustomerDeliveryAddress setBody(null|array|UpdateCustomerDeliveryAddressRequest $entity)
+ * @method UpdateCustomerDeliveryAddress setBody(null|array<string, mixed>|UpdateCustomerDeliveryAddressRequest $entity)
  * @method null|UpdateCustomerDeliveryAddressRequest getBody()
  */
 class UpdateCustomerDeliveryAddress extends Patch

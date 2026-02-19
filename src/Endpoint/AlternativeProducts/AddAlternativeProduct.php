@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Alternative-products/addalternativeproduct
  *
- * @method AddAlternativeProduct setBody(null|array|AddAlternativeProductRequest $entity)
+ * @method AddAlternativeProduct setBody(null|array<string, mixed>|AddAlternativeProductRequest $entity)
  * @method null|AddAlternativeProductRequest getBody()
  */
 class AddAlternativeProduct extends Post

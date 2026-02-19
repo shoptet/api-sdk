@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewResponse\CreateProje
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/createprojectreview
  *
- * @method CreateProjectReview setBody(null|array|CreateProjectReviewRequest $entity)
+ * @method CreateProjectReview setBody(null|array<string, mixed>|CreateProjectReviewRequest $entity)
  * @method null|CreateProjectReviewRequest getBody()
  */
 class CreateProjectReview extends Post

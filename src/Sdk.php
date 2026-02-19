@@ -3131,6 +3131,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     type?: string,
      * } $queryParams
      *
      * @return ResponseInterface

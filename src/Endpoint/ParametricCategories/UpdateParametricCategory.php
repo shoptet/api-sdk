@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/updateparametriccategory
  *
- * @method UpdateParametricCategory setBody(null|array|UpdateParametricCategoryRequest $entity)
+ * @method UpdateParametricCategory setBody(null|array<string, mixed>|UpdateParametricCategoryRequest $entity)
  * @method null|UpdateParametricCategoryRequest getBody()
  */
 class UpdateParametricCategory extends Patch

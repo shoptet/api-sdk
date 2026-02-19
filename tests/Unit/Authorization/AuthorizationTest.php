@@ -104,15 +104,15 @@ class AuthorizationTest extends TestCase
 
     public function testOAuthAccessTokenSuccess(): void
     {
+        // check if no exception is thrown
+        $this->expectNotToPerformAssertions();
+
         $tokenStorage = $this->createMock(TokenStorage::class);
         $tokenStorage->method('loadToken')
             ->willReturn(new BearerToken('privateTokenId', 'oAuthAccessTokenId'));
 
         $authorizationFacade = $this->createAuthorizationFacade($tokenStorage);
         $authorizationFacade->createFreshPublicApiToken('privateTokenId', 'oAuthAccessTokenId');
-
-        // no exception is thrown
-        $this->assertTrue(true);
     }
 
     /**

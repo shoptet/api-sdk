@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\CreateQuantityDiscountRespons
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/createquantitydiscount
  *
- * @method CreateQuantityDiscount setBody(null|array|CreateQuantityDiscountRequest $entity)
+ * @method CreateQuantityDiscount setBody(null|array<string, mixed>|CreateQuantityDiscountRequest $entity)
  * @method null|CreateQuantityDiscountRequest getBody()
  */
 class CreateQuantityDiscount extends Post

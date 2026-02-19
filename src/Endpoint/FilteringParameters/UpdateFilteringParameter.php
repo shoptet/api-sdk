@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/updatefilteringparameter
  *
- * @method UpdateFilteringParameter setBody(null|array|UpdateFilteringParameterRequest $entity)
+ * @method UpdateFilteringParameter setBody(null|array<string, mixed>|UpdateFilteringParameterRequest $entity)
  * @method null|UpdateFilteringParameterRequest getBody()
  */
 class UpdateFilteringParameter extends Patch

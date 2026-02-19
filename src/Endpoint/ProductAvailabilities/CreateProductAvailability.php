@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailability
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/createproductavailability
  *
- * @method CreateProductAvailability setBody(null|array|CreateProductAvailabilityRequest $entity)
+ * @method CreateProductAvailability setBody(null|array<string, mixed>|CreateProductAvailabilityRequest $entity)
  * @method null|CreateProductAvailabilityRequest getBody()
  */
 class CreateProductAvailability extends Post

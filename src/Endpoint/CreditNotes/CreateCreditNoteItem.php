@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnoteitem
  *
- * @method CreateCreditNoteItem setBody(null|array|CreateCreditNoteItemRequest $entity)
+ * @method CreateCreditNoteItem setBody(null|array<string, mixed>|CreateCreditNoteItemRequest $entity)
  * @method null|CreateCreditNoteItemRequest getBody()
  */
 class CreateCreditNoteItem extends Post

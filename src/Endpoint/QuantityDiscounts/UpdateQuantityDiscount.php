@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\QuantityDiscounts\UpdateQuantityDiscountRespons
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Quantity-discounts/updatequantitydiscount
  *
- * @method UpdateQuantityDiscount setBody(null|array|UpdateQuantityDiscountRequest $entity)
+ * @method UpdateQuantityDiscount setBody(null|array<string, mixed>|UpdateQuantityDiscountRequest $entity)
  * @method null|UpdateQuantityDiscountRequest getBody()
  */
 class UpdateQuantityDiscount extends Patch

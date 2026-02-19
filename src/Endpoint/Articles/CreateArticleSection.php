@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Articles/createarticlesection
  *
- * @method CreateArticleSection setBody(null|array|CreateArticleSectionRequest $entity)
+ * @method CreateArticleSection setBody(null|array<string, mixed>|CreateArticleSectionRequest $entity)
  * @method null|CreateArticleSectionRequest getBody()
  */
 class CreateArticleSection extends Post

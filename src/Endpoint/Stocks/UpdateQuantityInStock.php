@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Stocks\UpdateQuantityInStockResponse\UpdateQuan
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Stocks/updatequantityinstock
  *
- * @method UpdateQuantityInStock setBody(null|array|UpdateQuantityInStockRequest $entity)
+ * @method UpdateQuantityInStock setBody(null|array<string, mixed>|UpdateQuantityInStockRequest $entity)
  * @method null|UpdateQuantityInStockRequest getBody()
  */
 class UpdateQuantityInStock extends Patch

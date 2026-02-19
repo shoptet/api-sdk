@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-delivery-addresses/createdeliveryaddress
  *
- * @method CreateDeliveryAddress setBody(null|array|CreateDeliveryAddressRequest $entity)
+ * @method CreateDeliveryAddress setBody(null|array<string, mixed>|CreateDeliveryAddressRequest $entity)
  * @method null|CreateDeliveryAddressRequest getBody()
  */
 class CreateDeliveryAddress extends Post

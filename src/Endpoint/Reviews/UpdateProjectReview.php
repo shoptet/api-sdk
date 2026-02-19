@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProjectReviewResponse\UpdateProje
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/updateprojectreview
  *
- * @method UpdateProjectReview setBody(null|array|UpdateProjectReviewRequest $entity)
+ * @method UpdateProjectReview setBody(null|array<string, mixed>|UpdateProjectReviewRequest $entity)
  * @method null|UpdateProjectReviewRequest getBody()
  */
 class UpdateProjectReview extends Patch

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductSets\AddItemToProductSetResponse\AddItem
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-sets/additemtoproductset
  *
- * @method AddItemToProductSet setBody(null|array|AddItemToProductSetRequest $entity)
+ * @method AddItemToProductSet setBody(null|array<string, mixed>|AddItemToProductSetRequest $entity)
  * @method null|AddItemToProductSetRequest getBody()
  */
 class AddItemToProductSet extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/invoicelinkproofpayments
  *
- * @method InvoiceLinkProofPayments setBody(null|array|InvoiceLinkProofPaymentsRequest $entity)
+ * @method InvoiceLinkProofPayments setBody(null|array<string, mixed>|InvoiceLinkProofPaymentsRequest $entity)
  * @method null|InvoiceLinkProofPaymentsRequest getBody()
  */
 class InvoiceLinkProofPayments extends Patch

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/bulkorderstatuschange
  *
- * @method BulkOrderStatusChange setBody(null|array|BulkOrderStatusChangeRequest $entity)
+ * @method BulkOrderStatusChange setBody(null|array<string, mixed>|BulkOrderStatusChangeRequest $entity)
  * @method null|BulkOrderStatusChangeRequest getBody()
  */
 class BulkOrderStatusChange extends Patch

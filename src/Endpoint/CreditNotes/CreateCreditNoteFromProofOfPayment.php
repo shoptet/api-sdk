@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/createcreditnotefromproofofpayment
  *
- * @method CreateCreditNoteFromProofOfPayment setBody(null|array|CreateCreditNoteFromProofOfPaymentRequest $entity)
+ * @method CreateCreditNoteFromProofOfPayment setBody(null|array<string, mixed>|CreateCreditNoteFromProofOfPaymentRequest $entity)
  * @method null|CreateCreditNoteFromProofOfPaymentRequest getBody()
  */
 class CreateCreditNoteFromProofOfPayment extends Post

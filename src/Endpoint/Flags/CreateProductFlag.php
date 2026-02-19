@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/createproductflag
  *
- * @method CreateProductFlag setBody(null|array|CreateProductFlagRequest $entity)
+ * @method CreateProductFlag setBody(null|array<string, mixed>|CreateProductFlagRequest $entity)
  * @method null|CreateProductFlagRequest getBody()
  */
 class CreateProductFlag extends Post

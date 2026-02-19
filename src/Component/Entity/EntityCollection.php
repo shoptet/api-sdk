@@ -203,7 +203,7 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
      */
     public function filter(?callable $callback): static
     {
-        return new static(array_filter($this->data, $callback));
+        return new static(array_filter($this->data, $callback)); // @phpstan-ignore return.type
     }
 
     /**
@@ -212,7 +212,7 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
      */
     public function map(callable $callback): static
     {
-        return new static(array_map($callback, $this->data));
+        return new static(array_map($callback, $this->data)); // @phpstan-ignore return.type
     }
 
     /**

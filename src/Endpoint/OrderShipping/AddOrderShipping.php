@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-shipping/addordershipping
  *
- * @method AddOrderShipping setBody(null|array|AddOrderShippingRequest $entity)
+ * @method AddOrderShipping setBody(null|array<string, mixed>|AddOrderShippingRequest $entity)
  * @method null|AddOrderShippingRequest getBody()
  */
 class AddOrderShipping extends Post
