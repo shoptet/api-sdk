@@ -7,7 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 class Status extends Entity
 {
     protected ?string $name;
-    protected float $id;
+    protected int $id;
 
     public function getName(): ?string
     {
@@ -20,12 +20,12 @@ class Status extends Entity
         return $this;
     }
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;

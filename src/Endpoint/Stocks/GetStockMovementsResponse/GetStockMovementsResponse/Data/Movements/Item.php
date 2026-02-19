@@ -17,6 +17,7 @@ class Item extends Entity
     protected TypeDateTimeNullable $changeTime;
     protected ?string $orderCode;
     protected ?TypeGuidUnlimited $productGuid;
+    protected ?TypeGuidUnlimited $historicalProductGuid;
     protected ?TypeAmountNullable $sumAmount;
 
     public function getId(): int
@@ -104,6 +105,17 @@ class Item extends Entity
     public function setProductGuid(?TypeGuidUnlimited $productGuid): static
     {
         $this->productGuid = $productGuid;
+        return $this;
+    }
+
+    public function getHistoricalProductGuid(): ?TypeGuidUnlimited
+    {
+        return $this->historicalProductGuid;
+    }
+
+    public function setHistoricalProductGuid(?TypeGuidUnlimited $historicalProductGuid): static
+    {
+        $this->historicalProductGuid = $historicalProductGuid;
         return $this;
     }
 

@@ -21,7 +21,9 @@ class GetListOfJobs extends PageableGet
         'itemsPerPage' => false,
         'status' => false,
         'creationTimeFrom' => false,
+        'creationTimeTo' => false,
         'completionTimeFrom' => false,
+        'completionTimeTo' => false,
     ];
 
     public function getRequestEntityClass(): null

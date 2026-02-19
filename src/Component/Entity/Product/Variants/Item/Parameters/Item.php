@@ -13,7 +13,7 @@ class Item extends Entity
     protected ?string $rawValue;
     protected ?string $color;
     protected ?string $image;
-    protected float $valuePriority;
+    protected int $valuePriority;
 
     public function getParamName(): ?string
     {
@@ -92,12 +92,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getValuePriority(): float
+    public function getValuePriority(): int
     {
         return $this->valuePriority;
     }
 
-    public function setValuePriority(float $valuePriority): static
+    public function setValuePriority(int $valuePriority): static
     {
         $this->valuePriority = $valuePriority;
         return $this;

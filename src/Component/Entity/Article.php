@@ -8,8 +8,8 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Article extends Entity
 {
-    protected float $id;
-    protected ?float $defaultSectionId;
+    protected int $id;
+    protected ?int $defaultSectionId;
     protected ?SectionIds $sectionIds;
     protected string $title;
     protected ?string $language;
@@ -30,23 +30,23 @@ class Article extends Entity
     protected ?string $image;
     protected ?string $ogImage;
 
-    public function getId(): float
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(float $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getDefaultSectionId(): ?float
+    public function getDefaultSectionId(): ?int
     {
         return $this->defaultSectionId;
     }
 
-    public function setDefaultSectionId(?float $defaultSectionId): static
+    public function setDefaultSectionId(?int $defaultSectionId): static
     {
         $this->defaultSectionId = $defaultSectionId;
         return $this;
