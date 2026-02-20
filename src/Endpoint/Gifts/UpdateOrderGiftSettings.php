@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Gifts/updateordergiftsettings
  *
- * @method UpdateOrderGiftSettings setBody(null|array|UpdateOrderGiftSettingsRequest $entity)
+ * @method UpdateOrderGiftSettings setBody(null|array<string, mixed>|UpdateOrderGiftSettingsRequest $entity)
  * @method null|UpdateOrderGiftSettingsRequest getBody()
  */
 class UpdateOrderGiftSettings extends Patch

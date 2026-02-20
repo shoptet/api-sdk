@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Credit-notes/updatecreditnoteitem
  *
- * @method UpdateCreditNoteItem setBody(null|array|UpdateCreditNoteItemRequest $entity)
+ * @method UpdateCreditNoteItem setBody(null|array<string, mixed>|UpdateCreditNoteItemRequest $entity)
  * @method null|UpdateCreditNoteItemRequest getBody()
  */
 class UpdateCreditNoteItem extends Patch

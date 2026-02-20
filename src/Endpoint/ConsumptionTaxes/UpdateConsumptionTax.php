@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/updateconsumptiontax
  *
- * @method UpdateConsumptionTax setBody(null|array|UpdateConsumptionTaxRequest $entity)
+ * @method UpdateConsumptionTax setBody(null|array<string, mixed>|UpdateConsumptionTaxRequest $entity)
  * @method null|UpdateConsumptionTaxRequest getBody()
  */
 class UpdateConsumptionTax extends Patch

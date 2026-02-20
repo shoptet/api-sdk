@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/E-mail-distribution-lists/createemailsdistributionlist
  *
- * @method CreateEmailsDistributionList setBody(null|array|CreateEmailsDistributionListRequest $entity)
+ * @method CreateEmailsDistributionList setBody(null|array<string, mixed>|CreateEmailsDistributionListRequest $entity)
  * @method null|CreateEmailsDistributionListRequest getBody()
  */
 class CreateEmailsDistributionList extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetProductImagesUpdateResponse\Ge
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/getproductimagesupdate
  *
- * @method GetProductImagesUpdate setBody(null|array|GetProductImagesUpdateRequest $entity)
+ * @method GetProductImagesUpdate setBody(null|array<string, mixed>|GetProductImagesUpdateRequest $entity)
  * @method null|GetProductImagesUpdateRequest getBody()
  */
 class GetProductImagesUpdate extends Patch

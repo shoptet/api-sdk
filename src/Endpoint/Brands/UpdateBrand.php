@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/updatebrand
  *
- * @method UpdateBrand setBody(null|array|UpdateBrandRequest $entity)
+ * @method UpdateBrand setBody(null|array<string, mixed>|UpdateBrandRequest $entity)
  * @method null|UpdateBrandRequest getBody()
  */
 class UpdateBrand extends Patch

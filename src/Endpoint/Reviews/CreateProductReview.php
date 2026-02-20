@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReviewResponse\CreateProdu
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/createproductreview
  *
- * @method CreateProductReview setBody(null|array|CreateProductReviewRequest $entity)
+ * @method CreateProductReview setBody(null|array<string, mixed>|CreateProductReviewRequest $entity)
  * @method null|CreateProductReviewRequest getBody()
  */
 class CreateProductReview extends Post

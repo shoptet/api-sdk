@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/invoicelinkproformainvoices
  *
- * @method InvoiceLinkProformaInvoices setBody(null|array|InvoiceLinkProformaInvoicesRequest $entity)
+ * @method InvoiceLinkProformaInvoices setBody(null|array<string, mixed>|InvoiceLinkProformaInvoicesRequest $entity)
  * @method null|InvoiceLinkProformaInvoicesRequest getBody()
  */
 class InvoiceLinkProformaInvoices extends Patch

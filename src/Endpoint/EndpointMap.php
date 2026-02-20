@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint;
 
 class EndpointMap
 {
+    /** @var array<string, array<string, class-string>> */
     protected const array MAP = [
         'delete' => [
             '/api/products/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProduct',

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Invoices/createinvoicefromproformainvoice
  *
- * @method CreateInvoiceFromProformaInvoice setBody(null|array|CreateInvoiceFromProformaInvoiceRequest $entity)
+ * @method CreateInvoiceFromProformaInvoice setBody(null|array<string, mixed>|CreateInvoiceFromProformaInvoiceRequest $entity)
  * @method null|CreateInvoiceFromProformaInvoiceRequest getBody()
  */
 class CreateInvoiceFromProformaInvoice extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updateproductcategory
  *
- * @method UpdateProductCategory setBody(null|array|UpdateProductCategoryRequest $entity)
+ * @method UpdateProductCategory setBody(null|array<string, mixed>|UpdateProductCategoryRequest $entity)
  * @method null|UpdateProductCategoryRequest getBody()
  */
 class UpdateProductCategory extends Patch

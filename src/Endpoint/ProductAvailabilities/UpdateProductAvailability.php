@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\UpdateProductAvailability
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-availabilities/updateproductavailability
  *
- * @method UpdateProductAvailability setBody(null|array|UpdateProductAvailabilityRequest $entity)
+ * @method UpdateProductAvailability setBody(null|array<string, mixed>|UpdateProductAvailabilityRequest $entity)
  * @method null|UpdateProductAvailabilityRequest getBody()
  */
 class UpdateProductAvailability extends Patch

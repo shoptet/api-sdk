@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Filtering-parameters/createfilteringparametervalue
  *
- * @method CreateFilteringParameterValue setBody(null|array|CreateFilteringParameterValueRequest $entity)
+ * @method CreateFilteringParameterValue setBody(null|array<string, mixed>|CreateFilteringParameterValueRequest $entity)
  * @method null|CreateFilteringParameterValueRequest getBody()
  */
 class CreateFilteringParameterValue extends Post

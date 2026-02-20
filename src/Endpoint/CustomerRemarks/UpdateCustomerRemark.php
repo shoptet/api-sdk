@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/updatecustomerremark
  *
- * @method UpdateCustomerRemark setBody(null|array|UpdateCustomerRemarkRequest $entity)
+ * @method UpdateCustomerRemark setBody(null|array<string, mixed>|UpdateCustomerRemarkRequest $entity)
  * @method null|UpdateCustomerRemarkRequest getBody()
  */
 class UpdateCustomerRemark extends Patch

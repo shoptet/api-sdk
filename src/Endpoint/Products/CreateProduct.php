@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductResponse\CreateProductRes
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/createproduct
  *
- * @method CreateProduct setBody(null|array|CreateProductRequest $entity)
+ * @method CreateProduct setBody(null|array<string, mixed>|CreateProductRequest $entity)
  * @method null|CreateProductRequest getBody()
  */
 class CreateProduct extends Post

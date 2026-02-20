@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Webhooks\RegisterNewWebhookResponse\RegisterNew
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Webhooks/registernewwebhook
  *
- * @method RegisterNewWebhook setBody(null|array|RegisterNewWebhookRequest $entity)
+ * @method RegisterNewWebhook setBody(null|array<string, mixed>|RegisterNewWebhookRequest $entity)
  * @method null|RegisterNewWebhookRequest getBody()
  */
 class RegisterNewWebhook extends Post

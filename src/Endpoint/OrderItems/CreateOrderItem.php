@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/createorderitem
  *
- * @method CreateOrderItem setBody(null|array|CreateOrderItemRequest $entity)
+ * @method CreateOrderItem setBody(null|array<string, mixed>|CreateOrderItemRequest $entity)
  * @method null|CreateOrderItemRequest getBody()
  */
 class CreateOrderItem extends Post

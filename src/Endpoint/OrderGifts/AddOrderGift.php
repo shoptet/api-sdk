@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-gifts/addordergift
  *
- * @method AddOrderGift setBody(null|array|AddOrderGiftRequest $entity)
+ * @method AddOrderGift setBody(null|array<string, mixed>|AddOrderGiftRequest $entity)
  * @method null|AddOrderGiftRequest getBody()
  */
 class AddOrderGift extends Post

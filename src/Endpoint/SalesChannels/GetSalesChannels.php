@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsResponse\GetSales
 class GetSalesChannels extends Get
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'type' => false];
 
     public function getRequestEntityClass(): null
     {

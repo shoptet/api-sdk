@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-remarks/createcustomerremark
  *
- * @method CreateCustomerRemark setBody(null|array|CreateCustomerRemarkRequest $entity)
+ * @method CreateCustomerRemark setBody(null|array<string, mixed>|CreateCustomerRemarkRequest $entity)
  * @method null|CreateCustomerRemarkRequest getBody()
  */
 class CreateCustomerRemark extends Post

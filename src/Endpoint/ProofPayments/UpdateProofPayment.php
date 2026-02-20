@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\UpdateProofPaymentResponse\Update
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/updateproofpayment
  *
- * @method UpdateProofPayment setBody(null|array|UpdateProofPaymentRequest $entity)
+ * @method UpdateProofPayment setBody(null|array<string, mixed>|UpdateProofPaymentRequest $entity)
  * @method null|UpdateProofPaymentRequest getBody()
  */
 class UpdateProofPayment extends Patch

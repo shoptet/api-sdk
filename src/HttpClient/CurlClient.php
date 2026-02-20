@@ -64,12 +64,18 @@ class CurlClient implements ClientInterface
      */
     public function request(Endpoint $endpoint): ResponseInterface
     {
-        $this->handle = \curl_init();
+        $handle = \curl_init();
+
+        if ($handle === false) {
+            throw new RuntimeException('Failed to initialize cURL');
+        }
+
+        $this->handle = $handle;
 
         $opts = $this->getRequestOpts($endpoint);
 
         $rHeaders = [];
-        $opts[CURLOPT_HEADERFUNCTION] = function ($curl, $header_line) use (&$rHeaders) {
+        $opts[CURLOPT_HEADERFUNCTION] = function (\CurlHandle $curl, string $header_line) use (&$rHeaders) {
             if (str_contains($header_line, ':') === false) {
                 return strlen($header_line);
             }
@@ -208,7 +214,7 @@ class CurlClient implements ClientInterface
     }
 
     /**
-     * @return array<int, mixed>
+     * @return array<int|string, mixed>
      * @throws InvalidArgumentException
      */
     protected function getRequestOpts(Endpoint $endpoint): array

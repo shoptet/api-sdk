@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Files/uploadfiles
  *
- * @method UploadFiles setBody(null|array|UploadFilesRequest $entity)
+ * @method UploadFiles setBody(null|array<string, mixed>|UploadFilesRequest $entity)
  * @method null|UploadFilesRequest getBody()
  */
 class UploadFiles extends Post implements AsyncEndpoint

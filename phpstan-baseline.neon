@@ -1,0 +1,13 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\:\:filter\(\) should return static\(Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\<TValue\>\) but returns static\(Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\<TValue\>\)\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Component/Entity/EntityCollection.php
+
+		-
+			message: '#^Method Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\:\:map\(\) should return static\(Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\<TValue\>\) but returns static\(Shoptet\\Api\\Sdk\\Php\\Component\\Entity\\EntityCollection\<TValue\>\)\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Component/Entity/EntityCollection.php

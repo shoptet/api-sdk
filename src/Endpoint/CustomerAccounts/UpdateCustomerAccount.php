@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-accounts/updatecustomeraccount
  *
- * @method UpdateCustomerAccount setBody(null|array|UpdateCustomerAccountRequest $entity)
+ * @method UpdateCustomerAccount setBody(null|array<string, mixed>|UpdateCustomerAccountRequest $entity)
  * @method null|UpdateCustomerAccountRequest getBody()
  */
 class UpdateCustomerAccount extends Patch

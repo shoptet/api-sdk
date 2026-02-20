@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/creatediscussionposts
  *
- * @method CreateDiscussionPosts setBody(null|array|CreateDiscussionPostsRequest $entity)
+ * @method CreateDiscussionPosts setBody(null|array<string, mixed>|CreateDiscussionPostsRequest $entity)
  * @method null|CreateDiscussionPostsRequest getBody()
  */
 class CreateDiscussionPosts extends Post

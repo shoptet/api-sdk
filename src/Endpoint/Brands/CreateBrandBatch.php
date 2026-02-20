@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Brands/createbrandbatch
  *
- * @method CreateBrandBatch setBody(null|array|CreateBrandBatchRequest $entity)
+ * @method CreateBrandBatch setBody(null|array<string, mixed>|CreateBrandBatchRequest $entity)
  * @method null|CreateBrandBatchRequest getBody()
  */
 class CreateBrandBatch extends Post implements AsyncEndpoint

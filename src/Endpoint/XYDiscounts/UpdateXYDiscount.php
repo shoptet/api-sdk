@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\UpdateXYDiscountResponse\UpdateXYDi
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/XY-discounts/updatexydiscount
  *
- * @method UpdateXYDiscount setBody(null|array|UpdateXYDiscountRequest $entity)
+ * @method UpdateXYDiscount setBody(null|array<string, mixed>|UpdateXYDiscountRequest $entity)
  * @method null|UpdateXYDiscountRequest getBody()
  */
 class UpdateXYDiscount extends Patch
