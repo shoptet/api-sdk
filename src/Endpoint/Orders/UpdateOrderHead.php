@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Orders/updateorderhead
  *
- * @method UpdateOrderHead setBody(null|array|UpdateOrderHeadRequest $entity)
+ * @method UpdateOrderHead setBody(null|array<string, mixed>|UpdateOrderHeadRequest $entity)
  * @method null|UpdateOrderHeadRequest getBody()
  */
 class UpdateOrderHead extends Patch

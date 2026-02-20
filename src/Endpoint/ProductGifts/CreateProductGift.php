@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\CreateProductGiftResponse\CreatePr
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/createproductgift
  *
- * @method CreateProductGift setBody(null|array|CreateProductGiftRequest $entity)
+ * @method CreateProductGift setBody(null|array<string, mixed>|CreateProductGiftRequest $entity)
  * @method null|CreateProductGiftRequest getBody()
  */
 class CreateProductGift extends Post

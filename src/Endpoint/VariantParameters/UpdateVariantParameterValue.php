@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameterValueRe
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Variant-parameters/updatevariantparametervalue
  *
- * @method UpdateVariantParameterValue setBody(null|array|UpdateVariantParameterValueRequest $entity)
+ * @method UpdateVariantParameterValue setBody(null|array<string, mixed>|UpdateVariantParameterValueRequest $entity)
  * @method null|UpdateVariantParameterValueRequest getBody()
  */
 class UpdateVariantParameterValue extends Patch

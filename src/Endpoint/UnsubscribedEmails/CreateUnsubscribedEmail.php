@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\UnsubscribedEmails\CreateUnsubscribedEmailRespo
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Unsubscribed-emails/createunsubscribedemail
  *
- * @method CreateUnsubscribedEmail setBody(null|array|CreateUnsubscribedEmailRequest $entity)
+ * @method CreateUnsubscribedEmail setBody(null|array<string, mixed>|CreateUnsubscribedEmailRequest $entity)
  * @method null|CreateUnsubscribedEmailRequest getBody()
  */
 class CreateUnsubscribedEmail extends Post

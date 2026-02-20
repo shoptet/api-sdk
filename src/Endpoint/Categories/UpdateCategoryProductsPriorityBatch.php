@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/updatecategoryproductsprioritybatch
  *
- * @method UpdateCategoryProductsPriorityBatch setBody(null|array|UpdateCategoryProductsPriorityBatchRequest $entity)
+ * @method UpdateCategoryProductsPriorityBatch setBody(null|array<string, mixed>|UpdateCategoryProductsPriorityBatchRequest $entity)
  * @method null|UpdateCategoryProductsPriorityBatchRequest getBody()
  */
 class UpdateCategoryProductsPriorityBatch extends Patch implements AsyncEndpoint

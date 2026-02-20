@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\AddRelatedProductResponse\AddRe
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Related-products/addrelatedproduct
  *
- * @method AddRelatedProduct setBody(null|array|AddRelatedProductRequest $entity)
+ * @method AddRelatedProduct setBody(null|array<string, mixed>|AddRelatedProductRequest $entity)
  * @method null|AddRelatedProductRequest getBody()
  */
 class AddRelatedProduct extends Post

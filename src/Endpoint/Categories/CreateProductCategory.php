@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/createproductcategory
  *
- * @method CreateProductCategory setBody(null|array|CreateProductCategoryRequest $entity)
+ * @method CreateProductCategory setBody(null|array<string, mixed>|CreateProductCategoryRequest $entity)
  * @method null|CreateProductCategoryRequest getBody()
  */
 class CreateProductCategory extends Post

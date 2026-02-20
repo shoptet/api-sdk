@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameterVal
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/createsurchargeparametervalue
  *
- * @method CreateSurchargeParameterValue setBody(null|array|CreateSurchargeParameterValueRequest $entity)
+ * @method CreateSurchargeParameterValue setBody(null|array<string, mixed>|CreateSurchargeParameterValueRequest $entity)
  * @method null|CreateSurchargeParameterValueRequest getBody()
  */
 class CreateSurchargeParameterValue extends Post

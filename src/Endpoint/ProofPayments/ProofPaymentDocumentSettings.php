@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\ProofPaymentDocumentSettingsRespo
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Proof-payments/proofpaymentdocumentsettings
  *
- * @method ProofPaymentDocumentSettings setBody(null|array|ProofPaymentDocumentSettingsRequest $entity)
+ * @method ProofPaymentDocumentSettings setBody(null|array<string, mixed>|ProofPaymentDocumentSettingsRequest $entity)
  * @method null|ProofPaymentDocumentSettingsRequest getBody()
  */
 class ProofPaymentDocumentSettings extends Post

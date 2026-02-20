@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery-notes/deliverynotefromorder
  *
- * @method DeliveryNoteFromOrder setBody(null|array|DeliveryNoteFromOrderRequest $entity)
+ * @method DeliveryNoteFromOrder setBody(null|array<string, mixed>|DeliveryNoteFromOrderRequest $entity)
  * @method null|DeliveryNoteFromOrderRequest getBody()
  */
 class DeliveryNoteFromOrder extends Post

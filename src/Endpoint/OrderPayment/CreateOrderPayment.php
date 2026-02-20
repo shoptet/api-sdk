@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-payment/createorderpayment
  *
- * @method CreateOrderPayment setBody(null|array|CreateOrderPaymentRequest $entity)
+ * @method CreateOrderPayment setBody(null|array<string, mixed>|CreateOrderPaymentRequest $entity)
  * @method null|CreateOrderPaymentRequest getBody()
  */
 class CreateOrderPayment extends Post

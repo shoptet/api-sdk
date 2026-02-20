@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-items/createorderitemsurchargeparameters
  *
- * @method CreateOrderItemSurchargeParameters setBody(null|array|CreateOrderItemSurchargeParametersRequest $entity)
+ * @method CreateOrderItemSurchargeParameters setBody(null|array<string, mixed>|CreateOrderItemSurchargeParametersRequest $entity)
  * @method null|CreateOrderItemSurchargeParametersRequest getBody()
  */
 class CreateOrderItemSurchargeParameters extends Post

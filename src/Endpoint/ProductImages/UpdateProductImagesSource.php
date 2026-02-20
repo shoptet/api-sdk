@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\UpdateProductImagesSourceResponse
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/updateproductimagessource
  *
- * @method UpdateProductImagesSource setBody(null|array|UpdateProductImagesSourceRequest $entity)
+ * @method UpdateProductImagesSource setBody(null|array<string, mixed>|UpdateProductImagesSourceRequest $entity)
  * @method null|UpdateProductImagesSourceRequest getBody()
  */
 class UpdateProductImagesSource extends Patch implements AsyncEndpoint

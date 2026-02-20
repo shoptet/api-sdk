@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopyResponse\ProductCopyRespons
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productcopy
  *
- * @method ProductCopy setBody(null|array|ProductCopyRequest $entity)
+ * @method ProductCopy setBody(null|array<string, mixed>|ProductCopyRequest $entity)
  * @method null|ProductCopyRequest getBody()
  */
 class ProductCopy extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-history/createorderremark
  *
- * @method CreateOrderRemark setBody(null|array|CreateOrderRemarkRequest $entity)
+ * @method CreateOrderRemark setBody(null|array<string, mixed>|CreateOrderRemarkRequest $entity)
  * @method null|CreateOrderRemarkRequest getBody()
  */
 class CreateOrderRemark extends Post

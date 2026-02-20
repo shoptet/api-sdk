@@ -10,7 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImagesResponse\Creat
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/createproductimages
  *
- * @method CreateProductImages setBody(null|array|CreateProductImagesRequest $entity)
+ * @method CreateProductImages setBody(null|array<string, mixed>|CreateProductImagesRequest $entity)
  * @method null|CreateProductImagesRequest getBody()
  */
 class CreateProductImages extends Post implements AsyncEndpoint

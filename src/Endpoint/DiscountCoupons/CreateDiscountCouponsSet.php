@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/creatediscountcouponsset
  *
- * @method CreateDiscountCouponsSet setBody(null|array|CreateDiscountCouponsSetRequest $entity)
+ * @method CreateDiscountCouponsSet setBody(null|array<string, mixed>|CreateDiscountCouponsSetRequest $entity)
  * @method null|CreateDiscountCouponsSetRequest getBody()
  */
 class CreateDiscountCouponsSet extends Post

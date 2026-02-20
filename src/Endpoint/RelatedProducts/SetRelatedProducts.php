@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProductsResponse\SetR
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Related-products/setrelatedproducts
  *
- * @method SetRelatedProducts setBody(null|array|SetRelatedProductsRequest $entity)
+ * @method SetRelatedProducts setBody(null|array<string, mixed>|SetRelatedProductsRequest $entity)
  * @method null|SetRelatedProductsRequest getBody()
  */
 class SetRelatedProducts extends Put

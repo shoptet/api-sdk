@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLinkRespon
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-related-files/createrelatedfilelink
  *
- * @method CreateRelatedFileLink setBody(null|array|CreateRelatedFileLinkRequest $entity)
+ * @method CreateRelatedFileLink setBody(null|array<string, mixed>|CreateRelatedFileLinkRequest $entity)
  * @method null|CreateRelatedFileLinkRequest getBody()
  */
 class CreateRelatedFileLink extends Post

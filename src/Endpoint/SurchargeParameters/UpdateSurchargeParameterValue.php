@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\UpdateSurchargeParameterVal
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Surcharge-parameters/updatesurchargeparametervalue
  *
- * @method UpdateSurchargeParameterValue setBody(null|array|UpdateSurchargeParameterValueRequest $entity)
+ * @method UpdateSurchargeParameterValue setBody(null|array<string, mixed>|UpdateSurchargeParameterValueRequest $entity)
  * @method null|UpdateSurchargeParameterValueRequest getBody()
  */
 class UpdateSurchargeParameterValue extends Patch

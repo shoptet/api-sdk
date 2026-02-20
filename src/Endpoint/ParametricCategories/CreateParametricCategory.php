@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/createparametriccategory
  *
- * @method CreateParametricCategory setBody(null|array|CreateParametricCategoryRequest $entity)
+ * @method CreateParametricCategory setBody(null|array<string, mixed>|CreateParametricCategoryRequest $entity)
  * @method null|CreateParametricCategoryRequest getBody()
  */
 class CreateParametricCategory extends Post

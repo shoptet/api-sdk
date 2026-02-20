@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/createcustomer
  *
- * @method CreateCustomer setBody(null|array|CreateCustomerRequest $entity)
+ * @method CreateCustomer setBody(null|array<string, mixed>|CreateCustomerRequest $entity)
  * @method null|CreateCustomerRequest getBody()
  */
 class CreateCustomer extends Post

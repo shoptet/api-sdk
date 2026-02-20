@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingDataResponse\Upd
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-requests/updateshippingdata
  *
- * @method UpdateShippingData setBody(null|array|UpdateShippingDataRequest $entity)
+ * @method UpdateShippingData setBody(null|array<string, mixed>|UpdateShippingDataRequest $entity)
  * @method null|UpdateShippingDataRequest getBody()
  */
 class UpdateShippingData extends Put

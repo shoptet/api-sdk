@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/updatediscussionpost
  *
- * @method UpdateDiscussionPost setBody(null|array|UpdateDiscussionPostRequest $entity)
+ * @method UpdateDiscussionPost setBody(null|array<string, mixed>|UpdateDiscussionPostRequest $entity)
  * @method null|UpdateDiscussionPostRequest getBody()
  */
 class UpdateDiscussionPost extends Patch

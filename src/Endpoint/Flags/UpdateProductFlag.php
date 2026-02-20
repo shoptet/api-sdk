@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Flags/updateproductflag
  *
- * @method UpdateProductFlag setBody(null|array|UpdateProductFlagRequest $entity)
+ * @method UpdateProductFlag setBody(null|array<string, mixed>|UpdateProductFlagRequest $entity)
  * @method null|UpdateProductFlagRequest getBody()
  */
 class UpdateProductFlag extends Patch

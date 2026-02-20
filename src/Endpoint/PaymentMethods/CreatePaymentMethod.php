@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-methods/createpaymentmethod
  *
- * @method CreatePaymentMethod setBody(null|array|CreatePaymentMethodRequest $entity)
+ * @method CreatePaymentMethod setBody(null|array<string, mixed>|CreatePaymentMethodRequest $entity)
  * @method null|CreatePaymentMethodRequest getBody()
  */
 class CreatePaymentMethod extends Post

@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Consumption-taxes/createconsumptiontax
  *
- * @method CreateConsumptionTax setBody(null|array|CreateConsumptionTaxRequest $entity)
+ * @method CreateConsumptionTax setBody(null|array<string, mixed>|CreateConsumptionTaxRequest $entity)
  * @method null|CreateConsumptionTaxRequest getBody()
  */
 class CreateConsumptionTax extends Post

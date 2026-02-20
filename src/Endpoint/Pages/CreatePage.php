@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Post;
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Pages/createpage
  *
- * @method CreatePage setBody(null|array|CreatePageRequest $entity)
+ * @method CreatePage setBody(null|array<string, mixed>|CreatePageRequest $entity)
  * @method null|CreatePageRequest getBody()
  */
 class CreatePage extends Post

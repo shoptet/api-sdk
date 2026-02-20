@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatusResponse\Upd
 /**
  * @see https://api.docs.shoptet.com/shoptet-api/openapi/Payment-gateways/updatepaymentstatus
  *
- * @method UpdatePaymentStatus setBody(null|array|UpdatePaymentStatusRequest $entity)
+ * @method UpdatePaymentStatus setBody(null|array<string, mixed>|UpdatePaymentStatusRequest $entity)
  * @method null|UpdatePaymentStatusRequest getBody()
  */
 class UpdatePaymentStatus extends Patch
