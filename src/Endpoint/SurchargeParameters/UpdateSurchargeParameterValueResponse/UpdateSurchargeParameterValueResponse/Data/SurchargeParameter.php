@@ -18,7 +18,7 @@ class SurchargeParameter extends Entity
     protected string $currency;
     protected bool $includingVat;
     protected ?bool $subscription;
-    protected GoogleMappingType $googleMapping;
+    protected ?GoogleMappingType $googleMapping;
     protected Values $values;
 
     public function getId(): int
@@ -131,12 +131,12 @@ class SurchargeParameter extends Entity
         return $this;
     }
 
-    public function getGoogleMapping(): GoogleMappingType
+    public function getGoogleMapping(): ?GoogleMappingType
     {
         return $this->googleMapping;
     }
 
-    public function setGoogleMapping(GoogleMappingType $googleMapping): static
+    public function setGoogleMapping(?GoogleMappingType $googleMapping): static
     {
         $this->googleMapping = $googleMapping;
         return $this;

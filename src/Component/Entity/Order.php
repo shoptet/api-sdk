@@ -34,7 +34,7 @@ class Order extends Entity
     protected ?string $vatMode;
     protected ?BillingMethod $billingMethod;
     protected ?PaymentMethod $paymentMethod;
-    protected Shipping $shipping;
+    protected ?Shipping $shipping;
     protected ?ShippingDetails $shippingDetails;
     protected string $adminUrl;
     protected ?Status $status;
@@ -43,7 +43,7 @@ class Order extends Entity
     protected Price $price;
     protected ?bool $paid;
     protected BillingAddress $billingAddress;
-    protected Address $deliveryAddress;
+    protected ?Address $deliveryAddress;
     protected ?string $onlinePaymentLink;
     protected ?string $language;
     protected ?string $referer;
@@ -242,12 +242,12 @@ class Order extends Entity
         return $this;
     }
 
-    public function getShipping(): Shipping
+    public function getShipping(): ?Shipping
     {
         return $this->shipping;
     }
 
-    public function setShipping(Shipping $shipping): static
+    public function setShipping(?Shipping $shipping): static
     {
         $this->shipping = $shipping;
         return $this;
@@ -341,12 +341,12 @@ class Order extends Entity
         return $this;
     }
 
-    public function getDeliveryAddress(): Address
+    public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    public function setDeliveryAddress(Address $deliveryAddress): static
+    public function setDeliveryAddress(?Address $deliveryAddress): static
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;

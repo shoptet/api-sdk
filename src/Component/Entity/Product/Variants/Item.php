@@ -41,7 +41,7 @@ class Item extends Entity
     protected string $vatRate;
     protected string $currencyCode;
     protected TypeAmountNullable $minStockSupply;
-    protected ActionPrice $actionPrice;
+    protected ?ActionPrice $actionPrice;
     protected ?string $image;
     protected ?bool $isProductDefaultImage;
     protected ?string $name;
@@ -284,12 +284,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getActionPrice(): ActionPrice
+    public function getActionPrice(): ?ActionPrice
     {
         return $this->actionPrice;
     }
 
-    public function setActionPrice(ActionPrice $actionPrice): static
+    public function setActionPrice(?ActionPrice $actionPrice): static
     {
         $this->actionPrice = $actionPrice;
         return $this;

@@ -13,7 +13,7 @@ class DeliveryNote extends Entity
     protected TypeDateTimeNullable $creationTime;
     protected TypeDateTimeNullable $changeTime;
     protected BillingAddress $billingAddress;
-    protected Address $deliveryAddress;
+    protected ?Address $deliveryAddress;
     protected bool $addressesEqual;
     protected DocumentCustomer $customer;
     protected Items $items;
@@ -85,12 +85,12 @@ class DeliveryNote extends Entity
         return $this;
     }
 
-    public function getDeliveryAddress(): Address
+    public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    public function setDeliveryAddress(Address $deliveryAddress): static
+    public function setDeliveryAddress(?Address $deliveryAddress): static
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;

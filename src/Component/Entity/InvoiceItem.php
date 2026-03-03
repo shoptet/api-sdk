@@ -34,7 +34,7 @@ class InvoiceItem extends Entity
     protected ?RecyclingFee $recyclingFee;
     protected ?ItemSurchargeParameters $surchargeParameters;
     protected ?ItemSpecificSurchargeParameters $specificSurchargeParameters;
-    protected DocumentConsumptionTax $consumptionTax;
+    protected ?DocumentConsumptionTax $consumptionTax;
     protected ?ItemPriceVatBreakdown $itemPriceVatBreakdown;
 
     public function getProductGuid(): ?TypeGuidUnlimited
@@ -275,12 +275,12 @@ class InvoiceItem extends Entity
         return $this;
     }
 
-    public function getConsumptionTax(): DocumentConsumptionTax
+    public function getConsumptionTax(): ?DocumentConsumptionTax
     {
         return $this->consumptionTax;
     }
 
-    public function setConsumptionTax(DocumentConsumptionTax $consumptionTax): static
+    public function setConsumptionTax(?DocumentConsumptionTax $consumptionTax): static
     {
         $this->consumptionTax = $consumptionTax;
         return $this;

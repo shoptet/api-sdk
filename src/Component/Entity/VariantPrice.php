@@ -11,7 +11,7 @@ class VariantPrice extends Entity
     protected TypePriceNullable $commonPrice;
     protected TypePriceNullable $buyPrice;
     protected TypeProductPriceRatio $priceRatio;
-    protected ActionPrice $actionPrice;
+    protected ?ActionPrice $actionPrice;
 
     public function getPrice(): TypePriceNullable
     {
@@ -57,12 +57,12 @@ class VariantPrice extends Entity
         return $this;
     }
 
-    public function getActionPrice(): ActionPrice
+    public function getActionPrice(): ?ActionPrice
     {
         return $this->actionPrice;
     }
 
-    public function setActionPrice(ActionPrice $actionPrice): static
+    public function setActionPrice(?ActionPrice $actionPrice): static
     {
         $this->actionPrice = $actionPrice;
         return $this;

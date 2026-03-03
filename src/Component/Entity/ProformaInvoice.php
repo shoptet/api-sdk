@@ -23,7 +23,7 @@ class ProformaInvoice extends Entity
     protected TypeWeightUnlimited $completePackageWeight;
     protected ?BillingMethod $billingMethod;
     protected BillingAddress $billingAddress;
-    protected Address $deliveryAddress;
+    protected ?Address $deliveryAddress;
     protected bool $addressesEqual;
     protected Price $price;
     protected DocumentCustomer $customer;
@@ -187,12 +187,12 @@ class ProformaInvoice extends Entity
         return $this;
     }
 
-    public function getDeliveryAddress(): Address
+    public function getDeliveryAddress(): ?Address
     {
         return $this->deliveryAddress;
     }
 
-    public function setDeliveryAddress(Address $deliveryAddress): static
+    public function setDeliveryAddress(?Address $deliveryAddress): static
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;

@@ -13,7 +13,7 @@ class Item extends Entity
     protected ?string $displayName;
     protected ?string $description;
     protected ?int $priority;
-    protected GoogleMappingType $googleMapping;
+    protected ?GoogleMappingType $googleMapping;
     protected Values $values;
 
     public function getCode(): string
@@ -71,12 +71,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getGoogleMapping(): GoogleMappingType
+    public function getGoogleMapping(): ?GoogleMappingType
     {
         return $this->googleMapping;
     }
 
-    public function setGoogleMapping(GoogleMappingType $googleMapping): static
+    public function setGoogleMapping(?GoogleMappingType $googleMapping): static
     {
         $this->googleMapping = $googleMapping;
         return $this;

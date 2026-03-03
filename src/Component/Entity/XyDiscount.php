@@ -24,8 +24,8 @@ class XyDiscount extends Entity
     protected TypeColor $bannerColor;
     protected ?int $priority;
     protected ?int $usageCount;
-    protected XyDiscountTargetingResponse $xTargeting;
-    protected XyDiscountTargetingResponse $yTargeting;
+    protected ?XyDiscountTargetingResponse $xTargeting;
+    protected ?XyDiscountTargetingResponse $yTargeting;
     protected bool $includeUnregisteredCustomers;
 
     public function getId(): int
@@ -193,23 +193,23 @@ class XyDiscount extends Entity
         return $this;
     }
 
-    public function getXTargeting(): XyDiscountTargetingResponse
+    public function getXTargeting(): ?XyDiscountTargetingResponse
     {
         return $this->xTargeting;
     }
 
-    public function setXTargeting(XyDiscountTargetingResponse $xTargeting): static
+    public function setXTargeting(?XyDiscountTargetingResponse $xTargeting): static
     {
         $this->xTargeting = $xTargeting;
         return $this;
     }
 
-    public function getYTargeting(): XyDiscountTargetingResponse
+    public function getYTargeting(): ?XyDiscountTargetingResponse
     {
         return $this->yTargeting;
     }
 
-    public function setYTargeting(XyDiscountTargetingResponse $yTargeting): static
+    public function setYTargeting(?XyDiscountTargetingResponse $yTargeting): static
     {
         $this->yTargeting = $yTargeting;
         return $this;
