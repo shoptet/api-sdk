@@ -59,7 +59,7 @@ class ProofPaymentDetail extends Entity
     protected ?string $bic;
     protected ?string $documentRemark;
     protected ?string $invoiceCode;
-    protected ProofPaymentVatBreakdown $vatBreakdown;
+    protected ?ProofPaymentVatBreakdown $vatBreakdown;
     protected ?string $vatMode;
     protected TypeExchangeRate $invoicingExchangeRate;
 
@@ -575,12 +575,12 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getVatBreakdown(): ProofPaymentVatBreakdown
+    public function getVatBreakdown(): ?ProofPaymentVatBreakdown
     {
         return $this->vatBreakdown;
     }
 
-    public function setVatBreakdown(ProofPaymentVatBreakdown $vatBreakdown): static
+    public function setVatBreakdown(?ProofPaymentVatBreakdown $vatBreakdown): static
     {
         $this->vatBreakdown = $vatBreakdown;
         return $this;

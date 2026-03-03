@@ -29,7 +29,7 @@ class Item extends Entity
     protected string $adminUrl;
     protected ?Status $status;
     protected ?Source $source;
-    protected Shipping $shipping;
+    protected ?Shipping $shipping;
     protected ?PaymentMethod $paymentMethod;
     protected Price $price;
     protected ?bool $paid;
@@ -190,12 +190,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getShipping(): Shipping
+    public function getShipping(): ?Shipping
     {
         return $this->shipping;
     }
 
-    public function setShipping(Shipping $shipping): static
+    public function setShipping(?Shipping $shipping): static
     {
         $this->shipping = $shipping;
         return $this;

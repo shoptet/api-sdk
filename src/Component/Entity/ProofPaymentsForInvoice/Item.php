@@ -8,7 +8,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentVatBreakdown;
 class Item extends Entity
 {
     protected string $code;
-    protected ProofPaymentVatBreakdown $vatBreakdown;
+    protected ?ProofPaymentVatBreakdown $vatBreakdown;
 
     public function getCode(): string
     {
@@ -21,12 +21,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getVatBreakdown(): ProofPaymentVatBreakdown
+    public function getVatBreakdown(): ?ProofPaymentVatBreakdown
     {
         return $this->vatBreakdown;
     }
 
-    public function setVatBreakdown(ProofPaymentVatBreakdown $vatBreakdown): static
+    public function setVatBreakdown(?ProofPaymentVatBreakdown $vatBreakdown): static
     {
         $this->vatBreakdown = $vatBreakdown;
         return $this;

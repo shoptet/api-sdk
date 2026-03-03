@@ -37,7 +37,7 @@ class OrderItem extends Entity
     /** @deprecated */
     protected ?ItemPrice $buyPrice;
     protected ?ItemPrice $purchasePrice;
-    protected RecyclingFee $recyclingFee;
+    protected ?RecyclingFee $recyclingFee;
     protected ?MainImage $mainImage;
     protected ?string $stockLocation;
     protected ?string $supplierName;
@@ -281,12 +281,12 @@ class OrderItem extends Entity
         return $this;
     }
 
-    public function getRecyclingFee(): RecyclingFee
+    public function getRecyclingFee(): ?RecyclingFee
     {
         return $this->recyclingFee;
     }
 
-    public function setRecyclingFee(RecyclingFee $recyclingFee): static
+    public function setRecyclingFee(?RecyclingFee $recyclingFee): static
     {
         $this->recyclingFee = $recyclingFee;
         return $this;

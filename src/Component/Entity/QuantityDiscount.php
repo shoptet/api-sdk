@@ -20,7 +20,7 @@ class QuantityDiscount extends Entity
     protected bool $isActive;
     protected string $status;
     protected string $targetingLevel;
-    protected QuantityDiscountTargetingResponse $targeting;
+    protected ?QuantityDiscountTargetingResponse $targeting;
     protected bool $includeUnregisteredCustomers;
     protected QuantityDiscountSettingsResponse $settings;
 
@@ -156,12 +156,12 @@ class QuantityDiscount extends Entity
         return $this;
     }
 
-    public function getTargeting(): QuantityDiscountTargetingResponse
+    public function getTargeting(): ?QuantityDiscountTargetingResponse
     {
         return $this->targeting;
     }
 
-    public function setTargeting(QuantityDiscountTargetingResponse $targeting): static
+    public function setTargeting(?QuantityDiscountTargetingResponse $targeting): static
     {
         $this->targeting = $targeting;
         return $this;
