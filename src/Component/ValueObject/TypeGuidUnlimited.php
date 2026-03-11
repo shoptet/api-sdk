@@ -23,4 +23,9 @@ readonly class TypeGuidUnlimited implements ValueObjectInterface
     {
         return (string) $this->typeGuidUnlimited;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

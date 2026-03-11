@@ -23,4 +23,9 @@ readonly class TypeUnitRatio implements ValueObjectInterface
     {
         return (string) $this->typeUnitRatio;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

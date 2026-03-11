@@ -23,4 +23,9 @@ readonly class TypeProductPriceRatio implements ValueObjectInterface
     {
         return (string) $this->typeProductPriceRatio;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

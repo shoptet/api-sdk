@@ -26,4 +26,9 @@ readonly class TypeAmountNullable implements ValueObjectInterface
     {
         return (string) $this->typeAmountNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

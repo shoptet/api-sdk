@@ -26,4 +26,9 @@ readonly class TypeWeightUnlimited implements ValueObjectInterface
     {
         return (string) $this->typeWeightUnlimited;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

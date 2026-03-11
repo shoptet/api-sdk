@@ -23,4 +23,9 @@ readonly class TypePositiveAmount implements ValueObjectInterface
     {
         return (string) $this->typePositiveAmount;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

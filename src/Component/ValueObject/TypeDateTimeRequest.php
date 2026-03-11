@@ -26,4 +26,9 @@ readonly class TypeDateTimeRequest implements ValueObjectInterface
     {
         return (string) $this->typeDateTimeRequest;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

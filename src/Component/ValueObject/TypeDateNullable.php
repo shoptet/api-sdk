@@ -26,4 +26,9 @@ readonly class TypeDateNullable implements ValueObjectInterface
     {
         return (string) $this->typeDateNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

@@ -29,4 +29,9 @@ readonly class TypeGuidNullable implements ValueObjectInterface
     {
         return (string) $this->typeGuidNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

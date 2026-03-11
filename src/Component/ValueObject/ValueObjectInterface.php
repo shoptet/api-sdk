@@ -2,7 +2,9 @@
 
 namespace Shoptet\Api\Sdk\Php\Component\ValueObject;
 
-interface ValueObjectInterface
+use JsonSerializable;
+
+interface ValueObjectInterface extends JsonSerializable
 {
     public function __toString(): string;
 }

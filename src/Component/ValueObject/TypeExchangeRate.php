@@ -23,4 +23,9 @@ readonly class TypeExchangeRate implements ValueObjectInterface
     {
         return (string) $this->typeExchangeRate;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

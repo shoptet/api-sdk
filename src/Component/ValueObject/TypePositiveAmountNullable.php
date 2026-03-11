@@ -26,4 +26,9 @@ readonly class TypePositiveAmountNullable implements ValueObjectInterface
     {
         return (string) $this->typePositiveAmountNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

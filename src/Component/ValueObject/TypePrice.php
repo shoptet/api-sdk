@@ -23,4 +23,9 @@ readonly class TypePrice implements ValueObjectInterface
     {
         return (string) $this->typePrice;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }
