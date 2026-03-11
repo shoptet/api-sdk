@@ -21,6 +21,7 @@ abstract class Entity implements JsonSerializable
      */
     public function __construct(array $data = [])
     {
+        /** komentar pro SDK deploy test #3 */
         if (count($data) !== 0) {
             EntityFactory::createEntity($this, $data);
         }
