@@ -24,4 +24,9 @@ readonly class TypeCustomerFieldValue implements ValueObjectInterface
     {
         return (string) $this->typeCustomerFieldValue;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

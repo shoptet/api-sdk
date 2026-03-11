@@ -7,6 +7,8 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 use JsonSerializable;
+use ReflectionClass;
+use ReflectionException;
 use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 use Traversable;
 
@@ -221,5 +223,55 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
     public function jsonSerialize(): array
     {
         return $this->toArray();
+    }
+
+    /**
+     * @param string $multiType
+     * @param array<string, mixed> $data
+     * @return class-string<Entity>
+     */
+    protected function determineMultiTypeByData(string $multiType, array $data): string
+    {
+        /**
+         * @var array<int, class-string<Entity>> $types
+         */
+        $types = explode('|', $multiType);
+        /**
+         * @var array<int, class-string<Entity>> $result
+         */
+        $result = $types;
+
+        foreach ($types as $i => $type) {
+            try {
+                $reflection = new ReflectionClass($type);
+            } catch (ReflectionException $e) { // @phpstan-ignore catch.neverThrown
+                //Better Safe than Sorry
+                throw new InvalidArgumentException(sprintf('Cannot determine data type of "%s" due to unprocessable type "%s".', $multiType, $type), $e->getCode(), $e);
+            }
+
+            foreach ($reflection->getProperties() as $property) {
+                if ($property->getName() === 'undefinedParams') {
+                    continue;
+                }
+
+                if (!$property->getType()?->allowsNull() && !array_key_exists($property->getName(), $data)) {
+                    unset($result[$i]);
+                    continue 2;
+                }
+            }
+
+            foreach ($data as $property => $value) {
+                if (!$reflection->hasProperty($property)) {
+                    unset($result[$i]);
+                    continue 2;
+                }
+            }
+        }
+
+        if (empty($result)) {
+            throw new InvalidArgumentException(sprintf('Cannot determine data type of "%s" based on "%s".', $multiType, var_export($data, true)));
+        }
+
+        return reset($result);
     }
 }

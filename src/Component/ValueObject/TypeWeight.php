@@ -23,4 +23,9 @@ readonly class TypeWeight implements ValueObjectInterface
     {
         return (string) $this->typeWeight;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

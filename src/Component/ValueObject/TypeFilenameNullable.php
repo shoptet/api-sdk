@@ -32,4 +32,9 @@ readonly class TypeFilenameNullable implements ValueObjectInterface
     {
         return (string) $this->typeFilenameNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

@@ -23,4 +23,9 @@ readonly class TypeNonEmptyString implements ValueObjectInterface
     {
         return (string) $this->typeNonEmptyString;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

@@ -23,4 +23,9 @@ readonly class TypeCurrencyCode implements ValueObjectInterface
     {
         return (string) $this->typeCurrencyCode;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

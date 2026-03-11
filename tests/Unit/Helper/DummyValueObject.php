@@ -10,4 +10,9 @@ final class DummyValueObject implements ValueObjectInterface
     {
         return 'dummy-value-object';
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

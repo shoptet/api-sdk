@@ -29,4 +29,9 @@ readonly class TypeVariantCodeRequest implements ValueObjectInterface
     {
         return (string) $this->typeVariantCodeRequest;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

@@ -21,4 +21,9 @@ readonly class ConsumptionTaxId implements ValueObjectInterface
     {
         return (string) $this->consumptionTaxId;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

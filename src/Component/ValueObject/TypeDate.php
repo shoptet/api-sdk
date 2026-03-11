@@ -23,4 +23,9 @@ readonly class TypeDate implements ValueObjectInterface
     {
         return (string) $this->typeDate;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

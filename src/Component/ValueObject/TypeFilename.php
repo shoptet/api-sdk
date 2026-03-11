@@ -29,4 +29,9 @@ readonly class TypeFilename implements ValueObjectInterface
     {
         return (string) $this->typeFilename;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

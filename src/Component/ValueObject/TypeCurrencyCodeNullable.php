@@ -26,4 +26,9 @@ readonly class TypeCurrencyCodeNullable implements ValueObjectInterface
     {
         return (string) $this->typeCurrencyCodeNullable;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }

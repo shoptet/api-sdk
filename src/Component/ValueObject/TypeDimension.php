@@ -23,4 +23,9 @@ readonly class TypeDimension implements ValueObjectInterface
     {
         return (string) $this->typeDimension;
     }
+
+    public function jsonSerialize(): string
+    {
+        return $this->__toString();
+    }
 }
