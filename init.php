@@ -46,7 +46,8 @@ require_once __DIR__ . '/src/Component/Entity/Category/CatalogueMapping/Item.php
 require_once __DIR__ . '/src/Component/Entity/CategoryBatchUpdate.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data.php';
-require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data/Item.php';
+require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data/Item1.php';
+require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data/Item2.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryUpdate.php';
 require_once __DIR__ . '/src/Component/Entity/ConsumptionTax.php';
 require_once __DIR__ . '/src/Component/Entity/CreditNote.php';
@@ -458,7 +459,8 @@ require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductCategoryResponse/U
 require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategory.php';
 require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryRequest/UpdateProductOrderInCategoryRequest.php';
 require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryRequest/UpdateProductOrderInCategoryRequest/Data.php';
-require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryRequest/UpdateProductOrderInCategoryRequest/Data/Item.php';
+require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryRequest/UpdateProductOrderInCategoryRequest/Data/Item1.php';
+require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryRequest/UpdateProductOrderInCategoryRequest/Data/Item2.php';
 require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryResponse/UpdateProductOrderInCategoryResponse.php';
 require_once __DIR__ . '/src/Endpoint/Categories/UpdateProductOrderInCategoryResponse/UpdateProductOrderInCategoryResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ConsumptionTaxes/CreateConsumptionTax.php';
