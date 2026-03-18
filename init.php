@@ -1664,6 +1664,7 @@ require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdRe
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/OnlineStore.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/OnlineStore/Countries.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/SalesChannel.php';
+require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/SalesChannel/Abilities.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/SalesChannel/Currencies.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailByIdResponse/GetSalesChannelsDetailByIdResponse/Data/SalesChannel/Languages.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse.php';
@@ -1673,12 +1674,14 @@ require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailRespon
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/OnlineStore.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/OnlineStore/Countries.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/SalesChannel.php';
+require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/SalesChannel/Abilities.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/SalesChannel/Currencies.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsDetailResponse/GetSalesChannelsDetailResponse/Data/SalesChannel/Languages.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels/Item.php';
+require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels/Item/Abilities.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels/Item/Currencies.php';
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels/Item/Languages.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethod.php';
