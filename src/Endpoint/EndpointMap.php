@@ -298,6 +298,7 @@ class EndpointMap
             '/api/customers/{guid}/accounts' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\CreateCustomerAccount',
             '/api/customers/{guid}/delivery-addresses' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddress',
             '/api/customers/{guid}/remarks' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemark',
+            '/api/customers/groups' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroup',
             '/api/template-include' => 'Shoptet\Api\Sdk\Php\Endpoint\Templates\CreateAndEditHtmlCodes',
             '/api/webhooks' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\RegisterNewWebhook',
             '/api/webhooks/renew-signature-key' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GenerateWebhookSignatureKey',

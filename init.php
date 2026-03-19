@@ -604,6 +604,13 @@ require_once __DIR__ . '/src/Endpoint/CustomerRemarks/UpdateCustomerRemarkRespon
 require_once __DIR__ . '/src/Endpoint/CustomerRemarks/UpdateCustomerRemarkResponse/UpdateCustomerRemarkResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/CustomerRemarks/UpdateCustomerRemarkResponse/UpdateCustomerRemarkResponse/Data/Remark.php';
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomer.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroup.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupRequest/CreateCustomerGroupRequest.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupRequest/CreateCustomerGroupRequest/Data.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupResponse/CreateCustomerGroupResponse.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupResponse/CreateCustomerGroupResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupResponse/CreateCustomerGroupResponse/Data/CustomerGroups.php';
+require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerGroupResponse/CreateCustomerGroupResponse/Data/CustomerGroups/Item.php';
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerRequest/CreateCustomerRequest.php';
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerRequest/CreateCustomerRequest/Data.php';
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerRequest/CreateCustomerRequest/Data/Account.php';

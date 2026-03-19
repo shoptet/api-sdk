@@ -101,6 +101,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\GetListOfCustomerRemarks;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemarkRequest\UpdateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomer;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroupRequest\CreateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomer;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail;
@@ -6403,6 +6405,31 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfCustomerGroups::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateCustomerGroupRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/createcustomergroup
+     */
+    public static function createCustomerGroup(
+        array|CreateCustomerGroupRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateCustomerGroup::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
