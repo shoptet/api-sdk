@@ -617,6 +617,9 @@ require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerRequest/CreateCust
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse.php';
 require_once __DIR__ . '/src/Endpoint/Customers/CreateCustomerResponse/CreateCustomerResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomer.php';
+require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomerGroup.php';
+require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomerGroupResponse/DeleteCustomerGroupResponse.php';
+require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomerGroupResponse/DeleteCustomerGroupResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomerResponse/DeleteCustomerResponse.php';
 require_once __DIR__ . '/src/Endpoint/Customers/DeleteCustomerResponse/DeleteCustomerResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Customers/GetCustomerDetail.php';
