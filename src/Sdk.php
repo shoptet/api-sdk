@@ -105,6 +105,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroup;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroupRequest\CreateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomer;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerGroup;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfAllCustomers;
@@ -6430,6 +6431,28 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateCustomerGroup::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1]
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/deletecustomergroup
+     */
+    public static function deleteCustomerGroup(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteCustomerGroup::class)
+            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }

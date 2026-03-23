@@ -38,6 +38,7 @@ class EndpointMap
             '/api/customers/{guid}/accounts/{accountGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\DeleteCustomerAccount',
             '/api/customers/{guid}/delivery-addresses/{addressGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\DeleteCustomerDeliveryAddress',
             '/api/customers/{guid}/remarks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\DeleteCustomerRemark',
+            '/api/customers/groups/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerGroup',
             '/api/template-include/{location}' => 'Shoptet\Api\Sdk\Php\Endpoint\Templates\DeleteHtmlCode',
             '/api/webhooks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\DeleteRegisteredWebhook',
             '/api/payment-methods/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\DeletePaymentMethod',
