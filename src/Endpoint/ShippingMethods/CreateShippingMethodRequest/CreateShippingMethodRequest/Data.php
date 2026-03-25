@@ -1,0 +1,95 @@
+<?php
+
+namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
+
+use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
+use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest\Data\Logo;
+
+class Data extends Entity
+{
+    protected string $name;
+    protected ?string $description;
+    protected string $shippingMethodCode;
+    protected ?bool $visibility;
+    protected ?bool $wholesale;
+    protected ?Logo $logo;
+    protected ?TypePriceNullable $minimalShippingPrice;
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    public function getShippingMethodCode(): string
+    {
+        return $this->shippingMethodCode;
+    }
+
+    public function setShippingMethodCode(string $shippingMethodCode): static
+    {
+        $this->shippingMethodCode = $shippingMethodCode;
+        return $this;
+    }
+
+    public function getVisibility(): ?bool
+    {
+        return $this->visibility;
+    }
+
+    public function setVisibility(?bool $visibility): static
+    {
+        $this->visibility = $visibility;
+        return $this;
+    }
+
+    public function getWholesale(): ?bool
+    {
+        return $this->wholesale;
+    }
+
+    public function setWholesale(?bool $wholesale): static
+    {
+        $this->wholesale = $wholesale;
+        return $this;
+    }
+
+    public function getLogo(): ?Logo
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?Logo $logo): static
+    {
+        $this->logo = $logo;
+        return $this;
+    }
+
+    public function getMinimalShippingPrice(): ?TypePriceNullable
+    {
+        return $this->minimalShippingPrice;
+    }
+
+    public function setMinimalShippingPrice(?TypePriceNullable $minimalShippingPrice): static
+    {
+        $this->minimalShippingPrice = $minimalShippingPrice;
+        return $this;
+    }
+}

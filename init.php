@@ -1696,10 +1696,8 @@ require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/Get
 require_once __DIR__ . '/src/Endpoint/SalesChannels/GetSalesChannelsResponse/GetSalesChannelsResponse/Data/SalesChannels/Item/Languages.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethod.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest.php';
-require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data1.php';
-require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data1/Logo.php';
-require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data2.php';
-require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data2/Logo.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRequest/CreateShippingMethodRequest/Data/Logo.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/ShippingCompany.php';
