@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsRespons
 class GetListOfShippingMethods extends Get
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'salesChannelGuid' => false];
 
     public function getRequestEntityClass(): null
     {
