@@ -6746,6 +6746,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     salesChannelGuid?: string,
      * } $queryParams
      *
      * @return ResponseInterface
