@@ -23,7 +23,7 @@ class GetListOfProductsReviews extends PageableGet
         'dateTo' => false,
         'changeTimeFrom' => false,
         'productGuid' => false,
-        'orderCode' => true,
+        'orderCode' => false,
     ];
 
     public function getRequestEntityClass(): null

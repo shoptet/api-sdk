@@ -8374,7 +8374,7 @@ class Sdk
      *     dateTo?: string,
      *     changeTimeFrom?: string,
      *     productGuid?: string,
-     *     orderCode: string,
+     *     orderCode?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -8384,7 +8384,7 @@ class Sdk
      *
      * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviews
      */
-    public static function getListOfProductsReviews(array $queryParams): ResponseInterface
+    public static function getListOfProductsReviews(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfProductsReviews::class)
