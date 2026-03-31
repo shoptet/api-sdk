@@ -19,10 +19,10 @@ class GetListOfProductsReviews extends PageableGet
         'language' => false,
         'page' => false,
         'itemsPerPage' => false,
-        'dateFrom' => true,
-        'dateTo' => true,
-        'changeTimeFrom' => true,
-        'productGuid' => true,
+        'dateFrom' => false,
+        'dateTo' => false,
+        'changeTimeFrom' => false,
+        'productGuid' => false,
         'orderCode' => true,
     ];
 

@@ -2953,11 +2953,11 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
-     *     dateFrom: string,
-     *     dateTo: string,
-     *     changeTimeFrom: string,
-     *     productGuid: string,
-     *     orderCode: string,
+     *     dateFrom?: string,
+     *     dateTo?: string,
+     *     changeTimeFrom?: string,
+     *     productGuid?: string,
+     *     orderCode?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -2967,7 +2967,7 @@ class Sdk
      *
      * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviewsdeprecated
      */
-    public static function getListOfProductsReviewsDeprecated(array $queryParams): ResponseInterface
+    public static function getListOfProductsReviewsDeprecated(array $queryParams = []): ResponseInterface
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfProductsReviewsDeprecated::class)
@@ -6436,7 +6436,7 @@ class Sdk
     }
 
     /**
-     * @param string $id [1]
+     * @param string $id [999]
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -8370,10 +8370,10 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
-     *     dateFrom: string,
-     *     dateTo: string,
-     *     changeTimeFrom: string,
-     *     productGuid: string,
+     *     dateFrom?: string,
+     *     dateTo?: string,
+     *     changeTimeFrom?: string,
+     *     productGuid?: string,
      *     orderCode: string,
      * } $queryParams
      *
