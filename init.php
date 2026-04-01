@@ -649,6 +649,13 @@ require_once __DIR__ . '/src/Endpoint/Customers/GetListOfCustomersResponse/GetLi
 require_once __DIR__ . '/src/Endpoint/Customers/GetListOfCustomersResponse/GetListOfCustomersResponse/Data/Customers.php';
 require_once __DIR__ . '/src/Endpoint/Customers/GetListOfCustomersResponse/GetListOfCustomersResponse/Data/Customers/Item.php';
 require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomer.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroup.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupRequest/UpdateCustomerGroupRequest.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupRequest/UpdateCustomerGroupRequest/Data.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupResponse/UpdateCustomerGroupResponse.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupResponse/UpdateCustomerGroupResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupResponse/UpdateCustomerGroupResponse/Data/CustomerGroups.php';
+require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerGroupResponse/UpdateCustomerGroupResponse/Data/CustomerGroups/Item.php';
 require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerRequest/UpdateCustomerRequest.php';
 require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerRequest/UpdateCustomerRequest/Data.php';
 require_once __DIR__ . '/src/Endpoint/Customers/UpdateCustomerResponse/UpdateCustomerResponse.php';
