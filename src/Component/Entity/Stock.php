@@ -7,6 +7,7 @@ class Stock extends Entity
     protected int $id;
     protected string $title;
     protected bool $isDeliveryPoint;
+    protected bool $visibleOnEshop;
     protected ?string $deliveryPointTitle;
     protected ?string $deliveryPointAddress;
     protected string $type;
@@ -42,6 +43,17 @@ class Stock extends Entity
     public function setIsDeliveryPoint(bool $isDeliveryPoint): static
     {
         $this->isDeliveryPoint = $isDeliveryPoint;
+        return $this;
+    }
+
+    public function isVisibleOnEshop(): bool
+    {
+        return $this->visibleOnEshop;
+    }
+
+    public function setVisibleOnEshop(bool $visibleOnEshop): static
+    {
+        $this->visibleOnEshop = $visibleOnEshop;
         return $this;
     }
 
