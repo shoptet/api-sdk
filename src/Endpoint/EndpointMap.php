@@ -238,6 +238,7 @@ class EndpointMap
             '/api/customers/{guid}/accounts/{accountGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\UpdateCustomerAccount',
             '/api/customers/{guid}/delivery-addresses/{addressGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\UpdateCustomerDeliveryAddress',
             '/api/customers/{guid}/remarks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemark',
+            '/api/customers/groups/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerGroup',
             '/api/payment-status/{paymentCode}' => 'Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatus',
             '/api/webhooks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\UpdateExistingWebhook',
             '/api/discount-coupons/use/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage',

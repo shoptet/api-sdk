@@ -113,6 +113,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerGroups;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRegions;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomers;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomer;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerGroupRequest\UpdateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRequest\UpdateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrderRequest\DeliveryNoteFromOrderRequest;
@@ -6453,6 +6455,35 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DeleteCustomerGroup::class)
             ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Customer group ID
+     * @param array<string, mixed>|UpdateCustomerGroupRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/updatecustomergroup
+     */
+    public static function updateCustomerGroup(
+        string $id,
+        array|UpdateCustomerGroupRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateCustomerGroup::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
