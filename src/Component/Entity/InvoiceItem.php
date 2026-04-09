@@ -26,9 +26,6 @@ class InvoiceItem extends Entity
     protected ?string $additionalField;
     protected ItemPrice $itemPrice;
     protected ItemPrice $unitPrice;
-
-    /** @deprecated */
-    protected ?ItemPrice $buyPrice;
     protected ?ItemPrice $purchasePrice;
     protected ?DisplayPrices $displayPrices;
     protected ?RecyclingFee $recyclingFee;
@@ -199,23 +196,6 @@ class InvoiceItem extends Entity
     public function setUnitPrice(ItemPrice $unitPrice): static
     {
         $this->unitPrice = $unitPrice;
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getBuyPrice(): ?ItemPrice
-    {
-        return $this->buyPrice;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function setBuyPrice(?ItemPrice $buyPrice): static
-    {
-        $this->buyPrice = $buyPrice;
         return $this;
     }
 

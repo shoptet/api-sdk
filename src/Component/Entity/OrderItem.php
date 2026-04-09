@@ -33,9 +33,6 @@ class OrderItem extends Entity
     protected ItemPrice $itemPrice;
     protected ItemPrice $unitPrice;
     protected ?DisplayPrices $displayPrices;
-
-    /** @deprecated */
-    protected ?ItemPrice $buyPrice;
     protected ?ItemPrice $purchasePrice;
     protected ?RecyclingFee $recyclingFee;
     protected ?MainImage $mainImage;
@@ -250,23 +247,6 @@ class OrderItem extends Entity
     public function setDisplayPrices(?DisplayPrices $displayPrices): static
     {
         $this->displayPrices = $displayPrices;
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getBuyPrice(): ?ItemPrice
-    {
-        return $this->buyPrice;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function setBuyPrice(?ItemPrice $buyPrice): static
-    {
-        $this->buyPrice = $buyPrice;
         return $this;
     }
 
