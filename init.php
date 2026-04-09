@@ -103,6 +103,7 @@ require_once __DIR__ . '/src/Component/Entity/ItemSurchargeParametersWithoutPric
 require_once __DIR__ . '/src/Component/Entity/ItemSurchargeParametersWithoutPrice/Item/ParameterName.php';
 require_once __DIR__ . '/src/Component/Entity/ItemSurchargeParametersWithoutPrice/Item/ParameterValue.php';
 require_once __DIR__ . '/src/Component/Entity/MeasureUnit.php';
+require_once __DIR__ . '/src/Component/Entity/Metadata.php';
 require_once __DIR__ . '/src/Component/Entity/NotificationData.php';
 require_once __DIR__ . '/src/Component/Entity/OnlineStore.php';
 require_once __DIR__ . '/src/Component/Entity/OnlineStore/Countries.php';

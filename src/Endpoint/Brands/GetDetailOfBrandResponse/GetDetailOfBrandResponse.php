@@ -5,11 +5,13 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Brands\GetDetailOfBrandResponse;
 use Shoptet\Api\Sdk\Php\Component\Entity\Brand;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
+use Shoptet\Api\Sdk\Php\Component\Entity\Metadata;
 
 class GetDetailOfBrandResponse extends Entity
 {
     protected ?Brand $data;
     protected ?Errors $errors;
+    protected ?Metadata $metadata;
 
     public function getData(): ?Brand
     {
@@ -30,6 +32,17 @@ class GetDetailOfBrandResponse extends Entity
     public function setErrors(?Errors $errors): static
     {
         $this->errors = $errors;
+        return $this;
+    }
+
+    public function getMetadata(): ?Metadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(?Metadata $metadata): static
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }

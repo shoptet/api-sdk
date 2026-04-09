@@ -4,11 +4,13 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\DeleteProductAvaila
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
+use Shoptet\Api\Sdk\Php\Component\Entity\Metadata;
 
 class DeleteProductAvailabilityResponse extends Entity
 {
     protected null $data;
     protected ?Errors $errors;
+    protected ?Metadata $metadata;
 
     public function getData(): null
     {
@@ -29,6 +31,17 @@ class DeleteProductAvailabilityResponse extends Entity
     public function setErrors(?Errors $errors): static
     {
         $this->errors = $errors;
+        return $this;
+    }
+
+    public function getMetadata(): ?Metadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(?Metadata $metadata): static
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }

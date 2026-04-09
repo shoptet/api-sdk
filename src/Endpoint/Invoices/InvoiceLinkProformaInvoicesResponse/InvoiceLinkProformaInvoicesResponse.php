@@ -4,12 +4,14 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProformaInvoicesRespo
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
+use Shoptet\Api\Sdk\Php\Component\Entity\Metadata;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\InvoiceLinkProformaInvoicesResponse\InvoiceLinkProformaInvoicesResponse\Data;
 
 class InvoiceLinkProformaInvoicesResponse extends Entity
 {
     protected ?Data $data;
     protected ?Errors $errors;
+    protected ?Metadata $metadata;
 
     public function getData(): ?Data
     {
@@ -30,6 +32,17 @@ class InvoiceLinkProformaInvoicesResponse extends Entity
     public function setErrors(?Errors $errors): static
     {
         $this->errors = $errors;
+        return $this;
+    }
+
+    public function getMetadata(): ?Metadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(?Metadata $metadata): static
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }

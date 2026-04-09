@@ -4,12 +4,14 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
+use Shoptet\Api\Sdk\Php\Component\Entity\Metadata;
 use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsResponse\GetSalesChannelsResponse\Data;
 
 class GetSalesChannelsResponse extends Entity
 {
     protected ?Data $data;
     protected ?Errors $errors;
+    protected ?Metadata $metadata;
 
     public function getData(): ?Data
     {
@@ -30,6 +32,17 @@ class GetSalesChannelsResponse extends Entity
     public function setErrors(?Errors $errors): static
     {
         $this->errors = $errors;
+        return $this;
+    }
+
+    public function getMetadata(): ?Metadata
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(?Metadata $metadata): static
+    {
+        $this->metadata = $metadata;
         return $this;
     }
 }
