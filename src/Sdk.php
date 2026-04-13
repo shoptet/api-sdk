@@ -6350,7 +6350,7 @@ class Sdk
     }
 
     /**
-     * @param string $id [999]
+     * @param string $id [1]
      * @param array{
      *     language?: string,
      * } $queryParams
