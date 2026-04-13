@@ -183,8 +183,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\Flags\UpdateProductFlagRequest\UpdateProductFla
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\GetOrderGiftSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Gifts\UpdateOrderGiftSettingsRequest\UpdateOrderGiftSettingsRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Instores\GetInStoreDetail;
-use Shoptet\Api\Sdk\Php\Endpoint\Instores\GetListOfInStores;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\CreateInvoiceFromOrderRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromProformaInvoice;
@@ -203,8 +201,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetailResponse\GetJobDetailResponse;
 use Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetListOfJobs;
 use Shoptet\Api\Sdk\Php\Endpoint\MeasureUnits\GetListOfProductsMeasureUnits;
-use Shoptet\Api\Sdk\Php\Endpoint\OnlineStores\GetListOfOnlineStores;
-use Shoptet\Api\Sdk\Php\Endpoint\OnlineStores\GetOnlineStoreDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGift;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGiftRequest\AddOrderGiftRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\DeleteOrderGift;
@@ -670,48 +666,6 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfEshopReviewsDeprecated::class)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Online-stores/getlistofonlinestores
-     */
-    public static function getListOfOnlineStores(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetListOfOnlineStores::class)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param string $id [1] Online store ID
-     * @param array{
-     *     language?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Online-stores/getonlinestoredetail
-     */
-    public static function getOnlineStoreDetail(string $id, array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetOnlineStoreDetail::class)
-            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }
@@ -4092,48 +4046,6 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(UpdateOrderGiftSettings::class)
             ->setBody($requestBody)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/In-stores/getlistofinstores
-     */
-    public static function getListOfInStores(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetListOfInStores::class)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param string $id [1] In-store ID
-     * @param array{
-     *     language?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/In-stores/getinstoredetail
-     */
-    public static function getInStoreDetail(string $id, array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetInStoreDetail::class)
-            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }
