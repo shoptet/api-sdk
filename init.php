@@ -1618,12 +1618,6 @@ require_once __DIR__ . '/src/Endpoint/Reviews/CreateProjectReviewRequest/CreateP
 require_once __DIR__ . '/src/Endpoint/Reviews/CreateProjectReviewRequest/CreateProjectReviewRequest/Data/Reaction.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/CreateProjectReviewResponse/CreateProjectReviewResponse.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/CreateProjectReviewResponse/CreateProjectReviewResponse/Data.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecated.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecatedResponse/GetListOfEshopReviewsDeprecatedResponse.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecatedResponse/GetListOfEshopReviewsDeprecatedResponse/Data.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecatedResponse/GetListOfEshopReviewsDeprecatedResponse/Data/Reviews.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecatedResponse/GetListOfEshopReviewsDeprecatedResponse/Data/Reviews/Item.php';
-require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfEshopReviewsDeprecatedResponse/GetListOfEshopReviewsDeprecatedResponse/Data/Reviews/Item/Reaction.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProductsReviews.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProductsReviewsDeprecated.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProductsReviewsDeprecatedResponse/GetListOfProductsReviewsDeprecatedResponse.php';
