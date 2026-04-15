@@ -366,7 +366,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReviewRequest\CreateProductReviewRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewRequest\CreateProjectReviewRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfEshopReviewsDeprecated;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviewsDeprecated;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews;
@@ -644,28 +643,6 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetEshopMandatoryFields::class)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     *     page?: int,
-     *     itemsPerPage?: int,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofeshopreviewsdeprecated
-     */
-    public static function getListOfEshopReviewsDeprecated(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetListOfEshopReviewsDeprecated::class)
             ->setQueryParams($queryParams)
             ->execute();
     }

@@ -57,7 +57,6 @@ class EndpointMap
             '/api/eshop/design' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDesign',
             '/api/eshop/document-settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettings',
             '/api/eshop/customer-fields' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopMandatoryFields',
-            '/api/eshop/reviews' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfEshopReviewsDeprecated',
             '/api/products' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProducts',
             '/api/products/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProducts',
             '/api/products/snapshot/pricelists' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProductsAndPricelistPrices',
