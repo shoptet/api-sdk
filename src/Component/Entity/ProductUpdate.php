@@ -6,6 +6,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\CategoryGuids;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\DescriptiveParameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\FilteringParameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Flags;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\FlagsManagement;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\RelatedVideos;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\SurchargeParameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants;
@@ -34,6 +35,7 @@ class ProductUpdate extends Entity
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
     protected ?Flags $flags;
+    protected ?FlagsManagement $flagsManagement;
     protected ?DescriptiveParameters $descriptiveParameters;
     protected ?FilteringParameters $filteringParameters;
     protected ?SurchargeParameters $surchargeParameters;
@@ -258,6 +260,17 @@ class ProductUpdate extends Entity
     public function setFlags(?Flags $flags): static
     {
         $this->flags = $flags;
+        return $this;
+    }
+
+    public function getFlagsManagement(): ?FlagsManagement
+    {
+        return $this->flagsManagement;
+    }
+
+    public function setFlagsManagement(?FlagsManagement $flagsManagement): static
+    {
+        $this->flagsManagement = $flagsManagement;
         return $this;
     }
 
