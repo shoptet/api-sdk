@@ -230,6 +230,8 @@ require_once __DIR__ . '/src/Component/Entity/ProductUpdate/FilteringParameters/
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/FilteringParameters/Item/Values.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Flags.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Flags/Item.php';
+require_once __DIR__ . '/src/Component/Entity/ProductUpdate/FlagsManagement.php';
+require_once __DIR__ . '/src/Component/Entity/ProductUpdate/FlagsManagement/Item.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/RelatedVideos.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/RelatedVideos/Item.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/SurchargeParameters.php';
