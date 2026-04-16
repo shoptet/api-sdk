@@ -4,11 +4,12 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdateP
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRateNullable;
 
 class PurchasePrice extends Entity
 {
     protected ?TypePriceNullable $price;
-    protected ?TypePriceNullable $vatRate;
+    protected ?TypeVatRateNullable $vatRate;
     protected ?bool $includingVat;
 
     public function getPrice(): ?TypePriceNullable
@@ -22,12 +23,12 @@ class PurchasePrice extends Entity
         return $this;
     }
 
-    public function getVatRate(): ?TypePriceNullable
+    public function getVatRate(): ?TypeVatRateNullable
     {
         return $this->vatRate;
     }
 
-    public function setVatRate(?TypePriceNullable $vatRate): static
+    public function setVatRate(?TypeVatRateNullable $vatRate): static
     {
         $this->vatRate = $vatRate;
         return $this;
