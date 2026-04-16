@@ -342,6 +342,7 @@ require_once __DIR__ . '/src/Component/ValueObject/TypeProductPriceRatio.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeUnitRatio.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeVariantCodeRequest.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeVatRate.php';
+require_once __DIR__ . '/src/Component/ValueObject/TypeVatRateNullable.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeWeight.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeWeightRequest.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeWeightUnlimited.php';
