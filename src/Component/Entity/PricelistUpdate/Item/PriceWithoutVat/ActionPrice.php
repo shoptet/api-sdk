@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithoutVat;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
