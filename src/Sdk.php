@@ -277,6 +277,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetails;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceLists;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelist;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatch;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatchRequest\UpdatePricelistBatchRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailability;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailabilityRequest\CreateProductAvailabilityRequest;
@@ -3060,6 +3062,34 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAllPricelistDetails::class)
             ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Pricelist id
+     * @param array<string, mixed>|UpdatePricelistBatchRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/updatepricelistbatch
+     */
+    public static function updatePricelistBatch(
+        string $id,
+        array|UpdatePricelistBatchRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdatePricelistBatch::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
