@@ -1,9 +1,9 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Prices\PurchasePrice;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Prices\PurchasePrice;
 
 class Prices extends Entity
 {

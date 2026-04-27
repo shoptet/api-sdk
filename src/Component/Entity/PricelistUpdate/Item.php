@@ -1,21 +1,21 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRateNullable;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\OrderableAmount;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Price;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithoutVat;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Prices;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Sales;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\OrderableAmount;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Price;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithVat;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithoutVat;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Prices;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Sales;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 
 class Item extends Entity
 {
     protected string $code;
     protected ?string $currencyCode;
-    protected ?TypeVatRateNullable $vatRate;
+    protected ?TypePriceNullable $vatRate;
     protected ?bool $includingVat;
     protected ?OrderableAmount $orderableAmount;
     protected ?Sales $sales;
@@ -46,12 +46,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getVatRate(): ?TypeVatRateNullable
+    public function getVatRate(): ?TypePriceNullable
     {
         return $this->vatRate;
     }
 
-    public function setVatRate(?TypeVatRateNullable $vatRate): static
+    public function setVatRate(?TypePriceNullable $vatRate): static
     {
         $this->vatRate = $vatRate;
         return $this;

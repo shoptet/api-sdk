@@ -1,13 +1,13 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithoutVat\ActionPrice;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat\ActionPrice;
 
-class PriceWithVat extends Entity
+class PriceWithoutVat extends Entity
 {
     protected ?TypePriceNullable $price;
     protected ?TypePriceNullable $commonPrice;
