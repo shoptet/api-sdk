@@ -23,7 +23,7 @@ class Category extends Entity
     protected ?string $similarProductsCategory;
     protected ?string $relatedProductsCategory;
     protected ?string $customerVisibility;
-    protected ?string $productOrdering;
+    protected string $productOrdering;
     protected CatalogueMapping $catalogueMapping;
 
     public function getGuid(): TypeGuidNullable
@@ -202,12 +202,12 @@ class Category extends Entity
         return $this;
     }
 
-    public function getProductOrdering(): ?string
+    public function getProductOrdering(): string
     {
         return $this->productOrdering;
     }
 
-    public function setProductOrdering(?string $productOrdering): static
+    public function setProductOrdering(string $productOrdering): static
     {
         $this->productOrdering = $productOrdering;
         return $this;

@@ -214,6 +214,7 @@ class EndpointMap
             '/api/products/variant-parameters/{paramIndex}/{rawValue}' => 'Shoptet\Api\Sdk\Php\Endpoint\VariantParameters\UpdateVariantParameterValue',
             '/api/products/consumption-taxes/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\ConsumptionTaxes\UpdateConsumptionTax',
             '/api/pricelists/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelist',
+            '/api/pricelists/{id}/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatch',
             '/api/orders/status-change' => 'Shoptet\Api\Sdk\Php\Endpoint\Orders\BulkOrderStatusChange',
             '/api/orders/{code}/head' => 'Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderHead',
             '/api/orders/{code}/item/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\OrderItems\UpdateOrderItem',

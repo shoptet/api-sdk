@@ -1,15 +1,15 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\OrderableAmount;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Price;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithVat;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\PriceWithoutVat;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Prices;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item\Sales;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRateNullable;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\OrderableAmount;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Price;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithVat;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\PriceWithoutVat;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Prices;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item\Sales;
 
 class Item extends Entity
 {

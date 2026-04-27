@@ -1,9 +1,8 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest;
+namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
-use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item;
+use Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item;
 
 /**
  * @extends EntityCollection<Item>
@@ -18,7 +17,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePriceli
  * @method null|Item offsetGet(int $offset)
  * @method void offsetSet(int $offset, Item $value)
  */
-class Data extends EntityCollection
+class PricelistUpdate extends EntityCollection
 {
     /**
      * @param array<string, mixed> $data
@@ -26,6 +25,6 @@ class Data extends EntityCollection
      */
     public function getItemType(array $data): string
     {
-        return 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistRequest\UpdatePricelistRequest\Data\Item';
+        return 'Shoptet\Api\Sdk\Php\Component\Entity\PricelistUpdate\Item';
     }
 }
