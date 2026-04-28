@@ -26,6 +26,7 @@ class CurlClient implements ClientInterface
 
     protected const string HEADER_DEPRECATED_ENDPOINT = 'X-Shoptet-Deprecated';
     protected const string HEADER_SUNSET = 'Sunset';
+    protected const string HEADER_REQUEST_ID = 'X-Request-ID';
 
     /**
      * cURL synchronous requests handle.
@@ -126,19 +127,7 @@ class CurlClient implements ClientInterface
         $rStatusCode = \curl_getinfo($this->handle, \CURLINFO_HTTP_CODE);
         $this->closeCurlHandle();
 
-        Sdk::getLogger()->debug(
-            sprintf(
-                '%s: Response %s %s',
-                __CLASS__,
-                $endpoint->getMethod(),
-                $endpoint->getUrl()
-            ),
-            [
-                'headers' => $rHeaders,
-                'statusCode' => $rStatusCode,
-                'body' => $rBody,
-            ]
-        );
+        $this->logResponse($endpoint, $rHeaders, $rStatusCode, $rBody);
 
         $this->checkHeaders($rHeaders, $endpoint);
         $this->checkRateLimiter($rHeaders, $rStatusCode, $endpoint);
@@ -325,6 +314,27 @@ class CurlClient implements ClientInterface
                 Sdk::getLogger()->debug($message);
             }
         }
+    }
+
+    /**
+     * @param array<string, string> $headers
+     */
+    protected function logResponse(Endpoint $endpoint, array $headers, int $statusCode, string $body): void
+    {
+        Sdk::getLogger()->debug(
+            sprintf(
+                '%s: Response %s %s',
+                __CLASS__,
+                $endpoint->getMethod(),
+                $endpoint->getUrl()
+            ),
+            [
+                'requestId' => $headers[self::HEADER_REQUEST_ID] ?? null,
+                'headers' => $headers,
+                'statusCode' => $statusCode,
+                'body' => $body,
+            ]
+        );
     }
 
     protected function closeCurlHandle(): void
