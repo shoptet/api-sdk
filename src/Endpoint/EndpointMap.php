@@ -8,6 +8,7 @@ class EndpointMap
     protected const array MAP = [
         'delete' => [
             '/api/products/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProduct',
+            '/api/products/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchDelete',
             '/api/products/code/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProductVariant',
             '/api/products/{guid}/images/{gallery}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteAllProductImagesInGallery',
             '/api/products/{guid}/images/{gallery}/{imageName}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteOneProductImage',
