@@ -317,6 +317,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfAllProductsAndPricelistPrices
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProducts;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\GetProductDetailByCode;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchDelete;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchDeleteRequest\ProductBatchDeleteRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdate;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdateRequest\ProductBatchUpdateRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopy;
@@ -870,6 +872,31 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DeleteProduct::class)
             ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|ProductBatchDeleteRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productbatchdelete
+     */
+    public static function productBatchDelete(
+        array|ProductBatchDeleteRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(ProductBatchDelete::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
