@@ -1246,6 +1246,11 @@ require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetListOfParametricCa
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetListOfParametricCategoriesResponse/GetListOfParametricCategoriesResponse/Data/ParametricCategories.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetListOfParametricCategoriesResponse/GetListOfParametricCategoriesResponse/Data/ParametricCategories/Item.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetListOfParametricCategoriesResponse/GetListOfParametricCategoriesResponse/Data/ParametricCategories/Item/Parameters.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryAvailableParameters.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryAvailableParametersResponse/GetParametricCategoryAvailableParametersResponse.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryAvailableParametersResponse/GetParametricCategoryAvailableParametersResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryAvailableParametersResponse/GetParametricCategoryAvailableParametersResponse/Data/Parameters.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryAvailableParametersResponse/GetParametricCategoryAvailableParametersResponse/Data/Parameters/Item.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryDetail.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryDetailResponse/GetParametricCategoryDetailResponse.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/GetParametricCategoryDetailResponse/GetParametricCategoryDetailResponse/Data.php';
