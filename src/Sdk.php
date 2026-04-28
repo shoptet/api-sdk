@@ -457,6 +457,7 @@ use Shoptet\Api\Sdk\Php\Factory\Response\EntityResponseFactory;
 use Shoptet\Api\Sdk\Php\HttpClient\ClientInterface;
 use Shoptet\Api\Sdk\Php\HttpClient\CurlClient;
 use Shoptet\Api\Sdk\Php\Response\ResponseInterface;
+use Shoptet\Api\Sdk\Php\Webhook\SignatureValidator;
 
 class Sdk
 {
@@ -8552,5 +8553,19 @@ class Sdk
         $jobProcessor = new JobResultProcessor(self::getEndpointFactory());
 
         return $jobProcessor->processSnapshot($jobDetailBody);
+    }
+
+    /**
+     * Verify the HMAC-SHA1 signature of an incoming webhook notification.
+     *
+     * @see https://developers.shoptet.com/api/documentation/webhooks/
+     * @param string|array<mixed>|\JsonSerializable $messageBody
+     */
+    public static function isWebhookSignatureValid(
+        string $signatureKey,
+        string|array|\JsonSerializable $messageBody,
+        string $signature,
+    ): bool {
+        return SignatureValidator::isValid($signatureKey, $messageBody, $signature);
     }
 }

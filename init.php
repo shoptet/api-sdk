@@ -1987,3 +1987,4 @@ require_once __DIR__ . '/src/Response/RawResponse.php';
 require_once __DIR__ . '/src/Response/ResponseInterface.php';
 require_once __DIR__ . '/src/Sdk.php';
 require_once __DIR__ . '/src/Webhook/Event.php';
+require_once __DIR__ . '/src/Webhook/SignatureValidator.php';
