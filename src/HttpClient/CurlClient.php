@@ -27,6 +27,7 @@ class CurlClient implements ClientInterface
     protected const string HEADER_DEPRECATED_ENDPOINT = 'X-Shoptet-Deprecated';
     protected const string HEADER_SUNSET = 'Sunset';
     protected const string HEADER_REQUEST_ID = 'X-Request-ID';
+    public const string HEADER_WEBHOOK_SIGNATURE = 'Shoptet-Webhook-Signature';
 
     /**
      * cURL synchronous requests handle.

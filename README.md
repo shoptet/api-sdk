@@ -157,6 +157,29 @@ Sdk::registerNewWebhook([
 ]);
 ```
 
+#### Signature validation
+
+The message body can be passed as a raw string, an array, or an `Entity` — arrays and entities are JSON-encoded automatically before the signature is calculated.
+
+The signature header name is available as a constant:
+```php
+\Shoptet\Api\Sdk\Php\HttpClient\CurlClient::HEADER_WEBHOOK_SIGNATURE; // 'Shoptet-Webhook-Signature'
+```
+
+```php
+// Array
+$isValid = \Shoptet\Api\Sdk\Php\Webhook\SignatureValidator::isValid(
+    $signatureKey,
+    [
+        'eshopId' => 315185,
+        'event' => 'addon:uninstall',
+        'eventCreated' => '2019-09-23T22:01:36+0200',
+        'eventInstance' => '315185'
+    ],
+    $signature
+);
+```
+
 ### Custom header
 
 ```php
