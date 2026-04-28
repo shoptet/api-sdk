@@ -260,6 +260,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryRequest\CreateParametricCategoryRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\DeleteParametricCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetListOfParametricCategories;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetParametricCategoryAvailableParameters;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetParametricCategoryDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\UpdateParametricCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\UpdateParametricCategoryRequest\UpdateParametricCategoryRequest;
@@ -1627,6 +1628,30 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(DeleteParametricCategory::class)
+            ->addPathParam('categoryGuid', $categoryGuid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $categoryGuid [5c498fb7-70ac-11e9-9208-08002774f818] Guid of the parent category.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/getparametriccategoryavailableparameters
+     */
+    public static function getParametricCategoryAvailableParameters(
+        string $categoryGuid,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetParametricCategoryAvailableParameters::class)
             ->addPathParam('categoryGuid', $categoryGuid)
             ->setQueryParams($queryParams)
             ->execute();

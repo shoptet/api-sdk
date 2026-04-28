@@ -70,6 +70,7 @@ class EndpointMap
             '/api/categories/{categoryGuid}/productsPriority' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductsOrderInCategory',
             '/api/parametric-categories' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetListOfParametricCategories',
             '/api/parametric-categories/{categoryGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetParametricCategoryDetail',
+            '/api/parametric-categories-available-parameters/{categoryGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetParametricCategoryAvailableParameters',
             '/api/products/flags' => 'Shoptet\Api\Sdk\Php\Endpoint\Flags\GetListOfProductsFlags',
             '/api/products/measure-units' => 'Shoptet\Api\Sdk\Php\Endpoint\MeasureUnits\GetListOfProductsMeasureUnits',
             '/api/products/availabilities' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\GetListOfProductsAvailabilities',
