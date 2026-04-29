@@ -257,6 +257,7 @@ class EndpointMap
             '/api/products/{guid}/related-files' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLink',
             '/api/categories' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategory',
             '/api/parametric-categories' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategory',
+            '/api/parametric-categories-definition' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryDefinition',
             '/api/products/flags' => 'Shoptet\Api\Sdk\Php\Endpoint\Flags\CreateProductFlag',
             '/api/products/availabilities' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\CreateProductAvailability',
             '/api/products/surcharge-parameters' => 'Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameter',
