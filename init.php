@@ -1230,6 +1230,13 @@ require_once __DIR__ . '/src/Endpoint/Pages/UpdatePageRequest/UpdatePageRequest/
 require_once __DIR__ . '/src/Endpoint/Pages/UpdatePageResponse/UpdatePageResponse.php';
 require_once __DIR__ . '/src/Endpoint/Pages/UpdatePageResponse/UpdatePageResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategory.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinition.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionRequest/CreateParametricCategoryDefinitionRequest.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionRequest/CreateParametricCategoryDefinitionRequest/Data.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionRequest/CreateParametricCategoryDefinitionRequest/Data/Parameters.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionRequest/CreateParametricCategoryDefinitionRequest/Data/Parameters/Item.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionResponse/CreateParametricCategoryDefinitionResponse.php';
+require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryDefinitionResponse/CreateParametricCategoryDefinitionResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryRequest/CreateParametricCategoryRequest.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryRequest/CreateParametricCategoryRequest/Data.php';
 require_once __DIR__ . '/src/Endpoint/ParametricCategories/CreateParametricCategoryRequest/CreateParametricCategoryRequest/Data/Parameters.php';

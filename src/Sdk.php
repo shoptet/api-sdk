@@ -257,6 +257,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Pages\GetListOfPages;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\UpdatePage;
 use Shoptet\Api\Sdk\Php\Endpoint\Pages\UpdatePageRequest\UpdatePageRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryDefinition;
+use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryDefinitionRequest\CreateParametricCategoryDefinitionRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\CreateParametricCategoryRequest\CreateParametricCategoryRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\DeleteParametricCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetListOfParametricCategories;
@@ -1654,6 +1656,31 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(GetParametricCategoryAvailableParameters::class)
             ->addPathParam('categoryGuid', $categoryGuid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateParametricCategoryDefinitionRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Parametric-categories/createparametriccategorydefinition
+     */
+    public static function createParametricCategoryDefinition(
+        array|CreateParametricCategoryDefinitionRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateParametricCategoryDefinition::class)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
