@@ -16,6 +16,7 @@ class CreditNote extends Entity
     protected ?string $defaultReasonRemark;
     protected bool $restock;
     protected ?bool $addNotesFromOrder;
+    protected bool $checkComplianceWithInvoice;
     protected ForbiddenItemTypes $forbiddenItemTypes;
 
     public function getCodePrefix(): ?string
@@ -114,6 +115,17 @@ class CreditNote extends Entity
     public function setAddNotesFromOrder(?bool $addNotesFromOrder): static
     {
         $this->addNotesFromOrder = $addNotesFromOrder;
+        return $this;
+    }
+
+    public function isCheckComplianceWithInvoice(): bool
+    {
+        return $this->checkComplianceWithInvoice;
+    }
+
+    public function setCheckComplianceWithInvoice(bool $checkComplianceWithInvoice): static
+    {
+        $this->checkComplianceWithInvoice = $checkComplianceWithInvoice;
         return $this;
     }
 
