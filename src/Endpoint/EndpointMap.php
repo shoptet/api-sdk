@@ -87,7 +87,6 @@ class EndpointMap
             '/api/products/{guid}/relatedProducts' => 'Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\GetListOfProductRelatedProducts',
             '/api/products/units' => 'Shoptet\Api\Sdk\Php\Endpoint\Units\GetListOfProductUnits',
             '/api/products/{guid}/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\GetListOfProductGifts',
-            '/api/products/reviews' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviewsDeprecated',
             '/api/pricelists' => 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceLists',
             '/api/pricelists/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetail',
             '/api/pricelists/{id}/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetails',

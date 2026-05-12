@@ -374,7 +374,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReviewRequest\CreateProduc
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewRequest\CreateProjectReviewRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
-use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviewsDeprecated;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReviewRequest\UpdateProductReviewRequest;
@@ -2959,33 +2958,6 @@ class Sdk
             ->createEndpoint(SteGiftsToProduct::class)
             ->addPathParam('guid', $guid)
             ->setBody($requestBody)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     *     page?: int,
-     *     itemsPerPage?: int,
-     *     dateFrom?: string,
-     *     dateTo?: string,
-     *     changeTimeFrom?: string,
-     *     productGuid?: string,
-     *     orderCode?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofproductsreviewsdeprecated
-     */
-    public static function getListOfProductsReviewsDeprecated(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetListOfProductsReviewsDeprecated::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
