@@ -93,6 +93,12 @@ use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\GeListOfCustomerDeliv
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\GetDetailOfCustomerDeliveryAddress;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\UpdateCustomerDeliveryAddress;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\UpdateCustomerDeliveryAddressRequest\UpdateCustomerDeliveryAddressRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\CreateCustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\CreateCustomerGroupRequest\CreateCustomerGroupRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\DeleteCustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\GetListOfCustomerGroups;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\UpdateCustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\UpdateCustomerGroupRequest\UpdateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemarkRequest\CreateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\DeleteCustomerRemark;
@@ -101,20 +107,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\GetListOfCustomerRemarks;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemarkRequest\UpdateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroup;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerGroupRequest\CreateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomerGroup;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChanges;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfAllCustomers;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerGroups;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomerRegions;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomers;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomer;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerGroup;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerGroupRequest\UpdateCustomerGroupRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\UpdateCustomerRequest\UpdateCustomerRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrder;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DeliveryNoteFromOrderRequest\DeliveryNoteFromOrderRequest;
@@ -6401,7 +6401,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/getlistofcustomergroups
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-groups/getlistofcustomergroups
      */
     public static function getListOfCustomerGroups(array $queryParams = []): ResponseInterface
     {
@@ -6423,7 +6423,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/createcustomergroup
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-groups/createcustomergroup
      */
     public static function createCustomerGroup(
         array|CreateCustomerGroupRequest $requestBody,
@@ -6447,7 +6447,7 @@ class Sdk
      * @throws LogicException
      * @throws RuntimeException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/deletecustomergroup
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-groups/deletecustomergroup
      */
     public static function deleteCustomerGroup(string $id, array $queryParams = []): ResponseInterface
     {
@@ -6472,7 +6472,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/updatecustomergroup
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customer-groups/updatecustomergroup
      */
     public static function updateCustomerGroup(
         string $id,
