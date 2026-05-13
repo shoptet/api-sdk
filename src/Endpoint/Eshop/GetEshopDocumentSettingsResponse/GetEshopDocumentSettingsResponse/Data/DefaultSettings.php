@@ -3,11 +3,12 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettingsResponse\GetEshopDocumentSettingsResponse\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbolNullable;
 
 class DefaultSettings extends Entity
 {
     protected ?int $billingMethodId;
-    protected ?string $constSymbol;
+    protected ?TypeConstSymbolNullable $constSymbol;
     protected ?string $specSymbol;
     protected ?int $maturity;
     protected ?string $invoiceRemark;
@@ -29,12 +30,12 @@ class DefaultSettings extends Entity
         return $this;
     }
 
-    public function getConstSymbol(): ?string
+    public function getConstSymbol(): ?TypeConstSymbolNullable
     {
         return $this->constSymbol;
     }
 
-    public function setConstSymbol(?string $constSymbol): static
+    public function setConstSymbol(?TypeConstSymbolNullable $constSymbol): static
     {
         $this->constSymbol = $constSymbol;
         return $this;

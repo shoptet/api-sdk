@@ -6,15 +6,17 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbolNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbolNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 
 class Data extends Entity
 {
     protected ?string $proformaInvoiceCode;
-    protected ?int $varSymbol;
+    protected ?TypeVarSymbol $varSymbol;
     protected ?TypeDateTimeNullable $creationTime;
     protected ?TypeDateNullable $dueDate;
     protected ?TypeConstSymbolNullable $constSymbol;
-    protected ?int $specSymbol;
+    protected ?TypeSpecSymbolNullable $specSymbol;
     protected ?int $billingMethodId;
 
     public function getProformaInvoiceCode(): ?string
@@ -28,12 +30,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getVarSymbol(): ?int
+    public function getVarSymbol(): ?TypeVarSymbol
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(?int $varSymbol): static
+    public function setVarSymbol(?TypeVarSymbol $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;
@@ -72,12 +74,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSpecSymbol(): ?int
+    public function getSpecSymbol(): ?TypeSpecSymbolNullable
     {
         return $this->specSymbol;
     }
 
-    public function setSpecSymbol(?int $specSymbol): static
+    public function setSpecSymbol(?TypeSpecSymbolNullable $specSymbol): static
     {
         $this->specSymbol = $specSymbol;
         return $this;

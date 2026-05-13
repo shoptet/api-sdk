@@ -5,6 +5,8 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\CreditNote\Items;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbolNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightUnlimited;
 
 class CreditNote extends Entity
@@ -18,9 +20,9 @@ class CreditNote extends Entity
     protected TypeDateTimeNullable $changeTime;
     protected TypeDateNullable $dueDate;
     protected TypeDateNullable $taxDate;
-    protected float $varSymbol;
+    protected TypeVarSymbol $varSymbol;
     protected ?int $constSymbol;
-    protected ?float $specSymbol;
+    protected TypeSpecSymbolNullable $specSymbol;
     protected ?bool $restocked;
     protected ?string $stockAmountChangeType;
     protected TypeWeightUnlimited $weight;
@@ -137,12 +139,12 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getVarSymbol(): float
+    public function getVarSymbol(): TypeVarSymbol
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(float $varSymbol): static
+    public function setVarSymbol(TypeVarSymbol $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;
@@ -159,12 +161,12 @@ class CreditNote extends Entity
         return $this;
     }
 
-    public function getSpecSymbol(): ?float
+    public function getSpecSymbol(): TypeSpecSymbolNullable
     {
         return $this->specSymbol;
     }
 
-    public function setSpecSymbol(?float $specSymbol): static
+    public function setSpecSymbol(TypeSpecSymbolNullable $specSymbol): static
     {
         $this->specSymbol = $specSymbol;
         return $this;

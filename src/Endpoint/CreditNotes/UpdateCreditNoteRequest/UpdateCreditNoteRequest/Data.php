@@ -5,24 +5,26 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\UpdateCreditNoteRequest\Updat
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbolNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbolNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 
 class Data extends Entity
 {
-    protected ?float $varSymbol;
+    protected ?TypeVarSymbol $varSymbol;
     protected ?TypeDateNullable $dueDate;
     protected ?TypeDateNullable $taxDate;
     protected ?TypeConstSymbolNullable $constSymbol;
-    protected ?float $specSymbol;
+    protected ?TypeSpecSymbolNullable $specSymbol;
     protected ?int $billingMethodId;
     protected ?string $orderCode;
     protected ?string $reasonRemark;
 
-    public function getVarSymbol(): ?float
+    public function getVarSymbol(): ?TypeVarSymbol
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(?float $varSymbol): static
+    public function setVarSymbol(?TypeVarSymbol $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;
@@ -61,12 +63,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSpecSymbol(): ?float
+    public function getSpecSymbol(): ?TypeSpecSymbolNullable
     {
         return $this->specSymbol;
     }
 
-    public function setSpecSymbol(?float $specSymbol): static
+    public function setSpecSymbol(?TypeSpecSymbolNullable $specSymbol): static
     {
         $this->specSymbol = $specSymbol;
         return $this;
