@@ -5,11 +5,12 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoice
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Price;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbolNullable;
 
 class Item extends Entity
 {
     protected string $code;
-    protected ?float $varSymbol;
+    protected TypeVarSymbolNullable $varSymbol;
     protected bool $isValid;
     protected ?string $orderCode;
     protected TypeDateTimeNullable $creationTime;
@@ -29,12 +30,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getVarSymbol(): ?float
+    public function getVarSymbol(): TypeVarSymbolNullable
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(?float $varSymbol): static
+    public function setVarSymbol(TypeVarSymbolNullable $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;

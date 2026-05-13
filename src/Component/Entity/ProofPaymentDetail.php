@@ -3,11 +3,14 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\ProofPaymentDetail\Source;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbolNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeExchangeRate;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbolNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 
 class ProofPaymentDetail extends Entity
 {
@@ -47,9 +50,9 @@ class ProofPaymentDetail extends Entity
     /** @deprecated */
     protected ?string $identificationNumber;
     protected ?string $remark;
-    protected float $varSymbol;
-    protected ?string $constSymbol;
-    protected ?float $specSymbol;
+    protected TypeVarSymbol $varSymbol;
+    protected TypeConstSymbolNullable $constSymbol;
+    protected TypeSpecSymbolNullable $specSymbol;
     protected ?BillingMethod $billingMethod;
     protected ?string $billBankAccount;
     protected ?string $billIban;
@@ -443,34 +446,34 @@ class ProofPaymentDetail extends Entity
         return $this;
     }
 
-    public function getVarSymbol(): float
+    public function getVarSymbol(): TypeVarSymbol
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(float $varSymbol): static
+    public function setVarSymbol(TypeVarSymbol $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;
     }
 
-    public function getConstSymbol(): ?string
+    public function getConstSymbol(): TypeConstSymbolNullable
     {
         return $this->constSymbol;
     }
 
-    public function setConstSymbol(?string $constSymbol): static
+    public function setConstSymbol(TypeConstSymbolNullable $constSymbol): static
     {
         $this->constSymbol = $constSymbol;
         return $this;
     }
 
-    public function getSpecSymbol(): ?float
+    public function getSpecSymbol(): TypeSpecSymbolNullable
     {
         return $this->specSymbol;
     }
 
-    public function setSpecSymbol(?float $specSymbol): static
+    public function setSpecSymbol(TypeSpecSymbolNullable $specSymbol): static
     {
         $this->specSymbol = $specSymbol;
         return $this;

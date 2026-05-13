@@ -3,10 +3,13 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentRequest\CreateProofPaymentRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbolNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeRequest;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbolNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 
 class Data extends Entity
 {
@@ -14,11 +17,11 @@ class Data extends Entity
     protected ?string $orderCode;
     protected TypePriceNullable $payment;
     protected TypeCurrencyCode $currencyCode;
-    protected float $varSymbol;
+    protected TypeVarSymbol $varSymbol;
     protected ?TypeDateTimeRequest $issueDate;
     protected ?TypeDateNullable $taxDate;
-    protected ?string $constSymbol;
-    protected ?float $specSymbol;
+    protected ?TypeConstSymbolNullable $constSymbol;
+    protected ?TypeSpecSymbolNullable $specSymbol;
     protected ?int $invoiceBillingMethodId;
     protected ?string $billBankAccount;
     protected ?string $billIban;
@@ -69,12 +72,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getVarSymbol(): float
+    public function getVarSymbol(): TypeVarSymbol
     {
         return $this->varSymbol;
     }
 
-    public function setVarSymbol(float $varSymbol): static
+    public function setVarSymbol(TypeVarSymbol $varSymbol): static
     {
         $this->varSymbol = $varSymbol;
         return $this;
@@ -102,23 +105,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getConstSymbol(): ?string
+    public function getConstSymbol(): ?TypeConstSymbolNullable
     {
         return $this->constSymbol;
     }
 
-    public function setConstSymbol(?string $constSymbol): static
+    public function setConstSymbol(?TypeConstSymbolNullable $constSymbol): static
     {
         $this->constSymbol = $constSymbol;
         return $this;
     }
 
-    public function getSpecSymbol(): ?float
+    public function getSpecSymbol(): ?TypeSpecSymbolNullable
     {
         return $this->specSymbol;
     }
 
-    public function setSpecSymbol(?float $specSymbol): static
+    public function setSpecSymbol(?TypeSpecSymbolNullable $specSymbol): static
     {
         $this->specSymbol = $specSymbol;
         return $this;
