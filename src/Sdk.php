@@ -122,6 +122,16 @@ use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\DownloadDeliveryNoteAsPdf;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetDetailOfDeliveryNote;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotes;
 use Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfDeliveryNotes;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\CloseCarrierShipments;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\CreateShipment;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\CreateShipmentByOrderCode;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\CreateShipmentRequest\CreateShipmentRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetListOfShipmentCarriers;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetListOfShipments;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetShipmentCarrierDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetShipmentDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetShipmentShippingOptionsByOrderCode;
+use Shoptet\Api\Sdk\Php\Endpoint\Delivery\ShipmentCancellationRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCouponsRequest\BulkDeleteDiscountCouponsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCoupons;
@@ -3163,6 +3173,215 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetSalesChannels::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     status?: string,
+     *     orderCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/getlistofshipments
+     */
+    public static function getListOfShipments(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfShipments::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateShipmentRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/createshipment
+     */
+    public static function createShipment(
+        array|CreateShipmentRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateShipment::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Shipment GUID.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/getshipmentdetail
+     */
+    public static function getShipmentDetail(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetShipmentDetail::class)
+            ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [2024000008] Order code.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/createshipmentbyordercode
+     */
+    public static function createShipmentByOrderCode(string $code, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateShipmentByOrderCode::class)
+            ->addPathParam('code', $code)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Shipment GUID.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/shipmentcancellationrequest
+     */
+    public static function shipmentCancellationRequest(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(ShipmentCancellationRequest::class)
+            ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [2024000008] Order code.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/getshipmentshippingoptionsbyordercode
+     */
+    public static function getShipmentShippingOptionsByOrderCode(
+        string $code,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetShipmentShippingOptionsByOrderCode::class)
+            ->addPathParam('code', $code)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     type?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/getlistofshipmentcarriers
+     */
+    public static function getListOfShipmentCarriers(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfShipmentCarriers::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [110] Shipment carrier identifier.
+     * @param string $type [integration] Type of shipment carrier, for possible values see [Shipment carrier types](#section/code-lists/shipment-carrier-types) code list.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/getshipmentcarrierdetail
+     */
+    public static function getShipmentCarrierDetail(
+        string $code,
+        string $type,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetShipmentCarrierDetail::class)
+            ->addPathParam('code', $code)
+            ->addPathParam('type', $type)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $code [110] Shipment carrier identifier.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Delivery/closecarriershipments
+     */
+    public static function closeCarrierShipments(string $code, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(CloseCarrierShipments::class)
+            ->addPathParam('code', $code)
             ->setQueryParams($queryParams)
             ->execute();
     }
