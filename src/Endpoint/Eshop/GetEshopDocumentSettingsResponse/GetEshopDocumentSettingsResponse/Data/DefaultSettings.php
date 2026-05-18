@@ -18,6 +18,9 @@ class DefaultSettings extends Entity
     protected ?bool $showBarcode;
     protected ?bool $showBillFullName;
     protected ?bool $showBillFullNameOfRecipient;
+    protected ?bool $showRecipientEmail;
+    protected ?bool $showRecipientPhone;
+    protected ?bool $showRecipientDeliveryAddress;
 
     public function getBillingMethodId(): ?int
     {
@@ -137,6 +140,39 @@ class DefaultSettings extends Entity
     public function setShowBillFullNameOfRecipient(?bool $showBillFullNameOfRecipient): static
     {
         $this->showBillFullNameOfRecipient = $showBillFullNameOfRecipient;
+        return $this;
+    }
+
+    public function getShowRecipientEmail(): ?bool
+    {
+        return $this->showRecipientEmail;
+    }
+
+    public function setShowRecipientEmail(?bool $showRecipientEmail): static
+    {
+        $this->showRecipientEmail = $showRecipientEmail;
+        return $this;
+    }
+
+    public function getShowRecipientPhone(): ?bool
+    {
+        return $this->showRecipientPhone;
+    }
+
+    public function setShowRecipientPhone(?bool $showRecipientPhone): static
+    {
+        $this->showRecipientPhone = $showRecipientPhone;
+        return $this;
+    }
+
+    public function getShowRecipientDeliveryAddress(): ?bool
+    {
+        return $this->showRecipientDeliveryAddress;
+    }
+
+    public function setShowRecipientDeliveryAddress(?bool $showRecipientDeliveryAddress): static
+    {
+        $this->showRecipientDeliveryAddress = $showRecipientDeliveryAddress;
         return $this;
     }
 }
