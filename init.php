@@ -305,6 +305,7 @@ require_once __DIR__ . '/src/Component/Entity/ShipmentPackage.php';
 require_once __DIR__ . '/src/Component/Entity/ShipmentPackageWithHistory.php';
 require_once __DIR__ . '/src/Component/Entity/ShipmentPackageWithHistory/History.php';
 require_once __DIR__ . '/src/Component/Entity/ShipmentPrice.php';
+require_once __DIR__ . '/src/Component/Entity/ShipmentSenderRecipientAddress.php';
 require_once __DIR__ . '/src/Component/Entity/Shipping.php';
 require_once __DIR__ . '/src/Component/Entity/Stock.php';
 require_once __DIR__ . '/src/Component/Entity/StockList.php';
