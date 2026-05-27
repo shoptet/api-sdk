@@ -18,6 +18,7 @@ class Item extends Entity
     protected ?string $billFullName;
     protected Price $price;
     protected TypeDateTimeNullable $changeTime;
+    protected ?bool $paid;
 
     public function getCode(): string
     {
@@ -115,6 +116,17 @@ class Item extends Entity
     public function setChangeTime(TypeDateTimeNullable $changeTime): static
     {
         $this->changeTime = $changeTime;
+        return $this;
+    }
+
+    public function getPaid(): ?bool
+    {
+        return $this->paid;
+    }
+
+    public function setPaid(?bool $paid): static
+    {
+        $this->paid = $paid;
         return $this;
     }
 }

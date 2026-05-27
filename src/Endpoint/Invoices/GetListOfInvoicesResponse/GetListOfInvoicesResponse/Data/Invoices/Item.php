@@ -23,6 +23,7 @@ class Item extends Entity
     protected ?TypeDateTimeNullable $changeTime;
     protected ?TypeDateNullable $dueDate;
     protected ?TypeDateNullable $taxDate;
+    protected ?bool $paid;
 
     public function getCode(): string
     {
@@ -153,6 +154,17 @@ class Item extends Entity
     public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
+        return $this;
+    }
+
+    public function getPaid(): ?bool
+    {
+        return $this->paid;
+    }
+
+    public function setPaid(?bool $paid): static
+    {
+        $this->paid = $paid;
         return $this;
     }
 }
