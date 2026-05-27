@@ -37,6 +37,7 @@ class Invoice extends Entity
     protected bool $vatPayer;
     protected ?string $vatMode;
     protected ?ProofPaymentsForInvoice $proofPayments;
+    protected ?bool $paid;
 
     public function getCode(): string
     {
@@ -310,6 +311,17 @@ class Invoice extends Entity
     public function setProofPayments(?ProofPaymentsForInvoice $proofPayments): static
     {
         $this->proofPayments = $proofPayments;
+        return $this;
+    }
+
+    public function getPaid(): ?bool
+    {
+        return $this->paid;
+    }
+
+    public function setPaid(?bool $paid): static
+    {
+        $this->paid = $paid;
         return $this;
     }
 }
