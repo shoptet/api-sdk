@@ -11,6 +11,7 @@ class Webhook extends Entity
     protected string $url;
     protected TypeDateTimeNullable $created;
     protected TypeDateTimeNullable $updated;
+    protected ?string $sendPayload;
 
     public function getId(): int
     {
@@ -64,6 +65,17 @@ class Webhook extends Entity
     public function setUpdated(TypeDateTimeNullable $updated): static
     {
         $this->updated = $updated;
+        return $this;
+    }
+
+    public function getSendPayload(): ?string
+    {
+        return $this->sendPayload;
+    }
+
+    public function setSendPayload(?string $sendPayload): static
+    {
+        $this->sendPayload = $sendPayload;
         return $this;
     }
 }
