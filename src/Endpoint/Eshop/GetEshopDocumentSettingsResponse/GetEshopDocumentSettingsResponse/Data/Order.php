@@ -15,6 +15,7 @@ class Order extends Entity
     protected ?bool $printItemRemark;
     protected ?bool $displayProductStockLocation;
     protected ?ItemRemarkParameters $itemRemarkParameters;
+    protected bool $fullVatBreakdownExport;
 
     public function getCodePrefix(): ?string
     {
@@ -101,6 +102,17 @@ class Order extends Entity
     public function setItemRemarkParameters(?ItemRemarkParameters $itemRemarkParameters): static
     {
         $this->itemRemarkParameters = $itemRemarkParameters;
+        return $this;
+    }
+
+    public function isFullVatBreakdownExport(): bool
+    {
+        return $this->fullVatBreakdownExport;
+    }
+
+    public function setFullVatBreakdownExport(bool $fullVatBreakdownExport): static
+    {
+        $this->fullVatBreakdownExport = $fullVatBreakdownExport;
         return $this;
     }
 }
