@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\PricelistDetail;
 class Pricelist extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<PricelistDetail>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Component\Entity\PricelistDetail';
     }

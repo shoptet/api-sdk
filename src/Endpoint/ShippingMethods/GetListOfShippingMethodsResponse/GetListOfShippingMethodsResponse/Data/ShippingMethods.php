@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsRespons
 class ShippingMethods extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Item>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsResponse\GetListOfShippingMethodsResponse\Data\ShippingMethods\Item';
     }

@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsT
 class GiftCodes extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Item>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data\GiftCodes\Item';
     }

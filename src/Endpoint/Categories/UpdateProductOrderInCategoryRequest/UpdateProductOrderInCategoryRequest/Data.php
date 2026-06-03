@@ -23,10 +23,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductOrderInCategoryRequest\
 class Data extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Entity>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return $this->determineMultiTypeByData('Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductOrderInCategoryRequest\UpdateProductOrderInCategoryRequest\Data\Item1|Shoptet\Api\Sdk\Php\Endpoint\Categories\UpdateProductOrderInCategoryRequest\UpdateProductOrderInCategoryRequest\Data\Item2', $data);
     }

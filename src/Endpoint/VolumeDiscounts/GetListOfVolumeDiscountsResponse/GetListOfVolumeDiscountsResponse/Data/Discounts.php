@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\VolumeDiscounts\GetListOfVolumeDiscountsRespons
 class Discounts extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Item>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Endpoint\VolumeDiscounts\GetListOfVolumeDiscountsResponse\GetListOfVolumeDiscountsResponse\Data\Discounts\Item';
     }

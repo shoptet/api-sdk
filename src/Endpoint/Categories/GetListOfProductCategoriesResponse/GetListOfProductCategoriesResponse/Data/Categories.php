@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
 class Categories extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Category>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Component\Entity\Category';
     }
