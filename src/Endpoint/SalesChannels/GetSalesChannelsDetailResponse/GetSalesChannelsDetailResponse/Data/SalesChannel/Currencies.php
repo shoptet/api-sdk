@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\TypeCurrency;
 class Currencies extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<TypeCurrency>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Component\Entity\TypeCurrency';
     }

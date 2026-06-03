@@ -121,10 +121,10 @@ final class EntityCollectionFactory
     }
 
     /**
-     * @param array<string, mixed> $itemData
+     * @param mixed $itemData
      * @return class-string<Entity|EntityCollection>|string
      */
-    protected function getItemType(array $itemData): string
+    protected function getItemType(mixed $itemData): string
     {
         return $this->entityCollection->getItemType($itemData);
     }

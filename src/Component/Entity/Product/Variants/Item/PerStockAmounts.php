@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerStockAmounts\I
 class PerStockAmounts extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Item>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\PerStockAmounts\Item';
     }

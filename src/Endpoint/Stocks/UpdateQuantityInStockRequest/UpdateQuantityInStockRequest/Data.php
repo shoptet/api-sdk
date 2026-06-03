@@ -24,12 +24,15 @@ use Shoptet\Api\Sdk\Php\Exception\InvalidArgumentException;
 class Data extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<ItemWithAmountChange|ItemWithQuantity|ItemWithRealStock>
      * @throws InvalidArgumentException
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
+        /**
+         * @var array<string, mixed> $data
+         */
         if (array_key_exists('amountChange', $data)) {
             return ItemWithAmountChange::class;
         }

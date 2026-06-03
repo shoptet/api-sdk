@@ -31,11 +31,11 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<TValue>|string
      * @throws InvalidArgumentException
      */
-    abstract public function getItemType(array $data): string;
+    abstract public function getItemType(mixed $data): string;
 
     /**
      * @return array<int, TValue>
@@ -227,11 +227,19 @@ abstract class EntityCollection implements EntityCollectionInterface, ArrayAcces
 
     /**
      * @param string $multiType
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<Entity>
+     * @throws InvalidArgumentException
      */
-    protected function determineMultiTypeByData(string $multiType, array $data): string
+    protected function determineMultiTypeByData(string $multiType, mixed $data): string
     {
+        if (!is_array($data)) {
+            throw new InvalidArgumentException(sprintf('Cannot determine data type of "%s" based on "%s". The decision logic for non-array items has not yet been implemented.', $multiType, var_export($data, true)));
+        }
+        /**
+         * @var array<string, mixed> $data
+         */
+
         /**
          * @var array<int, class-string<Entity>> $types
          */

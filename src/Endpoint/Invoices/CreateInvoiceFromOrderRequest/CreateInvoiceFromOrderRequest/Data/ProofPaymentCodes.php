@@ -20,10 +20,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
 class ProofPaymentCodes extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return string
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'string';
     }

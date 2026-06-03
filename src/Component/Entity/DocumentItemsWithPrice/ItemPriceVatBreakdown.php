@@ -21,10 +21,10 @@ use Shoptet\Api\Sdk\Php\Component\Entity\ItemPrice;
 class ItemPriceVatBreakdown extends EntityCollection
 {
     /**
-     * @param array<string, mixed> $data
+     * @param mixed $data
      * @return class-string<ItemPrice>
      */
-    public function getItemType(array $data): string
+    public function getItemType(mixed $data): string
     {
         return 'Shoptet\Api\Sdk\Php\Component\Entity\ItemPrice';
     }
