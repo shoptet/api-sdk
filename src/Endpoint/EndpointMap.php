@@ -243,6 +243,7 @@ class EndpointMap
             '/api/customers/groups/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\UpdateCustomerGroup',
             '/api/payment-status/{paymentCode}' => 'Shoptet\Api\Sdk\Php\Endpoint\PaymentGateways\UpdatePaymentStatus',
             '/api/webhooks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\UpdateExistingWebhook',
+            '/api/discount-coupons' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkUpdateDiscountCoupons',
             '/api/discount-coupons/use/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage',
             '/api/xy-discounts/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\UpdateXYDiscount',
             '/api/xy-discounts/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\UpdateXYDiscountSettings',
