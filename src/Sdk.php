@@ -134,6 +134,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\Delivery\GetShipmentShippingOptionsByOrderCode;
 use Shoptet\Api\Sdk\Php\Endpoint\Delivery\ShipmentCancellationRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCouponsRequest\BulkDeleteDiscountCouponsRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkUpdateDiscountCoupons;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkUpdateDiscountCouponsRequest\BulkUpdateDiscountCouponsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsRequest\CreateDiscountCouponsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsSet;
@@ -7386,6 +7388,31 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(CreateDiscountCoupons::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|BulkUpdateDiscountCouponsRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/bulkupdatediscountcoupons
+     */
+    public static function bulkUpdateDiscountCoupons(
+        array|BulkUpdateDiscountCouponsRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(BulkUpdateDiscountCoupons::class)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsResponse\CreateDiscountCouponsResponse\Data;
+namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkUpdateDiscountCouponsResponse\BulkUpdateDiscountCouponsResponse\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\DiscountCoupon;
 use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
