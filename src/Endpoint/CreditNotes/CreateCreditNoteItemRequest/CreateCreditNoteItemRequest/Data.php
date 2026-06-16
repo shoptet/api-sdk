@@ -6,21 +6,16 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVatRate;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightRequest;
 
 class Data extends Entity
 {
     protected string $itemType;
-    protected ?string $code;
     protected TypeAmountNullable $amount;
     protected ?string $name;
-    protected ?string $variantName;
-    protected ?string $amountUnit;
     protected ?string $price;
     protected ?TypePriceRatio $priceRatio;
     protected ?bool $includingVat;
     protected ?TypeVatRate $vatRate;
-    protected ?TypeWeightRequest $weight;
     protected ?string $remark;
     protected ?string $additionalField;
 
@@ -32,17 +27,6 @@ class Data extends Entity
     public function setItemType(string $itemType): static
     {
         $this->itemType = $itemType;
-        return $this;
-    }
-
-    public function getCode(): ?string
-    {
-        return $this->code;
-    }
-
-    public function setCode(?string $code): static
-    {
-        $this->code = $code;
         return $this;
     }
 
@@ -65,28 +49,6 @@ class Data extends Entity
     public function setName(?string $name): static
     {
         $this->name = $name;
-        return $this;
-    }
-
-    public function getVariantName(): ?string
-    {
-        return $this->variantName;
-    }
-
-    public function setVariantName(?string $variantName): static
-    {
-        $this->variantName = $variantName;
-        return $this;
-    }
-
-    public function getAmountUnit(): ?string
-    {
-        return $this->amountUnit;
-    }
-
-    public function setAmountUnit(?string $amountUnit): static
-    {
-        $this->amountUnit = $amountUnit;
         return $this;
     }
 
@@ -131,17 +93,6 @@ class Data extends Entity
     public function setVatRate(?TypeVatRate $vatRate): static
     {
         $this->vatRate = $vatRate;
-        return $this;
-    }
-
-    public function getWeight(): ?TypeWeightRequest
-    {
-        return $this->weight;
-    }
-
-    public function setWeight(?TypeWeightRequest $weight): static
-    {
-        $this->weight = $weight;
         return $this;
     }
 
