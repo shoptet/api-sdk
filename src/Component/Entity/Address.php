@@ -12,7 +12,7 @@ class Address extends Entity
     protected ?string $district;
     protected ?string $additional;
     protected ?string $zip;
-    protected ?string $countryCode;
+    protected string $countryCode;
     protected ?string $regionName;
     protected ?string $regionShortcut;
 
@@ -104,12 +104,12 @@ class Address extends Entity
         return $this;
     }
 
-    public function getCountryCode(): ?string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
 
-    public function setCountryCode(?string $countryCode): static
+    public function setCountryCode(string $countryCode): static
     {
         $this->countryCode = $countryCode;
         return $this;
