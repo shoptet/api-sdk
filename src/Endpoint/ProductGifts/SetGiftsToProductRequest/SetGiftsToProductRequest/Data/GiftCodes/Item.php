@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data\GiftCodes;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest\Data\GiftCodes;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 

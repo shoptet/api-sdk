@@ -1,13 +1,13 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductResponse;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
 use Shoptet\Api\Sdk\Php\Component\Entity\Metadata;
-use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductResponse\SteGiftsToProductResponse\Data;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductResponse\SetGiftsToProductResponse\Data;
 
-class SteGiftsToProductResponse extends Entity
+class SetGiftsToProductResponse extends Entity
 {
     protected ?Data $data;
     protected ?Errors $errors;

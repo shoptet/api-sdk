@@ -335,7 +335,7 @@ class EndpointMap
             '/api/products/{guid}/alternativeProducts' => 'Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\SetAlternativeProducts',
             '/api/products/{guid}/relatedProducts' => 'Shoptet\Api\Sdk\Php\Endpoint\RelatedProducts\SetRelatedProducts',
             '/api/products/{guid}/set' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductSets\SetProductSetItems',
-            '/api/products/{guid}/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProduct',
+            '/api/products/{guid}/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProduct',
             '/api/shipping-request/{shippingRequestCode}/{shippingGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingData',
         ],
     ];
