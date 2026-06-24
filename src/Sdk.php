@@ -304,8 +304,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductAvailabilities\UpdateProductAvailability
 use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\CreateProductGift;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\CreateProductGiftRequest\CreateProductGiftRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\GetListOfProductGifts;
-use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProduct;
-use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProduct;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImages;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImagesRequest\CreateProductImagesRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteAllProductImagesInGallery;
@@ -2948,7 +2948,7 @@ class Sdk
 
     /**
      * @param string $guid [93bc0dbe-7481-11e8-8216-002590dad85e] Product guid
-     * @param array<string, mixed>|SteGiftsToProductRequest $requestBody
+     * @param array<string, mixed>|SetGiftsToProductRequest $requestBody
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -2959,15 +2959,15 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/stegiftstoproduct
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-gifts/setgiftstoproduct
      */
-    public static function steGiftsToProduct(
+    public static function setGiftsToProduct(
         string $guid,
-        array|SteGiftsToProductRequest $requestBody,
+        array|SetGiftsToProductRequest $requestBody,
         array $queryParams = [],
     ): ResponseInterface {
         return self::getEndpointFactory()
-            ->createEndpoint(SteGiftsToProduct::class)
+            ->createEndpoint(SetGiftsToProduct::class)
             ->addPathParam('guid', $guid)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)

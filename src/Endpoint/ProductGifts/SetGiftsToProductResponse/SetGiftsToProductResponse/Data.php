@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductResponse\SteGiftsToProductResponse;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductResponse\SetGiftsToProductResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductGifts;

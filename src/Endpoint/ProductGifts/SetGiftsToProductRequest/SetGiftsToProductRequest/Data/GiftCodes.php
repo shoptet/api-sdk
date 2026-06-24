@@ -1,9 +1,9 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest\Data;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\EntityCollection;
-use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data\GiftCodes\Item;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest\Data\GiftCodes\Item;
 
 /**
  * @extends EntityCollection<Item>
@@ -26,6 +26,6 @@ class GiftCodes extends EntityCollection
      */
     public function getItemType(mixed $data): string
     {
-        return 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data\GiftCodes\Item';
+        return 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest\Data\GiftCodes\Item';
     }
 }

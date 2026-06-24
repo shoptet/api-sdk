@@ -1,11 +1,11 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SteGiftsToProductRequest\SteGiftsToProductRequest\Data;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProductRequest\SetGiftsToProductRequest\Data;
 
-class SteGiftsToProductRequest extends Entity
+class SetGiftsToProductRequest extends Entity
 {
     protected Data $data;
 
