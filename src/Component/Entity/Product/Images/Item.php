@@ -14,6 +14,7 @@ class Item extends Entity
     protected ?string $description;
     protected TypeDateTimeNullable $changeTime;
     protected ?bool $isMainImage;
+    protected string $gallery;
 
     public function getName(): string
     {
@@ -89,6 +90,17 @@ class Item extends Entity
     public function setIsMainImage(?bool $isMainImage): static
     {
         $this->isMainImage = $isMainImage;
+        return $this;
+    }
+
+    public function getGallery(): string
+    {
+        return $this->gallery;
+    }
+
+    public function setGallery(string $gallery): static
+    {
+        $this->gallery = $gallery;
         return $this;
     }
 }
