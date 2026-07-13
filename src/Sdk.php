@@ -3741,7 +3741,7 @@ class Sdk
     /**
      * @param string $code [2018000012] order code
      * @param string $id [3120] order item id
-     * @param string $relationId [04e876] key to identify, which surcharge parameter in relation to order item, should be delete
+     * @param string $relationId [INF] key to identify, which surcharge parameter in relation to order item, should be delete
      * @param array{
      *     language?: string,
      * } $queryParams
