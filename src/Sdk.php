@@ -145,6 +145,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateRe
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\DeleteDiscountCoupon;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\DeleteDiscountCouponsTemplate;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDetailOfDiscountCoupon;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplate;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfAllDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons;
@@ -7613,6 +7614,28 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateDiscountCouponsTemplate::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [b6e09a7a-6cb5-11eb-89aa-08002746ad91] discount coupon template guid
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/getdiscountcouponstemplate
+     */
+    public static function getDiscountCouponsTemplate(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetDiscountCouponsTemplate::class)
+            ->addPathParam('guid', $guid)
             ->setQueryParams($queryParams)
             ->execute();
     }

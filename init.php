@@ -790,6 +790,7 @@ require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTempl
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateRequest/CreateDiscountCouponsTemplateRequest/Data/CategoryGuids.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateRequest/CreateDiscountCouponsTemplateRequest/Data/ProductFlags.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateRequest/CreateDiscountCouponsTemplateRequest/Data/ProductFlags/Item.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateRequest/CreateDiscountCouponsTemplateRequest/Data/ProductGuids.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/Brands.php';
@@ -798,6 +799,8 @@ require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTempl
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/CustomerGroup.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/ProductFlags.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/ProductFlags/Item.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/Products.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/CreateDiscountCouponsTemplateResponse/CreateDiscountCouponsTemplateResponse/Data/Products/Item.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/DeleteDiscountCoupon.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/DeleteDiscountCouponResponse/DeleteDiscountCouponResponse.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/DeleteDiscountCouponResponse/DeleteDiscountCouponResponse/Data.php';
@@ -807,6 +810,17 @@ require_once __DIR__ . '/src/Endpoint/DiscountCoupons/DeleteDiscountCouponsTempl
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDetailOfDiscountCoupon.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDetailOfDiscountCouponResponse/GetDetailOfDiscountCouponResponse.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDetailOfDiscountCouponResponse/GetDetailOfDiscountCouponResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplate.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/Brands.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/Categories.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/Categories/Item.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/CustomerGroup.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/ProductFlags.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/ProductFlags/Item.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/Products.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetDiscountCouponsTemplateResponse/GetDiscountCouponsTemplateResponse/Data/Products/Item.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetListOfAllDiscountCoupons.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetListOfAllDiscountCouponsResponse/GetListOfAllDiscountCouponsResponse.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetListOfAllDiscountCouponsResponse/GetListOfAllDiscountCouponsResponse/Data.php';

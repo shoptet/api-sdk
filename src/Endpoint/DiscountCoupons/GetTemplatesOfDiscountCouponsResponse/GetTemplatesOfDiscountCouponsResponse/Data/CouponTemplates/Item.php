@@ -17,6 +17,7 @@ class Item extends Entity
     protected ?Categories $categories;
     protected ?Brands $brands;
     protected ?ProductFlags $productFlags;
+    protected string $productSelectionMode;
 
     public function getGuid(): TypeGuid
     {
@@ -81,6 +82,17 @@ class Item extends Entity
     public function setProductFlags(?ProductFlags $productFlags): static
     {
         $this->productFlags = $productFlags;
+        return $this;
+    }
+
+    public function getProductSelectionMode(): string
+    {
+        return $this->productSelectionMode;
+    }
+
+    public function setProductSelectionMode(string $productSelectionMode): static
+    {
+        $this->productSelectionMode = $productSelectionMode;
         return $this;
     }
 }
