@@ -19,6 +19,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Product\Warranty;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidUnlimited;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeHsCodeNullable;
 
 class Product extends Entity
 {
@@ -39,6 +40,7 @@ class Product extends Entity
     protected ?string $conditionDescription;
     protected ?string $internalNote;
     protected ?bool $preauthorizationRequired;
+    protected TypeHsCodeNullable $hsCode;
     protected DefaultCategory $defaultCategory;
     protected ?Categories $categories;
     protected ?DescriptiveParameters $descriptiveParameters;
@@ -255,6 +257,17 @@ class Product extends Entity
     public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
     {
         $this->preauthorizationRequired = $preauthorizationRequired;
+        return $this;
+    }
+
+    public function getHsCode(): TypeHsCodeNullable
+    {
+        return $this->hsCode;
+    }
+
+    public function setHsCode(TypeHsCodeNullable $hsCode): static
+    {
+        $this->hsCode = $hsCode;
         return $this;
     }
 

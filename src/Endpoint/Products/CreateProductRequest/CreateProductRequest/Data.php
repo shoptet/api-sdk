@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProdu
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeHsCodeNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\CategoryGuids;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\DescriptiveParameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\FilteringParameters;
@@ -30,6 +31,7 @@ class Data extends Entity
     protected ?string $brandCode;
     protected ?string $internalNote;
     protected ?bool $preauthorizationRequired;
+    protected ?TypeHsCodeNullable $hsCode;
     protected ?TypeGuid $supplierGuid;
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
@@ -214,6 +216,17 @@ class Data extends Entity
     public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
     {
         $this->preauthorizationRequired = $preauthorizationRequired;
+        return $this;
+    }
+
+    public function getHsCode(): ?TypeHsCodeNullable
+    {
+        return $this->hsCode;
+    }
+
+    public function setHsCode(?TypeHsCodeNullable $hsCode): static
+    {
+        $this->hsCode = $hsCode;
         return $this;
     }
 
