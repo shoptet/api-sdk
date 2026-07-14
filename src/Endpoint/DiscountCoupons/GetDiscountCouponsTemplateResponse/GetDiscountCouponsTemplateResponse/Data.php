@@ -1,14 +1,14 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse;
+namespace Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
-use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse\Data\Brands;
-use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse\Data\Categories;
-use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse\Data\CustomerGroup;
-use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse\Data\ProductFlags;
-use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateResponse\CreateDiscountCouponsTemplateResponse\Data\Products;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse\Data\Brands;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse\Data\Categories;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse\Data\CustomerGroup;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse\Data\ProductFlags;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplateResponse\GetDiscountCouponsTemplateResponse\Data\Products;
 
 class Data extends Entity
 {

@@ -177,6 +177,7 @@ class EndpointMap
             '/api/discount-coupons/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfAllDiscountCoupons',
             '/api/discount-coupons/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDetailOfDiscountCoupon',
             '/api/discount-coupons/templates' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons',
+            '/api/discount-coupons/templates/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplate',
             '/api/xy-discounts' => 'Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\GetListOfXYDiscounts',
             '/api/xy-discounts/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\GetDetailOfXYDiscounts',
             '/api/xy-discounts/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\XYDiscounts\GetXYDiscountsSettings',

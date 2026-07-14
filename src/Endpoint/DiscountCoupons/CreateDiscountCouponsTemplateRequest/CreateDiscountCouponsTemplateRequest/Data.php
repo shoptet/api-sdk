@@ -7,6 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateRequest\CreateDiscountCouponsTemplateRequest\Data\Brands;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateRequest\CreateDiscountCouponsTemplateRequest\Data\CategoryGuids;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateRequest\CreateDiscountCouponsTemplateRequest\Data\ProductFlags;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\CreateDiscountCouponsTemplateRequest\CreateDiscountCouponsTemplateRequest\Data\ProductGuids;
 
 class Data extends Entity
 {
@@ -16,6 +17,8 @@ class Data extends Entity
     protected ?CategoryGuids $categoryGuids;
     protected ?Brands $brands;
     protected ?ProductFlags $productFlags;
+    protected ?string $productSelectionMode;
+    protected ?ProductGuids $productGuids;
 
     public function getGuid(): ?TypeGuidNullable
     {
@@ -80,6 +83,28 @@ class Data extends Entity
     public function setProductFlags(?ProductFlags $productFlags): static
     {
         $this->productFlags = $productFlags;
+        return $this;
+    }
+
+    public function getProductSelectionMode(): ?string
+    {
+        return $this->productSelectionMode;
+    }
+
+    public function setProductSelectionMode(?string $productSelectionMode): static
+    {
+        $this->productSelectionMode = $productSelectionMode;
+        return $this;
+    }
+
+    public function getProductGuids(): ?ProductGuids
+    {
+        return $this->productGuids;
+    }
+
+    public function setProductGuids(?ProductGuids $productGuids): static
+    {
+        $this->productGuids = $productGuids;
         return $this;
     }
 }
