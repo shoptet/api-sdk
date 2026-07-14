@@ -12,6 +12,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\SurchargeParameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeHsCodeNullable;
 
 class ProductUpdate extends Entity
 {
@@ -31,6 +32,7 @@ class ProductUpdate extends Entity
     protected ?string $brandCode;
     protected ?string $internalNote;
     protected ?bool $preauthorizationRequired;
+    protected ?TypeHsCodeNullable $hsCode;
     protected ?TypeGuidNullable $supplierGuid;
     protected ?CategoryGuids $categoryGuids;
     protected ?int $warrantyId;
@@ -216,6 +218,17 @@ class ProductUpdate extends Entity
     public function setPreauthorizationRequired(?bool $preauthorizationRequired): static
     {
         $this->preauthorizationRequired = $preauthorizationRequired;
+        return $this;
+    }
+
+    public function getHsCode(): ?TypeHsCodeNullable
+    {
+        return $this->hsCode;
+    }
+
+    public function setHsCode(?TypeHsCodeNullable $hsCode): static
+    {
+        $this->hsCode = $hsCode;
         return $this;
     }
 

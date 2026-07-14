@@ -348,6 +348,7 @@ require_once __DIR__ . '/src/Component/ValueObject/TypeFilenameNullable.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeGuid.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeGuidNullable.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeGuidUnlimited.php';
+require_once __DIR__ . '/src/Component/ValueObject/TypeHsCodeNullable.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypeNonEmptyString.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypePositiveAmount.php';
 require_once __DIR__ . '/src/Component/ValueObject/TypePositiveAmountNullable.php';
