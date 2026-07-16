@@ -192,6 +192,7 @@ class EndpointMap
             '/api/articles/sections/{articleSectionId}' => 'Shoptet\Api\Sdk\Php\Endpoint\Articles\GetDetailOfArticleSection',
             '/api/pages' => 'Shoptet\Api\Sdk\Php\Endpoint\Pages\GetListOfPages',
             '/api/pages/{pageId}' => 'Shoptet\Api\Sdk\Php\Endpoint\Pages\GetDetailOfPage',
+            '/api/discussions/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetDiscussionSettings',
             '/api/discussions-posts' => 'Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts',
             '/api/system/jobs' => 'Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetListOfJobs',
             '/api/system/jobs/{jobId}' => 'Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetail',

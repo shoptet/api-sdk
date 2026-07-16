@@ -69,6 +69,7 @@ require_once __DIR__ . '/src/Component/Entity/DeliveryNoteSnapshot.php';
 require_once __DIR__ . '/src/Component/Entity/DiscountCoupon.php';
 require_once __DIR__ . '/src/Component/Entity/DiscountCouponSnapshot.php';
 require_once __DIR__ . '/src/Component/Entity/DiscussionPost.php';
+require_once __DIR__ . '/src/Component/Entity/DiscussionSettings.php';
 require_once __DIR__ . '/src/Component/Entity/DocumentConsumptionTax.php';
 require_once __DIR__ . '/src/Component/Entity/DocumentCustomer.php';
 require_once __DIR__ . '/src/Component/Entity/DocumentItemsWithPrice.php';
@@ -854,6 +855,10 @@ require_once __DIR__ . '/src/Endpoint/Discussions/CreateDiscussionPostsResponse/
 require_once __DIR__ . '/src/Endpoint/Discussions/DeleteDiscussionById.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/DeleteDiscussionByIdResponse/DeleteDiscussionByIdResponse.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/DeleteDiscussionByIdResponse/DeleteDiscussionByIdResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/Discussions/GetDiscussionSettings.php';
+require_once __DIR__ . '/src/Endpoint/Discussions/GetDiscussionSettingsResponse/GetDiscussionSettingsResponse.php';
+require_once __DIR__ . '/src/Endpoint/Discussions/GetDiscussionSettingsResponse/GetDiscussionSettingsResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/Discussions/GetDiscussionSettingsResponse/GetDiscussionSettingsResponse/Data/Settings.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/GetListOfDiscussionPosts.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/GetListOfDiscussionPostsResponse/GetListOfDiscussionPostsResponse.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/GetListOfDiscussionPostsResponse/GetListOfDiscussionPostsResponse/Data.php';

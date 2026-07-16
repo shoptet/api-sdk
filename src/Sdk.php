@@ -154,6 +154,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsageReque
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\CreateDiscussionPosts;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\CreateDiscussionPostsRequest\CreateDiscussionPostsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\DeleteDiscussionById;
+use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetDiscussionSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPost;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPostRequest\UpdateDiscussionPostRequest;
@@ -8387,6 +8388,26 @@ class Sdk
             ->createEndpoint(UpdatePage::class)
             ->addPathParam('pageId', $pageId)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discussions/getdiscussionsettings
+     */
+    public static function getDiscussionSettings(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetDiscussionSettings::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
