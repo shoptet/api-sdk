@@ -1735,6 +1735,9 @@ require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProjectReviewsResponse/Ge
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProjectReviewsResponse/GetListOfProjectReviewsResponse/Data/Reviews.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProjectReviewsResponse/GetListOfProjectReviewsResponse/Data/Reviews/Item.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/GetListOfProjectReviewsResponse/GetListOfProjectReviewsResponse/Data/Reviews/Item/Reaction.php';
+require_once __DIR__ . '/src/Endpoint/Reviews/GetReviewsSettings.php';
+require_once __DIR__ . '/src/Endpoint/Reviews/GetReviewsSettingsResponse/GetReviewsSettingsResponse.php';
+require_once __DIR__ . '/src/Endpoint/Reviews/GetReviewsSettingsResponse/GetReviewsSettingsResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/UpdateProductReview.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/UpdateProductReviewRequest/UpdateProductReviewRequest.php';
 require_once __DIR__ . '/src/Endpoint/Reviews/UpdateProductReviewRequest/UpdateProductReviewRequest/Data.php';

@@ -388,6 +388,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewRequest\CreateProjectReviewRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetReviewsSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProductReviewRequest\UpdateProductReviewRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\UpdateProjectReview;
@@ -8632,6 +8633,26 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfAvailableEndpoints::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getreviewssettings
+     */
+    public static function getReviewsSettings(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetReviewsSettings::class)
             ->setQueryParams($queryParams)
             ->execute();
     }

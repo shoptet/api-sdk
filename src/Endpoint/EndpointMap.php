@@ -197,6 +197,7 @@ class EndpointMap
             '/api/system/jobs/{jobId}' => 'Shoptet\Api\Sdk\Php\Endpoint\Jobs\GetJobDetail',
             '/api/system/files' => 'Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFiles',
             '/api/system/endpoints' => 'Shoptet\Api\Sdk\Php\Endpoint\Endpoints\GetListOfAvailableEndpoints',
+            '/api/reviews/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetReviewsSettings',
             '/api/reviews/products' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews',
             '/api/reviews/project' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews',
         ],
