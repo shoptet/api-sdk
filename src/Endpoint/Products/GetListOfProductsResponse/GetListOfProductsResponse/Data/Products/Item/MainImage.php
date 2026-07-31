@@ -4,12 +4,14 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetLis
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProductsResponse\GetListOfProductsResponse\Data\Products\Item\MainImage\SignedCdnNames;
 
 class MainImage extends Entity
 {
     protected string $name;
     protected string $seoName;
     protected string $cdnName;
+    protected ?SignedCdnNames $signedCdnNames;
     protected int $priority;
     protected ?string $description;
     protected TypeDateTimeNullable $changeTime;
@@ -44,6 +46,17 @@ class MainImage extends Entity
     public function setCdnName(string $cdnName): static
     {
         $this->cdnName = $cdnName;
+        return $this;
+    }
+
+    public function getSignedCdnNames(): ?SignedCdnNames
+    {
+        return $this->signedCdnNames;
+    }
+
+    public function setSignedCdnNames(?SignedCdnNames $signedCdnNames): static
+    {
+        $this->signedCdnNames = $signedCdnNames;
         return $this;
     }
 
