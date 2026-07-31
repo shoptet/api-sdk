@@ -8763,6 +8763,7 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
