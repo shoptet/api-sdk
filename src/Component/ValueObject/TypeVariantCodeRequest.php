@@ -12,9 +12,6 @@ readonly class TypeVariantCodeRequest implements ValueObjectInterface
         if (!preg_match('/^[a-zA-Z0-9_\/ \-\.]+$/', $this->typeVariantCodeRequest)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeVariantCodeRequest', $this->typeVariantCodeRequest));
         }
-        if (mb_strlen($this->typeVariantCodeRequest) < '1') {
-            throw new InvalidArgumentException(sprintf('%s "%s" is too short. %s should be at least %s characters long', 'typeVariantCodeRequest', $this->typeVariantCodeRequest, '1', 'typeVariantCodeRequest'));
-        }
         if (mb_strlen($this->typeVariantCodeRequest) > '64') {
             throw new InvalidArgumentException(sprintf('%s "%s" is too long. %s should be less than %s characters long', 'typeVariantCodeRequest', $this->typeVariantCodeRequest, '64', 'typeVariantCodeRequest'));
         }

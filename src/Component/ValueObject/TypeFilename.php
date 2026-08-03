@@ -12,9 +12,6 @@ readonly class TypeFilename implements ValueObjectInterface
         if (!preg_match('/^[0-9a-zA-Z_\-.]+$/', $this->typeFilename)) {
             throw new InvalidArgumentException(sprintf('Invalid %s "%s".', 'typeFilename', $this->typeFilename));
         }
-        if (mb_strlen($this->typeFilename) < '1') {
-            throw new InvalidArgumentException(sprintf('%s "%s" is too short. %s should be at least %s characters long', 'typeFilename', $this->typeFilename, '1', 'typeFilename'));
-        }
         if (mb_strlen($this->typeFilename) > '255') {
             throw new InvalidArgumentException(sprintf('%s "%s" is too long. %s should be less than %s characters long', 'typeFilename', $this->typeFilename, '255', 'typeFilename'));
         }
