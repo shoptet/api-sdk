@@ -10,7 +10,6 @@ parameters:
     reportAlwaysTrueInLastCondition: true
     checkMissingCallableSignature: true
     checkTooWideReturnTypesInProtectedAndPublicMethods: true
-    treatPhpDocTypesAsCertain: false
 
     bootstrapFiles:
         - build/phpstan.bootstrap.php
