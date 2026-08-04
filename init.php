@@ -1573,6 +1573,10 @@ require_once __DIR__ . '/src/Endpoint/Products/ProductCopyRequest/ProductCopyReq
 require_once __DIR__ . '/src/Endpoint/Products/ProductCopyRequest/ProductCopyRequest/Data.php';
 require_once __DIR__ . '/src/Endpoint/Products/ProductCopyRequest/ProductCopyRequest/Data/CopyProperties.php';
 require_once __DIR__ . '/src/Endpoint/Products/ProductCopyResponse/ProductCopyResponse.php';
+require_once __DIR__ . '/src/Endpoint/Products/ProductImageBatchDelete.php';
+require_once __DIR__ . '/src/Endpoint/Products/ProductImageBatchDeleteRequest/ProductImageBatchDeleteRequest.php';
+require_once __DIR__ . '/src/Endpoint/Products/ProductImageBatchDeleteResponse/ProductImageBatchDeleteResponse.php';
+require_once __DIR__ . '/src/Endpoint/Products/ProductImageBatchDeleteResponse/ProductImageBatchDeleteResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Products/UnlinkAllProductRelatedFiles.php';
 require_once __DIR__ . '/src/Endpoint/Products/UnlinkAllProductRelatedFilesResponse/UnlinkAllProductRelatedFilesResponse.php';
 require_once __DIR__ . '/src/Endpoint/Products/UnlinkAllProductRelatedFilesResponse/UnlinkAllProductRelatedFilesResponse/Data.php';
