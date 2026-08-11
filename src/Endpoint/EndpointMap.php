@@ -357,6 +357,11 @@ class EndpointMap
             $url = '/' . $url;
         }
 
+        $queryPosition = strpos($url, '?');
+        if ($queryPosition !== false) {
+            $url = substr($url, 0, $queryPosition);
+        }
+
         return static::MAP[$method][$url] ?? null;
     }
 }

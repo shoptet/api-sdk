@@ -20,7 +20,7 @@ class JobResultProcessor
      * It returns an iterator over snapshot job result data. This method use Generator to process data with
      * smaller memory footprint.
      */
-    public function processSnapshot(GetJobDetailResponse $response): SnapshotResultData
+    public function processSnapshot(GetJobDetailResponse $response, bool $throwExceptionOnEmptyResultPath = true): ?SnapshotResultData
     {
         $job = $response->getData()?->getJob();
 
@@ -54,7 +54,13 @@ class JobResultProcessor
         $resultPath = $job->getResultUrl();
 
         if ($resultPath === null) {
-            throw new RuntimeException('Job`s result file path is missing in response!');
+            if ($throwExceptionOnEmptyResultPath === true) {
+                throw new RuntimeException(sprintf(
+                    'Job`s result file path is missing in response! Log: %s',
+                    $job->getLog() ?? 'No log message in job result response.'
+                ));
+            }
+            return null;
         }
 
         $jobResult->setResultDataGenerator(
