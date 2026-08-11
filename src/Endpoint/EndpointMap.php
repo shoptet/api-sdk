@@ -167,6 +167,7 @@ class EndpointMap
             '/api/webhooks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetDetailOfRegisteredWebhooks',
             '/api/webhooks/notifications' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\GetWebhookNotification',
             '/api/shipping-methods' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethods',
+            '/api/shipping-methods/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetShippingMethodDetail',
             '/api/shipping-request/{shippingRequestCode}/{shippingGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForCartDetails',
             '/api/shipping-request/{shippingRequestCode}/{shippingGuid}/status' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForGettingOrderStatus',
             '/api/payment-methods' => 'Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\GetListingOfPaymentMethods',

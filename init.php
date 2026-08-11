@@ -1813,6 +1813,14 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsRe
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods/Item.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods/Item/ShippingCompany.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetail.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PairedPaymentMethodGuids.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PriceTiers.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PriceTiers/Item.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/ShippingCompany.php';
 require_once __DIR__ . '/src/Endpoint/ShippingRequests/GetShippingRequestForCartDetails.php';
 require_once __DIR__ . '/src/Endpoint/ShippingRequests/GetShippingRequestForCartDetailsResponse/GetShippingRequestForCartDetailsResponse.php';
 require_once __DIR__ . '/src/Endpoint/ShippingRequests/GetShippingRequestForCartDetailsResponse/GetShippingRequestForCartDetailsResponse/Data.php';

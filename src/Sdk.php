@@ -402,6 +402,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailById;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethods;
+use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetShippingMethodDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForCartDetails;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\GetShippingRequestForGettingOrderStatus;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingData;
@@ -7038,6 +7039,29 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateShippingMethod::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [b57f91bb-e920-11e0-baa3-7dc668b75ca8] Unique identifier of the shipping method.
+     * @param array{
+     *     language?: string,
+     *     include?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/getshippingmethoddetail
+     */
+    public static function getShippingMethodDetail(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetShippingMethodDetail::class)
+            ->addPathParam('guid', $guid)
             ->setQueryParams($queryParams)
             ->execute();
     }
