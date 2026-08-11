@@ -8875,8 +8875,10 @@ class Sdk
         return self::$endpointFactory;
     }
 
-    public static function processSnapshotResult(string $jobId): SnapshotResultData
-    {
+    public static function processSnapshotResult(
+        string $jobId,
+        bool $throwExceptionOnEmptyResultPath = true,
+    ): ?SnapshotResultData {
         $jobDetail = Sdk::getJobDetail($jobId);
 
         if ($jobDetail->getStatusCode() === 404) {
@@ -8890,7 +8892,7 @@ class Sdk
         $jobDetailBody = $jobDetail->getBody();
         $jobProcessor = new JobResultProcessor(self::getEndpointFactory());
 
-        return $jobProcessor->processSnapshot($jobDetailBody);
+        return $jobProcessor->processSnapshot($jobDetailBody, $throwExceptionOnEmptyResultPath);
     }
 
     /**
