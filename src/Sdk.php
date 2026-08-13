@@ -11,7 +11,6 @@ use Shoptet\Api\Sdk\Php\Authorization\AuthorizationFacade;
 use Shoptet\Api\Sdk\Php\Authorization\OAuth;
 use Shoptet\Api\Sdk\Php\Authorization\Token\FileTokenStorage;
 use Shoptet\Api\Sdk\Php\Authorization\Token\TokenStorage;
-use Shoptet\Api\Sdk\Php\Endpoint\AbandonedCarts\GetListOfAllAbandonedCarts;
 use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\AddAlternativeProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\AddAlternativeProductRequest\AddAlternativeProductRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\AlternativeProducts\GetListOfProductAlternativeProducts;
@@ -6008,28 +6007,6 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateBrandBatch::class)
             ->setBody($requestBody)
-            ->setQueryParams($queryParams)
-            ->execute();
-    }
-
-    /**
-     * @param array{
-     *     language?: string,
-     *     visitTimeFrom?: string,
-     *     visitTimeTo?: string,
-     * } $queryParams
-     *
-     * @return ResponseInterface
-     *
-     * @throws LogicException
-     * @throws RuntimeException
-     *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Abandoned-carts/getlistofallabandonedcarts
-     */
-    public static function getListOfAllAbandonedCarts(array $queryParams = []): ResponseInterface
-    {
-        return self::getEndpointFactory()
-            ->createEndpoint(GetListOfAllAbandonedCarts::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
