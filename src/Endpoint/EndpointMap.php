@@ -149,6 +149,7 @@ class EndpointMap
             '/api/suppliers' => 'Shoptet\Api\Sdk\Php\Endpoint\Suppliers\GetListOfSuppliers',
             '/api/brands' => 'Shoptet\Api\Sdk\Php\Endpoint\Brands\GetListofBrands',
             '/api/brands/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\Brands\GetDetailOfBrand',
+            '/api/abandoned-carts/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\AbandonedCarts\GetListOfAllAbandonedCarts',
             '/api/customers' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfCustomers',
             '/api/customers/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\GetListOfAllCustomers',
             '/api/customers/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail',
