@@ -21,6 +21,7 @@ class Data extends Entity
     /** @deprecated */
     protected ShipmentAddress $carrierAddress;
     protected string $status;
+    protected string $shipmentType;
     protected string $serviceCode;
     protected ?ShipmentCoDPrice $cod;
     protected ?ShipmentPrice $value;
@@ -99,6 +100,17 @@ class Data extends Entity
     public function setStatus(string $status): static
     {
         $this->status = $status;
+        return $this;
+    }
+
+    public function getShipmentType(): string
+    {
+        return $this->shipmentType;
+    }
+
+    public function setShipmentType(string $shipmentType): static
+    {
+        $this->shipmentType = $shipmentType;
         return $this;
     }
 
