@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\MeasureUnit;
+use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants\Item\Heureka;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants\Item\OssVatLevels;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductUpdate\Variants\Item\StocksLocations;
@@ -42,6 +43,7 @@ class Item extends Entity
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
     protected ?bool $boxRestriction;
+    protected ?Heureka $heureka;
     protected ?OssVatLevels $ossVatLevels;
 
     public function getCode(): ?TypeVariantCodeRequest
@@ -349,6 +351,17 @@ class Item extends Entity
     public function setBoxRestriction(?bool $boxRestriction): static
     {
         $this->boxRestriction = $boxRestriction;
+        return $this;
+    }
+
+    public function getHeureka(): ?Heureka
+    {
+        return $this->heureka;
+    }
+
+    public function setHeureka(?Heureka $heureka): static
+    {
+        $this->heureka = $heureka;
         return $this;
     }
 
