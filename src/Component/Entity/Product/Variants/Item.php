@@ -7,6 +7,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\AvailabilityShort;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductConsumptionTax;
 use Shoptet\Api\Sdk\Php\Component\Entity\ProductPrices;
+use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\Heureka;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\MeasureUnit;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\OssVatLevels;
 use Shoptet\Api\Sdk\Php\Component\Entity\Product\Variants\Item\Parameters;
@@ -55,6 +56,7 @@ class Item extends Entity
     protected ?ProductConsumptionTax $consumptionTax;
     protected ?string $heurekaCPC;
     protected ?ZboziCZ $zboziCZ;
+    protected ?Heureka $heureka;
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
     protected ?bool $boxRestriction;
@@ -435,6 +437,17 @@ class Item extends Entity
     public function setZboziCZ(?ZboziCZ $zboziCZ): static
     {
         $this->zboziCZ = $zboziCZ;
+        return $this;
+    }
+
+    public function getHeureka(): ?Heureka
+    {
+        return $this->heureka;
+    }
+
+    public function setHeureka(?Heureka $heureka): static
+    {
+        $this->heureka = $heureka;
         return $this;
     }
 
