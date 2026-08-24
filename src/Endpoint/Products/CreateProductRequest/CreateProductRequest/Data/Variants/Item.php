@@ -10,6 +10,7 @@ use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVariantCodeRequest;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeWeightRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\Heureka;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\OssVatLevels;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\Parameters;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProductRequest\CreateProductRequest\Data\Variants\Item\StocksLocations;
@@ -44,6 +45,7 @@ class Item extends Entity
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
     protected ?bool $boxRestriction;
+    protected ?Heureka $heureka;
     protected ?OssVatLevels $ossVatLevels;
 
     public function getCode(): ?TypeVariantCodeRequest
@@ -351,6 +353,17 @@ class Item extends Entity
     public function setBoxRestriction(?bool $boxRestriction): static
     {
         $this->boxRestriction = $boxRestriction;
+        return $this;
+    }
+
+    public function getHeureka(): ?Heureka
+    {
+        return $this->heureka;
+    }
+
+    public function setHeureka(?Heureka $heureka): static
+    {
+        $this->heureka = $heureka;
         return $this;
     }
 

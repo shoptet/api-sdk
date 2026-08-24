@@ -212,6 +212,7 @@ require_once __DIR__ . '/src/Component/Entity/Product/SetItems/Item.php';
 require_once __DIR__ . '/src/Component/Entity/Product/SurchargeParameters.php';
 require_once __DIR__ . '/src/Component/Entity/Product/Variants.php';
 require_once __DIR__ . '/src/Component/Entity/Product/Variants/Item.php';
+require_once __DIR__ . '/src/Component/Entity/Product/Variants/Item/Heureka.php';
 require_once __DIR__ . '/src/Component/Entity/Product/Variants/Item/MeasureUnit.php';
 require_once __DIR__ . '/src/Component/Entity/Product/Variants/Item/OssVatLevels.php';
 require_once __DIR__ . '/src/Component/Entity/Product/Variants/Item/OssVatLevels/Item.php';
@@ -262,6 +263,7 @@ require_once __DIR__ . '/src/Component/Entity/ProductUpdate/RelatedVideos/Item.p
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/SurchargeParameters.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants/Item.php';
+require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants/Item/Heureka.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants/Item/OssVatLevels.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants/Item/OssVatLevels/Item.php';
 require_once __DIR__ . '/src/Component/Entity/ProductUpdate/Variants/Item/Parameters.php';
@@ -1535,6 +1537,7 @@ require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProduc
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/SurchargeParameters.php';
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants.php';
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants/Item.php';
+require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants/Item/Heureka.php';
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants/Item/OssVatLevels.php';
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants/Item/OssVatLevels/Item.php';
 require_once __DIR__ . '/src/Endpoint/Products/CreateProductRequest/CreateProductRequest/Data/Variants/Item/Parameters.php';
