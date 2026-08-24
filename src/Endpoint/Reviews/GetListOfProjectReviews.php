@@ -14,7 +14,16 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviewsResponse\GetList
 class GetListOfProjectReviews extends PageableGet
 {
     protected array $supportedPathParams = [];
-    protected array $supportedQueryParams = ['language' => false, 'page' => false, 'itemsPerPage' => false];
+
+    protected array $supportedQueryParams = [
+        'language' => false,
+        'page' => false,
+        'itemsPerPage' => false,
+        'dateFrom' => false,
+        'dateTo' => false,
+        'visible' => false,
+        'orderCode' => false,
+    ];
 
     public function getRequestEntityClass(): null
     {

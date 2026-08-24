@@ -8837,6 +8837,10 @@ class Sdk
      *     language?: string,
      *     page?: int,
      *     itemsPerPage?: int,
+     *     dateFrom?: string,
+     *     dateTo?: string,
+     *     visible?: string,
+     *     orderCode?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
