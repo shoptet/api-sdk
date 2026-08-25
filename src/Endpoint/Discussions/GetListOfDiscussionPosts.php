@@ -23,7 +23,7 @@ class GetListOfDiscussionPosts extends PageableGet
         'articleId' => false,
         'pageId' => false,
         'customerGuid' => false,
-        'userEmail' => false,
+        'email' => false,
         'creationDateFrom' => false,
         'creationDateTo' => false,
     ];

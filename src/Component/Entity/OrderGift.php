@@ -3,14 +3,14 @@
 namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeCurrencyCode;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePrice;
 
 class OrderGift extends Entity
 {
     protected int $id;
     protected string $code;
     protected TypeCurrencyCode $currencyCode;
-    protected TypePriceNullable $orderPrice;
+    protected TypePrice $orderPrice;
     protected bool $includingVat;
     protected int $priority;
 
@@ -47,12 +47,12 @@ class OrderGift extends Entity
         return $this;
     }
 
-    public function getOrderPrice(): TypePriceNullable
+    public function getOrderPrice(): TypePrice
     {
         return $this->orderPrice;
     }
 
-    public function setOrderPrice(TypePriceNullable $orderPrice): static
+    public function setOrderPrice(TypePrice $orderPrice): static
     {
         $this->orderPrice = $orderPrice;
         return $this;

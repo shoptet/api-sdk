@@ -3,20 +3,21 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\GetLastChangesInDistributionListResponse\GetLastChangesInDistributionListResponse\Data\Changes;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\ChangeType;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 
 class Item extends Entity
 {
-    protected string $changeType;
+    protected ChangeType $changeType;
     protected TypeDateTimeNullable $changeTime;
     protected string $email;
 
-    public function getChangeType(): string
+    public function getChangeType(): ChangeType
     {
         return $this->changeType;
     }
 
-    public function setChangeType(string $changeType): static
+    public function setChangeType(ChangeType $changeType): static
     {
         $this->changeType = $changeType;
         return $this;
