@@ -298,7 +298,7 @@ class EndpointMap
             '/api/orders/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Orders\OrderBatchInsertion',
             '/api/orders/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGift',
             '/api/orders/{code}/invoice' => 'Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrder',
-            '/api_orders_{code}_proforma-invoice.yaml' => 'Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\CreateProformaInvoiceFromOrder',
+            '/api/orders/{code}/proforma-invoice' => 'Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\CreateProformaInvoiceFromOrder',
             '/api/proforma-invoices/{code}/invoice' => 'Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromProformaInvoice',
             '/api/proof-payments' => 'Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPayment',
             '/api/proof-payments/order/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\CreateProofPaymentByOrderCode',

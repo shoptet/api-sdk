@@ -29,6 +29,6 @@ class CreateProformaInvoiceFromOrder extends Post
 
     public function getEndpoint(): string
     {
-        return '/api_orders_{code}_proforma-invoice.yaml';
+        return '/api/orders/{code}/proforma-invoice';
     }
 }
