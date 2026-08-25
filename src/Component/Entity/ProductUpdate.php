@@ -24,6 +24,7 @@ class ProductUpdate extends Entity
     protected ?string $shortDescription;
     protected ?string $description;
     protected ?string $additionalName;
+    protected ?string $xmlFeedName;
     protected ?string $metaTitle;
     protected ?string $metaDescription;
     protected ?string $conditionGrade;
@@ -130,6 +131,17 @@ class ProductUpdate extends Entity
     public function setAdditionalName(?string $additionalName): static
     {
         $this->additionalName = $additionalName;
+        return $this;
+    }
+
+    public function getXmlFeedName(): ?string
+    {
+        return $this->xmlFeedName;
+    }
+
+    public function setXmlFeedName(?string $xmlFeedName): static
+    {
+        $this->xmlFeedName = $xmlFeedName;
         return $this;
     }
 
