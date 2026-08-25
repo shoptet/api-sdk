@@ -12,6 +12,7 @@ class TypeLanguage extends Entity
     protected bool $isBlocked;
     protected ?int $priority;
     protected ?bool $isDefault;
+    protected string $locale;
 
     public function getCode(): string
     {
@@ -98,6 +99,17 @@ class TypeLanguage extends Entity
     public function setIsDefault(?bool $isDefault): static
     {
         $this->isDefault = $isDefault;
+        return $this;
+    }
+
+    public function getLocale(): string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(string $locale): static
+    {
+        $this->locale = $locale;
         return $this;
     }
 }

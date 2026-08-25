@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFilesResponse\GetListOfU
 class Data extends Entity
 {
     protected Images $images;
-    protected ?Files $files;
+    protected Files $files;
 
     public function getImages(): Images
     {
@@ -22,12 +22,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getFiles(): ?Files
+    public function getFiles(): Files
     {
         return $this->files;
     }
 
-    public function setFiles(?Files $files): static
+    public function setFiles(Files $files): static
     {
         $this->files = $files;
         return $this;

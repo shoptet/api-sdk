@@ -9,7 +9,7 @@ class Display extends Entity
     protected string $text;
     protected string $location;
     protected string $decimalsSeparator;
-    protected ?string $thousandsSeparator;
+    protected string $thousandsSeparator;
 
     public function getText(): string
     {
@@ -44,12 +44,12 @@ class Display extends Entity
         return $this;
     }
 
-    public function getThousandsSeparator(): ?string
+    public function getThousandsSeparator(): string
     {
         return $this->thousandsSeparator;
     }
 
-    public function setThousandsSeparator(?string $thousandsSeparator): static
+    public function setThousandsSeparator(string $thousandsSeparator): static
     {
         $this->thousandsSeparator = $thousandsSeparator;
         return $this;

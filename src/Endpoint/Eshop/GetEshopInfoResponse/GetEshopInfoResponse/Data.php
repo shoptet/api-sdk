@@ -23,20 +23,20 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse
 class Data extends Entity
 {
     protected ContactInformation $contactInformation;
-    protected ?BillingInformation $billingInformation;
+    protected BillingInformation $billingInformation;
     protected Settings $settings;
     protected Currencies $currencies;
     protected TaxClasses $taxClasses;
     protected ActiveModules $activeModules;
     protected Urls $urls;
-    protected ?SocialNetworks $socialNetworks;
+    protected SocialNetworks $socialNetworks;
     protected ?OrderAdditionalFields $orderAdditionalFields;
     protected ?OrderStatuses $orderStatuses;
     protected ?PaymentMethods $paymentMethods;
     protected ?ShippingMethods $shippingMethods;
     protected ?ImageCuts $imageCuts;
-    protected ?Languages $languages;
-    protected ?bool $trial;
+    protected Languages $languages;
+    protected bool $trial;
     protected ?Countries $countries;
     protected ?CashDesk $cashDesk;
 
@@ -51,12 +51,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getBillingInformation(): ?BillingInformation
+    public function getBillingInformation(): BillingInformation
     {
         return $this->billingInformation;
     }
 
-    public function setBillingInformation(?BillingInformation $billingInformation): static
+    public function setBillingInformation(BillingInformation $billingInformation): static
     {
         $this->billingInformation = $billingInformation;
         return $this;
@@ -117,12 +117,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getSocialNetworks(): ?SocialNetworks
+    public function getSocialNetworks(): SocialNetworks
     {
         return $this->socialNetworks;
     }
 
-    public function setSocialNetworks(?SocialNetworks $socialNetworks): static
+    public function setSocialNetworks(SocialNetworks $socialNetworks): static
     {
         $this->socialNetworks = $socialNetworks;
         return $this;
@@ -183,23 +183,23 @@ class Data extends Entity
         return $this;
     }
 
-    public function getLanguages(): ?Languages
+    public function getLanguages(): Languages
     {
         return $this->languages;
     }
 
-    public function setLanguages(?Languages $languages): static
+    public function setLanguages(Languages $languages): static
     {
         $this->languages = $languages;
         return $this;
     }
 
-    public function getTrial(): ?bool
+    public function isTrial(): bool
     {
         return $this->trial;
     }
 
-    public function setTrial(?bool $trial): static
+    public function setTrial(bool $trial): static
     {
         $this->trial = $trial;
         return $this;

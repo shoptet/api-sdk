@@ -26,8 +26,6 @@ class GetListOfAllProformaInvoices extends Get implements SnapshotEndpoint
         'changeTimeTo' => false,
         'codeFrom' => false,
         'codeTo' => false,
-        'proformaInvoiceCodeFrom' => false,
-        'proformaInvoiceCodeTo' => false,
         'isValid' => false,
         'paid' => false,
         'currencyCode' => false,

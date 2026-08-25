@@ -8,7 +8,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\BulkOrderStatusChangeRequest\BulkOrderSt
 class Data extends Entity
 {
     protected OrderCodes $orderCodes;
-    protected float $statusId;
+    protected int $statusId;
 
     public function getOrderCodes(): OrderCodes
     {
@@ -21,12 +21,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getStatusId(): float
+    public function getStatusId(): int
     {
         return $this->statusId;
     }
 
-    public function setStatusId(float $statusId): static
+    public function setStatusId(int $statusId): static
     {
         $this->statusId = $statusId;
         return $this;

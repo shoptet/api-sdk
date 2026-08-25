@@ -3,8 +3,8 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChangesResponse\GetLastProofPaymentsChangesResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\Paginator;
 use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChangesResponse\GetLastProofPaymentsChangesResponse\Data\Changes;
-use Shoptet\Api\Sdk\Php\Endpoint\ProofPayments\GetLastProofPaymentsChangesResponse\GetLastProofPaymentsChangesResponse\Data\Paginator;
 
 class Data extends Entity
 {

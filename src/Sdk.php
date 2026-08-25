@@ -4708,8 +4708,6 @@ class Sdk
      *     changeTimeTo?: string,
      *     codeFrom?: string,
      *     codeTo?: string,
-     *     proformaInvoiceCodeFrom?: string,
-     *     proformaInvoiceCodeTo?: string,
      *     isValid?: string,
      *     paid?: string,
      *     currencyCode?: string,
@@ -7315,7 +7313,6 @@ class Sdk
      * @param array<string, mixed>|CreateEmailDistributionListRequest $requestBody
      * @param array{
      *     language?: string,
-     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -8495,7 +8492,7 @@ class Sdk
      *     articleId?: string,
      *     pageId?: string,
      *     customerGuid?: string,
-     *     userEmail?: string,
+     *     email?: string,
      *     creationDateFrom?: string,
      *     creationDateTo?: string,
      *     itemsPerPage?: string,
