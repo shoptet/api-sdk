@@ -343,6 +343,7 @@ class EndpointMap
             '/api/products/{guid}/set' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductSets\SetProductSetItems',
             '/api/products/{guid}/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductGifts\SetGiftsToProduct',
             '/api/shipping-request/{shippingRequestCode}/{shippingGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingRequests\UpdateShippingData',
+            '/api/discount-coupons/templates/{guid}/products' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsTemplateProducts',
         ],
     ];
 

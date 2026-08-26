@@ -849,6 +849,14 @@ require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetTemplatesOfDiscountCoup
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetTemplatesOfDiscountCouponsResponse/GetTemplatesOfDiscountCouponsResponse/Data/CouponTemplates/Item/CustomerGroup.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetTemplatesOfDiscountCouponsResponse/GetTemplatesOfDiscountCouponsResponse/Data/CouponTemplates/Item/ProductFlags.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/GetTemplatesOfDiscountCouponsResponse/GetTemplatesOfDiscountCouponsResponse/Data/CouponTemplates/Item/ProductFlags/Item.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProducts.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsRequest/UpdateDiscountCouponsTemplateProductsRequest.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsRequest/UpdateDiscountCouponsTemplateProductsRequest/Data.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsRequest/UpdateDiscountCouponsTemplateProductsRequest/Data/ProductGuids.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsResponse/UpdateDiscountCouponsTemplateProductsResponse.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsResponse/UpdateDiscountCouponsTemplateProductsResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsResponse/UpdateDiscountCouponsTemplateProductsResponse/Data/Products.php';
+require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsTemplateProductsResponse/UpdateDiscountCouponsTemplateProductsResponse/Data/Products/Item.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsUsage.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsUsageRequest/UpdateDiscountCouponsUsageRequest.php';
 require_once __DIR__ . '/src/Endpoint/DiscountCoupons/UpdateDiscountCouponsUsageRequest/UpdateDiscountCouponsUsageRequest/Data.php';
