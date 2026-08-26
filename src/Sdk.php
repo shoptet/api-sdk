@@ -150,6 +150,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetDiscountCouponsTemplate;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfAllDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetListOfDiscountCoupons;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\GetTemplatesOfDiscountCoupons;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsTemplateProducts;
+use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsTemplateProductsRequest\UpdateDiscountCouponsTemplateProductsRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsage;
 use Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\UpdateDiscountCouponsUsageRequest\UpdateDiscountCouponsUsageRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\CreateDiscussionPosts;
@@ -7731,6 +7733,34 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(DeleteDiscountCouponsTemplate::class)
             ->addPathParam('guid', $guid)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [b6e09a7a-6cb5-11eb-89aa-08002746ad91] discount coupon template guid
+     * @param array<string, mixed>|UpdateDiscountCouponsTemplateProductsRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Discount-coupons/updatediscountcouponstemplateproducts
+     */
+    public static function updateDiscountCouponsTemplateProducts(
+        string $guid,
+        array|UpdateDiscountCouponsTemplateProductsRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdateDiscountCouponsTemplateProducts::class)
+            ->addPathParam('guid', $guid)
+            ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
     }
