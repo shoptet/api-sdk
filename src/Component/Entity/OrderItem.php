@@ -43,6 +43,7 @@ class OrderItem extends Entity
 
     /** @deprecated */
     protected TypePositiveAmountNullable $amountCompleted;
+    protected bool $nonReturnable;
 
     /** @deprecated */
     protected ?SurchargeParametersTexts $surchargeParametersTexts;
@@ -341,6 +342,17 @@ class OrderItem extends Entity
     public function setAmountCompleted(TypePositiveAmountNullable $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
+        return $this;
+    }
+
+    public function isNonReturnable(): bool
+    {
+        return $this->nonReturnable;
+    }
+
+    public function setNonReturnable(bool $nonReturnable): static
+    {
+        $this->nonReturnable = $nonReturnable;
         return $this;
     }
 

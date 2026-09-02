@@ -46,6 +46,7 @@ class Item extends Entity
     protected ?bool $atypicalShipping;
     protected ?bool $boxRestriction;
     protected ?Heureka $heureka;
+    protected ?bool $nonReturnable;
     protected ?OssVatLevels $ossVatLevels;
 
     public function getCode(): ?TypeVariantCodeRequest
@@ -364,6 +365,17 @@ class Item extends Entity
     public function setHeureka(?Heureka $heureka): static
     {
         $this->heureka = $heureka;
+        return $this;
+    }
+
+    public function getNonReturnable(): ?bool
+    {
+        return $this->nonReturnable;
+    }
+
+    public function setNonReturnable(?bool $nonReturnable): static
+    {
+        $this->nonReturnable = $nonReturnable;
         return $this;
     }
 
