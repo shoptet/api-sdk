@@ -18,6 +18,8 @@ class Data extends Entity
     protected ?string $customerGuid;
     protected ?string $orderCode;
     protected ?string $ipAddress;
+    protected ?bool $authorized;
+    protected ?bool $visible;
     protected ?Reaction $reaction;
 
     public function getProductGuid(): ?TypeGuidUnlimited
@@ -116,6 +118,28 @@ class Data extends Entity
     public function setIpAddress(?string $ipAddress): static
     {
         $this->ipAddress = $ipAddress;
+        return $this;
+    }
+
+    public function getAuthorized(): ?bool
+    {
+        return $this->authorized;
+    }
+
+    public function setAuthorized(?bool $authorized): static
+    {
+        $this->authorized = $authorized;
+        return $this;
+    }
+
+    public function getVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(?bool $visible): static
+    {
+        $this->visible = $visible;
         return $this;
     }
 
