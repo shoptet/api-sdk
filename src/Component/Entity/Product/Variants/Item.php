@@ -60,6 +60,7 @@ class Item extends Entity
     protected ?bool $atypicalBilling;
     protected ?bool $atypicalShipping;
     protected ?bool $boxRestriction;
+    protected ?bool $nonReturnable;
     protected ?PerStockAmounts $perStockAmounts;
     protected ?PerPricelistPrices $perPricelistPrices;
     protected ?string $url;
@@ -481,6 +482,17 @@ class Item extends Entity
     public function setBoxRestriction(?bool $boxRestriction): static
     {
         $this->boxRestriction = $boxRestriction;
+        return $this;
+    }
+
+    public function getNonReturnable(): ?bool
+    {
+        return $this->nonReturnable;
+    }
+
+    public function setNonReturnable(?bool $nonReturnable): static
+    {
+        $this->nonReturnable = $nonReturnable;
         return $this;
     }
 
