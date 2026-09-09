@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRespo
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodResponse\CreateShippingMethodResponse\Data\PriceList;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodResponse\CreateShippingMethodResponse\Data\ShippingCompany;
 
 class Data extends Entity
@@ -11,10 +12,16 @@ class Data extends Entity
     protected TypeGuid $guid;
     protected string $name;
     protected ?string $description;
+    protected ?ShippingCompany $shippingCompany;
+    protected ?string $trackingUrl;
+    protected bool $visible;
+
+    /** @deprecated */
     protected bool $visibility;
+    protected ?int $priority;
     protected bool $wholesale;
     protected ?string $logoUrl;
-    protected ShippingCompany $shippingCompany;
+    protected PriceList $priceList;
 
     public function getGuid(): TypeGuid
     {
@@ -49,14 +56,64 @@ class Data extends Entity
         return $this;
     }
 
+    public function getShippingCompany(): ?ShippingCompany
+    {
+        return $this->shippingCompany;
+    }
+
+    public function setShippingCompany(?ShippingCompany $shippingCompany): static
+    {
+        $this->shippingCompany = $shippingCompany;
+        return $this;
+    }
+
+    public function getTrackingUrl(): ?string
+    {
+        return $this->trackingUrl;
+    }
+
+    public function setTrackingUrl(?string $trackingUrl): static
+    {
+        $this->trackingUrl = $trackingUrl;
+        return $this;
+    }
+
+    public function isVisible(): bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): static
+    {
+        $this->visible = $visible;
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     */
     public function isVisibility(): bool
     {
         return $this->visibility;
     }
 
+    /**
+     * @deprecated
+     */
     public function setVisibility(bool $visibility): static
     {
         $this->visibility = $visibility;
+        return $this;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): static
+    {
+        $this->priority = $priority;
         return $this;
     }
 
@@ -82,14 +139,14 @@ class Data extends Entity
         return $this;
     }
 
-    public function getShippingCompany(): ShippingCompany
+    public function getPriceList(): PriceList
     {
-        return $this->shippingCompany;
+        return $this->priceList;
     }
 
-    public function setShippingCompany(ShippingCompany $shippingCompany): static
+    public function setPriceList(PriceList $priceList): static
     {
-        $this->shippingCompany = $shippingCompany;
+        $this->priceList = $priceList;
         return $this;
     }
 }
