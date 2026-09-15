@@ -23,10 +23,14 @@ class GetListOfInvoices extends PageableGet
         'proformaInvoiceCode' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
+        'changeTimeFrom' => false,
+        'changeTimeTo' => false,
         'taxDateFrom' => false,
+        'taxDateTo' => false,
         'orderCode' => false,
         'codeFrom' => false,
         'codeTo' => false,
+        'customerGuid' => false,
         'varSymbol' => false,
     ];
 

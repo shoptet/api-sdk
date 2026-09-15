@@ -21,6 +21,10 @@ class GetListOfCustomers extends PageableGet
         'itemsPerPage' => false,
         'email' => false,
         'phone' => false,
+        'creationTimeFrom' => false,
+        'creationTimeTo' => false,
+        'changeTimeFrom' => false,
+        'changeTimeTo' => false,
     ];
 
     public function getRequestEntityClass(): null

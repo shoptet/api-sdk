@@ -25,6 +25,9 @@ class GetListOfDiscountCoupons extends PageableGet
         'reusable' => false,
         'validFrom' => false,
         'validTo' => false,
+        'discountType' => false,
+        'currency' => false,
+        'shippingPrice' => false,
     ];
 
     public function getRequestEntityClass(): null

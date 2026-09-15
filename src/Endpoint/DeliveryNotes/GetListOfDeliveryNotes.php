@@ -21,6 +21,11 @@ class GetListOfDeliveryNotes extends PageableGet
         'itemsPerPage' => false,
         'isValid' => false,
         'orderCode' => false,
+        'creationTimeFrom' => false,
+        'creationTimeTo' => false,
+        'changeTimeFrom' => false,
+        'changeTimeTo' => false,
+        'customerGuid' => false,
     ];
 
     public function getRequestEntityClass(): null

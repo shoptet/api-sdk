@@ -23,7 +23,11 @@ class GetListOfProformaInvoices extends PageableGet
         'orderCode' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
+        'changeTimeFrom' => false,
+        'changeTimeTo' => false,
         'varSymbol' => false,
+        'paid' => false,
+        'currencyCode' => false,
     ];
 
     public function getRequestEntityClass(): null
