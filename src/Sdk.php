@@ -4373,10 +4373,14 @@ class Sdk
      *     proformaInvoiceCode?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
      *     taxDateFrom?: string,
+     *     taxDateTo?: string,
      *     orderCode?: string,
      *     codeFrom?: string,
      *     codeTo?: string,
+     *     customerGuid?: string,
      *     varSymbol?: string,
      *     itemsPerPage?: string,
      * } $queryParams
@@ -4681,7 +4685,11 @@ class Sdk
      *     orderCode?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
      *     varSymbol?: string,
+     *     paid?: string,
+     *     currencyCode?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
@@ -5521,6 +5529,11 @@ class Sdk
      *     itemsPerPage?: int,
      *     isValid?: string,
      *     orderCode?: string,
+     *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
+     *     customerGuid?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
@@ -6041,6 +6054,10 @@ class Sdk
      *     itemsPerPage?: int,
      *     email?: string,
      *     phone?: string,
+     *     creationTimeFrom?: string,
+     *     creationTimeTo?: string,
+     *     changeTimeFrom?: string,
+     *     changeTimeTo?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
@@ -7426,6 +7443,9 @@ class Sdk
      *     reusable?: string,
      *     validFrom?: string,
      *     validTo?: string,
+     *     discountType?: string,
+     *     currency?: string,
+     *     shippingPrice?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
