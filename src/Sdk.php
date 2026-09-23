@@ -318,6 +318,10 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteOneProductImage;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetListOfProductImages;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetProductImagesUpdate;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetProductImagesUpdateRequest\GetProductImagesUpdateRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDelete;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDeleteRequest\ProductImageBatchDeleteRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchInsert;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchInsertRequest\ProductImageBatchInsertRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\UpdateProductImagesSource;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\UpdateProductImagesSourceRequest\UpdateProductImagesSourceRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLink;
@@ -343,8 +347,6 @@ use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdate;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchUpdateRequest\ProductBatchUpdateRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopy;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopyRequest\ProductCopyRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDelete;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteRequest\ProductImageBatchDeleteRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UnlinkAllProductRelatedFiles;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProduct;
 use Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProductByCode;
@@ -962,7 +964,7 @@ class Sdk
      * @throws RuntimeException
      * @throws ReflectionException
      *
-     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productimagebatchdelete
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/productimagebatchdelete
      */
     public static function productImageBatchDelete(
         array|ProductImageBatchDeleteRequest $requestBody,
@@ -970,6 +972,32 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(ProductImageBatchDelete::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|ProductImageBatchInsertRequest $requestBody
+     * @param array{
+     *     language?: string,
+     *     clearImages?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/productimagebatchinsert
+     */
+    public static function productImageBatchInsert(
+        array|ProductImageBatchInsertRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(ProductImageBatchInsert::class)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();

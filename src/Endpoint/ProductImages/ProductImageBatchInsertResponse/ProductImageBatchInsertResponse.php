@@ -1,12 +1,12 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteResponse;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchInsertResponse;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\Entity\Errors;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteResponse\ProductImageBatchDeleteResponse\Data;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchInsertResponse\ProductImageBatchInsertResponse\Data;
 
-class ProductImageBatchDeleteResponse extends Entity
+class ProductImageBatchInsertResponse extends Entity
 {
     protected ?Data $data;
     protected ?Errors $errors;
