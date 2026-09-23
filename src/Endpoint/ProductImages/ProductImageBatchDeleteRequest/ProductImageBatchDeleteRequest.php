@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteRequest;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDeleteRequest;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 

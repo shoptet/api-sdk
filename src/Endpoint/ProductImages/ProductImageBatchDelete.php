@@ -1,14 +1,14 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Products;
+namespace Shoptet\Api\Sdk\Php\Endpoint\ProductImages;
 
 use Shoptet\Api\Sdk\Php\Async\AsyncEndpoint;
 use Shoptet\Api\Sdk\Php\Endpoint\Delete;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteRequest\ProductImageBatchDeleteRequest;
-use Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDeleteResponse\ProductImageBatchDeleteResponse;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDeleteRequest\ProductImageBatchDeleteRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDeleteResponse\ProductImageBatchDeleteResponse;
 
 /**
- * @see https://api.docs.shoptet.com/shoptet-api/openapi/Products/productimagebatchdelete
+ * @see https://api.docs.shoptet.com/shoptet-api/openapi/Product-images/productimagebatchdelete
  *
  * @method ProductImageBatchDelete setBody(null|array<string, mixed>|ProductImageBatchDeleteRequest $entity)
  * @method null|ProductImageBatchDeleteRequest getBody()

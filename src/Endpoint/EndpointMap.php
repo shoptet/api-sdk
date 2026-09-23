@@ -9,7 +9,7 @@ class EndpointMap
         'delete' => [
             '/api/products/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProduct',
             '/api/products/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\ProductBatchDelete',
-            '/api/products/images/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\ProductImageBatchDelete',
+            '/api/products/images/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchDelete',
             '/api/products/code/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\DeleteProductVariant',
             '/api/products/{guid}/images/{gallery}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteAllProductImagesInGallery',
             '/api/products/{guid}/images/{gallery}/{imageName}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\DeleteOneProductImage',
@@ -264,6 +264,7 @@ class EndpointMap
         'post' => [
             '/api/products' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\CreateProduct',
             '/api/products/{guid}/copy' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\ProductCopy',
+            '/api/products/images/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\ProductImageBatchInsert',
             '/api/products/{guid}/images/{gallery}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\CreateProductImages',
             '/api/products/{guid}/related-files' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductRelatedFiles\CreateRelatedFileLink',
             '/api/categories' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategory',
