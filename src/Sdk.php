@@ -290,11 +290,22 @@ use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\CreatePaymentMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\CreatePaymentMethodRequest\CreatePaymentMethodRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\DeletePaymentMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\GetListingOfPaymentMethods;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\GetAllPriceListPricesSnapshot;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\GetPriceListPrices;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\GetPriceListPricesSnapshot;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\UpdatePriceListPrices;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\UpdatePriceListPricesBatch;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\UpdatePriceListPricesBatchRequest\UpdatePriceListPricesBatchRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceListPrices\UpdatePriceListPricesRequest\UpdatePriceListPricesRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePriceListEntity;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePriceListEntityRequest\CreatePriceListEntityRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\CreatePricelistRequest\CreatePricelistRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\DeletePriceListEntity;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\DeletePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetails;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceLists;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPriceLists;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatch;
@@ -3218,6 +3229,210 @@ class Sdk
             ->createEndpoint(UpdatePricelistBatch::class)
             ->addPathParam('id', $id)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getpricelists
+     */
+    public static function getPriceLists(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetPriceLists::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreatePriceListEntityRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/createpricelistentity
+     */
+    public static function createPriceListEntity(
+        array|CreatePriceListEntityRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreatePriceListEntity::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/deletepricelistentity
+     */
+    public static function deletePriceListEntity(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeletePriceListEntity::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     code?: string,
+     *     guid?: string,
+     *     itemsPerPage?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-list-prices/getpricelistprices
+     */
+    public static function getPriceListPrices(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetPriceListPrices::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array<string, mixed>|UpdatePriceListPricesRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-list-prices/updatepricelistprices
+     */
+    public static function updatePriceListPrices(
+        string $id,
+        array|UpdatePriceListPricesRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdatePriceListPrices::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array<string, mixed>|UpdatePriceListPricesBatchRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-list-prices/updatepricelistpricesbatch
+     */
+    public static function updatePriceListPricesBatch(
+        string $id,
+        array|UpdatePriceListPricesBatchRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdatePriceListPricesBatch::class)
+            ->addPathParam('id', $id)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array{
+     *     language?: string,
+     *     codeFrom?: string,
+     *     codeTo?: string,
+     *     actionPriceDateFrom?: string,
+     *     actionPriceDateTo?: string,
+     *     vatRate?: string,
+     *     currencyCode?: string,
+     *     orderableMinAmount?: string,
+     *     orderableMinAmountFrom?: string,
+     *     orderableMinAmountTo?: string,
+     *     orderableMaxAmount?: string,
+     *     orderableMaxAmountFrom?: string,
+     *     orderableMaxAmountTo?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-list-prices/getpricelistpricessnapshot
+     */
+    public static function getPriceListPricesSnapshot(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetPriceListPricesSnapshot::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-list-prices/getallpricelistpricessnapshot
+     */
+    public static function getAllPriceListPricesSnapshot(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetAllPriceListPricesSnapshot::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
