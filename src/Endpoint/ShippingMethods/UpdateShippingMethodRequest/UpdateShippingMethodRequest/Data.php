@@ -11,6 +11,8 @@ class Data extends Entity
     protected ?string $name;
     protected ?string $description;
     protected ?string $shippingMethodCode;
+
+    /** @deprecated */
     protected ?bool $visible;
 
     /** @deprecated */
@@ -54,11 +56,17 @@ class Data extends Entity
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getVisible(): ?bool
     {
         return $this->visible;
     }
 
+    /**
+     * @deprecated
+     */
     public function setVisible(?bool $visible): static
     {
         $this->visible = $visible;
