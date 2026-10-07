@@ -405,6 +405,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProductReviewRequest\CreateProductReviewRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReview;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\CreateProjectReviewRequest\CreateProjectReviewRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfAllProjectReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews;
 use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetReviewsSettings;
@@ -9200,6 +9201,30 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateProjectReview::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     dateFrom?: string,
+     *     dateTo?: string,
+     *     visible?: string,
+     *     orderCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Reviews/getlistofallprojectreviews
+     */
+    public static function getListOfAllProjectReviews(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllProjectReviews::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
