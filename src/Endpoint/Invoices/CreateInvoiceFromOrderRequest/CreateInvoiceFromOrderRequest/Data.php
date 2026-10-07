@@ -5,6 +5,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\Cr
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeConstSymbol;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeSpecSymbol;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeVarSymbol;
 use Shoptet\Api\Sdk\Php\Endpoint\Invoices\CreateInvoiceFromOrderRequest\CreateInvoiceFromOrderRequest\Data\ProofPaymentCodes;
@@ -15,6 +16,7 @@ class Data extends Entity
     protected ?TypeVarSymbol $varSymbol;
     protected ?TypeDateNullable $dueDate;
     protected ?TypeDateNullable $taxDate;
+    protected ?TypeDateTimeNullable $creationTime;
     protected ?TypeConstSymbol $constSymbol;
     protected ?TypeSpecSymbol $specSymbol;
     protected ?int $billingMethodId;
@@ -62,6 +64,17 @@ class Data extends Entity
     public function setTaxDate(?TypeDateNullable $taxDate): static
     {
         $this->taxDate = $taxDate;
+        return $this;
+    }
+
+    public function getCreationTime(): ?TypeDateTimeNullable
+    {
+        return $this->creationTime;
+    }
+
+    public function setCreationTime(?TypeDateTimeNullable $creationTime): static
+    {
+        $this->creationTime = $creationTime;
         return $this;
     }
 
