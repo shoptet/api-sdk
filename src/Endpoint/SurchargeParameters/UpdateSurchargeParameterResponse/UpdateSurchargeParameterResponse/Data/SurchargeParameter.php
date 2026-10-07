@@ -16,6 +16,7 @@ class SurchargeParameter extends Entity
     protected bool $required;
     protected string $currency;
     protected bool $includingVat;
+    protected ?bool $subscription;
     protected ?GoogleMappingType $googleMapping;
 
     public function getId(): int
@@ -114,6 +115,17 @@ class SurchargeParameter extends Entity
     public function setIncludingVat(bool $includingVat): static
     {
         $this->includingVat = $includingVat;
+        return $this;
+    }
+
+    public function getSubscription(): ?bool
+    {
+        return $this->subscription;
+    }
+
+    public function setSubscription(?bool $subscription): static
+    {
+        $this->subscription = $subscription;
         return $this;
     }
 
