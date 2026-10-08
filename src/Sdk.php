@@ -418,6 +418,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailById;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\CreateShippingMethodRequest\CreateShippingMethodRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\DeleteShippingMethod;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethods;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetShippingMethodDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\UpdateShippingMethod;
@@ -7376,6 +7377,28 @@ class Sdk
             ->createEndpoint(UpdateShippingMethod::class)
             ->addPathParam('guid', $guid)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [b57f91bb-e920-11e0-baa3-7dc668b75ca8] Unique identifier of the shipping method.
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Shipping-methods/deleteshippingmethod
+     */
+    public static function deleteShippingMethod(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(DeleteShippingMethod::class)
+            ->addPathParam('guid', $guid)
             ->setQueryParams($queryParams)
             ->execute();
     }

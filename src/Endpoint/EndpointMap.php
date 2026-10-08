@@ -44,6 +44,7 @@ class EndpointMap
             '/api/customers/groups/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerGroups\DeleteCustomerGroup',
             '/api/template-include/{location}' => 'Shoptet\Api\Sdk\Php\Endpoint\Templates\DeleteHtmlCode',
             '/api/webhooks/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\Webhooks\DeleteRegisteredWebhook',
+            '/api/shipping-methods/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\DeleteShippingMethod',
             '/api/payment-methods/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\PaymentMethods\DeletePaymentMethod',
             '/api/discount-coupons' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\BulkDeleteDiscountCoupons',
             '/api/discount-coupons/{code}' => 'Shoptet\Api\Sdk\Php\Endpoint\DiscountCoupons\DeleteDiscountCoupon',
