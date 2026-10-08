@@ -1,6 +1,6 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviewsResponse\GetListOfProjectReviewsResponse\Data\Reviews\Item;
+namespace Shoptet\Api\Sdk\Php\Component\Entity\ReviewProjectList;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;

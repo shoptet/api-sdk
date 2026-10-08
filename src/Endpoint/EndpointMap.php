@@ -209,6 +209,7 @@ class EndpointMap
             '/api/reviews/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetReviewsSettings',
             '/api/reviews/products' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProductsReviews',
             '/api/reviews/project' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviews',
+            '/api/reviews/project/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfAllProjectReviews',
         ],
         'patch' => [
             '/api/products/{guid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\UpdateProduct',

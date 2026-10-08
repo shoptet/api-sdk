@@ -1,12 +1,11 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviewsResponse\GetListOfProjectReviewsResponse\Data\Reviews;
+namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
+use Shoptet\Api\Sdk\Php\Component\Entity\ReviewProjectList\Reaction;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
-use Shoptet\Api\Sdk\Php\Endpoint\Reviews\GetListOfProjectReviewsResponse\GetListOfProjectReviewsResponse\Data\Reviews\Item\Reaction;
 
-class Item extends Entity
+class ReviewProjectList extends Entity
 {
     protected int $id;
     protected TypeDateTimeNullable $date;
