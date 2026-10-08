@@ -1873,6 +1873,9 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRespon
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/PriceList/PriceTiers.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/PriceList/PriceTiers/Item.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/ShippingCompany.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/DeleteShippingMethod.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/DeleteShippingMethodResponse/DeleteShippingMethodResponse.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/DeleteShippingMethodResponse/DeleteShippingMethodResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethods.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data.php';
