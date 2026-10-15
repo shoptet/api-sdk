@@ -305,8 +305,11 @@ use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\DeletePriceListEntity;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\DeletePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfAllPricelistDetails;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetListOfPriceLists;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPriceListEntity;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPriceLists;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\GetPricelistDetail;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePriceListEntity;
+use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePriceListEntityRequest\UpdatePriceListEntityRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelist;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatch;
 use Shoptet\Api\Sdk\Php\Endpoint\PriceLists\UpdatePricelistBatchRequest\UpdatePricelistBatchRequest;
@@ -3275,6 +3278,56 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(CreatePriceListEntity::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/getpricelistentity
+     */
+    public static function getPriceListEntity(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetPriceListEntity::class)
+            ->addPathParam('id', $id)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [1] Price list ID
+     * @param array<string, mixed>|UpdatePriceListEntityRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Price-lists/updatepricelistentity
+     */
+    public static function updatePriceListEntity(
+        string $id,
+        array|UpdatePriceListEntityRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(UpdatePriceListEntity::class)
+            ->addPathParam('id', $id)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
