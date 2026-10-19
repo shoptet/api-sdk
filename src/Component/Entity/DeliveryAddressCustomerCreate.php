@@ -1,10 +1,8 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddressRequest\CreateDeliveryAddressRequest;
+namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-
-class Data extends Entity
+class DeliveryAddressCustomerCreate extends Entity
 {
     protected ?string $fullName;
     protected ?string $company;

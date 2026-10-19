@@ -2,19 +2,19 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddressRequest;
 
+use Shoptet\Api\Sdk\Php\Component\Entity\DeliveryAddressCustomerCreate;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddressRequest\CreateDeliveryAddressRequest\Data;
 
 class CreateDeliveryAddressRequest extends Entity
 {
-    protected Data $data;
+    protected DeliveryAddressCustomerCreate $data;
 
-    public function getData(): Data
+    public function getData(): DeliveryAddressCustomerCreate
     {
         return $this->data;
     }
 
-    public function setData(Data $data): static
+    public function setData(DeliveryAddressCustomerCreate $data): static
     {
         $this->data = $data;
         return $this;

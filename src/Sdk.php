@@ -109,6 +109,8 @@ use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\UpdateCustomerRemarkRequest\UpdateCustomerRemarkRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomer;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\CustomerBatchCreation;
+use Shoptet\Api\Sdk\Php\Endpoint\Customers\CustomerBatchCreationRequest\CustomerBatchCreationRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\DeleteCustomer;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetCustomerDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\Customers\GetLastCustomerChanges;
@@ -6399,6 +6401,31 @@ class Sdk
     ): ResponseInterface {
         return self::getEndpointFactory()
             ->createEndpoint(CreateCustomer::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CustomerBatchCreationRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Customers/customerbatchcreation
+     */
+    public static function customerBatchCreation(
+        array|CustomerBatchCreationRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CustomerBatchCreation::class)
             ->setBody($requestBody)
             ->setQueryParams($queryParams)
             ->execute();
