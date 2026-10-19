@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetShippingMethodDetailResponse
 class GetShippingMethodDetail extends Get
 {
     protected array $supportedPathParams = ['guid' => true];
-    protected array $supportedQueryParams = ['language' => false, 'include' => false];
+    protected array $supportedQueryParams = ['language' => false, 'include' => false, 'salesChannelGuid' => false];
 
     public function getRequestEntityClass(): null
     {

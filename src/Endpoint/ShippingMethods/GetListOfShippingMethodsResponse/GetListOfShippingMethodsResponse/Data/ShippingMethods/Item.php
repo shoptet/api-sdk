@@ -4,6 +4,7 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsR
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsResponse\GetListOfShippingMethodsResponse\Data\ShippingMethods\Item\SalesChannelGuids;
 use Shoptet\Api\Sdk\Php\Endpoint\ShippingMethods\GetListOfShippingMethodsResponse\GetListOfShippingMethodsResponse\Data\ShippingMethods\Item\ShippingCompany;
 
 class Item extends Entity
@@ -17,6 +18,7 @@ class Item extends Entity
     protected ?int $priority;
     protected bool $wholesale;
     protected ?string $logoUrl;
+    protected SalesChannelGuids $salesChannelGuids;
 
     public function getGuid(): TypeGuid
     {
@@ -114,6 +116,17 @@ class Item extends Entity
     public function setLogoUrl(?string $logoUrl): static
     {
         $this->logoUrl = $logoUrl;
+        return $this;
+    }
+
+    public function getSalesChannelGuids(): SalesChannelGuids
+    {
+        return $this->salesChannelGuids;
+    }
+
+    public function setSalesChannelGuids(SalesChannelGuids $salesChannelGuids): static
+    {
+        $this->salesChannelGuids = $salesChannelGuids;
         return $this;
     }
 }
