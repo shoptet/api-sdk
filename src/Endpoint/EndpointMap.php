@@ -325,6 +325,7 @@ class EndpointMap
             '/api/brands' => 'Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrand',
             '/api/brands/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Brands\CreateBrandBatch',
             '/api/customers' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomer',
+            '/api/customers/batch' => 'Shoptet\Api\Sdk\Php\Endpoint\Customers\CustomerBatchCreation',
             '/api/customers/{guid}/accounts' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerAccounts\CreateCustomerAccount',
             '/api/customers/{guid}/delivery-addresses' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerDeliveryAddresses\CreateDeliveryAddress',
             '/api/customers/{guid}/remarks' => 'Shoptet\Api\Sdk\Php\Endpoint\CustomerRemarks\CreateCustomerRemark',

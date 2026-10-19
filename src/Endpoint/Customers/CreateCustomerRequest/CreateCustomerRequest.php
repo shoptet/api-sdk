@@ -2,19 +2,19 @@
 
 namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest;
 
+use Shoptet\Api\Sdk\Php\Component\Entity\CustomerCreate;
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest\Data;
 
 class CreateCustomerRequest extends Entity
 {
-    protected Data $data;
+    protected CustomerCreate $data;
 
-    public function getData(): Data
+    public function getData(): CustomerCreate
     {
         return $this->data;
     }
 
-    public function setData(Data $data): static
+    public function setData(CustomerCreate $data): static
     {
         $this->data = $data;
         return $this;

@@ -1,13 +1,10 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest;
+namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\BillingAddressCustomer;
-use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePriceRatio;
-use Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest\Data\Account;
 
-class Data extends Entity
+class CustomerCreate extends Entity
 {
     protected ?string $remark;
     protected ?TypePriceRatio $priceRatio;
@@ -16,7 +13,7 @@ class Data extends Entity
     protected ?string $customerGroupCode;
     protected ?int $pricelistId;
     protected ?BillingAddressCustomer $billingAddress;
-    protected Account $account;
+    protected CustomerAccount $account;
 
     public function getRemark(): ?string
     {
@@ -95,12 +92,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getAccount(): Account
+    public function getAccount(): CustomerAccount
     {
         return $this->account;
     }
 
-    public function setAccount(Account $account): static
+    public function setAccount(CustomerAccount $account): static
     {
         $this->account = $account;
         return $this;

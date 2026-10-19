@@ -1,10 +1,8 @@
 <?php
 
-namespace Shoptet\Api\Sdk\Php\Endpoint\Customers\CreateCustomerRequest\CreateCustomerRequest\Data;
+namespace Shoptet\Api\Sdk\Php\Component\Entity;
 
-use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-
-class Account extends Entity
+class CustomerAccount extends Entity
 {
     protected ?string $fullName;
     protected string $email;
