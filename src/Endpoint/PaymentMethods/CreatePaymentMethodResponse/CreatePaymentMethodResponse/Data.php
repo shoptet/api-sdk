@@ -14,6 +14,7 @@ class Data extends Entity
     protected ?string $submethod;
     protected bool $visibility;
     protected bool $wholesale;
+    protected bool $inPersonPayment;
     protected ?string $logoUrl;
     protected PaymentType $paymentType;
 
@@ -80,6 +81,17 @@ class Data extends Entity
     public function setWholesale(bool $wholesale): static
     {
         $this->wholesale = $wholesale;
+        return $this;
+    }
+
+    public function isInPersonPayment(): bool
+    {
+        return $this->inPersonPayment;
+    }
+
+    public function setInPersonPayment(bool $inPersonPayment): static
+    {
+        $this->inPersonPayment = $inPersonPayment;
         return $this;
     }
 
