@@ -1892,6 +1892,7 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodRespon
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/PriceList/PairedPaymentMethodGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/PriceList/PriceTiers.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/PriceList/PriceTiers/Item.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/SalesChannelGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/CreateShippingMethodResponse/CreateShippingMethodResponse/Data/ShippingCompany.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/DeleteShippingMethod.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/DeleteShippingMethodResponse/DeleteShippingMethodResponse.php';
@@ -1901,6 +1902,7 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsRe
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods/Item.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods/Item/SalesChannelGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetListOfShippingMethodsResponse/GetListOfShippingMethodsResponse/Data/ShippingMethods/Item/ShippingCompany.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetail.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse.php';
@@ -1909,6 +1911,7 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailRes
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PairedPaymentMethodGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PriceTiers.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/PriceList/PriceTiers/Item.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/SalesChannelGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/GetShippingMethodDetailResponse/GetShippingMethodDetailResponse/Data/ShippingCompany.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethod.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodRequest/UpdateShippingMethodRequest.php';
@@ -1924,6 +1927,7 @@ require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodRespon
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodResponse/UpdateShippingMethodResponse/Data/PriceList/PairedPaymentMethodGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodResponse/UpdateShippingMethodResponse/Data/PriceList/PriceTiers.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodResponse/UpdateShippingMethodResponse/Data/PriceList/PriceTiers/Item.php';
+require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodResponse/UpdateShippingMethodResponse/Data/SalesChannelGuids.php';
 require_once __DIR__ . '/src/Endpoint/ShippingMethods/UpdateShippingMethodResponse/UpdateShippingMethodResponse/Data/ShippingCompany.php';
 require_once __DIR__ . '/src/Endpoint/ShippingRequests/GetShippingRequestForCartDetails.php';
 require_once __DIR__ . '/src/Endpoint/ShippingRequests/GetShippingRequestForCartDetailsResponse/GetShippingRequestForCartDetailsResponse.php';
