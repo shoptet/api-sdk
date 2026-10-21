@@ -20,6 +20,8 @@ class Order extends Entity
     protected string $code;
     protected string $guid;
     protected ?string $externalCode;
+    protected ?string $internalOrderNumber;
+    protected ?string $marketplaceExternalOrderId;
     protected TypeDateTimeNullable $creationTime;
     protected TypeDateTimeNullable $changeTime;
     protected ?string $email;
@@ -85,6 +87,28 @@ class Order extends Entity
     public function setExternalCode(?string $externalCode): static
     {
         $this->externalCode = $externalCode;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
+        return $this;
+    }
+
+    public function getMarketplaceExternalOrderId(): ?string
+    {
+        return $this->marketplaceExternalOrderId;
+    }
+
+    public function setMarketplaceExternalOrderId(?string $marketplaceExternalOrderId): static
+    {
+        $this->marketplaceExternalOrderId = $marketplaceExternalOrderId;
         return $this;
     }
 

@@ -10,6 +10,7 @@ class DeliveryNote extends Entity
     protected string $code;
     protected bool $isValid;
     protected ?string $orderCode;
+    protected ?string $internalOrderNumber;
     protected TypeDateTimeNullable $creationTime;
     protected TypeDateTimeNullable $changeTime;
     protected BillingAddress $billingAddress;
@@ -49,6 +50,17 @@ class DeliveryNote extends Entity
     public function setOrderCode(?string $orderCode): static
     {
         $this->orderCode = $orderCode;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
         return $this;
     }
 

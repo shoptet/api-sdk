@@ -17,6 +17,8 @@ class Item extends Entity
 {
     protected string $code;
     protected string $guid;
+    protected ?string $internalOrderNumber;
+    protected ?string $marketplaceExternalOrderId;
     protected TypeDateTimeNullable $creationTime;
     protected TypeDateTimeNullable $changeTime;
     protected ?string $fullName;
@@ -55,6 +57,28 @@ class Item extends Entity
     public function setGuid(string $guid): static
     {
         $this->guid = $guid;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
+        return $this;
+    }
+
+    public function getMarketplaceExternalOrderId(): ?string
+    {
+        return $this->marketplaceExternalOrderId;
+    }
+
+    public function setMarketplaceExternalOrderId(?string $marketplaceExternalOrderId): static
+    {
+        $this->marketplaceExternalOrderId = $marketplaceExternalOrderId;
         return $this;
     }
 

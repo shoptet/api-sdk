@@ -23,6 +23,7 @@ class OrderCreate extends Entity
     protected ?string $email;
     protected ?string $phone;
     protected ?string $birthDate;
+    protected ?string $internalOrderNumber;
     protected ?bool $vatPayer;
     protected ?TypeGuidNullable $paymentMethodGuid;
     protected ?TypeGuidNullable $shippingGuid;
@@ -158,6 +159,17 @@ class OrderCreate extends Entity
     public function setBirthDate(?string $birthDate): static
     {
         $this->birthDate = $birthDate;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
         return $this;
     }
 

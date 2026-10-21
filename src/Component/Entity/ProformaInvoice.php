@@ -16,6 +16,7 @@ class ProformaInvoice extends Entity
     protected bool $isValid;
     protected ?bool $paid;
     protected ?string $orderCode;
+    protected ?string $internalOrderNumber;
     protected TypeDateTimeNullable $creationTime;
     protected TypeDateTimeNullable $changeTime;
     protected TypeDateNullable $dueDate;
@@ -77,6 +78,17 @@ class ProformaInvoice extends Entity
     public function setOrderCode(?string $orderCode): static
     {
         $this->orderCode = $orderCode;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
         return $this;
     }
 
