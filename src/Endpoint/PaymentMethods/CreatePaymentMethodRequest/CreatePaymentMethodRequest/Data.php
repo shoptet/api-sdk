@@ -13,6 +13,7 @@ class Data extends Entity
     protected string $paymentType;
     protected ?bool $visibility;
     protected ?bool $wholesale;
+    protected ?bool $inPersonPayment;
     protected ?Logo $logo;
 
     public function getName(): string
@@ -78,6 +79,17 @@ class Data extends Entity
     public function setWholesale(?bool $wholesale): static
     {
         $this->wholesale = $wholesale;
+        return $this;
+    }
+
+    public function getInPersonPayment(): ?bool
+    {
+        return $this->inPersonPayment;
+    }
+
+    public function setInPersonPayment(?bool $inPersonPayment): static
+    {
+        $this->inPersonPayment = $inPersonPayment;
         return $this;
     }
 

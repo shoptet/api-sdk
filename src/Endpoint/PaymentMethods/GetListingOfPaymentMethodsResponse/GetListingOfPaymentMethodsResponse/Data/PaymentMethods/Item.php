@@ -16,6 +16,7 @@ class Item extends Entity
     protected bool $visible;
     protected ?int $priority;
     protected bool $wholesale;
+    protected bool $inPersonPayment;
     protected ?string $logoUrl;
 
     public function getGuid(): TypeGuid
@@ -103,6 +104,17 @@ class Item extends Entity
     public function setWholesale(bool $wholesale): static
     {
         $this->wholesale = $wholesale;
+        return $this;
+    }
+
+    public function isInPersonPayment(): bool
+    {
+        return $this->inPersonPayment;
+    }
+
+    public function setInPersonPayment(bool $inPersonPayment): static
+    {
+        $this->inPersonPayment = $inPersonPayment;
         return $this;
     }
 
