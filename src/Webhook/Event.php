@@ -37,6 +37,7 @@ enum Event: string
     case ESHOP_DESIGN = 'eshop:design';
     case ESHOP_MANDATORY_FIELDS = 'eshop:mandatoryFields';
     case ESHOP_PROJECT_DOMAIN = 'eshop:projectDomain';
+    case ESHOP_LANGUAGE = 'eshop:language';
     case INVOICE_CREATE = 'invoice:create';
     case INVOICE_DELETE = 'invoice:delete';
     case INVOICE_UPDATE = 'invoice:update';
