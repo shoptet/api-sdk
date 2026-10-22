@@ -12,7 +12,7 @@
     "authors": [
         {
             "name": "Shoptet and contributors",
-            "homepage": "https://github.com/shoptet/api-sdk-php/contributors"
+            "homepage": "https://github.com/shoptet/api-sdk/graphs/contributors"
         }
     ],
     "require": {
