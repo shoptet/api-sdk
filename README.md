@@ -214,7 +214,7 @@ echo $httpClient->getConnectTimeout(); // 90
 ### Handling Rate Limits
 When the API rate limit is exceeded, the SDK throws a `RateLimitExceededException`.
 You can handle this exception by retrying the request after the suggested `Retry-After` date.
-For more information, see the [Rate Limiting](https://api.docs.shoptet.com/openapi/section/basic-principles/rate-limiting) section in the API documentation.
+For more information, see the [Rate Limiting](https://api.docs.shoptet.com/shoptet-api/openapi/section/basic-principles/rate-limiting) section in the API documentation.
 
 ```php
 try {
