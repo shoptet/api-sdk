@@ -10,6 +10,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Orders\UpdateOrderHeadRequest\UpdateOrderHeadRe
 class Data extends Entity
 {
     protected ?string $creationTime;
+    protected ?string $internalOrderNumber;
     protected ?string $email;
     protected ?string $phone;
     protected ?string $birthDate;
@@ -26,6 +27,17 @@ class Data extends Entity
     public function setCreationTime(?string $creationTime): static
     {
         $this->creationTime = $creationTime;
+        return $this;
+    }
+
+    public function getInternalOrderNumber(): ?string
+    {
+        return $this->internalOrderNumber;
+    }
+
+    public function setInternalOrderNumber(?string $internalOrderNumber): static
+    {
+        $this->internalOrderNumber = $internalOrderNumber;
         return $this;
     }
 
