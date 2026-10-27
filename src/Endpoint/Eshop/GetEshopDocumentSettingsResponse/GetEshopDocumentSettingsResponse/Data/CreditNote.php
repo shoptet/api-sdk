@@ -7,9 +7,14 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettingsResponse\GetEshop
 
 class CreditNote extends Entity
 {
+    protected bool $useSequentionalNumberSerie;
     protected ?string $codePrefix;
     protected int $codeLength;
     protected int $numberSeriesStartFrom;
+    protected ?string $codePrefixInvoice;
+    protected ?string $codePrefixProofPayment;
+
+    /** @deprecated */
     protected ?bool $unifyCodeWithOrder;
     protected bool $displayCorrectedAndOriginalDocumentDiff;
     protected bool $printItemRemark;
@@ -18,6 +23,17 @@ class CreditNote extends Entity
     protected ?bool $addNotesFromOrder;
     protected bool $checkComplianceWithInvoice;
     protected ForbiddenItemTypes $forbiddenItemTypes;
+
+    public function isUseSequentionalNumberSerie(): bool
+    {
+        return $this->useSequentionalNumberSerie;
+    }
+
+    public function setUseSequentionalNumberSerie(bool $useSequentionalNumberSerie): static
+    {
+        $this->useSequentionalNumberSerie = $useSequentionalNumberSerie;
+        return $this;
+    }
 
     public function getCodePrefix(): ?string
     {
@@ -52,11 +68,39 @@ class CreditNote extends Entity
         return $this;
     }
 
+    public function getCodePrefixInvoice(): ?string
+    {
+        return $this->codePrefixInvoice;
+    }
+
+    public function setCodePrefixInvoice(?string $codePrefixInvoice): static
+    {
+        $this->codePrefixInvoice = $codePrefixInvoice;
+        return $this;
+    }
+
+    public function getCodePrefixProofPayment(): ?string
+    {
+        return $this->codePrefixProofPayment;
+    }
+
+    public function setCodePrefixProofPayment(?string $codePrefixProofPayment): static
+    {
+        $this->codePrefixProofPayment = $codePrefixProofPayment;
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     */
     public function getUnifyCodeWithOrder(): ?bool
     {
         return $this->unifyCodeWithOrder;
     }
 
+    /**
+     * @deprecated
+     */
     public function setUnifyCodeWithOrder(?bool $unifyCodeWithOrder): static
     {
         $this->unifyCodeWithOrder = $unifyCodeWithOrder;
