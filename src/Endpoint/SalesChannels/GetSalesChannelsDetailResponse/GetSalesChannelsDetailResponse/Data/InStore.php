@@ -12,7 +12,7 @@ class InStore extends Entity
     protected string $guid;
     protected ?InStoreAddress $address;
     protected InStoreContact $contact;
-    protected int $categoryId;
+    protected ?int $categoryId;
 
     public function getId(): int
     {
@@ -58,12 +58,12 @@ class InStore extends Entity
         return $this;
     }
 
-    public function getCategoryId(): int
+    public function getCategoryId(): ?int
     {
         return $this->categoryId;
     }
 
-    public function setCategoryId(int $categoryId): static
+    public function setCategoryId(?int $categoryId): static
     {
         $this->categoryId = $categoryId;
         return $this;
