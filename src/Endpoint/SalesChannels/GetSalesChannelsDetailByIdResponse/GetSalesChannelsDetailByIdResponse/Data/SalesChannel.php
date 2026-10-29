@@ -6,6 +6,7 @@ use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuid;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeGuidNullable;
 use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailByIdResponse\GetSalesChannelsDetailByIdResponse\Data\SalesChannel\Abilities;
 use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailByIdResponse\GetSalesChannelsDetailByIdResponse\Data\SalesChannel\Currencies;
 use Shoptet\Api\Sdk\Php\Endpoint\SalesChannels\GetSalesChannelsDetailByIdResponse\GetSalesChannelsDetailByIdResponse\Data\SalesChannel\Languages;
@@ -14,6 +15,7 @@ class SalesChannel extends Entity
 {
     protected int $id;
     protected TypeGuid $guid;
+    protected TypeGuidNullable $parentGuid;
     protected string $name;
     protected string $type;
     protected Abilities $abilities;
@@ -43,6 +45,17 @@ class SalesChannel extends Entity
     public function setGuid(TypeGuid $guid): static
     {
         $this->guid = $guid;
+        return $this;
+    }
+
+    public function getParentGuid(): TypeGuidNullable
+    {
+        return $this->parentGuid;
+    }
+
+    public function setParentGuid(TypeGuidNullable $parentGuid): static
+    {
+        $this->parentGuid = $parentGuid;
         return $this;
     }
 
