@@ -53,6 +53,7 @@ enum Event: string
     case ORDER_STATUSES_LIST_CHANGE = 'orderStatusesList:change';
     case PAYMENT_METHOD_CHANGE = 'paymentMethod:change';
     case PRICELIST_CREATE = 'pricelist:create';
+    case PRICELIST_UPDATE = 'pricelist:update';
     case PRICELIST_DELETE = 'pricelist:delete';
     case PRODUCT_CREATE = 'product:create';
     case PRODUCT_UPDATE = 'product:update';
