@@ -1384,6 +1384,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     itemsPerPage?: string,
+     *     language?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -4441,6 +4442,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     language?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6187,6 +6189,7 @@ class Sdk
      *     page?: int,
      *     itemsPerPage?: int,
      *     itemsPerPage?: string,
+     *     language?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6984,6 +6987,7 @@ class Sdk
 
     /**
      * @param array{
+     *     language?: string,
      *     language?: string,
      * } $queryParams
      *
