@@ -58,7 +58,7 @@ enum Event: string
     case PRODUCT_CREATE = 'product:create';
     case PRODUCT_UPDATE = 'product:update';
     case PRODUCT_DELETE = 'product:delete';
-    case PRODUCT_REVIEW_CREATED = 'productReview:created';
+    case PRODUCT_REVIEW_CREATE = 'productReview:create';
     case PRODUCT_VARIANT_CREATE = 'productVariant:create';
     case PRODUCT_VARIANT_UPDATE = 'productVariant:update';
     case PRODUCT_VARIANT_DELETE = 'productVariant:delete';
