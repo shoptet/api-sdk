@@ -910,6 +910,16 @@ require_once __DIR__ . '/src/Endpoint/Discussions/UpdateDiscussionPostRequest/Up
 require_once __DIR__ . '/src/Endpoint/Discussions/UpdateDiscussionPostRequest/UpdateDiscussionPostRequest/Data.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/UpdateDiscussionPostResponse/UpdateDiscussionPostResponse.php';
 require_once __DIR__ . '/src/Endpoint/Discussions/UpdateDiscussionPostResponse/UpdateDiscussionPostResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecords.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item/LastError.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item/Price.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item/SourceCurrency.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item/Warnings.php';
+require_once __DIR__ . '/src/Endpoint/EET/GetListOfEetRecordsResponse/GetListOfEetRecordsResponse/Data/Records/Item/Warnings/Item.php';
 require_once __DIR__ . '/src/Endpoint/EmailDistributionLists/CreateEmailDistributionList.php';
 require_once __DIR__ . '/src/Endpoint/EmailDistributionLists/CreateEmailDistributionListRequest/CreateEmailDistributionListRequest.php';
 require_once __DIR__ . '/src/Endpoint/EmailDistributionLists/CreateEmailDistributionListRequest/CreateEmailDistributionListRequest/Data.php';
