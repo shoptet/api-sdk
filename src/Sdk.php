@@ -1454,6 +1454,7 @@ class Sdk
      * @param array<string, mixed>|UpdateProductCategoryRequest $requestBody
      * @param array{
      *     language?: string,
+     *     suppressRedirect?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -6141,6 +6142,7 @@ class Sdk
      *     code?: string,
      *     onlyWithClaim?: string,
      *     changedFrom?: string,
+     *     include?: string,
      *     itemsPerPage?: string,
      * } $queryParams
      *
@@ -6233,7 +6235,7 @@ class Sdk
     }
 
     /**
-     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] brand GUID
+     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] Brand GUID or brand code (`indexName`). The `brand:*` webhooks send the brand code as `eventInstance`, so it can be passed here directly.
      * @param array{
      *     language?: string,
      * } $queryParams
@@ -6255,7 +6257,7 @@ class Sdk
     }
 
     /**
-     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] brand GUID
+     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] Brand GUID or brand code (`indexName`). The `brand:*` webhooks send the brand code as `eventInstance`, so it can be passed here directly.
      * @param array<string, mixed>|UpdateBrandRequest $requestBody
      * @param array{
      *     language?: string,
@@ -6283,7 +6285,7 @@ class Sdk
     }
 
     /**
-     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] brand GUID
+     * @param string $code [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] Brand GUID or brand code (`indexName`). The `brand:*` webhooks send the brand code as `eventInstance`, so it can be passed here directly.
      * @param array{
      *     language?: string,
      *     deleteUsed?: string,

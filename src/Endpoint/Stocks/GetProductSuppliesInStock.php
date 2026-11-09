@@ -23,6 +23,7 @@ class GetProductSuppliesInStock extends PageableGet
         'code' => false,
         'onlyWithClaim' => false,
         'changedFrom' => false,
+        'include' => false,
     ];
 
     public function getRequestEntityClass(): null
