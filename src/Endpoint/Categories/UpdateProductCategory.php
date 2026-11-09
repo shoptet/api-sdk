@@ -15,7 +15,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Patch;
 class UpdateProductCategory extends Patch
 {
     protected array $supportedPathParams = ['categoryGuid' => true];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'suppressRedirect' => false];
 
     public function getRequestEntityClass(): string
     {
