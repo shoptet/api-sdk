@@ -163,6 +163,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetDiscussionSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPost;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPostRequest\UpdateDiscussionPostRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\EET\GetListOfEetRecords;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionListRequest\CreateEmailDistributionListRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailsDistributionList;
@@ -5823,6 +5824,37 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetLastCreditNoteChanges::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     page?: int,
+     *     itemsPerPage?: int,
+     *     receiptedAtFrom?: string,
+     *     receiptedAtTo?: string,
+     *     states?: string,
+     *     source?: string,
+     *     evidenceUnitId?: string,
+     *     deviceId?: string,
+     *     paymentMethodGuid?: string,
+     *     adminUserId?: string,
+     *     orderCode?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/EET/getlistofeetrecords
+     */
+    public static function getListOfEetRecords(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfEetRecords::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
