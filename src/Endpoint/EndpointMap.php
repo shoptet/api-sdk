@@ -59,6 +59,7 @@ class EndpointMap
         'get' => [
             '/api/eshop' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfo',
             '/api/eshop/design' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDesign',
+            '/api/eshop/soul' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopSoul',
             '/api/eshop/document-settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettings',
             '/api/eshop/customer-fields' => 'Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopMandatoryFields',
             '/api/products' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\GetListOfProducts',

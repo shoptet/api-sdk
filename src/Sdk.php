@@ -176,6 +176,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDesign;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopDocumentSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfo;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopMandatoryFields;
+use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopSoul;
 use Shoptet\Api\Sdk\Php\Endpoint\Exports\GeneralDocumentDownload;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\GetListOfUploadedFiles;
 use Shoptet\Api\Sdk\Php\Endpoint\Files\UploadFile;
@@ -654,6 +655,26 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetEshopDesign::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Eshop/geteshopsoul
+     */
+    public static function getEshopSoul(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetEshopSoul::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
