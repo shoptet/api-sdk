@@ -1039,6 +1039,9 @@ require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopMandatoryFieldsResponse/GetE
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopMandatoryFieldsResponse/GetEshopMandatoryFieldsResponse/Data/BillingInfo.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopMandatoryFieldsResponse/GetEshopMandatoryFieldsResponse/Data/ContactInfo.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopMandatoryFieldsResponse/GetEshopMandatoryFieldsResponse/Data/DeliveryAddress.php';
+require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopSoul.php';
+require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopSoulResponse/GetEshopSoulResponse.php';
+require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopSoulResponse/GetEshopSoulResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Exports/GeneralDocumentDownload.php';
 require_once __DIR__ . '/src/Endpoint/Exports/GeneralDocumentDownloadResponse/GeneralDocumentDownloadResponse.php';
 require_once __DIR__ . '/src/Endpoint/Exports/GeneralDocumentDownloadResponse/GeneralDocumentDownloadResponse/Data.php';
