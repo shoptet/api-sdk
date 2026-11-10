@@ -1858,6 +1858,7 @@ class Sdk
      * @param string $code [action]
      * @param array{
      *     language?: string,
+     *     force?: string,
      * } $queryParams
      *
      * @return ResponseInterface

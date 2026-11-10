@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Flags\DeleteProductFlagResponse\DeleteProductFl
 class DeleteProductFlag extends Delete
 {
     protected array $supportedPathParams = ['code' => true];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'force' => false];
 
     public function getRequestEntityClass(): null
     {
