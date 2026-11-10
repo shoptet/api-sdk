@@ -441,6 +441,9 @@ use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovements;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\GetStockMovementsLastMove;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\UpdateQuantityInStock;
 use Shoptet\Api\Sdk\Php\Endpoint\Stocks\UpdateQuantityInStockRequest\UpdateQuantityInStockRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\CreateSupplier;
+use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\CreateSupplierRequest\CreateSupplierRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\GetDetailOfSupplier;
 use Shoptet\Api\Sdk\Php\Endpoint\Suppliers\GetListOfSuppliers;
 use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameter;
 use Shoptet\Api\Sdk\Php\Endpoint\SurchargeParameters\CreateSurchargeParameterRequest\CreateSurchargeParameterRequest;
@@ -6235,6 +6238,53 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetListOfSuppliers::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array<string, mixed>|CreateSupplierRequest $requestBody
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     * @throws ReflectionException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Suppliers/createsupplier
+     */
+    public static function createSupplier(
+        array|CreateSupplierRequest $requestBody,
+        array $queryParams = [],
+    ): ResponseInterface {
+        return self::getEndpointFactory()
+            ->createEndpoint(CreateSupplier::class)
+            ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $guid [1e3f3f3f-3f3f-63ca-b93f-02423f1f0005] supplier GUID
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Suppliers/getdetailofsupplier
+     */
+    public static function getDetailOfSupplier(string $guid, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetDetailOfSupplier::class)
+            ->addPathParam('guid', $guid)
             ->setQueryParams($queryParams)
             ->execute();
     }
