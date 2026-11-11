@@ -4,6 +4,9 @@ namespace Shoptet\Api\Sdk\Php\Webhook;
 
 enum Event: string
 {
+    case ARTICLE_CREATE = 'article:create';
+    case ARTICLE_UPDATE = 'article:update';
+    case ARTICLE_DELETE = 'article:delete';
     case AVAILABILITY_CREATE = 'availability:create';
     case AVAILABILITY_UPDATE = 'availability:update';
     case AVAILABILITY_DELETE = 'availability:delete';
