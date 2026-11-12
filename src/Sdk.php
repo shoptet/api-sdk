@@ -163,6 +163,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetDiscussionSettings;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\GetListOfDiscussionPosts;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPost;
 use Shoptet\Api\Sdk\Php\Endpoint\Discussions\UpdateDiscussionPostRequest\UpdateDiscussionPostRequest;
+use Shoptet\Api\Sdk\Php\Endpoint\EET\GetListOfEetEvidenceUnits;
 use Shoptet\Api\Sdk\Php\Endpoint\EET\GetListOfEetRecords;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionList;
 use Shoptet\Api\Sdk\Php\Endpoint\EmailDistributionLists\CreateEmailDistributionListRequest\CreateEmailDistributionListRequest;
@@ -5849,6 +5850,29 @@ class Sdk
     {
         return self::getEndpointFactory()
             ->createEndpoint(GetLastCreditNoteChanges::class)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     *     type?: string,
+     *     onlyReady?: string,
+     *     includeDeactivated?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/EET/getlistofeetevidenceunits
+     */
+    public static function getListOfEetEvidenceUnits(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfEetEvidenceUnits::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
