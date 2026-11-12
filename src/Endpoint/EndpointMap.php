@@ -142,6 +142,7 @@ class EndpointMap
             '/api/credit-notes/{code}/pdf' => 'Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\DownloadCreditNotePdf',
             '/api/credit-notes/{code}/isdoc' => 'Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\DownloadCreditNoteAsIsdoc',
             '/api/credit-notes/changes' => 'Shoptet\Api\Sdk\Php\Endpoint\CreditNotes\GetLastCreditNoteChanges',
+            '/api/eet/evidence-units' => 'Shoptet\Api\Sdk\Php\Endpoint\EET\GetListOfEetEvidenceUnits',
             '/api/eet/records' => 'Shoptet\Api\Sdk\Php\Endpoint\EET\GetListOfEetRecords',
             '/api/delivery-notes' => 'Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfDeliveryNotes',
             '/api/delivery-notes/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\DeliveryNotes\GetListOfAllDeliveryNotes',
