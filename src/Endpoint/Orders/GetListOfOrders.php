@@ -23,6 +23,7 @@ class GetListOfOrders extends PageableGet
         'shippingGuid' => false,
         'shippingCompanyCode' => false,
         'paymentMethodGuid' => false,
+        'salesChannelGuid' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'codeFrom' => false,

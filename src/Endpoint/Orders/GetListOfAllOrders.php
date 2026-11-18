@@ -25,6 +25,7 @@ class GetListOfAllOrders extends Get implements SnapshotEndpoint
         'shippingGuid' => false,
         'shippingCompanyCode' => false,
         'paymentMethodGuid' => false,
+        'salesChannelGuid' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'codeFrom' => false,
