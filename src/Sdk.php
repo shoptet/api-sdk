@@ -226,6 +226,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\MeasureUnits\GetListOfProductsMeasureUnits;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGift;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\AddOrderGiftRequest\AddOrderGiftRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\DeleteOrderGift;
+use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\GetOrderGiftDetail;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\GetOrderGiftsList;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\CreateOrderRemark;
 use Shoptet\Api\Sdk\Php\Endpoint\OrderHistory\CreateOrderRemarkRequest\CreateOrderRemarkRequest;
@@ -4627,6 +4628,28 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(AddOrderGift::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param string $id [4] ID of gift
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Order-gifts/getordergiftdetail
+     */
+    public static function getOrderGiftDetail(string $id, array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetOrderGiftDetail::class)
+            ->addPathParam('id', $id)
             ->setQueryParams($queryParams)
             ->execute();
     }

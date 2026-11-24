@@ -1215,6 +1215,9 @@ require_once __DIR__ . '/src/Endpoint/OrderGifts/AddOrderGiftResponse/AddOrderGi
 require_once __DIR__ . '/src/Endpoint/OrderGifts/DeleteOrderGift.php';
 require_once __DIR__ . '/src/Endpoint/OrderGifts/DeleteOrderGiftResponse/DeleteOrderGiftResponse.php';
 require_once __DIR__ . '/src/Endpoint/OrderGifts/DeleteOrderGiftResponse/DeleteOrderGiftResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftDetail.php';
+require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftDetailResponse/GetOrderGiftDetailResponse.php';
+require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftDetailResponse/GetOrderGiftDetailResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftsList.php';
 require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftsListResponse/GetOrderGiftsListResponse.php';
 require_once __DIR__ . '/src/Endpoint/OrderGifts/GetOrderGiftsListResponse/GetOrderGiftsListResponse/Data.php';
