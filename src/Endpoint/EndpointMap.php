@@ -116,6 +116,7 @@ class EndpointMap
             '/api/orders/changes' => 'Shoptet\Api\Sdk\Php\Endpoint\Orders\GetLastOrderChanges',
             '/api/orders/claims' => 'Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderClaims',
             '/api/orders/gifts' => 'Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\GetOrderGiftsList',
+            '/api/orders/gifts/{id}' => 'Shoptet\Api\Sdk\Php\Endpoint\OrderGifts\GetOrderGiftDetail',
             '/api/orders/gifts/settings' => 'Shoptet\Api\Sdk\Php\Endpoint\Gifts\GetOrderGiftSettings',
             '/api/invoices' => 'Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfInvoices',
             '/api/invoices/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetListOfAllInvoices',
