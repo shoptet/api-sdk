@@ -9,7 +9,7 @@ class Documents extends Entity
     protected bool $generateProformaInvoice;
     protected bool $generateInvoice;
     protected bool $generateDeliveryNote;
-    protected ?bool $generateProofPayment;
+    protected bool $generateProofPayment;
 
     public function isGenerateProformaInvoice(): bool
     {
@@ -44,12 +44,12 @@ class Documents extends Entity
         return $this;
     }
 
-    public function getGenerateProofPayment(): ?bool
+    public function isGenerateProofPayment(): bool
     {
         return $this->generateProofPayment;
     }
 
-    public function setGenerateProofPayment(?bool $generateProofPayment): static
+    public function setGenerateProofPayment(bool $generateProofPayment): static
     {
         $this->generateProofPayment = $generateProofPayment;
         return $this;

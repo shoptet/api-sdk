@@ -4,12 +4,12 @@ namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\GetLastOrderChangesResponse\GetLas
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
 use Shoptet\Api\Sdk\Php\Component\ValueObject\ChangeType;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTimeNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeDateTime;
 
 class Item extends Entity
 {
     protected string $code;
-    protected TypeDateTimeNullable $changeTime;
+    protected TypeDateTime $changeTime;
     protected ChangeType $changeType;
 
     public function getCode(): string
@@ -23,12 +23,12 @@ class Item extends Entity
         return $this;
     }
 
-    public function getChangeTime(): TypeDateTimeNullable
+    public function getChangeTime(): TypeDateTime
     {
         return $this->changeTime;
     }
 
-    public function setChangeTime(TypeDateTimeNullable $changeTime): static
+    public function setChangeTime(TypeDateTime $changeTime): static
     {
         $this->changeTime = $changeTime;
         return $this;
