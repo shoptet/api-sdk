@@ -70,6 +70,7 @@ class EndpointMap
             '/api/products/{guid}/images/{gallery}' => 'Shoptet\Api\Sdk\Php\Endpoint\ProductImages\GetListOfProductImages',
             '/api/products/changes' => 'Shoptet\Api\Sdk\Php\Endpoint\Products\GetLastProductChanges',
             '/api/categories' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductCategories',
+            '/api/categories/snapshot' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfAllCategories',
             '/api/categories/{categoryGuid}' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\GetProductCategoryDetail',
             '/api/categories/{categoryGuid}/productsPriority' => 'Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductsOrderInCategory',
             '/api/parametric-categories' => 'Shoptet\Api\Sdk\Php\Endpoint\ParametricCategories\GetListOfParametricCategories',

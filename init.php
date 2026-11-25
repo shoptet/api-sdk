@@ -53,6 +53,7 @@ require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate
 require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data/Item1.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryProductPriorityBatchUpdate/Data/Item2.php';
+require_once __DIR__ . '/src/Component/Entity/CategorySnapshot.php';
 require_once __DIR__ . '/src/Component/Entity/CategoryUpdate.php';
 require_once __DIR__ . '/src/Component/Entity/ConsumptionTax.php';
 require_once __DIR__ . '/src/Component/Entity/CreditNote.php';
@@ -496,6 +497,9 @@ require_once __DIR__ . '/src/Endpoint/Categories/CreateProductCategoryResponse/C
 require_once __DIR__ . '/src/Endpoint/Categories/DeleteProductCategory.php';
 require_once __DIR__ . '/src/Endpoint/Categories/DeleteProductCategoryResponse/DeleteProductCategoryResponse.php';
 require_once __DIR__ . '/src/Endpoint/Categories/DeleteProductCategoryResponse/DeleteProductCategoryResponse/Data.php';
+require_once __DIR__ . '/src/Endpoint/Categories/GetListOfAllCategories.php';
+require_once __DIR__ . '/src/Endpoint/Categories/GetListOfAllCategoriesResponse/GetListOfAllCategoriesResponse.php';
+require_once __DIR__ . '/src/Endpoint/Categories/GetListOfAllCategoriesResponse/GetListOfAllCategoriesResponse/Data.php';
 require_once __DIR__ . '/src/Endpoint/Categories/GetListOfProductCategories.php';
 require_once __DIR__ . '/src/Endpoint/Categories/GetListOfProductCategoriesResponse/GetListOfProductCategoriesResponse.php';
 require_once __DIR__ . '/src/Endpoint/Categories/GetListOfProductCategoriesResponse/GetListOfProductCategoriesResponse/Data.php';

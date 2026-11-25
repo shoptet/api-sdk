@@ -44,6 +44,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Brands\UpdateBrandRequest\UpdateBrandRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\CreateProductCategoryRequest\CreateProductCategoryRequest;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\DeleteProductCategory;
+use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfAllCategories;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductCategories;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetListOfProductsOrderInCategory;
 use Shoptet\Api\Sdk\Php\Endpoint\Categories\GetProductCategoryDetail;
@@ -1450,6 +1451,26 @@ class Sdk
         return self::getEndpointFactory()
             ->createEndpoint(CreateProductCategory::class)
             ->setBody($requestBody)
+            ->setQueryParams($queryParams)
+            ->execute();
+    }
+
+    /**
+     * @param array{
+     *     language?: string,
+     * } $queryParams
+     *
+     * @return ResponseInterface
+     *
+     * @throws LogicException
+     * @throws RuntimeException
+     *
+     * @see https://api.docs.shoptet.com/shoptet-api/openapi/Categories/getlistofallcategories
+     */
+    public static function getListOfAllCategories(array $queryParams = []): ResponseInterface
+    {
+        return self::getEndpointFactory()
+            ->createEndpoint(GetListOfAllCategories::class)
             ->setQueryParams($queryParams)
             ->execute();
     }
