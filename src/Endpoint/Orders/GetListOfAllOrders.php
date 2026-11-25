@@ -25,7 +25,6 @@ class GetListOfAllOrders extends Get implements SnapshotEndpoint
         'shippingGuid' => false,
         'shippingCompanyCode' => false,
         'paymentMethodGuid' => false,
-        'salesChannelGuid' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'codeFrom' => false,
@@ -37,6 +36,7 @@ class GetListOfAllOrders extends Get implements SnapshotEndpoint
         'changeTimeFrom' => false,
         'changeTimeTo' => false,
         'sourceId' => false,
+        'salesChannelGuid' => false,
     ];
 
     public function getRequestEntityClass(): null

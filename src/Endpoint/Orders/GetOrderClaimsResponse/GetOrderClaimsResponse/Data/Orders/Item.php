@@ -3,16 +3,16 @@
 namespace Shoptet\Api\Sdk\Php\Endpoint\Orders\GetOrderClaimsResponse\GetOrderClaimsResponse\Data\Orders;
 
 use Shoptet\Api\Sdk\Php\Component\Entity\Entity;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmountNullable;
-use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmountNullable;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypeAmount;
+use Shoptet\Api\Sdk\Php\Component\ValueObject\TypePositiveAmount;
 
 class Item extends Entity
 {
     protected string $orderCode;
     protected int $statusId;
     protected string $productCode;
-    protected TypeAmountNullable $amount;
-    protected TypePositiveAmountNullable $amountCompleted;
+    protected TypeAmount $amount;
+    protected TypePositiveAmount $amountCompleted;
 
     public function getOrderCode(): string
     {
@@ -47,23 +47,23 @@ class Item extends Entity
         return $this;
     }
 
-    public function getAmount(): TypeAmountNullable
+    public function getAmount(): TypeAmount
     {
         return $this->amount;
     }
 
-    public function setAmount(TypeAmountNullable $amount): static
+    public function setAmount(TypeAmount $amount): static
     {
         $this->amount = $amount;
         return $this;
     }
 
-    public function getAmountCompleted(): TypePositiveAmountNullable
+    public function getAmountCompleted(): TypePositiveAmount
     {
         return $this->amountCompleted;
     }
 
-    public function setAmountCompleted(TypePositiveAmountNullable $amountCompleted): static
+    public function setAmountCompleted(TypePositiveAmount $amountCompleted): static
     {
         $this->amountCompleted = $amountCompleted;
         return $this;

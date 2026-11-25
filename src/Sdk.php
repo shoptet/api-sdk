@@ -3859,7 +3859,6 @@ class Sdk
      *     shippingGuid?: string,
      *     shippingCompanyCode?: string,
      *     paymentMethodGuid?: string,
-     *     salesChannelGuid?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
      *     codeFrom?: string,
@@ -3871,6 +3870,7 @@ class Sdk
      *     changeTimeFrom?: string,
      *     changeTimeTo?: string,
      *     sourceId?: string,
+     *     salesChannelGuid?: string,
      * } $queryParams
      *
      * @return ResponseInterface
