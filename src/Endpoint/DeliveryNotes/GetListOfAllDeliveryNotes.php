@@ -19,6 +19,7 @@ class GetListOfAllDeliveryNotes extends Get implements SnapshotEndpoint
 
     protected array $supportedQueryParams = [
         'language' => false,
+        'include' => false,
         'creationTimeFrom' => false,
         'creationTimeTo' => false,
         'changeTimeFrom' => false,

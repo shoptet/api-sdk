@@ -4823,6 +4823,7 @@ class Sdk
      * @param string $code [2018000004]
      * @param array{
      *     language?: string,
+     *     include?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5540,6 +5541,7 @@ class Sdk
      *     creationTimeTo?: string,
      *     varSymbol?: string,
      *     proofPaymentCode?: string,
+     *     itemsPerPage?: string,
      * } $queryParams
      *
      * @return ResponseInterface
@@ -5987,6 +5989,7 @@ class Sdk
     /**
      * @param array{
      *     language?: string,
+     *     include?: string,
      *     creationTimeFrom?: string,
      *     creationTimeTo?: string,
      *     changeTimeFrom?: string,
