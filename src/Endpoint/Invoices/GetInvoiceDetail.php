@@ -14,7 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Invoices\GetInvoiceDetailResponse\GetInvoiceDet
 class GetInvoiceDetail extends Get
 {
     protected array $supportedPathParams = ['code' => true];
-    protected array $supportedQueryParams = ['language' => false];
+    protected array $supportedQueryParams = ['language' => false, 'include' => false];
 
     public function getRequestEntityClass(): null
     {

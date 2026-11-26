@@ -37,7 +37,7 @@ class Invoice extends Entity
     protected ?string $documentRemark;
     protected bool $vatPayer;
     protected ?string $vatMode;
-    protected ?ProofPaymentsForInvoice $proofPayments;
+    protected ProofPaymentsForInvoice $proofPayments;
     protected ?bool $paid;
 
     public function getCode(): string
@@ -315,12 +315,12 @@ class Invoice extends Entity
         return $this;
     }
 
-    public function getProofPayments(): ?ProofPaymentsForInvoice
+    public function getProofPayments(): ProofPaymentsForInvoice
     {
         return $this->proofPayments;
     }
 
-    public function setProofPayments(?ProofPaymentsForInvoice $proofPayments): static
+    public function setProofPayments(ProofPaymentsForInvoice $proofPayments): static
     {
         $this->proofPayments = $proofPayments;
         return $this;

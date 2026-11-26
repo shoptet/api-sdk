@@ -9,7 +9,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\ProformaInvoices\GetListOfProformaInvoicesRespo
 class Data extends Entity
 {
     protected ProformaInvoices $proformaInvoices;
-    protected ?Paginator $paginator;
+    protected Paginator $paginator;
 
     public function getProformaInvoices(): ProformaInvoices
     {
@@ -22,12 +22,12 @@ class Data extends Entity
         return $this;
     }
 
-    public function getPaginator(): ?Paginator
+    public function getPaginator(): Paginator
     {
         return $this->paginator;
     }
 
-    public function setPaginator(?Paginator $paginator): static
+    public function setPaginator(Paginator $paginator): static
     {
         $this->paginator = $paginator;
         return $this;
