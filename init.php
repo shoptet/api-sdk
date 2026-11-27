@@ -1028,6 +1028,7 @@ require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoRes
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/PaymentMethods/Wholesale.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/PaymentMethods/Wholesale/Methods.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/PaymentMethods/Wholesale/Methods/Item.php';
+require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/Peppol.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/Settings.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/ShippingMethods.php';
 require_once __DIR__ . '/src/Endpoint/Eshop/GetEshopInfoResponse/GetEshopInfoResponse/Data/ShippingMethods/Retail.php';
