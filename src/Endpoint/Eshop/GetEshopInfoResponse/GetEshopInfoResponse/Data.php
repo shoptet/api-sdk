@@ -14,6 +14,7 @@ use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\OrderAdditionalFields;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\OrderStatuses;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\PaymentMethods;
+use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\Peppol;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\Settings;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\ShippingMethods;
 use Shoptet\Api\Sdk\Php\Endpoint\Eshop\GetEshopInfoResponse\GetEshopInfoResponse\Data\SocialNetworks;
@@ -39,6 +40,7 @@ class Data extends Entity
     protected bool $trial;
     protected ?Countries $countries;
     protected ?CashDesk $cashDesk;
+    protected ?Peppol $peppol;
 
     public function getContactInformation(): ContactInformation
     {
@@ -224,6 +226,17 @@ class Data extends Entity
     public function setCashDesk(?CashDesk $cashDesk): static
     {
         $this->cashDesk = $cashDesk;
+        return $this;
+    }
+
+    public function getPeppol(): ?Peppol
+    {
+        return $this->peppol;
+    }
+
+    public function setPeppol(?Peppol $peppol): static
+    {
+        $this->peppol = $peppol;
         return $this;
     }
 }
